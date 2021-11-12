@@ -5,9 +5,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(166, 173, 173, 0.89);
+  padding:0;
+  /*color: #46B8FF;*/
+  /*cursor: pointer;*/
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:hover {
+  opacity: 0.5;
 }

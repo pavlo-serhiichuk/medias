@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import React, {useEffect} from "react";
+import {useSelector} from "react-redux";
+import {Route, Switch} from "react-router-dom";
+import BooksContainer from "./components/Books/BooksContainer";
+import Header from "./components/Header/Header";
+import {Content} from "./App.styles";
+import CartContainer from "./components/Cart/CartContainer";
+import Footer from "./components/Footer/Footer.component";
+import LoginContainer from "./components/Login/LoginContainer";
+import SignInContainer from "./components/SignIn/SignInContainer";
+import ArticlesContainer from "./components/Articles/ArticlesContainer";
+import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
+import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function App(props) {
+
+    const isSignInModalOpen = useSelector(state => state.modal.isSighInModalOpen)
+    const isLoginModalOpen = useSelector(state => state.modal.isLoginModalOpen)
+    const isMoreInfoModalOpen = useSelector(state => state.modal.isMoreInfoModalOpen)
+    return (
+        <div>
+            <Content>
+                <Header/>
+                <Switch>
+                    <Route exact path="/" render={() => <BooksContainer/>}/>
+                    <Route path="/cart" render={() => <CartContainer/>}/>
+                    <Route path="/articles" render={() => <ArticlesContainer/>}/>
+                    <Route path="/article" render={() => <FullArticleContainer/>}/>
+                </Switch>
+            </Content>
+            <Footer/>
+
+            {isMoreInfoModalOpen && <MoreInfoContainer/>}
+            {isLoginModalOpen && <LoginContainer/>}
+            {isSignInModalOpen && <SignInContainer/>}
+        </div>
+    );
 }
 
 export default App;
