@@ -1,8 +1,11 @@
 const GET_ELEMENTS = 'GET_ELEMENTS'
+const ADD_TO_CART = 'ADD_TO_CART'
+const DELETE_FROM_CART = 'DELETE_FROM_CART'
 
 const initialState = {
     books: [],
-
+    cartBooks: [],
+    elementID: null,
 
 }
 

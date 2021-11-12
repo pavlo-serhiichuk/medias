@@ -1,18 +1,23 @@
 import React, {useEffect} from 'react';
-import CurrentArticle from "./FullArticle.component";
+import FullArticle from "./FullArticle.component";
 import {useDispatch, useSelector} from "react-redux";
+import {getAsyncFullArticle} from "../../redux/articlesReducer";
 
-const FullArticleContainer = () => {
+const FullArticleContainer = ({id}) => {
+
     const dispatch = useDispatch()
-    const currentArticle = useSelector(state => state.articles.currentArticle)
+    const fullArticle = useSelector(state => state.articles.fullArticle)
 
     useEffect(() => {
+        dispatch(getAsyncFullArticle(id))
+    }, [fullArticle])
 
-    }, [])
+// debugger
+    if (Object.keys(fullArticle) === 0) return <div>Loading...</div>
 
     return (
         <>
-            <CurrentArticle currentArticle={currentArticle}/>
+            <FullArticle fullArticle={fullArticle} />
         </>
     );
 };

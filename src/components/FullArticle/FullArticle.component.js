@@ -1,18 +1,21 @@
 import React from 'react';
 import {Wrapper} from "./FullArticle.style";
 import {HugeTitle} from "../../common/Titles/Titles";
+import {Img} from "../../common/Imgs/Imgs";
 
-const CurrentArticle = ({currentArticle}) => {
+const FullArticle = ({fullArticle}) => {
 
-    console.log(currentArticle)
+    // console.log('fullArticle')
 
     return (
         <Wrapper>
             <HugeTitle>
-                {currentArticle.title}
+                {fullArticle.title}
             </HugeTitle>
+            <Img image={fullArticle.image}/>
+            <div>{fullArticle.description}</div>
         </Wrapper>
     );
 };
 
-export default CurrentArticle;
+export default FullArticle;

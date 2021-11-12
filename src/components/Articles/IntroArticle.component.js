@@ -1,11 +1,10 @@
 import React from 'react';
-import {ArticleWrapper, Content} from "./Articles.styles";
+import {ArticleWrapper, Content} from "./IntroArticles.styles";
 import {MiddleTitle} from "../../common/Titles/Titles";
 import {Img} from "../../common/Imgs/Imgs";
+import {Link} from "react-router-dom";
 
-const Article = ({article, openArticle}) => {
-    // const articleDescription = article.description.split(' ').slice(0, 50).join(' ')
-
+const IntroArticle = ({article}) => {
     return (
         <ArticleWrapper>
             <MiddleTitle>
@@ -14,11 +13,11 @@ const Article = ({article, openArticle}) => {
             <Img bgSize={'500px'} image={article.image} height={'200px'}/>
             <Content>
                 {article.description}
-                <a href={`/article?id=${article.id}`} onClick={openArticle(article.id)}>...Read more </a>
+                <Link to={`/article?id=${article.id}`}>...More info</Link>
             </Content>
 
         </ArticleWrapper>
     );
 };
 
-export default Article;
+export default IntroArticle;
