@@ -1,6 +1,6 @@
 import React from 'react';
 import {Wrapper} from "./Cart.styles";
-import CartBook from "./CartBook.component";
+import CartBook from "./CartBook/CartBook.component";
 import {BsCartX} from "react-icons/bs";
 
 const Cart = (props) => {

@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding: 0 0 0 0;
     box-sizing: border-box;
+    border-bottom: 2px solid grey;
 }
 
 .headerContent {

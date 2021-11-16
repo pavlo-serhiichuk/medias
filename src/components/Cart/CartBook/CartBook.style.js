@@ -7,9 +7,9 @@ export const Wrapper = styled.div`
     box-sizing: border-box;
     padding: 10px;
     margin-bottom: 10px;
-    border-radius: 5px;
+    border-bottom: 1px solid grey;
     background-color: #fff;
-
+    
 `
 
 export const Img = styled.div`
