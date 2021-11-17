@@ -30,15 +30,15 @@ export const Operators = styled.div`
 
 `
 
-export const AmountWrap = styled.div`
+export const Form = styled.form`
     width: 131px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     
 `
 
 export const Input = styled.input`
-    width: 50px;
+    width: 70px;
     height: 30px;
 `

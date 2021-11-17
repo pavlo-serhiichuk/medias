@@ -1,26 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from "../../../common/Buttons/Button.component";
-import {BsPlusLg} from "react-icons/bs";
-import {BiMinus} from "react-icons/bi";
-import {Operators, Title, Wrapper, Img, Input, AmountWrap} from "./CartBook.style";
+import {Operators, Title, Wrapper, Img, Input, Form} from "./CartBook.style";
 
 
-const CartBook = ({book, deleteFromCart}) => {
+const CartBook = ({cartBook, deleteFromCart, handleSubmit, register}) => {
     return (
 
         <Wrapper>
-            <Img image={book.image}/>
-            <Title>{book.title}</Title>
+            <Img image={cartBook.image}/>
+            <Title>{cartBook.title}</Title>
             <Operators>
-                <AmountWrap>
-                    <Button color={'white'}><BiMinus/></Button>
-                    <Input type={'text'} />
-                    <Button color={'white'}><BsPlusLg/></Button>
-                </AmountWrap>
+                <Form onSubmit={handleSubmit}>
+                        <Input type={'number'} {...register('amount', {required: true})} defaultValue={cartBook.amount} disabled/>
+                </Form>
                 <br/>
                 <Button color={'dodgerblue'}>Open Popup</Button>
-                <Button color={'indianred'} onClick={() => deleteFromCart(book.id)}>Delete</Button>
+                <Button color={'indianred'} onClick={() => deleteFromCart(cartBook.id)}>Delete</Button>
             </Operators>
         </Wrapper>
     );

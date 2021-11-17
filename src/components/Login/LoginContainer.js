@@ -22,10 +22,10 @@ const LoginContainer = () => {
     const dispatch = useDispatch()
     const isLoginModalOpen = useSelector(state => state.modal.isLoginModalOpen)
     const isAuth = useSelector(state => state.auth.isAuth)
-    const data = watch()
 
     const sendData = () => {
-            dispatch(fetchLogin({email: data.email, password: data.password}))
+        const data = watch()
+        dispatch(fetchLogin({email: data.email, password: data.password}))
     }
 
     const closeModal = () => dispatch(closeLoginModal())
@@ -41,7 +41,6 @@ const LoginContainer = () => {
             <Login closeModal={closeModal}
                    sendData={sendData}
                    errors={errors}
-                   data={data}
                    register={register}
                    handleSubmit={handleSubmit}/>
         </>

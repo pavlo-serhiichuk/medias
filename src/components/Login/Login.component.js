@@ -6,7 +6,7 @@ import Button from "../../common/Buttons/Button.component";
 import CloseButton from "../../common/Buttons/CloseButton.component";
 
 
-const Login = ({closeModal, sendData, register, handleSubmit, errors, data}) => {
+const Login = ({closeModal, sendData, register, handleSubmit, errors}) => {
     return (
         <Modal>
             <CloseButton onClick={closeModal}/>

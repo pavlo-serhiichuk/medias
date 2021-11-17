@@ -1,9 +1,8 @@
 import React, {useEffect} from 'react';
-import {Content, Wrapper} from './IntroArticles.styles'
+import {Wrapper} from './IntroArticles.styles'
 import IntroArticles from "./IntroArticles.component";
 import {useSelector, useDispatch} from "react-redux";
-import {getAsyncArticles, setFullArticleID} from "../../redux/articlesReducer";
-import {Redirect} from "react-router-dom";
+import {getAsyncArticles} from "../../redux/articlesReducer";
 
 const IntroArticlesContainer = () => {
 

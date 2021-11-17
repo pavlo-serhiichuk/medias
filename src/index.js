@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import './index.css';
-import App from './App';
+import AppContainer from './AppContainer';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
 import {Provider} from 'react-redux'
@@ -10,8 +10,6 @@ import {rootReducer} from "./redux/rootReducer";
 import thunk from "redux-thunk";
 import {logger} from "redux-logger";
 
-// https://jsonplaceholder.typicode.com/photos?_limit=10
-
 const store = createStore(rootReducer, compose(
     applyMiddleware(thunk, logger),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -19,14 +17,15 @@ const store = createStore(rootReducer, compose(
 
 window.store = store
 
-ReactDOM.render(
+render(
     <React.StrictMode>
         <Provider store={store}>
-            <Router >
-                <App/>
+            <Router>
+                <AppContainer/>
             </Router>
         </Provider>
-    </React.StrictMode>,
+    </React.StrictMode>
+    ,
     document.getElementById('root')
 );
 

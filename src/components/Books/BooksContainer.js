@@ -1,13 +1,13 @@
 import React from 'react';
 import Books from "./Books.component";
 import {connect} from "react-redux";
-import {getAsyncElements} from "../../redux/booksReducer";
+import {getAsyncBooks} from "../../redux/booksReducer";
 import {addToCart} from "../../redux/booksReducer";
 
 class BooksContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getAsyncElements()
+        this.props.getAsyncBooks()
         document.title = 'Books| Medias'
     }
     render() {
@@ -28,5 +28,5 @@ const mstp = state => ({
 
 
 export default connect(mstp, {
-    getAsyncElements, addToCart
+    getAsyncBooks, addToCart
 })(BooksContainer);

@@ -2,6 +2,7 @@ import React from 'react';
 import {Wrapper} from "./Cart.styles";
 import CartBook from "./CartBook/CartBook.component";
 import {BsCartX} from "react-icons/bs";
+import CartBookContainer from "./CartBook/CartBookContainer";
 
 const Cart = (props) => {
 
@@ -16,7 +17,7 @@ const Cart = (props) => {
 
     return (
         <Wrapper display={'flex'}>
-            {props.cartBooks.map(book => <CartBook {...props} book={book} key={book.id}/>)}
+            {props.cartBooks.map(cartBook => <CartBookContainer {...props} cartBook={cartBook} key={cartBook.id}/>)}
         </Wrapper>
     );
 };
