@@ -21,3 +21,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/src/store/photos/Sittings.PNG
+/.idea/styledmedia.iml
+/src/store/photos/TopScreen.PNG
+/.idea/vcs.xml
