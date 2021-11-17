@@ -27,18 +27,20 @@ export const Title = styled.div`
 `
 
 export const Operators = styled.div`
-
+    width: 106px;
 `
 
-export const Form = styled.form`
-    width: 131px;
+export const AmountContainer = styled.div`
+    margin: 0 auto;
+    width: 100px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    
+    justify-content: space-around;
 `
 
-export const Input = styled.input`
-    width: 70px;
-    height: 30px;
+export const Amount = styled.div`
+    margin: 5px;
+    padding-left: 4px;
+    width: 42px;
+    height: 32px;
+    border: 1px solid grey;
 `
