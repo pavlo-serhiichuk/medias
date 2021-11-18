@@ -9,7 +9,7 @@ const initialState = {
     fullArticle: {},
 }
 
-const articlesReducer = (state = initialState, action) => {
+export const articlesReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_ARTICLES:
             return {...state, articles: action.payload}
@@ -33,4 +33,3 @@ export const getAsyncFullArticle = (articleID) => async (dispatch) => {
     dispatch(setFullArticle(response))
 }
 
-export default articlesReducer;

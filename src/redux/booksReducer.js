@@ -1,4 +1,4 @@
-import {articlesAPI, booksAPI} from "../api/api";
+import { booksAPI} from "../api/api";
 
 const GET_ELEMENTS = 'GET_ELEMENTS'
 const ADD_TO_CART = 'ADD_TO_CART'
