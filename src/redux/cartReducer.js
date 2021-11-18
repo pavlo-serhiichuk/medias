@@ -56,5 +56,5 @@ export const decrementAmount = (productID) => ({type: DECREMENT_PRODUCT_AMOUNT, 
 export const bought = () => ({type: BOUGHT})
 
 // export const sendOrder = (books) => {
-//     const response = booksAPI.sendOrder(books)
+//     const response = productsAPI.sendOrder(books)
 // }

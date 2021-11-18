@@ -19,9 +19,12 @@ export const authAPI = {
     }
 }
 
-export const booksAPI = {
+export const productsAPI = {
     getBooks() {
         return get('book')
+    },
+    getGuitars() {
+      return get('guitars')
     },
     sendOrder(data) {
         return post('order', data)

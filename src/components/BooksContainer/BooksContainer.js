@@ -1,7 +1,7 @@
 import React from 'react';
 import Products from "../Products/Products.component";
 import {connect} from "react-redux";
-import {getAsyncBooks} from "../../redux/booksReducer";
+import {getAsyncBooks} from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 
 class BooksContainer extends React.Component {
@@ -22,7 +22,7 @@ class BooksContainer extends React.Component {
 }
 
 const mstp = state => ({
-    books: state.books.books,
+    books: state.products.books,
     isAuth: state.auth.isAuth
 })
 
