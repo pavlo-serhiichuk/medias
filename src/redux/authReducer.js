@@ -60,22 +60,16 @@ export const sighOut = () => ({type: SIGH_OUT})
 export const login = (data) => ({type: LOG_IN, payload: data})
 
 export const fetchLogin = (data) => async (dispatch) => {
-    const responce = await fetch('http://localhost:3001/login', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        }, body: JSON.stringify(data),
-    })
+    const response = await authAPI.login(data)
 
-    const jsonLogin = await responce.json()
-
-    dispatch(login(jsonLogin))
+    dispatch(login(response))
     dispatch(closeLoginModal())
 }
 
 
 export const fetchSignIn = (data) => async (dispatch) => {
     const response = await authAPI.signIn(data)
+
     dispatch(signIn(response))
     dispatch(closeSignInModal())
 }
