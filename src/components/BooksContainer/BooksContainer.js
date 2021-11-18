@@ -1,5 +1,5 @@
 import React from 'react';
-import Books from "./Books.component";
+import Products from "../Products/Products.component";
 import {connect} from "react-redux";
 import {getAsyncBooks} from "../../redux/booksReducer";
 import {addToCart} from "../../redux/cartReducer";
@@ -13,7 +13,7 @@ class BooksContainer extends React.Component {
     render() {
         return (
             <>
-                <Books books={this.props.books}
+                <Products products={this.props.books}
                              isAuth={this.props.isAuth}
                              addToCart={this.props.addToCart}/>
             </>

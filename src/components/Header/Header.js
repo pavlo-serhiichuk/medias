@@ -8,6 +8,7 @@ import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
 import {ImBooks} from "react-icons/im";
 import {BsCart4} from "react-icons/bs";
 import {GrArticle} from "react-icons/gr";
+import {GiGuitar} from "react-icons/gi";
 
 const Header = (props) => {
     return (
@@ -15,6 +16,7 @@ const Header = (props) => {
             <div className={s.headerElements}>
                 <div className={s.left}>
                     <Link to="/articles"><GrArticle/></Link>
+                    <Link to="/guitars"><GiGuitar/></Link>
                     <Link to="/"><ImBooks /></Link>
                     <Link to="/cart"><BsCart4/></Link>
                 </div>

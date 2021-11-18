@@ -10,7 +10,7 @@ import styled from 'styled-components';
 //         box-sizing: border-box;
 // `
 
-export const BookContent = styled.div`
+export const ProductContent = styled.div`
     width: 200px;
     height: 320px;
     padding: 10px;
