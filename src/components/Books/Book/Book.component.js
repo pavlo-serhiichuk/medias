@@ -1,7 +1,7 @@
 import React from 'react';
 import {BookContent, Title} from "./Book.styles";
-import Button from "../../common/Buttons/Button.component";
-import {openMoreInfoModal} from "../../redux/modalReducer";
+import Button from "../../../common/Buttons/Button.component";
+import {openMoreInfoModal} from "../../../redux/modalReducer";
 import {useDispatch} from "react-redux";
 import {AiOutlineShoppingCart} from "react-icons/ai"
 

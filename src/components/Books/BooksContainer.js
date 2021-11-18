@@ -2,7 +2,7 @@ import React from 'react';
 import Books from "./Books.component";
 import {connect} from "react-redux";
 import {getAsyncBooks} from "../../redux/booksReducer";
-import {addToCart} from "../../redux/booksReducer";
+import {addToCart} from "../../redux/cartReducer";
 
 class BooksContainer extends React.Component {
 

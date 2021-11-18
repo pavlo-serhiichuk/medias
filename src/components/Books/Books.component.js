@@ -1,6 +1,6 @@
 import React from 'react';
 import Wrapper from "./Books.styles";
-import Book from "../Book/Book.component";
+import Book from "./Book/Book.component";
 
 const Books = (props) => {
 

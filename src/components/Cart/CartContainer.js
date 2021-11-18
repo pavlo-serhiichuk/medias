@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from "react-redux";
 import Cart from "./Cart.component";
-import { deleteFromCart } from "../../redux/booksReducer";
+import { deleteFromCart } from "../../redux/cartReducer";
 
 class CartContainer extends React.Component {
 
@@ -19,7 +19,7 @@ class CartContainer extends React.Component {
 }
 
 const mstp = state => ({
-    cartBooks: state.books.cartBooks
+    cartProducts: state.cart.cartProducts
 })
 
 
