@@ -6,13 +6,17 @@ const DECREMENT_PRODUCT_AMOUNT = 'CART/DECREMENT_PRODUCT_AMOUNT'
 
 const initialState = {
     cartProducts: [],
-    elementID: null,
+    productID: null,
     isBought: false,
 }
 
 export const cartReducer = (state = initialState, action) => {
-    let existProduct = state.cartProducts.find(item => item.id === action.payload.id && item.title === action.payload.title)
+    let existProduct = {}
 
+    if(!!action.payload) {
+        existProduct = state.cartProducts.find(item => item.id === action.payload.id && item.title === action.payload.title)
+    }
+    
     switch (action.type) {
         case ADD_TO_CART:
 
@@ -25,8 +29,8 @@ export const cartReducer = (state = initialState, action) => {
             return {...state, cartProducts: state.cartProducts.concat(newCartProduct)}
 
         case DELETE_FROM_CART:
-            const elementID = action.payload
-            return {...state, cartProducts: state.cartProducts.filter(elem => elem.id !== elementID)}
+            const productID = action.payload
+            return {...state, cartProducts: state.cartProducts.filter(elem => elem.id !== productID)}
 
         case INCREMENT_PRODUCT_AMOUNT:
             existProduct.amount++
@@ -49,8 +53,8 @@ export const cartReducer = (state = initialState, action) => {
 export const addToCart = (product) => ({type: ADD_TO_CART, payload: product})
 export const deleteFromCart = (productID) => ({type: DELETE_FROM_CART, payload: productID})
 
-export const incrementAmount = (productID, title) => ({type: INCREMENT_PRODUCT_AMOUNT, payload: {productID, title}})
-export const decrementAmount = (productID, title) => ({type: DECREMENT_PRODUCT_AMOUNT, payload: {productID, title}})
+export const incrementAmount = (productID, title) => ({type: INCREMENT_PRODUCT_AMOUNT, payload: {id: productID, title}})
+export const decrementAmount = (productID, title) => ({type: DECREMENT_PRODUCT_AMOUNT, payload: {id: productID, title}})
 
 export const bought = () => ({type: BOUGHT})
 

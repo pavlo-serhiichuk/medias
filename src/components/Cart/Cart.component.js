@@ -1,12 +1,11 @@
 import React from 'react';
 import {Wrapper} from "./Cart.styles";
-import CartBook from "./CartProduct/CartProduct.component";
 import {BsCartX} from "react-icons/bs";
 import CartProductContainer from "./CartProduct/CartProductContainer";
 
 const Cart = (props) => {
 
-    if (props.cartProducts.length < 1) {
+    if (!props.isAuth) {
         return (
             <Wrapper padTop={'150px'}>
                 <h6>Упс... You haven't added anything to your <BsCartX/>. It's empty...
@@ -17,7 +16,7 @@ const Cart = (props) => {
 
     return (
         <Wrapper display={'flex'}>
-            {props.cartProducts.map(cartProduct => <CartProductContainer {...props} cartProduct={cartProduct} key={cartProduct.id}/>)}
+            {props.cartProducts.map(cartProduct => <CartProductContainer {...props} product={cartProduct} key={`${cartProduct.category}_${cartProduct.id}`}/>)}
         </Wrapper>
     );
 };

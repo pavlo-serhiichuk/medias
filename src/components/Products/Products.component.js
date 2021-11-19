@@ -10,7 +10,7 @@ const Products = (props) => {
         <Wrapper>
             {props.products
                 .filter(product => product !== undefined)
-                .map(product => <Product {...props} product={product} key={product.id}/>)}
+                .map(product => <Product {...props} product={product} key={`${product.category}_${product.id}`}/>)}
         </Wrapper>
     );
 };

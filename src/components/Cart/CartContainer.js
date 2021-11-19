@@ -19,7 +19,8 @@ class CartContainer extends React.Component {
 }
 
 const mstp = state => ({
-    cartProducts: state.cart.cartProducts
+    cartProducts: state.cart.cartProducts,
+    isAuth: state.auth.isAuth
 })
 
 

@@ -1,13 +1,16 @@
 import React from 'react';
 import Products from "../Products/Products.component";
 import {connect} from "react-redux";
-import {getAsyncGuitars} from "../../redux/productsReducer";
+import {getAsyncBooks, getAsyncGuitars} from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 
-class GuitarsContainer extends React.Component {
+class ProductsContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getAsyncGuitars()
+        console.log(this.props.category);
+        this.props.category === 'books' && this.props.getAsyncBooks()
+        this.props.category === 'guitars' && this.props.getAsyncGuitars()
+
         document.title = 'Guitars| Medias'
     }
     render() {
@@ -26,9 +29,10 @@ const mstp = state => ({
     products: state.products.products,
     isAuth: state.auth.isAuth,
     isFetching: state.auth.isFetching,
+    category: state.products.category
 })
 
 
 export default connect(mstp, {
-    getAsyncGuitars, addToCart
-})(GuitarsContainer);
+    getAsyncGuitars, getAsyncBooks, addToCart
+})(ProductsContainer);

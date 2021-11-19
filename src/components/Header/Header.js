@@ -9,15 +9,23 @@ import {ImBooks} from "react-icons/im";
 import {BsCart4} from "react-icons/bs";
 import {GrArticle} from "react-icons/gr";
 import {GiGuitar} from "react-icons/gi";
+import {changeCategory} from "../../redux/productsReducer";
 
 const Header = (props) => {
+const dispatch = useDispatch()
+const category = useSelector(state => state.products.category)
+
+    const toggleCategory = (nextCategory) => {
+        category !== nextCategory && dispatch(changeCategory(nextCategory))
+    }
+
     return (
         <div className={s.header}>
             <div className={s.headerElements}>
                 <div className={s.left}>
                     <Link to="/articles"><GrArticle/></Link>
-                    <Link to="/guitars"><GiGuitar/></Link>
-                    <Link to="/"><ImBooks /></Link>
+                    <Link to="/guitars" onClick={() => toggleCategory('guitars')}><GiGuitar/></Link>
+                    <Link to="/" onClick={() => toggleCategory('books')}><ImBooks /></Link>
                     <Link to="/cart"><BsCart4/></Link>
                 </div>
                 {props.isAuth
