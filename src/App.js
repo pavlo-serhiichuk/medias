@@ -19,7 +19,7 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
             <Content>
                 <Header/>
                     <Route exact path="/" render={() => <BooksContainer/>}/>
-                    <Route exact path="/guitar" render={() => <GuitarsContainer/>}/>
+                    <Route exact path="/guitars" render={() => <GuitarsContainer/>}/>
                     <Route path="/cart" render={() => <CartContainer/>}/>
                     <Route path="/articles" render={() => <IntroArticlesContainer/>}/>
                     <Route path="/article" render={() => <FullArticleContainer id={query.get("id")}/>}/>

@@ -29,7 +29,8 @@ export const getAsyncArticles = () => async (dispatch) => {
 }
 
 export const getAsyncFullArticle = (articleID) => async (dispatch) => {
-    const response = articlesAPI.getFullArticle(articleID)
+    console.log('New id has come...')
+    const response = await articlesAPI.getFullArticle(articleID)
     dispatch(setFullArticle(response))
 }
 

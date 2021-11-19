@@ -36,7 +36,7 @@ export const articlesAPI = {
         return get('articles')
     },
     getFullArticle(articleID) {
-        return get(`?id=${articleID}`)
+        return get(`article?id=${articleID}`)
     }
 }
 

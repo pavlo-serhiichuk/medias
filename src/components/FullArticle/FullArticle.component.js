@@ -4,9 +4,6 @@ import {HugeTitle} from "../../common/Titles/Titles";
 import {Img} from "../../common/Imgs/Imgs";
 
 const FullArticle = ({fullArticle}) => {
-
-    // console.log('fullArticle')
-
     return (
         <Wrapper>
             <HugeTitle>

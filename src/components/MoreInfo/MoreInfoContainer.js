@@ -7,8 +7,12 @@ const MoreInfoContainer = () => {
 
     const dispatch = useDispatch()
     const currentBookId = useSelector(state => state.modal.currentBookId)
-    const books = useSelector(state => state.books.books)
+
+    const books = useSelector(state => state.products.books)
+    const guitars = useSelector(state => state.products.guitars)
+
     const currentBook = books.filter(book => book.id === currentBookId)
+    const currentGuitar = guitars.filter(guitar => guitar.id === currentBookId)
 
     const closeMoreInfo = () => dispatch(closeMoreInfoModal())
 

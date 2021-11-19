@@ -3,6 +3,7 @@ import styled from 'styled-components'
 
 export const Content = styled.div`
     display: block;
+    min-height: 100vh;
     margin: 0 auto;
     width: 839px;
     // border-left: 1px solid gray;

@@ -9,6 +9,8 @@ class GuitarsContainer extends React.Component {
     componentDidMount() {
         this.props.getAsyncGuitars()
         document.title = 'Guitars| Medias'
+        console.log('inside GuitarsContainer')
+        console.log(this.props.guitars)
     }
     render() {
         return (
@@ -22,7 +24,7 @@ class GuitarsContainer extends React.Component {
 }
 
 const mstp = state => ({
-    guitars: state.products.books,
+    guitars: state.products.guitars,
     isAuth: state.auth.isAuth
 })
 

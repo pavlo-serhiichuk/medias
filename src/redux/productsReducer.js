@@ -24,7 +24,7 @@ export const productsReducer = (state = initialState, action) => {
 }
 
 const getBooks = books => ({type: GET_BOOKS, payload: books})
-const getGuitars = guitars => ({type: GET_BOOKS, payload: guitars})
+const getGuitars = guitars => ({type: GET_GUITARS, payload: guitars})
 
 export const getAsyncBooks = () => async (dispatch) => {
     const response = await productsAPI.getBooks()

@@ -6,7 +6,7 @@ const Products = (props) => {
 
     if (props.products === undefined) return <div>Завантаження...</div>
     if (!props.products.length) return <div>Завантаження...</div>
-
+    // console.log(props.products)
     return (
         <Wrapper>
             {props.products
