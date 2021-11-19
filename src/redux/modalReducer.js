@@ -11,7 +11,7 @@ const initialState = {
     isSighInModalOpen: false,
     isLoginModalOpen: false,
     isMoreInfoModalOpen: false,
-    currentBookId: null,
+    currentProductId: null,
 }
 
 export const modalReducer = (state = initialState, action) => {
@@ -30,7 +30,7 @@ export const modalReducer = (state = initialState, action) => {
             return {...state, isSighInModalOpen: false}
 
         case OPEN_MORE_INFO_MODAL:
-            return {...state, isMoreInfoModalOpen: true, currentBookId: action.payload}
+            return {...state, isMoreInfoModalOpen: true, currentProductId: action.payload}
 
         case CLOSE_MORE_INFO_MODAL:
             return {...state, isMoreInfoModalOpen: false}

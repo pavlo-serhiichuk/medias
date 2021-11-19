@@ -10,20 +10,23 @@ class BooksContainer extends React.Component {
         this.props.getAsyncBooks()
         document.title = 'Books| Medias'
     }
+
     render() {
         return (
             <>
-                <Products products={this.props.books}
-                             isAuth={this.props.isAuth}
-                             addToCart={this.props.addToCart}/>
+                <Products products={this.props.products}
+                          isAuth={this.props.isAuth}
+                          isFetching={this.props.isFetching}
+                          addToCart={this.props.addToCart}/>
             </>
         );
     }
 }
 
 const mstp = state => ({
-    books: state.products.books,
-    isAuth: state.auth.isAuth
+    products: state.products.products,
+    isAuth: state.auth.isAuth,
+    isFetching: state.auth.isFetching
 })
 
 

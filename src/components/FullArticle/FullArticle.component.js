@@ -9,7 +9,7 @@ const FullArticle = ({fullArticle}) => {
             <HugeTitle>
                 {fullArticle.title}
             </HugeTitle>
-            <Img image={fullArticle.image}/>
+            <Img bgSize={'650px'} image={fullArticle.image}/>
             <div>{fullArticle.description}</div>
         </Wrapper>
     );

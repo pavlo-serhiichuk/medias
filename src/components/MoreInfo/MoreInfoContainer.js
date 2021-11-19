@@ -6,14 +6,10 @@ import MoreInfo from "./MoreInfo.component";
 const MoreInfoContainer = () => {
 
     const dispatch = useDispatch()
-    const currentBookId = useSelector(state => state.modal.currentBookId)
+    const currentProductId = useSelector(state => state.modal.currentProductId)
 
-    const books = useSelector(state => state.products.books)
-    const guitars = useSelector(state => state.products.guitars)
-
-    const currentBook = books.filter(book => book.id === currentBookId)
-    const currentGuitar = guitars.filter(guitar => guitar.id === currentBookId)
-
+    const products = useSelector(state => state.products.products)
+    const currentProduct = products.filter(book => book.id === currentProductId)
     const closeMoreInfo = () => dispatch(closeMoreInfoModal())
 
     useEffect(() => {
@@ -23,7 +19,7 @@ const MoreInfoContainer = () => {
     }, [])
 
     return (
-        <MoreInfo closeMoreInfo={closeMoreInfo} currentBook={currentBook}/>
+        <MoreInfo closeMoreInfo={closeMoreInfo} currentProduct={currentProduct}/>
     );
 };
 

@@ -4,9 +4,8 @@ import Product from "./Product/Product.component";
 
 const Products = (props) => {
 
-    if (props.products === undefined) return <div>Завантаження...</div>
-    if (!props.products.length) return <div>Завантаження...</div>
-    // console.log(props.products)
+   if (props.isFetching) return  <div>Завантаження...</div>
+
     return (
         <Wrapper>
             {props.products

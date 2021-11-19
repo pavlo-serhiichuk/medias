@@ -8,23 +8,20 @@ const IntroArticlesContainer = () => {
 
     const dispatch = useDispatch()
     const articles = useSelector(state => state.articles.articles)
+    const isFetching = useSelector(state => state.auth.isFetching)
 
     useEffect(() => {
         document.title = 'Articles| Medias'
         dispatch(getAsyncArticles())
     }, [])
 
-    if(articles) {
+    if(isFetching) return <div>Loading...</div>
+
     return (
         <Wrapper>
             <IntroArticles articles={articles}/>
         </Wrapper>
     );
-    } else {
-        return (
-            <div>Loading...</div>
-        )
-    }
 };
 
 export default IntroArticlesContainer;

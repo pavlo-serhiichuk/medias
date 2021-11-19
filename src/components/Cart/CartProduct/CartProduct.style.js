@@ -12,6 +12,13 @@ export const Wrapper = styled.div`
     
 `
 
+export const Description = styled.div`
+     display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+`
+
 export const Img = styled.div`
   min-width: 150px;
   height: 235px;

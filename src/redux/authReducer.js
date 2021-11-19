@@ -5,8 +5,10 @@ const LOG_IN = 'LOG_IN'
 
 const SIGN_IN = 'SIGN_IN'
 const SIGH_OUT = 'SIGH_OUT'
+const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 
 const initialState = {
+    isFetching: false,
     isAuth: true,
     username: '',
     password: '',
@@ -33,14 +35,6 @@ export const authReducer = (state = initialState, action) => {
                 username: action.payload.username,
                 email: action.payload.email
             }
-            return {
-                ...state,
-                isAuth: true,
-                username: action.payload.username,
-                password: action.payload.password,
-                tel: action.payload.tel,
-                email: action.payload.email
-            }
         case SIGH_OUT:
             return {
                 ...state,
@@ -48,6 +42,9 @@ export const authReducer = (state = initialState, action) => {
                 username: null,
                 email: null
             }
+        case TOGGLE_IS_FETCHING:
+            console.log(!state.isFetching)
+            return {...state, isFetching: !state.isFetching}
 
         default:
             return state
@@ -56,6 +53,7 @@ export const authReducer = (state = initialState, action) => {
 
 export const signIn = (data) => ({type: SIGN_IN, payload: data})
 export const sighOut = () => ({type: SIGH_OUT})
+export const toggleIsFetching = () => ({type: TOGGLE_IS_FETCHING})
 
 export const login = (data) => ({type: LOG_IN, payload: data})
 

@@ -9,7 +9,7 @@ import CartContainer from "./components/Cart/CartContainer";
 import Footer from "./components/Footer/Footer.component";
 import LoginContainer from "./components/Login/LoginContainer";
 import SignInContainer from "./components/SignIn/SignInContainer";
-import IntroArticlesContainer from "./components/Articles/IntroArticlesContainer";
+import IntroArticlesContainer from "./components/IntroArticles/IntroArticlesContainer";
 import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
 import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
 
