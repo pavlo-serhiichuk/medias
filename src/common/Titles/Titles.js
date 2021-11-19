@@ -12,4 +12,5 @@ export const BigTitle = styled.div`
 export const MiddleTitle = styled.div`
     font-size: 23px;
     font-weight: bold;
+    color: ${p => p.price && 'red' || '#000'}
 `
