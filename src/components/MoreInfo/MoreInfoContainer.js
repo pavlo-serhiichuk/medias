@@ -19,7 +19,7 @@ const MoreInfoContainer = () => {
     }, [])
 
     return (
-        <MoreInfo closeMoreInfo={closeMoreInfo} currentProduct={currentProduct[0]}/>
+        <MoreInfo closeMoreInfo={closeMoreInfo} product={currentProduct[0]}/>
     );
 };
 

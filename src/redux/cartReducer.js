@@ -11,12 +11,13 @@ const initialState = {
 }
 
 export const cartReducer = (state = initialState, action) => {
+    let existProduct = state.cartProducts.find(item => item.id === action.payload.id && item.title === action.payload.title)
+
     switch (action.type) {
         case ADD_TO_CART:
-            let existCartProduct = state.cartProducts.find(item => item.id === action.payload.id)
 
-            if (!!existCartProduct) {
-                existCartProduct.amount++;
+            if (!!existProduct) {
+                existProduct.amount++;
                 return {...state}
             }
 
@@ -28,16 +29,14 @@ export const cartReducer = (state = initialState, action) => {
             return {...state, cartProducts: state.cartProducts.filter(elem => elem.id !== elementID)}
 
         case INCREMENT_PRODUCT_AMOUNT:
-            const incrementBook = state.cartProducts.find(item => item.id === action.payload)
-            incrementBook.amount++
+            existProduct.amount++
             return {...state, cartProducts: [...state.cartProducts]}
 
         case DECREMENT_PRODUCT_AMOUNT:
-            const decrementProduct = state.cartProducts.find(item => item.id === action.payload)
 
-            if (decrementProduct.amount === 1) return {...state}
+            if (existProduct.amount === 1) return {...state}
 
-            decrementProduct.amount--
+            existProduct.amount--
             return {...state, cartProducts: [...state.cartProducts]}
 
         case BOUGHT:
@@ -50,8 +49,8 @@ export const cartReducer = (state = initialState, action) => {
 export const addToCart = (product) => ({type: ADD_TO_CART, payload: product})
 export const deleteFromCart = (productID) => ({type: DELETE_FROM_CART, payload: productID})
 
-export const incrementAmount = (productID) => ({type: INCREMENT_PRODUCT_AMOUNT, payload: productID})
-export const decrementAmount = (productID) => ({type: DECREMENT_PRODUCT_AMOUNT, payload: productID})
+export const incrementAmount = (productID, title) => ({type: INCREMENT_PRODUCT_AMOUNT, payload: {productID, title}})
+export const decrementAmount = (productID, title) => ({type: DECREMENT_PRODUCT_AMOUNT, payload: {productID, title}})
 
 export const bought = () => ({type: BOUGHT})
 

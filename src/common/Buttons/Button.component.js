@@ -6,8 +6,8 @@ const SButton = styled.button`
     justify-content: ${p => p.justify &&  p.justify};
     width: ${p => p.width ||  '100%'};
     margin: 5px 0;
-    background-color: ${p => p.color || 'dodgerblue'};
-    border-radius: 5px;
+    background-color: ${p => p.color || p.amount && '#c9cbc9' || 'dodgerblue'};
+    border-radius: ${p => p.operator && '0px' || '5px'};
     border: none;
     outline: none;
     &:hover {

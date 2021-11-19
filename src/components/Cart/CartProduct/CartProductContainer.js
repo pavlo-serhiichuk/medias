@@ -3,12 +3,11 @@ import CartProduct from "./CartProduct.component";
 import {useDispatch} from "react-redux";
 import {decrementAmount, incrementAmount} from "../../../redux/cartReducer";
 
-
 const CartProductContainer = (props) => {
 
     const dispatch = useDispatch()
-    const increment = (productID) => dispatch(incrementAmount(productID))
-    const decrement = (productID) => dispatch(decrementAmount(productID))
+    const increment = (productID, title) => dispatch(incrementAmount(productID, title))
+    const decrement = (productID, title) => dispatch(decrementAmount(productID, title))
 
 
     return (
