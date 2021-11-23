@@ -9,31 +9,30 @@ const SignInContainer = () => {
 
     const dispatch = useDispatch()
     const isSignInModalOpen = useSelector(state => state.modal.isSignInModalOpen)
-    const isAuth = useSelector(state => state.auth.isAuth)
     const {register, handleSubmit, watch, formState: {errors}} = useForm();
-
     const closeModal = () => dispatch(closeSignInModal())
 
     const sendData = () => {
         const data = watch()
-
         dispatch(fetchSignIn({username: data.username, password: data.password, email: data.email, tel: data.tel}))
     }
 
     useEffect(() => {
         document.querySelector('[data-close]').addEventListener('click', event => {
-            if (event.target.dataset.close) return dispatch(closeSignInModal())
+           return event.target.dataset.close
+                ? dispatch(closeSignInModal())
+                : null
         });
     }, [isSignInModalOpen])
 
-        return (
-            <div>
-                <SignIn closeModal={closeModal}
-                        sendData={sendData}
-                        register={register}
-                        handleSubmit={handleSubmit}/>
-            </div>
-        );
+    return (
+        <div>
+            <SignIn closeModal={closeModal}
+                    sendData={sendData}
+                    register={register}
+                    handleSubmit={handleSubmit}/>
+        </div>
+    );
 };
 
 export default SignInContainer;

@@ -14,8 +14,10 @@ const MoreInfoContainer = () => {
 
     useEffect(() => {
         document.querySelector('[data-close]').addEventListener('click', event => {
-                if(event.target.dataset.close) return dispatch(closeMoreInfoModal())
-            });
+            return event.target.dataset.close
+                ? dispatch(closeMoreInfoModal())
+                : null
+        });
     }, [])
 
     return (

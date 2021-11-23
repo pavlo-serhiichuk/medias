@@ -8,18 +8,20 @@ import {AiOutlineShoppingCart} from "react-icons/ai"
 const Product = ({isAuth, product, addToCart}) => {
     const dispatch = useDispatch()
 
-    return (
-            <ProductContent image={product.image}>
+    const addProduct = (product) => {
+        return isAuth
+            ? () => dispatch(addToCart(product))
+            : () => alert('Please, sigh in first! Asshole!!')
+    }
 
-                <Title onClick={() => dispatch(openMoreInfoModal(product.id))}>
-                    {product.title}
-                </Title>
-                {isAuth
-                    ? <Button color={'dodgerblue'} onClick={() => addToCart(product)}>Add
-                        to <AiOutlineShoppingCart/></Button>
-                    : <Button color={'dodgerblue'} onClick={() => alert('Please, sigh in first! Asshole!!')}>Add
-                        to <AiOutlineShoppingCart/></Button>}
-            </ProductContent>
+    return (
+        <ProductContent image={product.image}>
+            <Title onClick={() => dispatch(openMoreInfoModal(product.id))}>
+                {product.title}
+            </Title>
+            <Button color={'dodgerblue'}
+                    onClick={addProduct(product)}>Add to <AiOutlineShoppingCart/></Button>
+        </ProductContent>
 
     );
 };
