@@ -8,8 +8,8 @@ body {
   background-color: rgba(210, 217, 217, 0.89);
   padding:0;
   /*color: #46B8FF;*/
-  /*cursor: pointer;*/
-
+  /*cursor: zoom-in;*/
+  /*grid-template-columns: ;*/
 }
 
 code {
@@ -17,9 +17,9 @@ code {
     monospace;
 }
 
-a {
-  cursor: pointer;
-}
+/*a {*/
+/*  cursor: pointer;*/
+/*}*/
 
 a:hover {
   opacity: 0.5;

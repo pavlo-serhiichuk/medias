@@ -1,15 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-
-// export const Wrapper = styled.div`
-//         // background-color: #000;
-//         margin: 0;
-//         // padding: 5px;
-//         // z-index: 1;
-//         box-sizing: border-box;
-// `
-
 export const ProductContent = styled.div`
     width: 200px;
     height: 320px;
@@ -30,7 +21,7 @@ export const Title = styled.div`
      color: white;
      text-shadow: #000 0.5px 0 11px;
      text-align:center; 
-     cursor: pointer;
+     cursor: default;
      &:hover {
         opacity: 1;
      }   
