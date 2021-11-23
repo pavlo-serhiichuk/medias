@@ -10,7 +10,7 @@ import SignInContainer from "./components/SignIn/SignInContainer";
 import IntroArticlesContainer from "./components/IntroArticles/IntroArticlesContainer";
 import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
 import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
-import ProductsContainer from "./components/ProductsContainer/ProductsContainer";
+import ProductsContainer from "./components/Products/ProductsContainer";
 
 function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) {
     return (

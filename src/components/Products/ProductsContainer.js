@@ -1,5 +1,5 @@
 import React from 'react';
-import Products from "../Products/Products.component";
+import Products from "./Products.component";
 import {connect} from "react-redux";
 import {getAsyncBooks, getAsyncGuitars} from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
@@ -7,12 +7,16 @@ import {addToCart} from "../../redux/cartReducer";
 class ProductsContainer extends React.Component {
 
     componentDidMount() {
-        console.log(this.props.category);
-        this.props.category === 'books' && this.props.getAsyncBooks()
-        this.props.category === 'guitars' && this.props.getAsyncGuitars()
 
-        document.title = 'Guitars| Medias'
+        if (this.props.category === 'books') {
+            document.title = 'Books| Medias'
+            this.props.getAsyncBooks()
+        } else if (this.props.category === 'guitars') {
+            document.title = 'Guitars| Medias'
+            this.props.getAsyncGuitars()
+        }
     }
+
     render() {
         return (
             <>
