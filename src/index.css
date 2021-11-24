@@ -17,10 +17,11 @@ code {
     monospace;
 }
 
-/*a {*/
-/*  cursor: pointer;*/
-/*}*/
+a {
+  text-decoration: none;
+  color: black;
+}
 
 a:hover {
-  opacity: 0.5;
+  color: #000000;
 }

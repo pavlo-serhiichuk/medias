@@ -11,6 +11,7 @@ const initialState = {
     isFetching: false,
     isAuth: true,
     username: '',
+    profilePhoto: null,
     password: '',
     tel: '',
     email: '',
@@ -28,11 +29,11 @@ export const authReducer = (state = initialState, action) => {
                 email: action.payload.email
             }
         case LOG_IN:
-            console.log(LOG_IN)
             return {
                 ...state,
                 isAuth: true,
                 username: action.payload.username,
+                profilePhoto: action.payload.image,
                 email: action.payload.email
             }
         case SIGH_OUT:

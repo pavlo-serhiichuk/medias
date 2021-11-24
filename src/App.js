@@ -13,6 +13,7 @@ import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
 import ProductsContainer from "./components/Products/ProductsContainer";
 import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
+import {Img, SmallProfilePhoto} from "./common/Imgs/Imgs";
 
 function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) {
     return (
