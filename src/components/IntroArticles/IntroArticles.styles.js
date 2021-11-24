@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 `
 
 export const ArticleWrapper = styled.div`
-    border-top: 1px solid #C5C4C3;
+    border-bottom: 1px solid #C5C4C3;
     padding-top: 8px;
 `
 

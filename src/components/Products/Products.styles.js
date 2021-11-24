@@ -15,7 +15,7 @@ const Wrapper = styled.div`
         }
 
      @media screen and (max-width: 576px) {
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
 
         }
 

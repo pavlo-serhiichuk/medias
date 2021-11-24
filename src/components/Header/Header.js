@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {sighOut} from "../../redux/authReducer";
 import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
 import {BsCart4} from "react-icons/bs";
-import {GrArticle} from "react-icons/gr";
+import {VscSignOut} from "react-icons/all";
 
 
 const Header = (props) => {
@@ -15,13 +15,15 @@ const Header = (props) => {
         <div className={s.header}>
             <div className={s.headerElements}>
                 <div className={s.left}>
-                    <h1>medias</h1>
-                    <Link className={s.article} to="/articles"><GrArticle/> Articles</Link>
+                    <h1>
+                        <Link className={s.article} to="/articles">medias</Link>
+                    </h1>
+                    <Link className={s.account} to={`/profile?=${props.id}`}>User name</Link>
                     <Link className={s.cart} to="/cart"><BsCart4/></Link>
                 </div>
                 {props.isAuth
-                    ? <div className={s.right}>
-                        <Button color={'indianred'} onClick={props.sighOut}>Sign out</Button>
+                    ? <div className={s.signOut}>
+                        <Button signOut color={'indianred'} onClick={props.sighOut}><VscSignOut/></Button>
                     </div>
 
                     : <div className={s.right}>
