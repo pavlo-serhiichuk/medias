@@ -26,6 +26,9 @@ export const productsAPI = {
     getGuitars() {
       return get('guitars')
     },
+    getTraveling() {
+      return get('traveling')
+    },
     sendOrder(data) {
         return post('order', data)
     }

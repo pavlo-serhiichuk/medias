@@ -1,6 +1,6 @@
 import React from 'react';
 import {articlesAPI} from "../api/api";
-import {toggleIsFetching} from "./authReducer";
+import {showLoading} from "./authReducer";
 
 const GET_ARTICLES = 'GET_ARTICLES'
 const SET_FULL_ARTICLE = 'SET_FULL_ARTICLE'
@@ -25,20 +25,20 @@ const getArticles = articles => ({type: GET_ARTICLES, payload: articles})
 const setFullArticle = (fullArticle) => ({type: SET_FULL_ARTICLE, payload: fullArticle})
 
 export const getAsyncArticles = () => async (dispatch) => {
-    dispatch(toggleIsFetching())
+    dispatch(showLoading())
 
     const response = await articlesAPI.getArticles()
     dispatch(getArticles(response))
-    dispatch(toggleIsFetching())
+    dispatch(showLoading())
 
 }
 
 export const getAsyncFullArticle = (articleID) => async (dispatch) => {
-    dispatch(toggleIsFetching())
+    dispatch(showLoading())
 
     const response = await articlesAPI.getFullArticle(articleID)
     dispatch(setFullArticle(response))
-    dispatch(toggleIsFetching())
+    dispatch(showLoading())
 
 }
 

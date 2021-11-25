@@ -4,7 +4,7 @@ import Product from "./Product/Product.component";
 
 const Products = (props) => {
 
-   if (props.isFetching) return  <div>Завантаження...</div>
+   if (props.isLoading) return  <div>Завантаження...</div>
 
     return (
         <Wrapper>

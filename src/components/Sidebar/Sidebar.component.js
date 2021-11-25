@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {changeCategory} from "../../redux/productsReducer";
 import {GiGuitar} from "react-icons/gi";
 import {ImBooks} from "react-icons/im";
+import {FaFly} from "react-icons/fa";
 
 const Sidebar = () => {
     const dispatch = useDispatch()
@@ -18,6 +19,7 @@ const Sidebar = () => {
         <SidebarWrap>
             <Link to="/" onClick={() => toggleCategory('books')}><ImBooks /> Books</Link>
             <Link to="/guitars" onClick={() => toggleCategory('guitars')}><GiGuitar/>Music Instruments</Link>
+            <Link to="/traveling" onClick={() => toggleCategory('traveling')}><FaFly/>Traveling</Link>
         </SidebarWrap>
     );
 };

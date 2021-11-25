@@ -1,9 +1,11 @@
 import {productsAPI} from "../api/api";
-import {toggleIsFetching} from "./authReducer";
+import {hideLoading, showLoading} from "./authReducer";
 
 const GET_BOOKS = 'GET_BOOKS'
 const GET_GUITARS = 'GET_GUITARS'
+const GET_TRAVELING = 'GET_TRAVELING'
 const CHANGE_CATEGORY = 'CHANGE_CATEGORY'
+
 const initialState = {
     category: 'books',
     products: [],
@@ -17,6 +19,8 @@ export const productsReducer = (state = initialState, action) => {
             return {...state, products: action.payload}
         case GET_GUITARS:
             return {...state, products: action.payload}
+        case GET_TRAVELING:
+            return {...state, products: action.payload}
         case CHANGE_CATEGORY:
             return {...state, category: action.payload}
         default:
@@ -26,26 +30,16 @@ export const productsReducer = (state = initialState, action) => {
 
 const getBooks = books => ({type: GET_BOOKS, payload: books})
 const getGuitars = guitars => ({type: GET_GUITARS, payload: guitars})
+const getTraveling = traveling => ({type: GET_TRAVELING, payload: traveling})
 export const changeCategory = category => ({type: CHANGE_CATEGORY, payload: category})
 
-export const getAsyncBooks = () => async (dispatch) => {
-    dispatch(toggleIsFetching())
-
-    const response = await productsAPI.getBooks()
-    dispatch(getBooks(response))
-    dispatch(toggleIsFetching())
-
+const request = (requestType, actionReducer) => async dispatch => {
+    dispatch(showLoading())
+    const response = await requestType()
+    dispatch(actionReducer(response))
+    dispatch(hideLoading())
 }
 
-export const getAsyncGuitars = () => async (dispatch) => {
-    dispatch(toggleIsFetching())
-
-    const response = await productsAPI.getGuitars()
-    dispatch(getGuitars(response))
-    dispatch(toggleIsFetching())
-
-}
-
-// export const sendOrder = (books) => {
-//     const response = productsAPI.sendOrder(books)
-// }
+export const getAsyncBooks = () => request(productsAPI.getBooks, getBooks)
+export const getAsyncGuitars = () => request(productsAPI.getGuitars, getGuitars)
+export const getAsyncTraveling = () => request(productsAPI.getTraveling, getTraveling)

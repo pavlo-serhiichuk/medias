@@ -6,13 +6,13 @@ import {getAsyncFullArticle} from "../../redux/articlesReducer";
 const FullArticleContainer = ({id}) => {
     const dispatch = useDispatch()
     const fullArticle = useSelector(state => state.articles.fullArticle)
-    const isFetching = useSelector(state => state.auth.isFetching)
+    const isLoading = useSelector(state => state.auth.isLoading)
 
     useEffect(() => {
         dispatch(getAsyncFullArticle(id))
     }, [])
 
-    if (isFetching) return <div>Loading...</div>
+    if (isLoading) return <div>Loading...</div>
 
     return (
         <>

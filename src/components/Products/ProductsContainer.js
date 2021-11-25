@@ -1,19 +1,24 @@
 import React from 'react';
 import Products from "./Products.component";
 import {connect} from "react-redux";
-import {getAsyncBooks, getAsyncGuitars} from "../../redux/productsReducer";
+import {getAsyncBooks, getAsyncGuitars, getAsyncTraveling} from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 
 class ProductsContainer extends React.Component {
 
     componentDidMount() {
-
-        if (this.props.category === 'books') {
-            document.title = 'Books| Medias'
-            this.props.getAsyncBooks()
-        } else if (this.props.category === 'guitars') {
-            document.title = 'Guitars| Medias'
-            this.props.getAsyncGuitars()
+        switch(this.props.category) {
+            case 'books':
+                document.title = 'Books| Medias'
+                return this.props.getAsyncBooks()
+            case 'guitars':
+                document.title = 'Guitars| Medias'
+                return this.props.getAsyncGuitars()
+            case 'traveling':
+                document.title = 'Traveling| Medias'
+                return this.props.getAsyncTraveling()
+            default:
+                return null
         }
     }
 
@@ -22,7 +27,7 @@ class ProductsContainer extends React.Component {
             <>
                 <Products products={this.props.products}
                           isAuth={this.props.isAuth}
-                          isFetching={this.props.isFetching}
+                          isLoading={this.props.isLoading}
                           addToCart={this.props.addToCart}/>
             </>
         );
@@ -32,11 +37,11 @@ class ProductsContainer extends React.Component {
 const mstp = state => ({
     products: state.products.products,
     isAuth: state.auth.isAuth,
-    isFetching: state.auth.isFetching,
+    isLoading: state.auth.isLoading,
     category: state.products.category
 })
 
 
 export default connect(mstp, {
-    getAsyncGuitars, getAsyncBooks, addToCart
+    getAsyncGuitars, getAsyncBooks, getAsyncTraveling, addToCart
 })(ProductsContainer);
