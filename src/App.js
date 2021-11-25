@@ -13,7 +13,7 @@ import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
 import ProductsContainer from "./components/Products/ProductsContainer";
 import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
-import Traveling from "./components/Traveling/Traveling.component";
+import WishesContainer from "./components/Wishes/WishesContainer";
 
 function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) {
     return (
@@ -24,9 +24,10 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
                     <Sidebar/>
                     <div>
                         <Route exact path="/" render={() => <ProductsContainer/>}/>
-                        <Route path="/profile" render={() => <Profile />}/>
                         <Route path="/guitars" render={() => <ProductsContainer/>}/>
-                        <Route path="/traveling" render={() => <Traveling />}/>
+                        <Route path="/traveling" render={() => <ProductsContainer />}/>
+                        <Route path="/profile" render={() => <Profile />}/>
+                        <Route path="/wishes" render={() => <WishesContainer/>}/>
                         <Route path="/cart" render={() => <CartContainer/>}/>
                         <Route path="/articles" render={() => <IntroArticlesContainer/>}/>
                         <Route path="/article" render={() => <FullArticleContainer id={query.get("id")}/>}/>

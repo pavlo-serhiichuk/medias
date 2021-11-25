@@ -23,9 +23,11 @@
     /*width: 250px;*/
 }
 
-.cart, .account {
-    height: 103%;
+
+
+.cart, .account, .wishes {
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 0 10px;
 }
@@ -54,15 +56,21 @@
     background-color: rgba(192, 192, 192, 0.35);
 }
 
+.cart {
+    border-right: 1px solid #000;
+
+}
+.cart, .wishes {
+    width: 80px;
+    border-left: 1px solid #000;
+}
+
 .cart:hover {
     background-color: rgba(192, 192, 192, 0.35);
 }
 
-.cart {
-    width: 80px;
-    display: flex;
-    justify-content: center;
-    border: 1px solid #000;
+.wishes:hover {
+    background-color: rgba(192, 192, 192, 0.35);
 }
 
 .article {

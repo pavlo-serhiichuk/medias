@@ -20,6 +20,7 @@ export const productsReducer = (state = initialState, action) => {
         case GET_GUITARS:
             return {...state, products: action.payload}
         case GET_TRAVELING:
+            console.log(GET_TRAVELING)
             return {...state, products: action.payload}
         case CHANGE_CATEGORY:
             return {...state, category: action.payload}

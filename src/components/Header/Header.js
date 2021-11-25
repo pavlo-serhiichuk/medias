@@ -6,7 +6,7 @@ import {connect, useSelector} from "react-redux";
 import {sighOut} from "../../redux/authReducer";
 import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
 import {BsCart4} from "react-icons/bs";
-import {VscSignOut} from "react-icons/all";
+import {BiHeart, VscSignOut} from "react-icons/all";
 import {SmallProfilePhoto} from "../../common/Imgs/Imgs";
 
 
@@ -27,6 +27,7 @@ const Header = (props) => {
                                 <SmallProfilePhoto profilePhoto={profilePhoto}/>
                                 <Link to={`/profile?=${props.id}`}>{username}</Link>
                             </div>
+                            <Link className={s.wishes} to="/wishes"><BiHeart/></Link>
                             <Link className={s.cart} to="/cart"><BsCart4/></Link>
                         </>
                         : null}
