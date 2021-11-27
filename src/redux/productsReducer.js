@@ -1,4 +1,4 @@
-import {productsAPI} from "../api/api";
+import {productsAPI, request} from "../api/api";
 import {hideLoading, showLoading} from "./authReducer";
 
 const GET_BOOKS = 'GET_BOOKS'
@@ -34,12 +34,12 @@ const getGuitars = guitars => ({type: GET_GUITARS, payload: guitars})
 const getTraveling = traveling => ({type: GET_TRAVELING, payload: traveling})
 export const changeCategory = category => ({type: CHANGE_CATEGORY, payload: category})
 
-const request = (requestType, actionReducer) => async dispatch => {
-    dispatch(showLoading())
-    const response = await requestType()
-    dispatch(actionReducer(response))
-    dispatch(hideLoading())
-}
+// export const request = (requestType, actionReducer) => async dispatch => {
+//     dispatch(showLoading())
+//     const response = await requestType()
+//     dispatch(actionReducer(response))
+//     dispatch(hideLoading())
+// }
 
 export const getAsyncBooks = () => request(productsAPI.getBooks, getBooks)
 export const getAsyncGuitars = () => request(productsAPI.getGuitars, getGuitars)

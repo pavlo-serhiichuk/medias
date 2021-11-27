@@ -10,7 +10,7 @@ const SButton = styled.button`
     border: none;
     outline: none;
     &:hover {
-        background-color: ${p => p.signOut && '#cd6330' || `#46B8FF`};
+        background-color: ${p => p.signOut && '#cd6330' || p.wishes && '#00AE00' || `#46B8FF`};
     }
 `
 

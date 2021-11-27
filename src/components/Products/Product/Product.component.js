@@ -1,9 +1,11 @@
 import React from 'react';
-import {ProductContent, Title} from "./Product.styles";
+import {Buttons, ProductContent, Title} from "./Product.styles";
 import Button from "../../../common/Buttons/Button.component";
 import {openMoreInfoModal} from "../../../redux/modalReducer";
 import {useDispatch} from "react-redux";
 import {AiOutlineShoppingCart} from "react-icons/ai"
+import {BiHeart} from "react-icons/all";
+import {addToWishes} from "../../../redux/wishesReducer";
 
 const Product = ({isAuth, product, addToCart}) => {
     const dispatch = useDispatch()
@@ -19,8 +21,12 @@ const Product = ({isAuth, product, addToCart}) => {
             <Title onClick={() => dispatch(openMoreInfoModal(product.id))}>
                 {product.title}
             </Title>
-            <Button color={'dodgerblue'}
-                    onClick={addProduct(product)}>Add to <AiOutlineShoppingCart/></Button>
+            <Buttons>
+                <Button color={'dodgerblue'}
+                        onClick={addProduct(product)}>Add to <AiOutlineShoppingCart/></Button>
+                <Button color={'#009B00'} wishes
+                        onClick={addToWishes(product.id)}><BiHeart/></Button>
+            </Buttons>
         </ProductContent>
 
     );

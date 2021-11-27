@@ -26,3 +26,9 @@ export const Title = styled.div`
         opacity: 1;
      }   
 `
+
+export const Buttons = styled.div`
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-gap: 3px;
+`

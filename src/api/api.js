@@ -1,3 +1,5 @@
+import {hideLoading, showLoading} from "../redux/authReducer";
+
 const serverURL = 'http://localhost:3001/'
 
 const get = (url) => fetch(`${serverURL}${url}`).then(res => res.json())
@@ -41,5 +43,12 @@ export const articlesAPI = {
     getFullArticle(articleID) {
         return get(`article?id=${articleID}`)
     }
+}
+
+export const request = (requestType, actionReducer) => async dispatch => {
+    dispatch(showLoading())
+    const response = await requestType()
+    dispatch(actionReducer(response))
+    dispatch(hideLoading())
 }
 

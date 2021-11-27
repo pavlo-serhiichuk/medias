@@ -1,11 +1,5 @@
-import React from 'react';
+import styled from 'styled-components'
 
-const WishesContainer = () => {
-    return (
-        <div>
-            Wishes
-        </div>
-    );
-};
+export const Wrapper = styled.div`
 
-export default WishesContainer;
+`
