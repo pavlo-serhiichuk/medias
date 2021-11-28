@@ -2,11 +2,12 @@ import styled from 'styled-components'
 
 export const Img = styled.div`
   margin: 0 auto;
-  height: ${p => p.height || '350px'} ;
+  width: ${p => p.country && '90px' || '300px'};
+  height: ${p => p.height || p.country && '60px' || '350px'} ;
   background-position: center;
   background-image: url(${p => p.image});
   background-repeat: no-repeat;
-  background-size: ${p => p.bgSize || '250px'};
+  background-size: ${p => p.bgSize || p.country && '100px' || '250px'};
 `
 
 
@@ -21,4 +22,3 @@ export const SmallProfilePhoto = styled.div`
   border-radius: 50%;
   z-index: 1000000;
 `
-

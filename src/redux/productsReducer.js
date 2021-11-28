@@ -1,14 +1,16 @@
 import {productsAPI, request} from "../api/api";
-import {hideLoading, showLoading} from "./authReducer";
 
 const GET_BOOKS = 'GET_BOOKS'
 const GET_GUITARS = 'GET_GUITARS'
-const GET_TRAVELING = 'GET_TRAVELING'
+const GET_VOUCHERS = 'GET_VOUCHERS'
+const GET_COUNTRIES = 'GET_COUNTRIES'
 const CHANGE_CATEGORY = 'CHANGE_CATEGORY'
 
 const initialState = {
     category: 'books',
     products: [],
+    filteredVouchers: [],
+    countries: [],
     elementID: null,
     isBought: false,
 }
@@ -19,9 +21,10 @@ export const productsReducer = (state = initialState, action) => {
             return {...state, products: action.payload}
         case GET_GUITARS:
             return {...state, products: action.payload}
-        case GET_TRAVELING:
-            console.log(GET_TRAVELING)
+        case GET_VOUCHERS:
             return {...state, products: action.payload}
+        case GET_COUNTRIES:
+            return {...state, countries: action.payload}
         case CHANGE_CATEGORY:
             return {...state, category: action.payload}
         default:
@@ -31,16 +34,12 @@ export const productsReducer = (state = initialState, action) => {
 
 const getBooks = books => ({type: GET_BOOKS, payload: books})
 const getGuitars = guitars => ({type: GET_GUITARS, payload: guitars})
-const getTraveling = traveling => ({type: GET_TRAVELING, payload: traveling})
+const getVouchers = vouchers => ({type: GET_VOUCHERS, payload: vouchers})
+export const getCountries = (countries) => ({type: GET_COUNTRIES, payload: countries})
 export const changeCategory = category => ({type: CHANGE_CATEGORY, payload: category})
-
-// export const request = (requestType, actionReducer) => async dispatch => {
-//     dispatch(showLoading())
-//     const response = await requestType()
-//     dispatch(actionReducer(response))
-//     dispatch(hideLoading())
-// }
 
 export const getAsyncBooks = () => request(productsAPI.getBooks, getBooks)
 export const getAsyncGuitars = () => request(productsAPI.getGuitars, getGuitars)
-export const getAsyncTraveling = () => request(productsAPI.getTraveling, getTraveling)
+export const getAsyncVouchers = () => request(productsAPI.getVouchers, getVouchers)
+export const getAsyncCountries = () => request(productsAPI.getCountries, getCountries)
+

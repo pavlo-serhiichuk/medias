@@ -34,7 +34,7 @@ const SighIn = ({closeModal, sendData, register, handleSubmit}) => {
                                defaultValue="+380976804609"
                                {...register('tel', { required: true })}/>
                     </Label>
-                    <Button onClick={sendData}>Sign in</Button>
+                    <Button onClick={() => sendData}>Sign in</Button>
                 </Form>
         </Modal>
 

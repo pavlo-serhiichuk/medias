@@ -11,7 +11,7 @@ const HIDE_LOADING = 'HIDE_LOADING'
 const initialState = {
     isLoading: false,
     isAuth: true,
-    username: '',
+    username: 'pasha_s',
     profilePhoto: null,
     password: '',
     tel: '',
@@ -63,7 +63,6 @@ export const login = (data) => ({type: LOG_IN, payload: data})
 
 export const fetchLogin = (data) => async (dispatch) => {
     const response = await authAPI.login(data)
-
     dispatch(login(response))
     dispatch(closeLoginModal())
 }
@@ -71,7 +70,6 @@ export const fetchLogin = (data) => async (dispatch) => {
 
 export const fetchSignIn = (data) => async (dispatch) => {
     const response = await authAPI.signIn(data)
-
     dispatch(signIn(response))
     dispatch(closeSignInModal())
 }

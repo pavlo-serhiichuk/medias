@@ -28,11 +28,23 @@ export const productsAPI = {
     getGuitars() {
       return get('guitars')
     },
-    getTraveling() {
+    getVouchers() {
       return get('traveling')
+    },
+    getCountries() {
+        return get('countries')
+    },
+    getFilteredVouchers(countryID) {
+        return get(`countries?id=${countryID}`)
     },
     sendOrder(data) {
         return post('order', data)
+    }
+}
+
+export const wishesAPI = {
+    getWishes() {
+        return get('wishes')
     }
 }
 
@@ -47,6 +59,7 @@ export const articlesAPI = {
 
 export const request = (requestType, actionReducer) => async dispatch => {
     dispatch(showLoading())
+
     const response = await requestType()
     dispatch(actionReducer(response))
     dispatch(hideLoading())

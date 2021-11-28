@@ -11,8 +11,11 @@ import {SmallProfilePhoto} from "../../common/Imgs/Imgs";
 
 
 const Header = (props) => {
-    const username = useSelector(state => state.auth.username)
-    const profilePhoto = useSelector(state => state.auth.profilePhoto)
+    const wishesAmount = props.wishes.length
+    const cartAmount = props.cartProducts.length
+    console.log('wishesAmount ', wishesAmount)
+    console.log('cartAmount ', cartAmount)
+
     return (
         <div className={s.header}>
             <div className={s.headerElements}>
@@ -20,21 +23,27 @@ const Header = (props) => {
                     <h1>
                         <Link className={s.article} to="/articles">medias</Link>
                     </h1>
-                    {username
+                    {props.username
                         ?
                         <>
                             <div className={s.profile}>
-                                <SmallProfilePhoto profilePhoto={profilePhoto}/>
-                                <Link to={`/profile?=${props.id}`}>{username}</Link>
+                                <SmallProfilePhoto profilePhoto={props.profilePhoto}/>
+                                <Link to={`/profile?=${props.id}`}>{props.username}</Link>
                             </div>
-                            <Link className={s.wishes} to="/wishes"><BiHeart/></Link>
-                            <Link className={s.cart} to="/cart"><BsCart4/></Link>
+                            <Link to="/wishes" className={s.wishes}>
+                                <BiHeart/>
+                                <span className={s.amount}> {wishesAmount > 0 && wishesAmount}</span>
+                            </Link>
+                            <Link to="/cart" className={s.cart}>
+                                <BsCart4/>
+                                <span className={s.amount}> {cartAmount > 0 && cartAmount}</span>
+                            </Link>
                         </>
                         : null}
                 </div>
                 {props.isAuth
                     ? <div className={s.signOut}>
-                        <Button signOut color={'indianred'} onClick={props.sighOut}><VscSignOut/></Button>
+                        <Button signOut color={'indianred'} onClick={() => props.sighOut}><VscSignOut/></Button>
                     </div>
 
                     : <div className={s.right}>
@@ -49,7 +58,11 @@ const Header = (props) => {
 
 const mstp = state => ({
     isAuth: state.auth.isAuth,
-    isSighInModalOpen: state.auth.isSighInModalOpen
+    profilePhoto: state.auth.profilePhoto,
+    username: state.auth.username,
+    isSighInModalOpen: state.auth.isSighInModalOpen,
+    cartProducts: state.cart.cartProducts,
+    wishes: state.wishes.wishes
 })
 
 export default connect(mstp, {openLoginModal, openSignInModal, sighOut})(Header);

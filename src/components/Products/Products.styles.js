@@ -1,7 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
+
+`
+
+export const ProductsContainer = styled.div`
     margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -20,4 +24,7 @@ const Wrapper = styled.div`
 
       }
 `
-export default Wrapper;
+
+export const CountriesContainer = styled.div`
+
+`

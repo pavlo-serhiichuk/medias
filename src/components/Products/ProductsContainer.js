@@ -1,12 +1,16 @@
 import React from 'react';
 import Products from "./Products.component";
 import {connect} from "react-redux";
-import {getAsyncBooks, getAsyncGuitars, getAsyncTraveling} from "../../redux/productsReducer";
+import {getAsyncBooks, getAsyncCountries, getAsyncGuitars, getAsyncVouchers} from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
+import {CountriesContainer, Wrapper} from "./Products.styles";
+import Countries from "../Countries/Countries.component";
+import {fetchLogin} from "../../redux/authReducer";
 
 class ProductsContainer extends React.Component {
 
     componentDidMount() {
+
         switch(this.props.category) {
             case 'books':
                 document.title = 'Books| Medias'
@@ -16,7 +20,8 @@ class ProductsContainer extends React.Component {
                 return this.props.getAsyncGuitars()
             case 'traveling':
                 document.title = 'Traveling| Medias'
-                return this.props.getAsyncTraveling()
+                this.props.getAsyncVouchers()
+                return this.props.getAsyncCountries()
             default:
                 return null
         }
@@ -25,6 +30,7 @@ class ProductsContainer extends React.Component {
     render() {
         return (
             <>
+                {this.props.category === 'traveling' && <Countries countries={this.props.countries} />}
                 <Products products={this.props.products}
                           isAuth={this.props.isAuth}
                           isLoading={this.props.isLoading}
@@ -36,6 +42,7 @@ class ProductsContainer extends React.Component {
 
 const mstp = state => ({
     products: state.products.products,
+    countries: state.products.countries,
     isAuth: state.auth.isAuth,
     isLoading: state.auth.isLoading,
     category: state.products.category
@@ -43,5 +50,7 @@ const mstp = state => ({
 
 
 export default connect(mstp, {
-    getAsyncGuitars, getAsyncBooks, getAsyncTraveling, addToCart
+    getAsyncGuitars, getAsyncBooks,
+    getAsyncVouchers, getAsyncCountries,
+    addToCart
 })(ProductsContainer);

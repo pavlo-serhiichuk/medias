@@ -1,6 +1,5 @@
 import React from 'react';
-import {articlesAPI} from "../api/api";
-import {showLoading} from "./authReducer";
+import {articlesAPI, request} from "../api/api";
 
 const GET_ARTICLES = 'GET_ARTICLES'
 const SET_FULL_ARTICLE = 'SET_FULL_ARTICLE'
@@ -24,21 +23,6 @@ export const articlesReducer = (state = initialState, action) => {
 const getArticles = articles => ({type: GET_ARTICLES, payload: articles})
 const setFullArticle = (fullArticle) => ({type: SET_FULL_ARTICLE, payload: fullArticle})
 
-export const getAsyncArticles = () => async (dispatch) => {
-    dispatch(showLoading())
-
-    const response = await articlesAPI.getArticles()
-    dispatch(getArticles(response))
-    dispatch(showLoading())
-
-}
-
-export const getAsyncFullArticle = (articleID) => async (dispatch) => {
-    dispatch(showLoading())
-
-    const response = await articlesAPI.getFullArticle(articleID)
-    dispatch(setFullArticle(response))
-    dispatch(showLoading())
-
-}
+export const getAsyncArticles = () => request(articlesAPI.getArticles, getArticles)
+export const getAsyncFullArticle = (articleID) => request(() => articlesAPI.getFullArticle(articleID), setFullArticle)
 

@@ -1,5 +1,5 @@
 import './index.css';
-import React from "react";
+import React, {useEffect} from "react";
 import {Route} from "react-router-dom";
 import {Wrapper, Content} from "./App.styles";
 import Header from "./components/Header/Header";
@@ -14,8 +14,10 @@ import ProductsContainer from "./components/Products/ProductsContainer";
 import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
+import {fetchLogin} from "./redux/authReducer";
 
 function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) {
+
     return (
         <>
             <Wrapper>

@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 export const Content = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 2fr;
     overflow: scroll;
     height: 500px;
 `
@@ -10,6 +12,9 @@ export const Description = styled.div`
 `
 
 export const Features = styled.ul`
-    // display: flex;
-    // flex-direction: row;
 `
+
+export const Li = styled.li`
+width: 40px;
+`
+

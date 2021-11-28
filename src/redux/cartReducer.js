@@ -21,6 +21,7 @@ export const cartReducer = (state = initialState, action) => {
         case ADD_TO_CART:
 
             if (!!existProduct) {
+                console.log('plus 1')
                 existProduct.amount++;
                 return {...state}
             }

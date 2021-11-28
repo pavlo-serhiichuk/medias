@@ -58,9 +58,10 @@
 
 .cart {
     border-right: 1px solid #000;
-
 }
+
 .cart, .wishes {
+    position: relative;
     width: 80px;
     border-left: 1px solid #000;
 }
@@ -82,6 +83,17 @@
     cursor: default;
     color: #000000;
     opacity: 1;
+}
+
+.amount {
+    position: absolute;
+    width: 30px;
+    top: 3px;
+    right: -8px;
+    border-radius: 50%;
+    background-color: #ff694b;
+    text-align: center;
+
 }
 
 .signOut {
