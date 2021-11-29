@@ -19,7 +19,7 @@ const Sidebar = () => {
         <SidebarWrap>
             <Link to="/" onClick={() => toggleCategory('books')}><ImBooks /> Books</Link>
             <Link to="/guitars" onClick={() => toggleCategory('guitars')}><GiGuitar/> Music Instruments</Link>
-            <Link to="/traveling" onClick={() => toggleCategory('traveling')}><FaFly/> Traveling</Link>
+            <Link to="/vouchers" onClick={() => toggleCategory('vouchers')}><FaFly/> Vouchers</Link>
         </SidebarWrap>
     );
 };

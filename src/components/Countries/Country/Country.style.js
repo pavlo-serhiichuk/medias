@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
     width: 130px;
     height: 100px;
     text-align: center;
-    cursor: pointer;
       &:hover {
     background-color: #F1F1F1;
   }

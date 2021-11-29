@@ -1,11 +1,9 @@
 import React from 'react';
 import Products from "./Products.component";
 import {connect} from "react-redux";
-import {getAsyncBooks, getAsyncCountries, getAsyncGuitars, getAsyncVouchers} from "../../redux/productsReducer";
+import {getAsyncBooks, getAsyncCountries, getAsyncGuitars, getAsyncVouchers, getAsyncFilteredVouchers} from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
-import {CountriesContainer, Wrapper} from "./Products.styles";
 import Countries from "../Countries/Countries.component";
-import {fetchLogin} from "../../redux/authReducer";
 
 class ProductsContainer extends React.Component {
 
@@ -18,10 +16,16 @@ class ProductsContainer extends React.Component {
             case 'guitars':
                 document.title = 'Guitars| Medias'
                 return this.props.getAsyncGuitars()
-            case 'traveling':
-                document.title = 'Traveling| Medias'
+            case 'vouchers':
+                document.title = 'Vouchers| Medias'
                 this.props.getAsyncVouchers()
                 return this.props.getAsyncCountries()
+
+            case 'filteredVouchers':
+                document.title = 'Filtered Vouchers| Medias'
+                this.props.getAsyncFilteredVouchers(this.props.countryID)
+                return this.props.getAsyncCountries()
+
             default:
                 return null
         }
@@ -30,7 +34,7 @@ class ProductsContainer extends React.Component {
     render() {
         return (
             <>
-                {this.props.category === 'traveling' && <Countries countries={this.props.countries} />}
+                {this.props.category === 'vouchers' && <Countries countries={this.props.countries} />}
                 <Products products={this.props.products}
                           isAuth={this.props.isAuth}
                           isLoading={this.props.isLoading}
@@ -42,7 +46,9 @@ class ProductsContainer extends React.Component {
 
 const mstp = state => ({
     products: state.products.products,
+    filteredProducts: state.filteredProducts,
     countries: state.products.countries,
+    countryID: state.products.countryID,
     isAuth: state.auth.isAuth,
     isLoading: state.auth.isLoading,
     category: state.products.category
@@ -51,6 +57,6 @@ const mstp = state => ({
 
 export default connect(mstp, {
     getAsyncGuitars, getAsyncBooks,
-    getAsyncVouchers, getAsyncCountries,
+    getAsyncVouchers, getAsyncCountries, getAsyncFilteredVouchers,
     addToCart
 })(ProductsContainer);

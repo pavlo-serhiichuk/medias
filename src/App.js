@@ -14,10 +14,8 @@ import ProductsContainer from "./components/Products/ProductsContainer";
 import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
-import {fetchLogin} from "./redux/authReducer";
 
 function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) {
-
     return (
         <>
             <Wrapper>
@@ -27,7 +25,8 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
                     <div>
                         <Route exact path="/" render={() => <ProductsContainer/>}/>
                         <Route path="/guitars" render={() => <ProductsContainer/>}/>
-                        <Route path="/traveling" render={() => <ProductsContainer />}/>
+                        <Route exact path="/vouchers" render={() => <ProductsContainer />}/>
+                        <Route path="/filtered" render={() => <ProductsContainer id={query.get("id")}/>}/>
                         <Route path="/profile" render={() => <Profile />}/>
                         <Route path="/wishes" render={() => <WishesContainer/>}/>
                         <Route path="/cart" render={() => <CartContainer/>}/>

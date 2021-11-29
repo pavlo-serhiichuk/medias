@@ -29,16 +29,13 @@ export const productsAPI = {
       return get('guitars')
     },
     getVouchers() {
-      return get('traveling')
+      return get('vouchers')
     },
     getCountries() {
         return get('countries')
     },
     getFilteredVouchers(countryID) {
-        return get(`countries?id=${countryID}`)
-    },
-    sendOrder(data) {
-        return post('order', data)
+        return get(`filtered?id=${countryID}`)
     }
 }
 
