@@ -23,7 +23,7 @@ const SButton = styled.button`
 
 const CloseButton = (props) => {
 
-    return <SButton {...props}><BsXCircle/></SButton>
+    return <SButton {...props}>{props.component || <BsXCircle/>}</SButton>
 };
 
 export default CloseButton;

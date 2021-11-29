@@ -1,15 +1,24 @@
 import React from 'react';
 import Products from "./Products.component";
 import {connect} from "react-redux";
-import {getAsyncBooks, getAsyncCountries, getAsyncGuitars, getAsyncVouchers, getAsyncFilteredVouchers} from "../../redux/productsReducer";
+import {
+    getAsyncBooks,
+    getAsyncCountries,
+    getAsyncGuitars,
+    getAsyncVouchers,
+    getAsyncFilteredVouchers, changeCategory
+} from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 import Countries from "../Countries/Countries.component";
+import {Redirect} from "react-router-dom";
 
 class ProductsContainer extends React.Component {
-
     componentDidMount() {
 
-        switch(this.props.category) {
+        switch (this.props.category) {
+            // case null:
+            //     document.title = 'Books| Medias'
+            //     return this.props.getAsyncBooks()
             case 'books':
                 document.title = 'Books| Medias'
                 return this.props.getAsyncBooks()
@@ -32,9 +41,19 @@ class ProductsContainer extends React.Component {
     }
 
     render() {
+        let countryName = null
+        if (this.props.countries) {
+            if (this.props.countryID) {
+                countryName = this.props.countries.filter(country => country.id === this.props.countryID)
+            }
+        }
+
+
         return (
             <>
-                {this.props.category === 'vouchers' && <Countries countries={this.props.countries} />}
+                {/*{this.props.category === null && <Redirect to={'articles'}/>}*/}
+                {this.props.category === 'vouchers' && <Countries countries={this.props.countries}/>}
+                {this.props.category === 'filteredVouchers' && <h5>{countryName[0].title} vouchers:</h5>}
                 <Products products={this.props.products}
                           isAuth={this.props.isAuth}
                           isLoading={this.props.isLoading}

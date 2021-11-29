@@ -23,7 +23,7 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
                 <Content>
                     <Sidebar/>
                     <div>
-                        <Route exact path="/" render={() => <ProductsContainer/>}/>
+                        <Route path="/book" render={() => <ProductsContainer/>}/>
                         <Route path="/guitars" render={() => <ProductsContainer/>}/>
                         <Route exact path="/vouchers" render={() => <ProductsContainer />}/>
                         <Route path="/filtered" render={() => <ProductsContainer id={query.get("id")}/>}/>

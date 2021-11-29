@@ -1,11 +1,12 @@
 import React from 'react';
-import {SidebarWrap} from "./Sidebar.style";
+import {SidebarWrap, Button, Title} from "./Sidebar.style";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {changeCategory} from "../../redux/productsReducer";
 import {GiGuitar} from "react-icons/gi";
 import {ImBooks} from "react-icons/im";
 import {FaFly} from "react-icons/fa";
+import {GiHamburgerMenu} from "react-icons/all";
 
 const Sidebar = () => {
     const dispatch = useDispatch()
@@ -17,7 +18,9 @@ const Sidebar = () => {
 
     return (
         <SidebarWrap>
-            <Link to="/" onClick={() => toggleCategory('books')}><ImBooks /> Books</Link>
+            <Title>Categories:</Title>
+            <Button><GiHamburgerMenu/></Button>
+            <Link to="/books" onClick={() => toggleCategory('books')}><ImBooks /> Books</Link>
             <Link to="/guitars" onClick={() => toggleCategory('guitars')}><GiGuitar/> Music Instruments</Link>
             <Link to="/vouchers" onClick={() => toggleCategory('vouchers')}><FaFly/> Vouchers</Link>
         </SidebarWrap>
