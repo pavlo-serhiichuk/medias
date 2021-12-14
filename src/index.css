@@ -10,6 +10,7 @@ body {
   /*color: silver;*/
   /*cursor: zoom-in;*/
   /*grid-template-columns: ;*/
+  justify-content: space-between;
 }
 
 code {

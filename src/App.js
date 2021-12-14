@@ -14,6 +14,7 @@ import ProductsContainer from "./components/Products/ProductsContainer";
 import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
+import Filters from "./components/Filters/Filters.component";
 
 function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) {
     return (
@@ -23,6 +24,7 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
                 <Content>
                     <Sidebar/>
                     <div>
+                        <Filters/>
                         <Route exact path="/" render={() => <IntroArticlesContainer/>}/>
                         <Route path="/books" render={() => <ProductsContainer/>}/>
                         <Route path="/guitars" render={() => <ProductsContainer/>}/>
