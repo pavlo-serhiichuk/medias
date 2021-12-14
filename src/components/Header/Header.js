@@ -14,14 +14,16 @@ const Header = (props) => {
     const wishesAmount = props.wishes.length
     const cartAmount = props.cartProducts.length
     console.log('wishesAmount ', wishesAmount)
-    console.log('cartAmount ', cartAmount)
+    console.log('props.profilePhoto:  ', props.profilePhoto)
+
+
 
     return (
         <div className={s.header}>
             <div className={s.headerElements}>
                 <div className={s.left}>
-                    <h1>
-                        <Link className={s.article} to="/articles">medias</Link>
+                    <h1 className={s.article}>
+                        <Link to="/articles">medias</Link>
                     </h1>
                     {props.username
                         ?
@@ -43,7 +45,7 @@ const Header = (props) => {
                 </div>
                 {props.isAuth
                     ? <div className={s.signOut}>
-                        <Button signOut color={'indianred'} onClick={() => props.sighOut}><VscSignOut/></Button>
+                        <Button signOut color={'indianred'} onClick={props.sighOut}><VscSignOut/></Button>
                     </div>
 
                     : <div className={s.right}>

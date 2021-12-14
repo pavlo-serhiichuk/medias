@@ -27,7 +27,7 @@ const Login = ({closeModal, sendData, register, handleSubmit, errors}) => {
                 </Label>
                 {errors.password && <P>! {errors.password.message}</P>}
 
-                <Button onClick={() => sendData}>Log in</Button>
+                <Button onClick={sendData}>Log in</Button>
             </Form>
         </Modal>
 

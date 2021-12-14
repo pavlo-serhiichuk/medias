@@ -13,6 +13,7 @@ import Countries from "../Countries/Countries.component";
 
 class ProductsContainer extends React.Component {
     componentDidMount() {
+        console.log(this.props.category)
 
         switch (this.props.category) {
             case 'books':

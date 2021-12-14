@@ -1,4 +1,5 @@
 import {productsAPI, request} from "../api/api";
+import {hideLoading, showLoading} from "./authReducer";
 
 const GET_BOOKS = 'GET_BOOKS'
 const GET_GUITARS = 'GET_GUITARS'
@@ -9,7 +10,7 @@ const GET_COUNTRIES = 'GET_COUNTRIES'
 const CHANGE_CATEGORY = 'CHANGE_CATEGORY'
 
 const initialState = {
-    category: 'books',
+    category: '',
     products: [],
     filteredProducts: [],
     countries: [],
@@ -19,15 +20,17 @@ const initialState = {
 }
 
 export const productsReducer = (state = initialState, action) => {
+    const products = {...state, products: action.payload}
+
     switch (action.type) {
         case GET_BOOKS:
-            return {...state, products: action.payload}
+            return products
         case GET_GUITARS:
-            return {...state, products: action.payload}
+            return products
         case GET_VOUCHERS:
-            return {...state, products: action.payload}
+            return products
         case GET_FILTERED_VOUCHERS:
-            return {...state, products: action.payload}
+            return products
         case GET_COUNTRIES:
             return {...state, countries: action.payload}
         case CHANGE_COUNTRY_ID:
@@ -49,7 +52,16 @@ export const changeCountryID = countryID => ({type: CHANGE_COUNTRY_ID, payload: 
 export const getCountries = (countries) => ({type: GET_COUNTRIES, payload: countries})
 export const changeCategory = category => ({type: CHANGE_CATEGORY, payload: category})
 
-export const getAsyncBooks = () => request(productsAPI.getBooks, getBooks)
+export const getAsyncBooks = () => async dispatch => {
+    dispatch(showLoading())
+    const response = await fetch('http://localhost:3001/book')
+    const json = await response.json()
+    dispatch(getBooks(json))
+    dispatch(hideLoading())
+}
+
+// export const getAsyncBooks = request(productsAPI.getBooks, getBooks)
+
 export const getAsyncGuitars = () => request(productsAPI.getGuitars, getGuitars)
 export const getAsyncVouchers = () => request(productsAPI.getVouchers, getVouchers)
 export const getAsyncCountries = () => request(productsAPI.getCountries, getCountries)

@@ -23,14 +23,15 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
                 <Content>
                     <Sidebar/>
                     <div>
-                        <Route path="/book" render={() => <ProductsContainer/>}/>
+                        <Route exact path="/" render={() => <IntroArticlesContainer/>}/>
+                        <Route path="/books" render={() => <ProductsContainer/>}/>
                         <Route path="/guitars" render={() => <ProductsContainer/>}/>
-                        <Route exact path="/vouchers" render={() => <ProductsContainer />}/>
+                        <Route path="/vouchers" render={() => <ProductsContainer />}/>
                         <Route path="/filtered" render={() => <ProductsContainer id={query.get("id")}/>}/>
                         <Route path="/profile" render={() => <Profile />}/>
                         <Route path="/wishes" render={() => <WishesContainer/>}/>
                         <Route path="/cart" render={() => <CartContainer/>}/>
-                        <Route path="/articles" render={() => <IntroArticlesContainer/>}/>
+                        <Route path="/" render={() => <IntroArticlesContainer/>}/>
                         <Route path="/article" render={() => <FullArticleContainer id={query.get("id")}/>}/>
                     </div>
                 </Content>
