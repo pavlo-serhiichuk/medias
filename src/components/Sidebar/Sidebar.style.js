@@ -6,7 +6,7 @@ export const SidebarWrap = styled.div`
     position: relative;
     padding: 20px 0 0 10px;
     width: 181px;
-    height: 500px;
+    height: 100%;
     border-right: 1px solid grey;
     font-size: 15px;
         @media screen and (max-width: 768px) {

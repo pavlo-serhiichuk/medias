@@ -1,27 +1,25 @@
 import React, {useState} from 'react';
-import {Form, FilterWrap, Label, Wrapper, Select} from './Filters.style'
-import {SmallTitle} from "../../common/Titles/Titles";
+import {Form, FilterWrap, Label, Wrapper, Select, FilterTitle} from './Filters.style'
 
 const Filters = (props) => {
 
-
     return (
         <Wrapper>
-            <SmallTitle filter="true">Filter on:</SmallTitle>
+            <FilterTitle filter="true">Filter on:</FilterTitle>
             <FilterWrap>
                 <Form>
                 <Label>price:
-                    <Select value={price} onChange={() => {}} placeholder="Select...">
-                        <option value="default" disabled hidden>....</option>
+                    <Select value={props.price} onChange={props.setPrice}>
+                        <option value={props.price} disabled hidden>{props.price}</option>
                         <option value="expensive">expensive first</option>
-                        <option value="bottom">lower first</option>
+                        <option value="lower">lower first</option>
                     </Select>
                 </Label>
                 </Form>
                 <Form>
                 <Label>popularity:
-                    <Select value={popularity} onChange={() => {}} placeholder="Select...">
-                        <option value="default" disabled hidden>....</option>
+                    <Select value={props.popularity} onChange={props.setPopularity}>
+                        <option value={props.popularity} disabled hidden>{props.popularity}</option>
                         <option value="popular">popular</option>
                         <option value="unpopular">unpopular</option>
                     </Select>
@@ -29,8 +27,8 @@ const Filters = (props) => {
                 </Form>
                 <Form>
                 <Label>time:
-                    <Select value={time} onChange={() => {}} placeholder="Select...">
-                        <option value="default" disabled hidden>....</option>
+                    <Select value={props.time} onChange={props.setTime}>
+                        <option value={props.time} disabled hidden>{props.time}</option>
                         <option value="newer">Working on it</option>
                     </Select>
                 </Label>

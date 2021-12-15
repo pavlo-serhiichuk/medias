@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import {FlexWrap} from "../../common/FlexWrap/FlexWrap";
+import {SmallTitle} from "../../common/Titles/Titles";
 
 export const Wrapper = styled(FlexWrap)`
     width: 100%;
@@ -19,14 +20,14 @@ export const Label = styled.div`
 `
 
 export const Select = styled.select`
-    width: 100px;
+    min-width: 101px;
     height: 20px;
     margin-right: 40px;
 `
 
 
 
-export const FilterInput = styled.input`
-   
+export const FilterTitle = styled(SmallTitle)`
+   width: 100px;
 `
 

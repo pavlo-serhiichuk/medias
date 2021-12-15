@@ -3,12 +3,17 @@ import React from "react";
 import {Provider, useSelector} from "react-redux";
 import {BrowserRouter as Router, useLocation} from "react-router-dom";
 import App from "./App";
+import styled from "styled-components";
 
 function useQuery() {
     const {search} = useLocation();
 
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
+
+export const Routers = styled.div`
+       width: 100%
+`
 
 function AppContainer() {
 

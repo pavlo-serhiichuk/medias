@@ -18,6 +18,5 @@ export const MiddleTitle = styled.div`
 export const SmallTitle = styled.div`
     font-size: 18px;
     font-weight: bold;
-    margin-right: ${p => p.filter && '45px'};
     color: ${p => p.price && 'red' || p.author && 'grey' || p.producer && 'grey' || '#000'}
 `
