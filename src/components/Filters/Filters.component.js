@@ -4,13 +4,10 @@ import {SmallTitle} from "../../common/Titles/Titles";
 
 const Filters = (props) => {
 
-    const [price, setPrice] = useState("default")
-    const [popularity, setPopularity] = useState("default")
-    const [time, setTime] = useState("default")
 
     return (
         <Wrapper>
-            <SmallTitle filter>Filter on:</SmallTitle>
+            <SmallTitle filter="true">Filter on:</SmallTitle>
             <FilterWrap>
                 <Form>
                 <Label>price:

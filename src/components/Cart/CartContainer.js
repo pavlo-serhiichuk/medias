@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from "react-redux";
 import Cart from "./Cart.component";
 import { deleteFromCart } from "../../redux/cartReducer";
+import {closeFilters} from "../../redux/filterReducer";
 
 class CartContainer extends React.Component {
 
@@ -25,5 +26,5 @@ const mstp = state => ({
 
 
 export default connect(mstp, {
-    deleteFromCart
+    deleteFromCart, closeFilters
 })(CartContainer);

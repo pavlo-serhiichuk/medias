@@ -5,6 +5,7 @@ import {modalReducer} from "./modalReducer";
 import {articlesReducer} from "./articlesReducer";
 import {cartReducer} from "./cartReducer";
 import {wishesReducer} from "./wishesReducer";
+import {filtersReducer} from "./filterReducer";
 
 export const rootReducer = combineReducers({
     articles: articlesReducer,
@@ -12,5 +13,6 @@ export const rootReducer = combineReducers({
     cart: cartReducer,
     wishes: wishesReducer,
     auth: authReducer,
-    modal: modalReducer
+    modal: modalReducer,
+    filters: filtersReducer
 })

@@ -1,4 +1,5 @@
 import {hideLoading, showLoading} from "../redux/authReducer";
+import {openFilters} from "../redux/filterReducer";
 
 const serverURL = 'http://localhost:3001/'
 
@@ -56,6 +57,7 @@ export const articlesAPI = {
 
 export const request = (requestType, actionReducer) => async dispatch => {
     dispatch(showLoading())
+    // dispatch(openFilters())
 
     const response = await requestType()
     dispatch(actionReducer(response))

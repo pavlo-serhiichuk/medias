@@ -10,14 +10,16 @@ import {
 } from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 import Countries from "../Countries/Countries.component";
+import {openFilters} from "../../redux/filterReducer";
 
-class ProductsContainer extends React.Component {
+class ProductsContainer extends React.PureComponent {
+
     componentDidMount() {
-        console.log(this.props.category)
-
         switch (this.props.category) {
             case 'books':
                 document.title = 'Books| Medias'
+                this.props.openFilters()
+
                 return this.props.getAsyncBooks()
             case 'guitars':
                 document.title = 'Guitars| Medias'
@@ -74,6 +76,6 @@ const mstp = state => ({
 
 export default connect(mstp, {
     getAsyncGuitars, getAsyncBooks,
-    getAsyncVouchers, getAsyncCountries, getAsyncFilteredVouchers,
+    getAsyncVouchers, getAsyncCountries, getAsyncFilteredVouchers, openFilters,
     addToCart
 })(ProductsContainer);
