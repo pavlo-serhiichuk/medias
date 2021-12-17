@@ -11,7 +11,7 @@ const Filters = (props) => {
         {value: 'expensive', label: 'expensive first'},
         {value: 'cheap', label: 'cheap first'},
     ]
-    const popularity = [
+    const liked = [
         {value: 'popular', label: 'Most popular'},
         {value: 'unpopular', label: 'Less popular'},
     ]
@@ -27,8 +27,8 @@ const Filters = (props) => {
                 <Select options={price} disabled onChange={(e) => setFilterPrice(e.value)}/>
             </FilterWrap>
             <FilterWrap>
-                <Label>popularity:</Label>
-                <Select options={popularity} onChange={props.setPopularity}/>
+                <Label>liked:</Label>
+                <Select options={liked} onChange={props.setPopularity}/>
             </FilterWrap>
             <FilterWrap>
                 <Label>time:</Label>

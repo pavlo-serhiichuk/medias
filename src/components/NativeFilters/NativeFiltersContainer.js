@@ -15,7 +15,7 @@ const NativeFiltersContainer = () => {
 
     let isFiltersOpen = useSelector(state => state.filters.isFiltersOpen)
     let filterPrice = useSelector(state => state.filters.price)
-    let filterPopularity = useSelector(state => state.filters.popularity)
+    let filterPopularity = useSelector(state => state.filters.liked)
     let filterTime = useSelector(state => state.filters.time)
 
     let filterName = useSelector(state => state.filters.filterName)
@@ -24,7 +24,7 @@ const NativeFiltersContainer = () => {
 
 
     let [price, setPrice] = useState(filterPrice)
-    let [popularity, setPopularity] = useState(filterPopularity)
+    let [liked, setPopularity] = useState(filterPopularity)
     let [time, setTime] = useState(filterTime)
 
     let setFiltersData = (filterName, filterParam) => {
@@ -39,7 +39,7 @@ const NativeFiltersContainer = () => {
 
     let setNewPopularity = (e) => {
         dispatch(setFilterPopularity(e.target.value))
-        setFiltersData('popularity', e.target.value)
+        setFiltersData('liked', e.target.value)
     }
 
     let setNewTime = (e) => {
@@ -62,7 +62,7 @@ const NativeFiltersContainer = () => {
         <>
             <Filters price={price}
                      time={time}
-                     popularity={popularity}
+                     liked={liked}
                      setTime={setNewTime}
                      setPopularity={setNewPopularity}
                      setPrice={setNewPrice}/>

@@ -5,7 +5,7 @@ import {setFilterPopularity, setFilterPrice, setFilterTime} from "../../redux/fi
 
 const NativeFilters = (props) => {
 
-    let {price, popularity, time, setPrice, setPopularity, setTime} = props
+    let {price, liked, time, setPrice, setPopularity, setTime} = props
 
     return (
         <Wrapper>
@@ -21,9 +21,9 @@ const NativeFilters = (props) => {
                 </Label>
                 </Form>
                 <Form>
-                <Label>popularity:
-                    <Select value={popularity} onChange={setPopularity}>
-                        <option value={popularity} disabled hidden>{popularity}</option>
+                <Label>liked:
+                    <Select value={liked} onChange={setPopularity}>
+                        <option value={liked} disabled hidden>{liked}</option>
                         <option value="popular">popular</option>
                         <option value="unpopular">unpopular</option>
                     </Select>

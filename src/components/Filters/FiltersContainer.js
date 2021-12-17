@@ -7,7 +7,7 @@ const FiltersContainer = (props) => {
     const dispatch = useDispatch()
     const isFiltersOpen = useSelector(state => state.filters.isFiltersOpen)
     const price = useSelector(state => state.filters.price)
-    const popularity = useSelector(state => state.filters.popularity)
+    const liked = useSelector(state => state.filters.liked)
     const time = useSelector(state => state.filters.time)
 
 
@@ -38,7 +38,7 @@ const FiltersContainer = (props) => {
     return (
         <>
             <Filters price={price}
-                     popularity={popularity}
+                     liked={liked}
                      time={time}
                      setTime={setTime}
                      setPopularity={setPopularity}

@@ -19,7 +19,7 @@ const initialState = {
     filterParam: '',
     price: "....",
     time: "....",
-    popularity: "....",
+    liked: "....",
 }
 
 export const filtersReducer = (state = initialState, action) => {
@@ -30,17 +30,17 @@ export const filtersReducer = (state = initialState, action) => {
             return {...state, isFiltersOpen: false}
 
         case SET_PRICE:
-            return {...state, price: action.payload, popularity: "....", time: "...."}
+            return {...state, price: action.payload, liked: "....", time: "...."}
         case SET_POPULARITY:
-            return {...state, popularity: action.payload, price: "....", time: "...."}
+            return {...state, liked: action.payload, price: "....", time: "...."}
         case SET_TIME:
-            return {...state, time: action.payload, price: "....", popularity: "...."}
+            return {...state, time: action.payload, price: "....", liked: "...."}
         case SET_FILTER_NAME:
             return {...state, filterName: action.payload}
         case SET_FILTER_PARAM:
             return {...state, filterParam: action.payload}
         case DELETE_FILTERS:
-            return {...state, price: "....", popularity: "....", time: "....", filterName: '', filterParam: ''}
+            return {...state, price: "....", liked: "....", time: "....", filterName: '', filterParam: ''}
         default:
             return state
     }
@@ -51,7 +51,7 @@ export const closeFilters = () => ({type: CLOSE_FILTERS})
 
 export const setFilterPrice = (price) => ({type: SET_PRICE, payload: price})
 export const deleteFilters = () => ({type: DELETE_FILTERS})
-export const setFilterPopularity = (popularity) => ({type: SET_POPULARITY, payload: popularity})
+export const setFilterPopularity = (liked) => ({type: SET_POPULARITY, payload: liked})
 export const setFilterTime = (time) => ({type: SET_TIME, payload: time})
 export const setFilterName = (filterName) => ({type: SET_FILTER_NAME, payload: filterName})
 export const setFilterParam = (filterParam) => ({type: SET_FILTER_PARAM, payload: filterParam})
