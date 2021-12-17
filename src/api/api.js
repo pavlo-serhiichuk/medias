@@ -1,5 +1,6 @@
 import {hideLoading, showLoading} from "../redux/authReducer";
-import {openFilters} from "../redux/filterReducer";
+import {deleteFilters, openFilters} from "../redux/filterReducer";
+import {setFilteredProducts} from "../redux/productsReducer";
 
 const serverURL = 'http://localhost:3001/'
 
@@ -56,15 +57,6 @@ export const wishesAPI = {
     }
 }
 
-export const filtersAPI = {
-    filter(category, data) {
-        console.log('filter rerender')
-        category === 'guitars' && productsAPI.getFilteredBooks(data)
-        // category === 'guitars' && productsAPI.getFilteredGuitars(data)
-        // category === 'vouchers' && productsAPI.getFilteredVouchers(data)
-    }
-}
-
 export const articlesAPI = {
     getArticles() {
         return get('articles')
@@ -76,10 +68,18 @@ export const articlesAPI = {
 
 export const request = (requestType, actionReducer) => async dispatch => {
     dispatch(showLoading())
-    // dispatch(openFilters())
 
     const response = await requestType()
     dispatch(actionReducer(response))
+    dispatch(hideLoading())
+}
+
+export const filterRequest = (method, data) => async dispatch => {
+    dispatch(showLoading())
+    let response =  await method(data)
+
+    dispatch(setFilteredProducts(response))
+    dispatch(deleteFilters())
     dispatch(hideLoading())
 }
 

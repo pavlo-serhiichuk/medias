@@ -19,17 +19,6 @@ import NativeFiltersContainer from "./components/NativeFilters/NativeFiltersCont
 
 function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, isFiltersOpen}) {
 
-    const books = [
-        {price: 432, title: 'fsfds'},
-        {price: 32, title: 'fsfds'},
-        {price: 43, title: 'fsfds'},
-        {price: 422, title: 'fsfds'}
-    ]
-
-    let filteredBooks = books.sort((a, b) => a.price - b.price)
-
-    console.log("filteredBooks: ")
-    console.log(filteredBooks)
     return (
         <>
             <Wrapper>

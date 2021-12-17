@@ -65,8 +65,6 @@ export const getAsyncBooks = () => async dispatch => {
     dispatch(hideLoading())
 }
 
-// export const getAsyncBooks = request(productsAPI.getBooks, getBooks)
-
 export const getAsyncGuitars = () => request(productsAPI.getGuitars, getGuitars)
 export const getAsyncVouchers = () => request(productsAPI.getVouchers, getVouchers)
 export const getAsyncCountries = () => request(productsAPI.getCountries, getCountries)

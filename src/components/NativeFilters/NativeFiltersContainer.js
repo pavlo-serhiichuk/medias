@@ -53,10 +53,9 @@ const NativeFiltersContainer = () => {
         setPopularity(filterPopularity)
         setTime(filterTime)
 
-        // category && filterName && filterParam && getAsyncFilteredProducts(category, {filterName: filterName, filterParam: filterParam})()
-        category === 'books' && filterName && filterParam && dispatch(getAsyncFilteredProducts(category, {filterName: filterName, filterParam: filterParam}))
-        //
-
+        filterName
+        && filterParam
+        && dispatch(getAsyncFilteredProducts(category, {filterName: filterName, filterParam: filterParam}))
     })
 
     return (
