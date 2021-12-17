@@ -7,6 +7,7 @@ export const ModalWrap = styled.div`
     bottom: 0;
     background: rgba(0, 0, 0, .2);
     background-filter: blur(10px);  
+    z-index: 10000;
 `
 export const ModalContent = styled.div`
     display: flex;

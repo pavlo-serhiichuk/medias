@@ -10,30 +10,31 @@ import {
 } from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 import Countries from "../Countries/Countries.component";
-import {openFilters} from "../../redux/filterReducer";
+import {closeFilters, openFilters} from "../../redux/filterReducer";
 
 class ProductsContainer extends React.PureComponent {
 
-    componentDidMount() {
+    tabTitle = (title) => {
+        return document.title = `${title}| Medias`
+    }
+        componentDidMount() {
+        this.props.openFilters()
+
         switch (this.props.category) {
             case 'books':
-                document.title = 'Books| Medias'
-                this.props.openFilters()
-
+                this.tabTitle('Books')
                 return this.props.getAsyncBooks()
             case 'guitars':
-                document.title = 'Guitars| Medias'
+                this.tabTitle('Guitars')
                 return this.props.getAsyncGuitars()
             case 'vouchers':
-                document.title = 'Vouchers| Medias'
+                this.tabTitle('Vouchers')
                 this.props.getAsyncVouchers()
                 return this.props.getAsyncCountries()
-
             case 'filteredVouchers':
-                document.title = 'Filtered Vouchers| Medias'
+                this.tabTitle('Filtered Vouchers')
                 this.props.getAsyncFilteredVouchers(this.props.countryID)
                 return this.props.getAsyncCountries()
-
             default:
                 return null
         }
@@ -47,13 +48,14 @@ class ProductsContainer extends React.PureComponent {
             }
         }
 
-
         return (
             <>
                 {this.props.category === 'vouchers'
                 && <Countries countries={this.props.countries}/>}
                 {this.props.category === 'filteredVouchers'
                 && <h5>{countryName[0].title} vouchers:</h5>}
+                {/*{this.props.category === 'filteredVouchers' && this.props.closeFilters()}*/}
+
                 <Products products={this.props.products}
                           isAuth={this.props.isAuth}
                           isLoading={this.props.isLoading}
@@ -76,6 +78,6 @@ const mstp = state => ({
 
 export default connect(mstp, {
     getAsyncGuitars, getAsyncBooks,
-    getAsyncVouchers, getAsyncCountries, getAsyncFilteredVouchers, openFilters,
+    getAsyncVouchers, getAsyncCountries, getAsyncFilteredVouchers, openFilters, closeFilters,
     addToCart
 })(ProductsContainer);

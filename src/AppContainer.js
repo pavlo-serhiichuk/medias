@@ -1,7 +1,7 @@
 import './index.css';
 import React from "react";
-import {Provider, useSelector} from "react-redux";
-import {BrowserRouter as Router, useLocation} from "react-router-dom";
+import {useSelector} from "react-redux";
+import {useLocation} from "react-router-dom";
 import App from "./App";
 import styled from "styled-components";
 
@@ -16,16 +16,16 @@ export const Routers = styled.div`
 `
 
 function AppContainer() {
-
     let query = useQuery();
-
     const isSignInModalOpen = useSelector(state => state.modal.isSighInModalOpen)
     const isLoginModalOpen = useSelector(state => state.modal.isLoginModalOpen)
     const isMoreInfoModalOpen = useSelector(state => state.modal.isMoreInfoModalOpen)
+    let isFiltersOpen = useSelector(state => state.filters.isFiltersOpen)
 
     return (
         <>
             <App query={query}
+                 isFiltersOpen={isFiltersOpen}
                  isSignInModalOpen={isSignInModalOpen}
                  isMoreInfoModalOpen={isMoreInfoModalOpen}
                  isLoginModalOpen={isLoginModalOpen}/>

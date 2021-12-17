@@ -6,27 +6,22 @@ import {setFilterPopularity, setFilterPrice, setFilterTime} from "../../redux/fi
 const FiltersContainer = (props) => {
     const dispatch = useDispatch()
     const isFiltersOpen = useSelector(state => state.filters.isFiltersOpen)
-    const filterPrice = useSelector(state => state.filters.price)
-    const filterPopularity = useSelector(state => state.filters.popularity)
-    const filterTime = useSelector(state => state.filters.time)
+    const price = useSelector(state => state.filters.price)
+    const popularity = useSelector(state => state.filters.popularity)
+    const time = useSelector(state => state.filters.time)
 
-    const [price, setPrice] = useState(filterPrice)
-    const [popularity, setPopularity] = useState(filterPopularity)
-    const [time, setTime] = useState(filterTime)
 
-    const setNewPrice = (e) => {
+    const setPrice = (e) => {
+        console.log("Price: ", e.target.value)
         dispatch(setFilterPrice(e.target.value))
-        setPrice(filterPrice)
     }
 
-    const setNewPopularity = (e) => {
+    const setPopularity = (e) => {
         dispatch(setFilterPopularity(e.target.value))
-        setPopularity(filterPopularity)
     }
 
-    const setNewTime = (e) => {
+    const setTime = (e) => {
         dispatch(setFilterTime(e.target.value))
-        setTime(filterTime)
     }
 
     useEffect(() => {
@@ -43,11 +38,11 @@ const FiltersContainer = (props) => {
     return (
         <>
             <Filters price={price}
-                     time={time}
                      popularity={popularity}
-                     setTime={setNewTime}
-                     setPopularity={setNewPopularity}
-                     setPrice={setNewPrice}/>
+                     time={time}
+                     setTime={setTime}
+                     setPopularity={setPopularity}
+                     setPrice={setPrice}/>
         </>
     );
 };

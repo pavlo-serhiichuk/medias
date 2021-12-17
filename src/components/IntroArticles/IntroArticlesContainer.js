@@ -15,8 +15,8 @@ const IntroArticlesContainer = () => {
 
     useEffect(() => {
         document.title = 'Articles| Medias'
-        console.log('render Intro Article')
         dispatch(getAsyncArticles())
+        dispatch(closeFilters())
     }, [])
 
     if (isLoading) return <div>Loading...</div>

@@ -8,6 +8,8 @@ class CartContainer extends React.Component {
 
     componentDidMount() {
         document.title = 'Cart| Medias'
+        console.log('this.props.closeFilters()')
+        this.props.closeFilters()
     }
 
     render() {
@@ -26,5 +28,5 @@ const mstp = state => ({
 
 
 export default connect(mstp, {
-    deleteFromCart, closeFilters
+    deleteFromCart, closeFilters,
 })(CartContainer);

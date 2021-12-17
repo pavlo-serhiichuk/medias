@@ -24,18 +24,28 @@ export const authAPI = {
 
 export const productsAPI = {
     getBooks() {
-        return get('book')
+        return get('books')
+    },
+    getFilteredBooks(data) {
+        return post('books/filtered', data)
     },
     getGuitars() {
       return get('guitars')
     },
+    getFilteredGuitars(data) {
+
+        return post('guitars/filtered', data)
+    },
     getVouchers() {
       return get('vouchers')
+    },
+    getFilteredVouchers(data) {
+        return post('vouchers/filtered', data)
     },
     getCountries() {
         return get('countries')
     },
-    getFilteredVouchers(countryID) {
+    getCountryFilteredVouchers(countryID) {
         return get(`filtered?id=${countryID}`)
     }
 }
@@ -43,6 +53,15 @@ export const productsAPI = {
 export const wishesAPI = {
     getWishes() {
         return get('wishes')
+    }
+}
+
+export const filtersAPI = {
+    filter(category, data) {
+        console.log('filter rerender')
+        category === 'guitars' && productsAPI.getFilteredBooks(data)
+        // category === 'guitars' && productsAPI.getFilteredGuitars(data)
+        // category === 'vouchers' && productsAPI.getFilteredVouchers(data)
     }
 }
 

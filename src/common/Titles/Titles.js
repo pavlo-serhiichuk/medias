@@ -15,7 +15,7 @@ export const MiddleTitle = styled.div`
     color: ${p => p.price && 'red' || p.author && 'grey' || p.producer && 'grey' || '#000'}
 `
 
-export const SmallTitle = styled.div`
+export const SmallTitle = styled.span`
     font-size: 18px;
     font-weight: bold;
     color: ${p => p.price && 'red' || p.author && 'grey' || p.producer && 'grey' || '#000'}

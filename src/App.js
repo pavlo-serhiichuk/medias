@@ -1,5 +1,5 @@
 import './index.css';
-import React, {useEffect} from "react";
+import React from "react";
 import {Route} from "react-router-dom";
 import {Wrapper, Content} from "./App.styles";
 import Header from "./components/Header/Header";
@@ -14,10 +14,22 @@ import ProductsContainer from "./components/Products/ProductsContainer";
 import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
-import FiltersContainer from "./components/Filters/FiltersContainer";
 import {Routers} from "./AppContainer";
+import NativeFiltersContainer from "./components/NativeFilters/NativeFiltersContainer";
 
-function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) {
+function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, isFiltersOpen}) {
+
+    const books = [
+        {price: 432, title: 'fsfds'},
+        {price: 32, title: 'fsfds'},
+        {price: 43, title: 'fsfds'},
+        {price: 422, title: 'fsfds'}
+    ]
+
+    let filteredBooks = books.sort((a, b) => a.price - b.price)
+
+    console.log("filteredBooks: ")
+    console.log(filteredBooks)
     return (
         <>
             <Wrapper>
@@ -25,7 +37,7 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
                 <Content>
                     <Sidebar/>
                     <Routers>
-                        <FiltersContainer/>
+                        {isFiltersOpen && <NativeFiltersContainer />}
                         <Route path="/books" render={() => <ProductsContainer/>}/>
                         <Route path="/guitars" render={() => <ProductsContainer/>}/>
                         <Route path="/vouchers" render={() => <ProductsContainer />}/>

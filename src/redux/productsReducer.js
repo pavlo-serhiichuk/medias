@@ -5,8 +5,9 @@ const GET_BOOKS = 'GET_BOOKS'
 const GET_GUITARS = 'GET_GUITARS'
 const GET_VOUCHERS = 'GET_VOUCHERS'
 const GET_FILTERED_VOUCHERS = 'GET_FILTERED_VOUCHERS'
-const CHANGE_COUNTRY_ID = 'CHANGE_COUNTRY_ID'
 const GET_COUNTRIES = 'GET_COUNTRIES'
+const GET_FILTERED_PRODUCTS = 'GET_FILTERED_PRODUCTS'
+const CHANGE_COUNTRY_ID = 'CHANGE_COUNTRY_ID'
 const CHANGE_CATEGORY = 'CHANGE_CATEGORY'
 
 const initialState = {
@@ -31,6 +32,8 @@ export const productsReducer = (state = initialState, action) => {
             return products
         case GET_FILTERED_VOUCHERS:
             return products
+        case GET_FILTERED_PRODUCTS:
+            return products
         case GET_COUNTRIES:
             return {...state, countries: action.payload}
         case CHANGE_COUNTRY_ID:
@@ -47,14 +50,16 @@ export const productsReducer = (state = initialState, action) => {
 const getBooks = books => ({type: GET_BOOKS, payload: books})
 const getGuitars = guitars => ({type: GET_GUITARS, payload: guitars})
 const getVouchers = vouchers => ({type: GET_VOUCHERS, payload: vouchers})
-const getFilteredVouchers = vouchers => ({type: GET_FILTERED_VOUCHERS, payload: vouchers})
+const getCountryFilteredVouchers = vouchers => ({type: GET_FILTERED_VOUCHERS, payload: vouchers})
+export const setFilteredProducts = filteredProducts => ({type: GET_FILTERED_PRODUCTS, payload: filteredProducts})
+
 export const changeCountryID = countryID => ({type: CHANGE_COUNTRY_ID, payload: countryID})
 export const getCountries = (countries) => ({type: GET_COUNTRIES, payload: countries})
 export const changeCategory = category => ({type: CHANGE_CATEGORY, payload: category})
 
 export const getAsyncBooks = () => async dispatch => {
     dispatch(showLoading())
-    const response = await fetch('http://localhost:3001/book')
+    const response = await fetch('http://localhost:3001/books')
     const json = await response.json()
     dispatch(getBooks(json))
     dispatch(hideLoading())
@@ -66,5 +71,5 @@ export const getAsyncGuitars = () => request(productsAPI.getGuitars, getGuitars)
 export const getAsyncVouchers = () => request(productsAPI.getVouchers, getVouchers)
 export const getAsyncCountries = () => request(productsAPI.getCountries, getCountries)
 
-export const getAsyncFilteredVouchers = (countryID) => request(() => productsAPI.getFilteredVouchers(countryID), getFilteredVouchers)
+export const getAsyncFilteredVouchers = (countryID) => request(() => productsAPI.getCountryFilteredVouchers(countryID), getCountryFilteredVouchers)
 

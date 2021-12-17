@@ -1,11 +1,17 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Wrapper} from "../Cart/Cart.styles";
 import {BiHeart} from "react-icons/all";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {closeFilters} from "../../redux/filterReducer";
 
 const WishesContainer = () => {
+    const dispatch = useDispatch()
+    let wishes = useSelector(state => state.wishes.wishes)
 
-    const wishes = useSelector(state => state.wishes.wishes)
+    useEffect(() => {
+        dispatch(closeFilters())
+        document.title = 'Wishes| Medias'
+    }, [])
 
     if (wishes) {
         return (
