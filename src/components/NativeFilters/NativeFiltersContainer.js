@@ -13,7 +13,6 @@ const NativeFiltersContainer = () => {
 
     const dispatch = useDispatch()
 
-    let isFiltersOpen = useSelector(state => state.filters.isFiltersOpen)
     let filterPrice = useSelector(state => state.filters.price)
     let filterPopularity = useSelector(state => state.filters.liked)
     let filterTime = useSelector(state => state.filters.time)
@@ -53,7 +52,7 @@ const NativeFiltersContainer = () => {
         setPopularity(filterPopularity)
         setTime(filterTime)
 
-        filterName
+        filterName && filterName !== 'time'
         && filterParam
         && dispatch(getAsyncFilteredProducts(category, {filterName: filterName, filterParam: filterParam}))
     })

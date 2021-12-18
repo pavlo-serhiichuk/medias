@@ -17,7 +17,7 @@ const Filters = (props) => {
     ]
     const time = [
         {value: 'inProcess', label: 'Working on it...'},
-    ]
+    ];
 
     return (
         <Wrapper>

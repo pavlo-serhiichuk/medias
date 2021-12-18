@@ -1,5 +1,5 @@
 import React from 'react';
-import {Buttons, ProductContent, Title} from "./Product.styles";
+import {Buttons, Img, ProductContent, Title} from "./Product.styles";
 import Button from "../../../common/Buttons/Button.component";
 import {useDispatch} from "react-redux";
 import {AiOutlineShoppingCart} from "react-icons/ai"
@@ -18,6 +18,7 @@ const Product = ({isAuth, product, addToCart}) => {
 
     return (
         <ProductContent image={product.image}>
+            {/*<Img src={image={product.image}}/> */}
             <Title  onClick={() => dispatch(openMoreInfoModal(product.id))}>
                 {product.title}
             </Title>

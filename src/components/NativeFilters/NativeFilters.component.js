@@ -33,7 +33,7 @@ const NativeFilters = (props) => {
                 <Label>time:
                     <Select value={time} onChange={setTime}>
                         <option value={time} disabled hidden>{time}</option>
-                        <option value="newer">Working on it</option>
+                        <option value="in process...">Working on it</option>
                     </Select>
                 </Label>
                 </Form>

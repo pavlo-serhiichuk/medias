@@ -5,8 +5,8 @@ export const SidebarWrap = styled.div`
     flex-direction: column;
     position: relative;
     padding: 20px 0 0 10px;
-    width: 181px;
-    height: 100%;
+    min-width: 181px;
+    height: 100vh;
     border-right: 1px solid grey;
     font-size: 15px;
         @media screen and (max-width: 768px) {

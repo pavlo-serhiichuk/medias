@@ -47,7 +47,7 @@ export const productsAPI = {
         return get('countries')
     },
     getCountryFilteredVouchers(countryID) {
-        return get(`filtered?id=${countryID}`)
+        return get(`vouchers/countries?id=${countryID}`)
     }
 }
 
