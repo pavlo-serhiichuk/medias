@@ -29,3 +29,5 @@ yarn-error.log*
 /.idea/styledmedia.iml
 /src/store/photos/TopScreen.PNG
 /.idea/vcs.xml
+/.idea/.name
+/public/favicon.ico
