@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
+    position: relative;
     min-height: 100vh;
     margin: 0 auto;
     width: 1065px;
@@ -18,6 +19,9 @@ export const Content = styled.div`
       flex-direction: row;  
     justify-content: center;    
       position: relative;
-      
 `
 
+export const A = styled.a`
+    width: 50px;
+    height: 50px;
+`
