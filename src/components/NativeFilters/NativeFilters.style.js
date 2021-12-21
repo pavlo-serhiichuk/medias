@@ -1,13 +1,14 @@
 import styled from 'styled-components'
-import {FlexWrap} from "../../common/FlexWrap/FlexWrap";
 import {SmallTitle} from "../../common/Titles/Titles";
 
-export const Wrapper = styled(FlexWrap)`
+export const Wrapper = styled.div`
     width: 100%;
-    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    padding: 20px 0 0 10px;
+
 `
 
-export const FilterWrap = styled(FlexWrap)`
+export const FilterWrap = styled.div`
 `
 
 export const Form = styled.form`
@@ -22,7 +23,6 @@ export const Label = styled.div`
 export const Select = styled.select`
     min-width: 101px;
     height: 20px;
-    margin-right: 40px;
 `
 
 

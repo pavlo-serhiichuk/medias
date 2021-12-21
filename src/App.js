@@ -1,5 +1,5 @@
 import './index.css';
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import {Route} from "react-router-dom";
 import {Wrapper, Content} from "./App.styles";
 import Header from "./components/Header/Header";
@@ -10,15 +10,16 @@ import SignInContainer from "./components/SignIn/SignInContainer";
 import IntroArticlesContainer from "./components/IntroArticles/IntroArticlesContainer";
 import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
 import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
-import ProductsContainer from "./components/Products/ProductsContainer";
+// import ProductsContainer from "./components/Products/ProductsContainer";
 import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
 import {Routers} from "./AppContainer";
-import NativeFiltersContainer from "./components/NativeFilters/NativeFiltersContainer";
+
+const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
 function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, isFiltersOpen}) {
-
+    console.log('rendered twice')
     return (
         <>
             <Wrapper>
@@ -26,12 +27,13 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, i
                 <Content>
                     <Sidebar/>
                     <Routers>
-                        {isFiltersOpen && <NativeFiltersContainer />}
-                        <Route path="/books" render={() => <ProductsContainer/>}/>
-                        <Route path="/guitars" render={() => <ProductsContainer/>}/>
-                        <Route path="/vouchers" render={() => <ProductsContainer />}/>
-                        <Route path="/filtered" render={() => <ProductsContainer id={query.get("id")}/>}/>
-                        <Route path="/profile" render={() => <Profile />}/>
+                        <Suspense fallback={'Loading...'}>
+                            <Route path="/books" render={() => <ProductsContainer/>}/>
+                            <Route path="/guitars" render={() => <ProductsContainer/>}/>
+                            <Route path="/vouchers" render={() => <ProductsContainer/>}/>
+                            <Route path="/filtered" render={() => <ProductsContainer id={query.get("id")}/>}/>
+                        </Suspense>
+                        <Route path="/profile" render={() => <Profile/>}/>
                         <Route path="/wishes" render={() => <WishesContainer/>}/>
                         <Route path="/cart" render={() => <CartContainer/>}/>
                         <Route path="/articles" render={() => <IntroArticlesContainer/>}/>

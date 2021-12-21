@@ -10,7 +10,7 @@ export const ProductsContainer = styled.div`
     gap: 5px;
     flex-wrap: wrap;
     flex-direction: row;
-    margin: 10px 0 0 0;
+    margin: 10px 0 0 5px;
     
     // display: grid;
     // grid-template-columns: repeat(4, 1fr);

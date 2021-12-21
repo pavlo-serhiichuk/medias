@@ -18,4 +18,6 @@ const Products = (props) => {
     );
 };
 
-export default Products;
+const MemoizedProducts = React.memo(Products)
+
+export default MemoizedProducts;

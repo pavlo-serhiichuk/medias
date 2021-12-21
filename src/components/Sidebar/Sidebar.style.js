@@ -4,17 +4,24 @@ export const SidebarWrap = styled.div`
     display: flex;
     flex-direction: column;
     position: relative;
-    padding: 20px 0 0 10px;
-    min-width: 181px;
+    min-width: 215px;
     height: 100vh;
     border-right: 1px solid grey;
     font-size: 15px;
         @media screen and (max-width: 768px) {
             position: absolute;
+            left: 0;
             background-color: #fff;
             z-index: 1000;
         }
 
+`
+
+export const Categories = styled.div`
+  display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 20px 0 10px 10px;
 `
 
 export const Title = styled.div`

@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
-import {Form, FilterWrap, Label, Wrapper, Select, FilterTitle} from './NativeFilters.style'
-import {useDispatch, useSelector} from "react-redux";
-import {setFilterPopularity, setFilterPrice, setFilterTime} from "../../redux/filterReducer";
+import React from 'react';
+import {Form, FilterWrap, Label, Wrapper, Select} from './NativeFilters.style'
+import {SmallTitle} from "../../common/Titles/Titles";
 
 const NativeFilters = (props) => {
 
@@ -9,7 +8,7 @@ const NativeFilters = (props) => {
 
     return (
         <Wrapper>
-            <FilterTitle filter="true">Filter on:</FilterTitle>
+            <SmallTitle filter="true">Filter on:</SmallTitle>
             <FilterWrap>
                 <Form>
                 <Label>price:

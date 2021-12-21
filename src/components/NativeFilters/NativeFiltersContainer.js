@@ -10,7 +10,6 @@ import {
 } from "../../redux/filterReducer";
 
 const NativeFiltersContainer = () => {
-
     const dispatch = useDispatch()
 
     let filterPrice = useSelector(state => state.filters.price)
@@ -20,7 +19,6 @@ const NativeFiltersContainer = () => {
     let filterName = useSelector(state => state.filters.filterName)
     let filterParam = useSelector(state => state.filters.filterParam)
     let category = useSelector(state => state.products.category)
-
 
     let [price, setPrice] = useState(filterPrice)
     let [liked, setPopularity] = useState(filterPopularity)
@@ -69,4 +67,6 @@ const NativeFiltersContainer = () => {
     );
 };
 
-export default NativeFiltersContainer;
+const MemoizedNativeFiltersContainer = React.memo(NativeFiltersContainer)
+
+export default MemoizedNativeFiltersContainer;

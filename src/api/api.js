@@ -77,6 +77,7 @@ export const request = (requestType, actionReducer) => async dispatch => {
 export const filterRequest = (method, data) => async dispatch => {
     dispatch(showLoading())
     let response =  await method(data)
+    debugger
 
     dispatch(setFilteredProducts(response))
     dispatch(deleteFilters())

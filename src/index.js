@@ -1,5 +1,5 @@
 import React from 'react';
-import {render} from 'react-dom';
+import {render, createPortal} from 'react-dom';
 import './index.css';
 import AppContainer from './AppContainer';
 import reportWebVitals from './reportWebVitals';
@@ -28,6 +28,8 @@ render(
     ,
     document.getElementById('root')
 );
+
+createPortal(<h1>My Portal</h1>, document.getElementById('root'))
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

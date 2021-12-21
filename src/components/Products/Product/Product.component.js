@@ -33,4 +33,7 @@ const Product = ({isAuth, product, addToCart}) => {
     );
 };
 
-export default Product;
+const MemoizedProduct = React.memo(Product)
+
+
+export default MemoizedProduct;

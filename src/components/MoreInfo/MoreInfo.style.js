@@ -40,19 +40,22 @@ export const InfoImg = styled.img`
 `
 
 export const SmallImg = styled.img`
-    width: 61px;
-    max-height: 55px;
+    width: 76px;
+    max-height: 65px;
     object-fit: cover;
     object-position: 50% 50%;
-  
 `
 
 const SmallImgContainer = styled.div`
-    border:  1px solid rgba(210, 217, 217, 0.89);
-d    z-index: 1002;
+    border:  5px solid #ebede8;
+    border-radius: 5px;
+    z-index: 1002;
     display: flex;
     justify-content: center; /*Центрирование по горизонтали*/
     align-items: center; 
+  &:hover {
+    border: 5px solid #72ae4a;
+  }
 `
 
 export const SmallImgCont = (props) => {
