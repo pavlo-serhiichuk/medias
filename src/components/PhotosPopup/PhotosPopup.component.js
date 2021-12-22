@@ -7,7 +7,7 @@ const PhotosPopup = (props) => {
 
     return (
         <Modal>
-            
+            Photo Popup
         </Modal>
     );
 };

@@ -60,8 +60,6 @@ const SSmallImgCont = styled.div`
   }
 `
 
-export const SmallImgs = ({images, img}) => {
-    const dispatch = useDispatch()
-
-    return <SSmallImgCont onClick={() => dispatch(setProductPhotos(images))}><SSmallImg src={img}/></SSmallImgCont>
+export const SmallImgs = ({img, images, openPhotosModal}) => {
+    return <SSmallImgCont><SSmallImg src={img} onClick={() => openPhotosModal(images)}/></SSmallImgCont>
 }

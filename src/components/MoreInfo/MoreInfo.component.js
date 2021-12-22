@@ -8,12 +8,12 @@ import {
     ImgContaiter,
     InfoImg,
     OtherImgs,
-    SmallImg, SmallImgs, SSmallImg
+    SmallImgs,
 } from "./MoreInfo.style";
 import {BigTitle, MiddleTitle} from "../../common/Titles/Titles";
 
 
-const MoreInfo = ({closeMoreInfo, product}) => {
+const MoreInfo = ({closeMoreInfo, openPhotosModal, product}) => {
     const {image, author,
         producer, price,
         features, title,
@@ -28,7 +28,8 @@ const MoreInfo = ({closeMoreInfo, product}) => {
                     <InfoImg src={image}/>
                     {Array.isArray(image)
                         ? <OtherImgs>
-                            {image.map((img, i) => <SmallImgs onClick={() => {}} images={image} img={img} key={i}/>)}
+                            {image.map((img, i) => <SmallImgs openPhotosModal={openPhotosModal}
+                                                              images={image} img={img} key={i}/>)}
                     </OtherImgs>
                         : null}
                 </ImgContaiter>

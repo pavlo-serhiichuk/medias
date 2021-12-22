@@ -15,7 +15,7 @@ const initialState = {
     isLoginModalOpen: false,
     isMoreInfoModalOpen: false,
     currentProductId: null,
-    isPhotosPopupOpen: true
+    isPhotosPopupOpen: false
 }
 
 export const modalReducer = (state = initialState, action) => {
