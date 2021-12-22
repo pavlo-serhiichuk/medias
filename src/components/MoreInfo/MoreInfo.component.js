@@ -27,7 +27,9 @@ const MoreInfo = ({closeMoreInfo, product}) => {
                 <ImgContaiter>
                     <InfoImg src={image}/>
                     {Array.isArray(image)
-                        ? <OtherImgs>{image.map((img, i) => <SmallImgs images={image} img={img} key={i}/>)}</OtherImgs>
+                        ? <OtherImgs>
+                            {image.map((img, i) => <SmallImgs onClick={() => {}} images={image} img={img} key={i}/>)}
+                    </OtherImgs>
                         : null}
                 </ImgContaiter>
                 <div>

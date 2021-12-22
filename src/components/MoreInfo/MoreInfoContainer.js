@@ -11,6 +11,9 @@ const MoreInfoContainer = () => {
     const products = useSelector(state => state.products.products)
     const currentProduct = products.filter(book => book.id === currentProductId)
     const closeMoreInfo = () => dispatch(closeMoreInfoModal())
+    const openPhotosPopupModal = () => {
+        dispatch(op)
+    }
 
     useEffect(() => {
         document.querySelector('[data-close]').addEventListener('click', event => {
