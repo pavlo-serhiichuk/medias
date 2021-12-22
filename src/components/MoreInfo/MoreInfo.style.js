@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import React from "react";
 import {useDispatch} from "react-redux";
-import {setProductPhotos} from "../../redux/productsReducer";
+import {setCurrentProduct} from "../../redux/productsReducer";
 
 export const Content = styled.div`
     display: grid;
@@ -60,6 +60,6 @@ const SSmallImgCont = styled.div`
   }
 `
 
-export const SmallImgs = ({img, images, openPhotosModal}) => {
-    return <SSmallImgCont><SSmallImg src={img} onClick={() => openPhotosModal(images)}/></SSmallImgCont>
+export const SmallImgs = ({img, product, openPhotosModal}) => {
+    return <SSmallImgCont><SSmallImg src={img} onClick={() => openPhotosModal(product)}/></SSmallImgCont>
 }

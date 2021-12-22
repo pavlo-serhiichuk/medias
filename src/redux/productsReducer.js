@@ -7,13 +7,14 @@ const SET_VOUCHERS = 'SET_VOUCHERS'
 const SET_FILTERED_VOUCHERS = 'SET_FILTERED_VOUCHERS'
 const SET_COUNTRIES = 'SET_COUNTRIES'
 const SET_FILTERED_PRODUCTS = 'SET_FILTERED_PRODUCTS'
-const SET_PRODUCT_PHOTOS = 'SET_PRODUCT_PHOTOS'
+const SET_CURRENT_PRODUCT = 'SET_CURRENT_PRODUCT'
 const CHANGE_COUNTRY_ID = 'CHANGE_COUNTRY_ID'
 const CHANGE_CATEGORY = 'CHANGE_CATEGORY'
 
 const initialState = {
     category: '',
     products: [],
+    currentProduct: null,
     filteredProducts: [],
     countries: [],
     countryID: null,
@@ -31,8 +32,8 @@ export const productsReducer = (state = initialState, action) => {
         case SET_FILTERED_VOUCHERS:
         case SET_FILTERED_PRODUCTS:
             return products
-        case SET_PRODUCT_PHOTOS:
-                return {...state, productPhotos: action.payload}
+        case SET_CURRENT_PRODUCT:
+                return {...state, currentProduct: action.payload}
         case SET_COUNTRIES:
             return {...state, countries: action.payload}
         case CHANGE_COUNTRY_ID:
@@ -51,7 +52,7 @@ const setGuitars = guitars => ({type: SET_GUITARS, payload: guitars})
 const setVouchers = vouchers => ({type: SET_VOUCHERS, payload: vouchers})
 const getCountryFilteredVouchers = vouchers => ({type: SET_FILTERED_VOUCHERS, payload: vouchers})
 export const setFilteredProducts = filteredProducts => ({type: SET_FILTERED_PRODUCTS, payload: filteredProducts})
-export const setProductPhotos = productPhotos => ({type: SET_PRODUCT_PHOTOS, payload: productPhotos})
+export const setCurrentProduct = productPhotos => ({type: SET_CURRENT_PRODUCT, payload: productPhotos})
 
 const setCountries = (countries) => ({type: SET_COUNTRIES, payload: countries})
 export const changeCountryID = countryID => ({type: CHANGE_COUNTRY_ID, payload: countryID})

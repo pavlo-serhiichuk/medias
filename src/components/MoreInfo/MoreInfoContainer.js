@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {closeMoreInfoModal, openPhotosPopup} from "../../redux/modalReducer";
 import {useDispatch, useSelector} from "react-redux";
 import MoreInfo from "./MoreInfo.component";
-import {setProductPhotos} from "../../redux/productsReducer";
+import {setCurrentProduct} from "../../redux/productsReducer";
 
 const MoreInfoContainer = () => {
 
@@ -13,9 +13,9 @@ const MoreInfoContainer = () => {
     const currentProduct = products.filter(book => book.id === currentProductId)
     const closeMoreInfo = () => dispatch(closeMoreInfoModal())
 
-    const openPhotosModal = (images) => {
+    const openPhotosModal = (product) => {
         console.log('openPhotosPopupModal')
-        dispatch(setProductPhotos(images))
+        dispatch(setCurrentProduct(product))
         dispatch(openPhotosPopup())
 
     }

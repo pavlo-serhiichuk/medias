@@ -29,7 +29,7 @@ const MoreInfo = ({closeMoreInfo, openPhotosModal, product}) => {
                     {Array.isArray(image)
                         ? <OtherImgs>
                             {image.map((img, i) => <SmallImgs openPhotosModal={openPhotosModal}
-                                                              images={image} img={img} key={i}/>)}
+                                                              product={product} img={img} key={i}/>)}
                     </OtherImgs>
                         : null}
                 </ImgContaiter>
