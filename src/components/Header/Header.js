@@ -30,11 +30,11 @@ const Header = (props) => {
                                 <Link to={`/profile?=${props.id}`}>{props.username}</Link>
                             </div>
                             <Link onClick={closeFilters} to="/wishes" className={s.wishes}>
-                                <BiHeart/>
+                                <BiHeart size={25}/>
                                 <span className={s.amount}> {wishesAmount > 0 && wishesAmount}</span>
                             </Link>
                             <Link to="/cart" className={s.cart}>
-                                <BsCart4/>
+                                <BsCart4 size={25}/>
                                 <span className={s.amount}> {cartAmount > 0 && cartAmount}</span>
                             </Link>
                         </>
