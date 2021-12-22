@@ -9,8 +9,8 @@ const SHOW_LOADING = 'SHOW_LOADING'
 const HIDE_LOADING = 'HIDE_LOADING'
 
 const initialState = {
-    isLoading: false,
     isAuth: true,
+    isLoading: false,
     username: 'pasha_s',
     profilePhoto: null,
     password: '',
