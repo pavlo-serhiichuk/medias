@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {closeMoreInfoModal} from "../../redux/modalReducer";
+import {closeMoreInfoModal, openPhotosPopup} from "../../redux/modalReducer";
 import {useDispatch, useSelector} from "react-redux";
 import MoreInfo from "./MoreInfo.component";
 
@@ -11,8 +11,10 @@ const MoreInfoContainer = () => {
     const products = useSelector(state => state.products.products)
     const currentProduct = products.filter(book => book.id === currentProductId)
     const closeMoreInfo = () => dispatch(closeMoreInfoModal())
-    const openPhotosPopupModal = () => {
-        dispatch(op)
+    const openPhotosPopupModal = (images) => {
+        dispatch(setProductPhotos(images))
+        dispatch(openPhotosPopup())
+
     }
 
     useEffect(() => {
