@@ -28,7 +28,6 @@ const Sidebar = () => {
                 <Link to="/guitars" onClick={() => toggleCategory('guitars')}><GiGuitar/> Music Instruments</Link>
                 <Link to="/vouchers" onClick={() => toggleCategory('vouchers')}><FaFly/> Vouchers</Link>
             </Categories>
-            {/*{isFiltersOpen && <NativeFiltersContainer />}*/}
             <NativeFiltersContainer/>
         </SidebarWrap>
     );
