@@ -38,7 +38,6 @@ export const authReducer = (state = initialState, action) => {
                 email: action.payload.email
             }
         case SIGH_OUT:
-            console.log(SIGH_OUT)
             return {
                 ...state,
                 isAuth: false,
