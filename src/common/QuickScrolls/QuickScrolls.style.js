@@ -1,7 +1,5 @@
 import styled from "styled-components";
 
-export const iconStyle = {width: '70px', height: '70px'}
-
 export const A = styled.a`
   background-color: #fff;
   border-radius: 5px;
@@ -12,10 +10,10 @@ export const A = styled.a`
   }
 `
 
-export const SGoDown = styled(A)`
+export const GoBottomWrapper = styled(A)`
     top: 0;
 `
 
-export const SGoTop = styled(A)`
+export const GoTopWrapper = styled(A)`
     bottom: 0;
 `

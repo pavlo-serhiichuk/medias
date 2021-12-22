@@ -14,7 +14,7 @@ import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
 import {Routers} from "./AppContainer";
-import {GoDown, GoTop} from "./common/QuickScrolls/QuickScrolls.component";
+import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "./common/QuickScrolls/QuickScrolls.component";
 
 const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
@@ -23,7 +23,8 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
     return (
         <>
             <Wrapper>
-                <GoDown/>
+                <TopAnchor />
+                <GoBottom/>
                 <Header/>
                 <Content>
                     <Sidebar/>
@@ -42,6 +43,7 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
                     </Routers>
                 </Content>
                 <GoTop/>
+                <BottomAnchor />
             </Wrapper>
             <Footer/>
 

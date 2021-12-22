@@ -1,21 +1,19 @@
-import {BsFillCaretDownFill, BsFillCaretUpFill} from "react-icons/all";
-import {iconStyle, SGoDown, SGoTop} from "./QuickScrolls.style";
 import React from "react";
+import {BsFillCaretDownFill, BsFillCaretUpFill} from "react-icons/all";
 
-export const GoDown = () => {
-    return (
-        <>
-            <a name={'top'}></a>
-            <SGoDown href={'#down'}><BsFillCaretDownFill style={iconStyle}/></SGoDown>
-        </>
-    )
-}
+import {GoBottomWrapper, GoTopWrapper} from "./QuickScrolls.style";
 
-export const GoTop = () => {
-    return (
-        <>
-            <a name={'down'}></a>
-            <SGoTop href={"#top"}><BsFillCaretUpFill style={iconStyle}/></SGoTop>
-        </>
-    )
-}
+export const TopAnchor = () => <a name='top-anchor'/>
+export const BottomAnchor = () => <a name='bottom-anchor'/>
+
+export const GoBottom = () => (
+    <GoBottomWrapper href='#bottom-anchor'>
+        <BsFillCaretDownFill size={70}/>
+    </GoBottomWrapper>
+)
+
+export const GoTop = () => (
+    <GoTopWrapper href='#top-anchor'>
+        <BsFillCaretUpFill size={70} />
+    </GoTopWrapper>
+)
