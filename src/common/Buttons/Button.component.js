@@ -5,7 +5,7 @@ const SButton = styled.button`
     display: ${p => p.display};
     justify-content: ${p => p.justify};
     width: ${p => p.width ||  '100%'};
-    background-color: ${p => p.color || p.amount && '#c9cbc9' || 'dodgerblue'};
+    background-color: ${p => p.sighOut && 'indianred' || p.color || p.amount && '#c9cbc9' || 'dodgerblue'};
     border-radius: ${p => p.operator && '0px' || '5px'};
     border: none;
     outline: none;

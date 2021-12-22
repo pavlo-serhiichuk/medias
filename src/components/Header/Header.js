@@ -41,10 +41,7 @@ const Header = (props) => {
                         : null}
                 </div>
                 {props.isAuth
-                    ? <div className={s.signOut}>
-                        <Button signOut color={'indianred'} onClick={props.sighOut}><VscSignOut/></Button>
-                    </div>
-
+                    ? ''
                     : <div className={s.right}>
                         <Button onClick={props.openLoginModal}>Log in</Button>
                         <Button onClick={props.openSignInModal}>Sign in</Button>

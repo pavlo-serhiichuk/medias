@@ -9,8 +9,8 @@ const SHOW_LOADING = 'SHOW_LOADING'
 const HIDE_LOADING = 'HIDE_LOADING'
 
 const initialState = {
-    isLoading: false,
     isAuth: true,
+    isLoading: false,
     username: 'pasha_s',
     profilePhoto: null,
     password: '',
@@ -38,6 +38,7 @@ export const authReducer = (state = initialState, action) => {
                 email: action.payload.email
             }
         case SIGH_OUT:
+            console.log(SIGH_OUT)
             return {
                 ...state,
                 isAuth: false,
