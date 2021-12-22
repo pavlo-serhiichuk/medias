@@ -8,7 +8,7 @@ import {
     ImgContaiter,
     InfoImg,
     OtherImgs,
-    SmallImg, SSmallImg
+    SmallImg, SmallImgs, SSmallImg
 } from "./MoreInfo.style";
 import {BigTitle, MiddleTitle} from "../../common/Titles/Titles";
 
@@ -27,7 +27,7 @@ const MoreInfo = ({closeMoreInfo, product}) => {
                 <ImgContaiter>
                     <InfoImg src={image}/>
                     {Array.isArray(image)
-                        ? <OtherImgs>{image.map(image => <SmallImg image={image}/>)}</OtherImgs>
+                        ? <OtherImgs>{image.map((img, i) => <SmallImgs images={image} img={img} key={i}/>)}</OtherImgs>
                         : null}
                 </ImgContaiter>
                 <div>

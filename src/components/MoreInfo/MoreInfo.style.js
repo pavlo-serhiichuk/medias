@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import {FlexWrap} from "../../common/FlexWrap/FlexWrap";
 import React from "react";
+import {useDispatch} from "react-redux";
+import {setProductPhotos} from "../../redux/productsReducer";
 
 export const Content = styled.div`
     display: grid;
@@ -59,6 +60,8 @@ const SSmallImgCont = styled.div`
   }
 `
 
-export const SmallImg = ({image}) => {
-    return <SSmallImgCont><SSmallImg src={image}/></SSmallImgCont>
+export const SmallImgs = ({images, img}) => {
+    const dispatch = useDispatch()
+
+    return <SSmallImgCont onClick={() => dispatch(setProductPhotos(images))}><SSmallImg src={img}/></SSmallImgCont>
 }

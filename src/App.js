@@ -15,10 +15,11 @@ import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
 import {Routers} from "./AppContainer";
+import PhotosPopup from "./components/PhotosPopup/PhotosPopup.component";
 
 const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
-function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, isFiltersOpen}) {
+function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, isPhotosPopupOpen}) {
     console.log('rendered twice')
     return (
         <>
@@ -44,6 +45,7 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, i
             <Footer/>
 
             {isMoreInfoModalOpen && <MoreInfoContainer/>}
+            {isPhotosPopupOpen && <PhotosPopup/>}
             {isLoginModalOpen && <LoginContainer/>}
             {isSignInModalOpen && <SignInContainer/>}
         </>
