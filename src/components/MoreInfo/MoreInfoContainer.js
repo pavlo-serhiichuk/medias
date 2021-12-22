@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {closeMoreInfoModal, openPhotosPopup} from "../../redux/modalReducer";
 import {useDispatch, useSelector} from "react-redux";
 import MoreInfo from "./MoreInfo.component";
+import {setProductPhotos} from "../../redux/productsReducer";
 
 const MoreInfoContainer = () => {
 
