@@ -1,7 +1,7 @@
 import './index.css';
 import React, {lazy, Suspense} from "react";
 import {Route} from "react-router-dom";
-import {Wrapper, Content, A} from "./App.styles";
+import {Wrapper, Content} from "./App.styles";
 import Header from "./components/Header/Header";
 import CartContainer from "./components/Cart/CartContainer";
 import Footer from "./components/Footer/Footer.component";
@@ -10,24 +10,21 @@ import SignInContainer from "./components/SignIn/SignInContainer";
 import IntroArticlesContainer from "./components/IntroArticles/IntroArticlesContainer";
 import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
 import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
-// import ProductsContainer from "./components/Products/ProductsContainer";
 import Sidebar from "./components/Sidebar/Sidebar.component";
 import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
 import {Routers} from "./AppContainer";
-import {BsFillCaretDownFill, BsFillCaretUpFill} from "react-icons/all";
+import {GoDown, GoTop} from "./common/QuickScrolls/QuickScrolls.component";
 
 const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
-function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, isFiltersOpen}) {
-    console.log('rendered twice')
+function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) {
+
     return (
         <>
             <Wrapper>
-                <a name={'top'}></a>
-                <A href={'#down'}><BsFillCaretDownFill className={'goToDown'}/></A>
+                <GoDown/>
                 <Header/>
-
                 <Content>
                     <Sidebar/>
                     <Routers>
@@ -44,8 +41,7 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, i
                         <Route path="/article" render={() => <FullArticleContainer id={query.get("id")}/>}/>
                     </Routers>
                 </Content>
-                <A name={'down'}></A>
-                <A href={"#top"}><BsFillCaretUpFill className='goToTop'/></A>
+                <GoTop/>
             </Wrapper>
             <Footer/>
 

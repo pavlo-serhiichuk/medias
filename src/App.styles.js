@@ -15,13 +15,8 @@ export const Wrapper = styled.div`
 `
 
 export const Content = styled.div`
-      display: flex;
-      flex-direction: row;  
+    display: flex;
+    flex-direction: row;  
     justify-content: center;    
-      position: relative;
-`
-
-export const A = styled.a`
-    width: 50px;
-    height: 50px;
+    position: relative;
 `
