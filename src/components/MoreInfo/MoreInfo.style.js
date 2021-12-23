@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import React from "react";
 import {useDispatch} from "react-redux";
 import {setCurrentProduct} from "../../redux/productsReducer";
+import {FlexWrap} from "../../common/FlexWrap/FlexWrap";
 
 export const Content = styled.div`
     display: grid;
@@ -18,9 +19,7 @@ export const ImgContaiter = styled.div`
     max-width: 280px;
 `
 
-export const OtherImgs = styled.div`
-    display: flex;
-    flex-direction: row;
+export const OtherImgs = styled(FlexWrap)`
     flex-wrap: wrap;
     gap: 5px;
 `
