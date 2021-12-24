@@ -3,11 +3,12 @@ import Modal from "../../common/ModalWrap/Modal.component";
 import CloseButton from "../../common/Buttons/CloseButton.component";
 import {connect} from "react-redux";
 import {closePhotosPopup} from "../../redux/modalReducer";
-import {ImgContainer, MainImage, MainImg, OtherImgs, SmallImage, Wrapper} from "./PhotosPopup.style";
+import {ImagesContainer, MainImage, OtherImgs, SmallImage, Wrapper} from "./PhotosPopup.style";
 
 const PhotosPopup = (props) => {
     const {product, closePhotosPopup} = props
 
+    debugger
     const {image, title} = product
 
     return (
@@ -15,12 +16,14 @@ const PhotosPopup = (props) => {
             <CloseButton onClick={closePhotosPopup}/>
             <Wrapper>
                 {title}
-                <ImgContainer>
-                    <MainImage src={image}/>
-                    <OtherImgs>
+                <ImagesContainer>
+                    <MainImage image={image}/>
+                    {Array.isArray(image)
+                        ? <OtherImgs>
                         {image.map(img => <SmallImage img={img}/>)}
                     </OtherImgs>
-                </ImgContainer>
+                        : null}
+                </ImagesContainer>
             </Wrapper>
         </Modal>
     );

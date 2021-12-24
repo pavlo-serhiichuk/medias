@@ -6,15 +6,18 @@ import {
     Description,
     Features,
     ImgContaiter,
-    InfoImg,
     OtherImgs,
-    SmallImgs,
+    MainImage,
+    SmallImages,
 } from "./MoreInfo.style";
 import {BigTitle, MiddleTitle} from "../../common/Titles/Titles";
+import Images from "./Images.component";
 
 
-const MoreInfo = ({closeMoreInfo, openPhotosModal, product}) => {
-    const {image, author,
+const MoreInfo = (props) => {
+    const {closeMoreInfo, product} = props
+
+    const {author,
         producer, price,
         features, title,
         conditions, rating,
@@ -24,36 +27,28 @@ const MoreInfo = ({closeMoreInfo, openPhotosModal, product}) => {
         <Modal width={'80%'}>
             <CloseButton onClick={closeMoreInfo}/>
             <Content>
-                <ImgContaiter>
-                    <InfoImg src={image}/>
-                    {Array.isArray(image)
-                        ? <OtherImgs>
-                            {image.map((img, i) => <SmallImgs openPhotosModal={openPhotosModal}
-                                                              product={product} img={img} key={i}/>)}
-                    </OtherImgs>
-                        : null}
-                </ImgContaiter>
+                <Images  {...props}/>
                 <div>
                     <BigTitle>{title}</BigTitle>
-
                     {author
                     && <MiddleTitle producer>{author}</MiddleTitle>}
                     {producer
                     && <MiddleTitle author>{producer}</MiddleTitle>}
 
                     <MiddleTitle price>{price}</MiddleTitle>
-                    {rating && <MiddleTitle>Rating: {rating}</MiddleTitle>}
+                    {rating
+                    && <MiddleTitle>Rating: {rating}</MiddleTitle>}
 
                     {features && <Features>
                         <h5>Features: </h5>
                         {features.map(item => <li>{item}</li>)}
                     </Features>}
 
-                    {conditions && <Features>
+                    {conditions
+                    && <Features>
                         <h5>Conditions: </h5>
                         {conditions.map(item => <li>{item}</li>)}
                     </Features>}
-
 
                     {gunres
                     && <Features>

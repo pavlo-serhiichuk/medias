@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 import React from "react";
-import {useDispatch} from "react-redux";
-import {setCurrentProduct} from "../../redux/productsReducer";
 import {FlexWrap} from "../../common/FlexWrap/FlexWrap";
 
 export const Content = styled.div`
@@ -35,19 +33,22 @@ export const Li = styled.li`
     width: 63px;
 `
 
-export const InfoImg = styled.img`
+export const MainImg = styled.img`
     max-width: 100%;
     width: 268px;
 `
 
-const SSmallImg = styled.img`
+export const MainImgWrap = styled.div`
+`
+
+export const SmallImg = styled.img`
     width: 76px;
     max-height: 65px;
     object-fit: cover;
     object-position: 50% 50%;
 `
 
-const SSmallImgCont = styled.div`
+export const SmallImgWrap = styled.div`
     border:  5px solid #ebede8;
     border-radius: 5px;
     z-index: 1002;
@@ -59,6 +60,3 @@ const SSmallImgCont = styled.div`
   }
 `
 
-export const SmallImgs = ({img, product, openPhotosModal}) => {
-    return <SSmallImgCont><SSmallImg src={img} onClick={() => openPhotosModal(product)}/></SSmallImgCont>
-}

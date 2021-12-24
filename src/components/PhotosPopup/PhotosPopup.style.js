@@ -6,19 +6,19 @@ export const Wrapper = styled.div`
 
 `
 
-export const ImgContainer = styled.div`
+export const ImagesContainer = styled.div`
 
 `
 
-export const MainImg = styled.img`
+const MainImg = styled.img`
     max-width: 100%;
-    width: 90%;
-    margin: 0 auto;
+    width: 400px;
+    margin: 0 auto 25px;
 `
 
-export const MainImgWrap = styled.div`
-    height: 65px;
-   
+const MainImgWrap = styled.div`
+    margin: 0 auto;
+    width: 400px;
 `
 
 export const OtherImgs = styled(FlexWrap)`
@@ -28,14 +28,14 @@ export const OtherImgs = styled(FlexWrap)`
     padding-bottom: 20px;
 `
 
-export const SmallImg = styled.img`
+const SmallImg = styled.img`
     width: 76px;
     max-height: 65px;
     object-fit: cover;
     object-position: 50% 50%;
 `
 
-export const SmallImgWrap = styled.div`
+const SmallImgWrap = styled.div`
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -54,9 +54,9 @@ export const SmallImage = ({img}) => {
     </SmallImgWrap>
 }
 
-export const MainImage = ({img}) => {
+export const MainImage = ({image}) => {
     return <MainImgWrap>
-        <MainImg src={img}/>
+        <MainImg src={image}/>
     </MainImgWrap>
 }
 
