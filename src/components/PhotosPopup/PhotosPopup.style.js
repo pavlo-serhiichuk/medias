@@ -10,13 +10,13 @@ export const ImagesContainer = styled.div`
 
 `
 
-const MainImg = styled.img`
+export const MainImg = styled.img`
     max-width: 100%;
     width: 400px;
     margin: 0 auto 25px;
 `
 
-const MainImgWrap = styled.div`
+export const MainImgWrap = styled.div`
     margin: 0 auto;
     width: 400px;
 `
@@ -28,14 +28,14 @@ export const OtherImgs = styled(FlexWrap)`
     padding-bottom: 20px;
 `
 
-const SmallImg = styled.img`
+export const SmallImg = styled.img`
     width: 76px;
     max-height: 65px;
     object-fit: cover;
     object-position: 50% 50%;
 `
 
-const SmallImgWrap = styled.div`
+export const SmallImgWrap = styled.div`
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -47,16 +47,3 @@ const SmallImgWrap = styled.div`
        border: 5px solid #72ae4a;
     }
 `
-
-export const SmallImage = ({img}) => {
-    return <SmallImgWrap>
-        <SmallImg src={img}/>
-    </SmallImgWrap>
-}
-
-export const MainImage = ({image}) => {
-    return <MainImgWrap>
-        <MainImg src={image}/>
-    </MainImgWrap>
-}
-

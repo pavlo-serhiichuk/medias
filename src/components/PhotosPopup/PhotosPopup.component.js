@@ -3,12 +3,11 @@ import Modal from "../../common/ModalWrap/Modal.component";
 import CloseButton from "../../common/Buttons/CloseButton.component";
 import {connect} from "react-redux";
 import {closePhotosPopup} from "../../redux/modalReducer";
-import {ImagesContainer, MainImage, OtherImgs, SmallImage, Wrapper} from "./PhotosPopup.style";
+import {ImagesContainer, OtherImgs, Wrapper} from "./PhotosPopup.style";
+import {MainImage, SmallImage} from "./Images.component";
 
 const PhotosPopup = (props) => {
     const {product, closePhotosPopup} = props
-
-    debugger
     const {image, title} = product
 
     return (

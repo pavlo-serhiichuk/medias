@@ -7,8 +7,8 @@ const initialState = {
 }
 
 export const imagesReducer = (state = initialState, action) => {
-    switch (action.type) {
 
+    switch (action.type) {
         case SET_CURRENT_IMAGE_ID:
             return {...state, currentImgId: action.payload}
         case SET_IMAGES:
@@ -18,5 +18,5 @@ export const imagesReducer = (state = initialState, action) => {
     }
 }
 
-export const setCurrentImage = (image) => ({type: SET_CURRENT_IMAGE_ID, payload: image})
+export const setCurrentImageId = (image) => ({type: SET_CURRENT_IMAGE_ID, payload: image})
 export const setImages = (image) => ({type: SET_IMAGES, payload: image})
