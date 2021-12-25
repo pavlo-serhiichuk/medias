@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
 import {FilterTitle, FilterWrap, Label, Wrapper} from "./Filters.style";
-import {setFilterPrice} from "../../redux/filterReducer";
+import {setFilterPrice} from "../../redux/sidebarReducer";
 
 
 

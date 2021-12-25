@@ -1,5 +1,5 @@
 import {hideLoading, showLoading} from "../redux/authReducer";
-import {deleteFilters, openFilters} from "../redux/filterReducer";
+import {deleteFilters} from "../redux/sidebarReducer";
 import {setFilteredProducts} from "../redux/productsReducer";
 
 const serverURL = 'http://localhost:3001/'

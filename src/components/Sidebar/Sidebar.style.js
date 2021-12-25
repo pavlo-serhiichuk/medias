@@ -33,13 +33,22 @@ export const Title = styled.div`
 export const Button = styled.div`
     position: absolute;
     top: 0;
-    right: 6px;
-    margin-top: 5px;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 34px;
     text-align: center;
     cursor: pointer;
+    text-align: center;
+    cursor: pointer;
+    z-index: 10000;
     &:hover {
         background-color: #D3D3D3;
     }
+`
+
+export const RightBtn = styled(Button)`
+  right: 6px;
+`
+
+export const LeftBtn = styled(Button)`
+  left: 6px;
 `

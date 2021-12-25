@@ -15,10 +15,14 @@ import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
 import {Routers} from "./AppContainer";
 import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "./common/QuickScrolls/QuickScrolls.component";
+import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
+import {LeftBtn} from "./components/Sidebar/Sidebar.style";
 
 const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
-function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) {
+function App(props) {
+    const {query, isSignInModalOpen, isSidebarOpen, open,
+        isLoginModalOpen, isMoreInfoModalOpen} = props
 
     return (
         <>
@@ -27,7 +31,7 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen}) 
                 <GoBottom/>
                 <Header/>
                 <Content>
-                    <Sidebar/>
+                    {isSidebarOpen ? <Sidebar/>: <LeftBtn onClick={() => open()}><Hamburger size={25}/></LeftBtn>}
                     <Routers>
                         <Suspense fallback={'Loading...'}>
                             <Route path="/books" render={() => <ProductsContainer/>}/>
