@@ -11,7 +11,7 @@ import {
     SmallImages,
 } from "./MoreInfo.style";
 import {BigTitle, MiddleTitle} from "../../common/Titles/Titles";
-import MoreInfoImages from "./MoreInfoImages.component";
+import MoreInfoImages from "./MoreInfoImages/MoreInfoImages.component";
 
 
 const MoreInfo = (props) => {

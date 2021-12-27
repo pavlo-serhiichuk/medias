@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {closeMoreInfoModal, openPhotosPopup} from "../../redux/modalReducer";
+import {closeMoreInfoModal, closePhotosPopup, openPhotosPopup} from "../../redux/modalReducer";
 import {useDispatch, useSelector} from "react-redux";
 import MoreInfo from "./MoreInfo.component";
 import {setCurrentProduct} from "../../redux/productsReducer";
@@ -12,9 +12,11 @@ const MoreInfoContainer = () => {
 
     const products = useSelector(state => state.products.products)
     const currentProduct = products.filter(book => book.id === currentProductId)
-    const closeMoreInfo = () => dispatch(closeMoreInfoModal())
+    let isPhotosPopupOpen = useSelector(state => state.modal.isPhotosPopupOpen)
     let currentImgId = useSelector(state => state.images.currentImgId)
     let images = useSelector(state => state.images.images)
+
+    const closeMoreInfo = () => dispatch(closeMoreInfoModal())
 
     const openPhotosModal = (product) => {
         dispatch(setCurrentProduct(product))
@@ -24,12 +26,17 @@ const MoreInfoContainer = () => {
     const setImageId = (imageId) => dispatch(setCurrentImageId(imageId))
 
     useEffect(() => {
+
+
+
         document.querySelector('[data-close]')
             .addEventListener('click', event => {
-                return event.target.dataset.close ? dispatch(closeMoreInfoModal()) : null
+                return event.target.dataset.close && !isPhotosPopupOpen
+                    ? dispatch(closeMoreInfoModal())
+                    : dispatch(closePhotosPopup())
             });
 
-       dispatch(setImages(currentProduct[0].image))
+        dispatch(setImages(currentProduct[0].image))
     }, [])
 
     return (

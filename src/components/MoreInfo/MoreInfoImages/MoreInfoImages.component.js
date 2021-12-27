@@ -1,31 +1,31 @@
 import React from 'react';
-import {ImgContaiter, MainImg, MainImgWrap, OtherImgs, SmallImg, SmallImgWrap} from "./MoreInfo.style";
+import {ImgContaiter, MainImg, MainImgWrap, OtherImgs, SmallImg, SmallImgWrap} from "../MoreInfo.style";
 
 const SmallImages = ({image, product, openPhotosModal, setImageId, imageId}) => {
-    const openAndSet = (product, imageId) => {
+
+    const openPhotos = (product, imageId) => {
         openPhotosModal(product)
         setImageId(imageId)
     }
 
     return <SmallImgWrap>
-        <SmallImg src={image} onClick={() => openAndSet(product, imageId)}/>
+        <SmallImg src={image} onClick={() => openPhotos(product, imageId)}/>
     </SmallImgWrap>
 }
 
 const MainImage = ({image, product, openPhotosModal, setImageId}) => {
 
-    const setAndOpen = (product, imageId) => {
+    const openPhotos = (product, imageId) => {
         openPhotosModal(product)
         setImageId(imageId)
     }
 
     return <MainImgWrap>
-        <MainImg src={image} onClick={() => setAndOpen(product, 0)}/>
+        <MainImg src={image} onClick={() => openPhotos(product, 0)}/>
     </MainImgWrap>
 }
 
 const MoreInfoImages = ({openPhotosModal, product, setImageId}) => {
-    debugger
     return (
             <ImgContaiter>
                 <MainImage image={product.image}
