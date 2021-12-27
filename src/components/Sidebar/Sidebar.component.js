@@ -1,20 +1,22 @@
 import React from 'react';
-import {SidebarWrap, Button, Title, Categories, RightBtn} from "./Sidebar.style";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {changeCategory} from "../../redux/productsReducer";
-import {GiGuitar} from "react-icons/gi";
-import {ImBooks} from "react-icons/im";
+import {SidebarWrap, Categories, RightBtn, LeftBtn} from "./Sidebar.style";
+
 import {FaFly} from "react-icons/fa";
+import {ImBooks} from "react-icons/im";
+import {GiGuitar} from "react-icons/gi";
 import {GiHamburgerMenu as Hamburger} from "react-icons/all";
-import NativeFiltersContainer from "../NativeFilters/NativeFiltersContainer";
+
 import {SmallTitle} from "../../common/Titles/Titles";
-import {closeSidebar} from "../../redux/sidebarReducer";
+
+import {changeCategory} from "../../redux/productsReducer";
+import NativeFiltersContainer from "../NativeFilters/NativeFiltersContainer";
+import {closeSidebar, openSidebar} from "../../redux/sidebarReducer";
 
 const Sidebar = () => {
     const dispatch = useDispatch()
     const category = useSelector(state => state.products.category)
-    const isSidebarOpen = useSelector(state => state.products.isSidebarOpen)
 
     const toggleCategory = (nextCategory) => {
         category !== nextCategory && dispatch(changeCategory(nextCategory))

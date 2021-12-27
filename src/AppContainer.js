@@ -1,9 +1,9 @@
-import './index.css';
 import React from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {useLocation} from "react-router-dom";
-import App from "./App";
 import styled from "styled-components";
+import {useLocation} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import './index.css';
+import App from "./App";
 import {openSidebar} from "./redux/sidebarReducer";
 
 function useQuery() {
@@ -17,14 +17,17 @@ export const Routers = styled.div`
 `
 
 function AppContainer() {
+
     const dispatch = useDispatch()
     let query = useQuery();
+
     const isSignInModalOpen = useSelector(state => state.modal.isSighInModalOpen)
     const isLoginModalOpen = useSelector(state => state.modal.isLoginModalOpen)
     const isMoreInfoModalOpen = useSelector(state => state.modal.isMoreInfoModalOpen)
     let isSidebarOpen = useSelector(state => state.sidebar.isSidebarOpen)
 
     const open = () => dispatch(openSidebar())
+
     return (
         <>
             <App query={query}
