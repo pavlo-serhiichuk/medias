@@ -11,7 +11,7 @@ import {
     SmallImages,
 } from "./MoreInfo.style";
 import {BigTitle, MiddleTitle} from "../../common/Titles/Titles";
-import Images from "./Images.component";
+import MoreInfoImages from "./MoreInfoImages.component";
 
 
 const MoreInfo = (props) => {
@@ -27,7 +27,7 @@ const MoreInfo = (props) => {
         <Modal width={'80%'}>
             <CloseButton onClick={closeMoreInfo}/>
             <Content>
-                <Images  {...props}/>
+                <MoreInfoImages  {...props}/>
                 <div>
                     <BigTitle>{title}</BigTitle>
                     {author

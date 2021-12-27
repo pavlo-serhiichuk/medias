@@ -1,14 +1,21 @@
 import React from 'react';
 import Modal from "../../common/ModalWrap/Modal.component";
 import CloseButton from "../../common/Buttons/CloseButton.component";
-import {connect} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import {closePhotosPopup} from "../../redux/modalReducer";
 import {ImagesContainer, OtherImgs, Wrapper} from "./PhotosPopup.style";
 import {MainImage, SmallImage} from "./Images.component";
+import {setCurrentImageId} from "../../redux/imagesReducer";
 
-const PhotosPopup = (props) => {
-    const {product, closePhotosPopup} = props
+const PhotosPopup = ({product, closePhotosPopup}) => {
     const {image, title} = product
+
+    const dispatch = useDispatch()
+    const images = useSelector(state => state.images.images)
+    const currentImgId = useSelector(state => state.images.currentImgId)
+    const currentImage = images.filter(image => image.id === currentImgId)
+
+    const setImageId = imageId => dispatch(setCurrentImageId(imageId))
 
     return (
         <Modal width={'55%'}>
@@ -16,10 +23,10 @@ const PhotosPopup = (props) => {
             <Wrapper>
                 {title}
                 <ImagesContainer>
-                    <MainImage image={image}/>
+                    <MainImage image={currentImage[0].image}/>
                     {Array.isArray(image)
                         ? <OtherImgs>
-                        {image.map(img => <SmallImage img={img}/>)}
+                        {images.map(image => <SmallImage setImageId={setImageId} imageId={image.id} img={image.image} key={image.id}/>)}
                     </OtherImgs>
                         : null}
                 </ImagesContainer>
