@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {Avatar, Content, History, UserInfo, Wrapper} from "./Profile.style";
 import {useDispatch, useSelector} from "react-redux";
-import {closeFilters} from "../../redux/filterReducer";
+import {closeSidebar} from "../../redux/sidebarReducer";
 import {VscSignOut} from "react-icons/all";
 import Button from "../../common/Buttons/Button.component";
 import {sighOut} from "../../redux/authReducer";
@@ -15,7 +15,7 @@ const Profile = () => {
 
     useEffect(() => {
         document.title = 'MyProfile| Medias'
-        dispatch(closeFilters())
+        dispatch(closeSidebar())
     }, [])
 
     if(!isAuth) return <Redirect to={'/guitars'}/>

@@ -8,7 +8,7 @@ import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
 import {BsCart4} from "react-icons/bs";
 import {BiHeart, VscSignOut} from "react-icons/all";
 import {SmallProfilePhoto} from "../../common/Imgs/Imgs";
-import {closeFilters} from "../../redux/filterReducer";
+import {closeSidebar} from "../../redux/sidebarReducer";
 
 const Header = (props) => {
     const wishesAmount = props.wishes.length
@@ -20,7 +20,7 @@ const Header = (props) => {
             <div className={s.headerElements}>
                 <div className={s.left}>
                     <h1 className={s.article} >
-                        <Link to="/articles" onClick={closeFilters}>medias</Link>
+                        <Link to="/articles" onClick={closeSidebar}>medias</Link>
                     </h1>
                     {props.username
                         ?
@@ -29,7 +29,7 @@ const Header = (props) => {
                                  <SmallProfilePhoto profilePhoto={props.profilePhoto || photoURL}/>
                                 <Link to={`/profile?=${props.id}`}>{props.username}</Link>
                             </div>
-                            <Link onClick={closeFilters} to="/wishes" className={s.wishes}>
+                            <Link onClick={closeSidebar} to="/wishes" className={s.wishes}>
                                 <BiHeart size={25}/>
                                 <span className={s.amount}> {wishesAmount > 0 && wishesAmount}</span>
                             </Link>

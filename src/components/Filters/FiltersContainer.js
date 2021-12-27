@@ -1,18 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import Filters from "./Filters.component";
 import {useDispatch, useSelector} from "react-redux";
-import {setFilterPopularity, setFilterPrice, setFilterTime} from "../../redux/filterReducer";
+import {setFilterPopularity, setFilterPrice, setFilterTime} from "../../redux/sidebarReducer";
 
 const FiltersContainer = (props) => {
     const dispatch = useDispatch()
-    const isFiltersOpen = useSelector(state => state.filters.isFiltersOpen)
-    const price = useSelector(state => state.filters.price)
-    const liked = useSelector(state => state.filters.liked)
-    const time = useSelector(state => state.filters.time)
+    const isSidebarOpen = useSelector(state => state.sidebar.isSidebarOpen)
+    const price = useSelector(state => state.sidebar.price)
+    const liked = useSelector(state => state.sidebar.liked)
+    const time = useSelector(state => state.sidebar.time)
 
 
     const setPrice = (e) => {
-        console.log("Price: ", e.target.value)
         dispatch(setFilterPrice(e.target.value))
     }
 
@@ -25,13 +24,12 @@ const FiltersContainer = (props) => {
     }
 
     useEffect(() => {
-        console.log('useEffect')
         document.title = 'Filtered| Medias'
     }, [])
 
-    if (!isFiltersOpen) {
+    if (!isSidebarOpen) {
         console.log('inside if')
-        console.log(isFiltersOpen)
+        console.log(isSidebarOpen)
         return null
     }
 
