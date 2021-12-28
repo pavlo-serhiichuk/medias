@@ -5,6 +5,8 @@ import {useDispatch, useSelector} from "react-redux";
 import './index.css';
 import App from "./App";
 import {openSidebar} from "./redux/sidebarReducer";
+import {createPortal} from "react-dom";
+import Portal from "./components/Portal/Portal.component";
 
 function useQuery() {
     const {search} = useLocation();
@@ -36,6 +38,7 @@ function AppContainer() {
                  isSignInModalOpen={isSignInModalOpen}
                  isMoreInfoModalOpen={isMoreInfoModalOpen}
                  isLoginModalOpen={isLoginModalOpen}/>
+            {createPortal(<Portal />, document.getElementById('portal'))}
         </>
     );
 }
