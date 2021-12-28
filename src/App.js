@@ -1,32 +1,42 @@
-import './index.css';
 import React, {lazy, Suspense} from "react";
 import {Route} from "react-router-dom";
+import './index.css';
 import {Wrapper, Content} from "./App.styles";
-import Header from "./components/Header/Header";
-import CartContainer from "./components/Cart/CartContainer";
+
 import Footer from "./components/Footer/Footer.component";
+import Header from "./components/Header/Header";
+import Profile from "./components/Profile/Profile.component";
+import Sidebar from "./components/Sidebar/Sidebar.component";
+import CartContainer from "./components/Cart/CartContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 import SignInContainer from "./components/SignIn/SignInContainer";
-import IntroArticlesContainer from "./components/IntroArticles/IntroArticlesContainer";
-import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
-import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
-// import ProductsContainer from "./components/Products/ProductsContainer";
-import Sidebar from "./components/Sidebar/Sidebar.component";
-import Profile from "./components/Profile/Profile.component";
 import WishesContainer from "./components/Wishes/WishesContainer";
+import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
+import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
+import IntroArticlesContainer from "./components/IntroArticles/IntroArticlesContainer";
+import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "./common/QuickScrolls/QuickScrolls.component";
+
 import {Routers} from "./AppContainer";
+import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
+import {LeftBtn} from "./components/Sidebar/Sidebar.style";
 import PhotosPopup from "./components/PhotosPopup/PhotosPopup.component";
 
 const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
-function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, isPhotosPopupOpen}) {
-    console.log('rendered twice')
+function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, open, isSidebarOpen, isPhotosPopupOpen}) {
+
     return (
         <>
             <Wrapper>
+                <TopAnchor/>
+                <GoBottom/>
                 <Header/>
                 <Content>
-                    <Sidebar/>
+                    {
+                        isSidebarOpen
+                            ? <Sidebar/>
+                            : <LeftBtn onClick={() => open()}><Hamburger size={25}/></LeftBtn>
+                    }
                     <Routers>
                         <Suspense fallback={'Loading...'}>
                             <Route path="/books" render={() => <ProductsContainer/>}/>
@@ -41,6 +51,8 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, i
                         <Route path="/article" render={() => <FullArticleContainer id={query.get("id")}/>}/>
                     </Routers>
                 </Content>
+                <GoTop/>
+                <BottomAnchor/>
             </Wrapper>
             <Footer/>
 

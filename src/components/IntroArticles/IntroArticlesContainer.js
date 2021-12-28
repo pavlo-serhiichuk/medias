@@ -3,7 +3,7 @@ import {Wrapper} from './IntroArticles.styles'
 import IntroArticles from "./IntroArticles.component";
 import {useSelector, useDispatch} from "react-redux";
 import {getAsyncArticles} from "../../redux/articlesReducer";
-import {closeFilters} from "../../redux/filterReducer";
+import {closeSidebar} from "../../redux/sidebarReducer";
 
 const IntroArticlesContainer = () => {
 
@@ -11,12 +11,10 @@ const IntroArticlesContainer = () => {
     const articles = useSelector(state => state.articles.articles)
     const isLoading = useSelector(state => state.auth.isLoading)
 
-    // dispatch(closeFilters())
-
     useEffect(() => {
         document.title = 'Articles| Medias'
         dispatch(getAsyncArticles())
-        dispatch(closeFilters())
+        dispatch(closeSidebar())
     }, [])
 
     if (isLoading) return <div>Loading...</div>

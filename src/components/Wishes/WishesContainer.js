@@ -2,14 +2,14 @@ import React, {useEffect} from 'react';
 import {Wrapper} from "../Cart/Cart.styles";
 import {BiHeart} from "react-icons/all";
 import {useDispatch, useSelector} from "react-redux";
-import {closeFilters} from "../../redux/filterReducer";
+import {closeSidebar} from "../../redux/sidebarReducer";
 
 const WishesContainer = () => {
     const dispatch = useDispatch()
     let wishes = useSelector(state => state.wishes.wishes)
 
     useEffect(() => {
-        dispatch(closeFilters())
+        dispatch(closeSidebar())
         document.title = 'Wishes| Medias'
     }, [])
 

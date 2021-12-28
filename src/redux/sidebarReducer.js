@@ -1,10 +1,7 @@
-import {filterRequest, filtersAPI, productsAPI as filterAPI, productsAPI, request} from "../api/api";
-import {getCountries, getFilteredProducts, setFilteredProducts} from "./productsReducer";
-import {hideLoading, showLoading} from "./authReducer";
-import {useSelector} from "react-redux";
+import {filterRequest, productsAPI} from "../api/api";
 
-const OPEN_FILTERS = 'OPEN_FILTERS'
-const CLOSE_FILTERS = 'CLOSE_FILTERS'
+const OPEN_SIDEBAR = 'OPEN_SIDEBAR'
+const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR'
 
 const SET_PRICE = 'SET_PRICE'
 const SET_POPULARITY = 'SET_POPULARITY'
@@ -14,7 +11,7 @@ const SET_FILTER_NAME = 'SET_FILTER_NAME'
 const SET_FILTER_PARAM = 'SET_FILTER_PARAM'
 
 const initialState = {
-    isFiltersOpen: false,
+    isSidebarOpen: false,
     filterName: '',
     filterParam: '',
     price: "....",
@@ -22,12 +19,12 @@ const initialState = {
     liked: "....",
 }
 
-export const filtersReducer = (state = initialState, action) => {
+export const sidebarReducer = (state = initialState, action) => {
     switch (action.type) {
-        case OPEN_FILTERS:
-            return {...state, isFiltersOpen: true}
-        case CLOSE_FILTERS:
-            return {...state, isFiltersOpen: false}
+        case OPEN_SIDEBAR:
+            return {...state, isSidebarOpen: true}
+        case CLOSE_SIDEBAR:
+            return {...state, isSidebarOpen: false}
 
         case SET_PRICE:
             return {...state, price: action.payload, liked: "....", time: "...."}
@@ -46,8 +43,8 @@ export const filtersReducer = (state = initialState, action) => {
     }
 }
 
-export const openFilters = () => ({type: OPEN_FILTERS})
-export const closeFilters = () => ({type: CLOSE_FILTERS})
+export const openSidebar = () => ({type: OPEN_SIDEBAR})
+export const closeSidebar = () => ({type: CLOSE_SIDEBAR})
 
 export const setFilterPrice = (price) => ({type: SET_PRICE, payload: price})
 export const deleteFilters = () => ({type: DELETE_FILTERS})

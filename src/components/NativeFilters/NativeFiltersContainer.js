@@ -7,17 +7,17 @@ import {
     setFilterPopularity,
     setFilterPrice,
     setFilterTime
-} from "../../redux/filterReducer";
+} from "../../redux/sidebarReducer";
 
 const NativeFiltersContainer = () => {
     const dispatch = useDispatch()
 
-    let filterPrice = useSelector(state => state.filters.price)
-    let filterPopularity = useSelector(state => state.filters.liked)
-    let filterTime = useSelector(state => state.filters.time)
+    let filterPrice = useSelector(state => state.sidebar.price)
+    let filterPopularity = useSelector(state => state.sidebar.liked)
+    let filterTime = useSelector(state => state.sidebar.time)
 
-    let filterName = useSelector(state => state.filters.filterName)
-    let filterParam = useSelector(state => state.filters.filterParam)
+    let filterName = useSelector(state => state.sidebar.filterName)
+    let filterParam = useSelector(state => state.sidebar.filterParam)
     let category = useSelector(state => state.products.category)
 
     let [price, setPrice] = useState(filterPrice)

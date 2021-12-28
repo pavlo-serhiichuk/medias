@@ -10,14 +10,14 @@ import {
 } from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 import Countries from "../Countries/Countries.component";
-import {closeFilters, openFilters} from "../../redux/filterReducer";
+import {closeSidebar, openSidebar} from "../../redux/sidebarReducer";
 
 class ProductsContainer extends React.PureComponent {
 
     tabTitle = title => document.title = `${title}| Medias`
 
         componentDidMount() {
-        this.props.openFilters()
+        this.props.openSidebar()
 
         switch (this.props.category) {
             case 'books':
@@ -53,7 +53,6 @@ class ProductsContainer extends React.PureComponent {
                 && <Countries countries={this.props.countries}/>}
                 {this.props.category === 'filteredVouchers'
                 && <h5>{countryName[0].title} vouchers:</h5>}
-                {/*{this.props.category === 'filteredVouchers' && this.props.closeFilters()}*/}
 
                 <Products products={this.props.products}
                           isAuth={this.props.isAuth}
@@ -77,6 +76,6 @@ const mstp = state => ({
 
 export default connect(mstp, {
     getAsyncGuitars, getAsyncBooks,
-    getAsyncVouchers, getAsyncCountries, getAsyncFilteredVouchers, openFilters, closeFilters,
+    getAsyncVouchers, getAsyncCountries, getAsyncFilteredVouchers, openSidebar, closeSidebar,
     addToCart
 })(ProductsContainer);
