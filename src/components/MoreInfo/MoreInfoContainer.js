@@ -14,11 +14,10 @@ const MoreInfoContainer = () => {
     const currentProduct = products.filter(book => book.id === currentProductId)
     let isPhotosPopupOpen = useSelector(state => state.modal.isPhotosPopupOpen)
     let currentImgId = useSelector(state => state.images.currentImgId)
-    let images = useSelector(state => state.images.images)
 
     const closeMoreInfo = () => dispatch(closeMoreInfoModal())
 
-    const openPhotosModal = (product) => {
+    const openPhotosModal = product => {
         dispatch(setCurrentProduct(product))
         dispatch(openPhotosPopup())
     }
@@ -43,7 +42,6 @@ const MoreInfoContainer = () => {
         <MoreInfo currentImgId={currentImgId}
                   openPhotosModal={openPhotosModal}
                   closeMoreInfo={closeMoreInfo}
-                  images={images}
                   setImageId={setImageId}
                   product={currentProduct[0]}/>
     );

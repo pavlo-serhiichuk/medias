@@ -14,7 +14,7 @@ import {closeFilters, openFilters} from "../../redux/filterReducer";
 
 class ProductsContainer extends React.PureComponent {
 
-    tabTitle = (title) => document.title = `${title}| Medias`
+    tabTitle = title => document.title = `${title}| Medias`
 
         componentDidMount() {
         this.props.openFilters()

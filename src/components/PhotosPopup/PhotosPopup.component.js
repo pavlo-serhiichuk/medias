@@ -1,11 +1,12 @@
 import React from 'react';
+import {connect, useDispatch, useSelector} from "react-redux";
+import {ImagesContainer, OtherImgs, Wrapper} from "./PhotosPopup.style";
+
+import {closePhotosPopup} from "../../redux/modalReducer";
+import {setCurrentImageId} from "../../redux/imagesReducer";
 import Modal from "../../common/ModalWrap/Modal.component";
 import CloseButton from "../../common/Buttons/CloseButton.component";
-import {connect, useDispatch, useSelector} from "react-redux";
-import {closePhotosPopup} from "../../redux/modalReducer";
-import {ImagesContainer, OtherImgs, Wrapper} from "./PhotosPopup.style";
 import {MainImage, SmallImage} from "./Images.component";
-import {setCurrentImageId} from "../../redux/imagesReducer";
 
 const PhotosPopup = ({product, closePhotosPopup}) => {
     const {image, title} = product

@@ -28,18 +28,25 @@ const MainImage = ({image, product, openPhotosModal, setImageId}) => {
 const MoreInfoImages = ({openPhotosModal, product, setImageId}) => {
     return (
             <ImgContaiter>
-                <MainImage image={product.image}
-                           setImageId={setImageId}
-                           openPhotosModal={openPhotosModal}
-                           product={product}/>
+                <MainImage
+                    image={product.image}
+                    setImageId={setImageId}
+                    openPhotosModal={openPhotosModal}
+                    product={product}
+                />
 
                 {Array.isArray(product.image)
                     ? <OtherImgs>
-                        {product.image.map((image, i) => <SmallImages setImageId={setImageId}
-                                                                      openPhotosModal={openPhotosModal}
-                                                                      imageId={i}
-                                                                      product={product}
-                                                                      image={image} key={i}/>)}
+                        {product.image.map((image, i) =>
+                            <SmallImages
+                                setImageId={setImageId}
+                                openPhotosModal={openPhotosModal}
+                                imageId={i}
+                                product={product}
+                                image={image}
+                                key={i}
+                            />
+                        )}
                     </OtherImgs>
                     : null}
             </ImgContaiter>
