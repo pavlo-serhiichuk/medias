@@ -18,7 +18,6 @@ const Product = ({isAuth, product, addToCart}) => {
 
     return (
         <ProductContent image={product.image}>
-            {/*<Img src={image={product.image}}/> */}
             <Title  onClick={() => dispatch(openMoreInfoModal(product.id))}>
                 {product.title}
             </Title>

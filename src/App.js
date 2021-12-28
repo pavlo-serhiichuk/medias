@@ -19,10 +19,11 @@ import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "./common/QuickScrolls/Qu
 import {Routers} from "./AppContainer";
 import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
 import {LeftBtn} from "./components/Sidebar/Sidebar.style";
+import PhotosPopup from "./components/PhotosPopup/PhotosPopup.component";
 
 const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
-function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, open, isSidebarOpen}) {
+function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, open, isSidebarOpen, isPhotosPopupOpen}) {
 
     return (
         <>
@@ -56,6 +57,7 @@ function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, o
             <Footer/>
 
             {isMoreInfoModalOpen && <MoreInfoContainer/>}
+            {isPhotosPopupOpen && <PhotosPopup/>}
             {isLoginModalOpen && <LoginContainer/>}
             {isSignInModalOpen && <SignInContainer/>}
         </>

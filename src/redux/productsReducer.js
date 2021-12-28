@@ -1,18 +1,20 @@
 import {productsAPI, request} from "../api/api";
 import {hideLoading, showLoading} from "./authReducer";
 
-const GET_BOOKS = 'GET_BOOKS'
-const GET_GUITARS = 'GET_GUITARS'
-const GET_VOUCHERS = 'GET_VOUCHERS'
-const GET_FILTERED_VOUCHERS = 'GET_FILTERED_VOUCHERS'
-const GET_COUNTRIES = 'GET_COUNTRIES'
-const GET_FILTERED_PRODUCTS = 'GET_FILTERED_PRODUCTS'
+const SET_BOOKS = 'SET_BOOKS'
+const SET_GUITARS = 'SET_GUITARS'
+const SET_VOUCHERS = 'SET_VOUCHERS'
+const SET_FILTERED_VOUCHERS = 'SET_FILTERED_VOUCHERS'
+const SET_COUNTRIES = 'SET_COUNTRIES'
+const SET_FILTERED_PRODUCTS = 'SET_FILTERED_PRODUCTS'
+const SET_CURRENT_PRODUCT = 'SET_CURRENT_PRODUCT'
 const CHANGE_COUNTRY_ID = 'CHANGE_COUNTRY_ID'
 const CHANGE_CATEGORY = 'CHANGE_CATEGORY'
 
 const initialState = {
     category: '',
     products: [],
+    currentProduct: null,
     filteredProducts: [],
     countries: [],
     countryID: null,
@@ -24,17 +26,15 @@ export const productsReducer = (state = initialState, action) => {
     const products = {...state, products: action.payload}
 
     switch (action.type) {
-        case GET_BOOKS:
+        case SET_BOOKS:
+        case SET_GUITARS:
+        case SET_VOUCHERS:
+        case SET_FILTERED_VOUCHERS:
+        case SET_FILTERED_PRODUCTS:
             return products
-        case GET_GUITARS:
-            return products
-        case GET_VOUCHERS:
-            return products
-        case GET_FILTERED_VOUCHERS:
-            return products
-        case GET_FILTERED_PRODUCTS:
-            return products
-        case GET_COUNTRIES:
+        case SET_CURRENT_PRODUCT:
+                return {...state, currentProduct: action.payload}
+        case SET_COUNTRIES:
             return {...state, countries: action.payload}
         case CHANGE_COUNTRY_ID:
             console.log(CHANGE_COUNTRY_ID)
@@ -47,27 +47,28 @@ export const productsReducer = (state = initialState, action) => {
     }
 }
 
-const getBooks = books => ({type: GET_BOOKS, payload: books})
-const getGuitars = guitars => ({type: GET_GUITARS, payload: guitars})
-const getVouchers = vouchers => ({type: GET_VOUCHERS, payload: vouchers})
-const getCountryFilteredVouchers = vouchers => ({type: GET_FILTERED_VOUCHERS, payload: vouchers})
-export const setFilteredProducts = filteredProducts => ({type: GET_FILTERED_PRODUCTS, payload: filteredProducts})
+const setBooks = books => ({type: SET_BOOKS, payload: books})
+const setGuitars = guitars => ({type: SET_GUITARS, payload: guitars})
+const setVouchers = vouchers => ({type: SET_VOUCHERS, payload: vouchers})
+const getCountryFilteredVouchers = vouchers => ({type: SET_FILTERED_VOUCHERS, payload: vouchers})
+export const setFilteredProducts = filteredProducts => ({type: SET_FILTERED_PRODUCTS, payload: filteredProducts})
+export const setCurrentProduct = productPhotos => ({type: SET_CURRENT_PRODUCT, payload: productPhotos})
 
+const setCountries = (countries) => ({type: SET_COUNTRIES, payload: countries})
 export const changeCountryID = countryID => ({type: CHANGE_COUNTRY_ID, payload: countryID})
-export const getCountries = (countries) => ({type: GET_COUNTRIES, payload: countries})
 export const changeCategory = category => ({type: CHANGE_CATEGORY, payload: category})
 
 export const getAsyncBooks = () => async dispatch => {
     dispatch(showLoading())
     const response = await fetch('http://localhost:3001/books')
     const json = await response.json()
-    dispatch(getBooks(json))
+    dispatch(setBooks(json))
     dispatch(hideLoading())
 }
 
-export const getAsyncGuitars = () => request(productsAPI.getGuitars, getGuitars)
-export const getAsyncVouchers = () => request(productsAPI.getVouchers, getVouchers)
-export const getAsyncCountries = () => request(productsAPI.getCountries, getCountries)
+export const getAsyncGuitars = () => request(productsAPI.getGuitars, setGuitars)
+export const getAsyncVouchers = () => request(productsAPI.getVouchers, setVouchers)
+export const getAsyncCountries = () => request(productsAPI.getCountries, setCountries)
 
 export const getAsyncFilteredVouchers = (countryID) => request(() => productsAPI.getCountryFilteredVouchers(countryID), getCountryFilteredVouchers)
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import React from "react";
 import {FlexWrap} from "../../common/FlexWrap/FlexWrap";
 
 export const Content = styled.div`
@@ -16,9 +17,7 @@ export const ImgContaiter = styled.div`
     max-width: 280px;
 `
 
-export const OtherImgs = styled.div`
-    display: flex;
-    flex-direction: row;
+export const OtherImgs = styled(FlexWrap)`
     flex-wrap: wrap;
     gap: 5px;
 `
@@ -34,9 +33,12 @@ export const Li = styled.li`
     width: 63px;
 `
 
-export const InfoImg = styled.img`
+export const MainImg = styled.img`
     max-width: 100%;
     width: 268px;
+`
+
+export const MainImgWrap = styled.div`
 `
 
 export const SmallImg = styled.img`
@@ -46,7 +48,7 @@ export const SmallImg = styled.img`
     object-position: 50% 50%;
 `
 
-const SmallImgContainer = styled.div`
+export const SmallImgWrap = styled.div`
     border:  5px solid #ebede8;
     border-radius: 5px;
     z-index: 1002;
@@ -58,6 +60,3 @@ const SmallImgContainer = styled.div`
   }
 `
 
-export const SmallImgCont = (props) => {
-    return <SmallImgContainer>{props.children}</SmallImgContainer>
-}

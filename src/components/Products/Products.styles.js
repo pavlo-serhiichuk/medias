@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     margin: 5px;
 `
 
-export const ProductsContainer = styled.div`
+export const ProductsWrap = styled.div`
     display: flex;
     gap: 5px;
     flex-wrap: wrap;

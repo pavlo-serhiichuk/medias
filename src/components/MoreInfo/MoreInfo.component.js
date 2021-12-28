@@ -4,58 +4,53 @@ import CloseButton from "../../common/Buttons/CloseButton.component";
 import {
     Content,
     Description,
-    Features,
-    ImgContaiter,
-    InfoImg,
-    OtherImgs,
-    SmallImg,
-    SmallImgCont
-} from "./MoreInfo.style";
+    Features} from "./MoreInfo.style";
 import {BigTitle, MiddleTitle} from "../../common/Titles/Titles";
+import MoreInfoImages from "./MoreInfoImages/MoreInfoImages.component";
 
 
-const MoreInfo = ({closeMoreInfo, product}) => {
+const MoreInfo = (props) => {
+    const {closeMoreInfo, product} = props
+
+    const {author,
+        producer,
+        price,
+        features,
+        title,
+        conditions,
+        rating,
+        gunres,
+        description} = product
+
     return (
         <Modal width={'80%'}>
             <CloseButton onClick={closeMoreInfo}/>
             <Content>
-                    <ImgContaiter>
-                        <InfoImg src={product.image}/>
-                {Array.isArray(product.image)
-                ? <OtherImgs>
-                            {product.image.map(image => <SmallImgCont><SmallImg src={image}/></SmallImgCont>)}
-                        </OtherImgs>
-                    : null}
-                    </ImgContaiter>
+                <MoreInfoImages  {...props}/>
                 <div>
-                    <BigTitle>{product.title}</BigTitle>
+                    <BigTitle>{title}</BigTitle>
+                    {author && <MiddleTitle producer>{author}</MiddleTitle>}
+                    {producer && <MiddleTitle author>{producer}</MiddleTitle>}
 
-                    {product.author
-                    && <MiddleTitle producer>{product.author}</MiddleTitle>}
-                    {product.producer
-                    && <MiddleTitle author>{product.producer}</MiddleTitle>}
+                    <MiddleTitle price>{price}</MiddleTitle>
+                    {rating && <MiddleTitle>Rating: {rating}</MiddleTitle>}
 
-                    <MiddleTitle price>{product.price}</MiddleTitle>
-                    {product.rating && <MiddleTitle>Rating: {product.rating}</MiddleTitle>}
-
-                    {product.features && <Features>
+                    {features && <Features>
                         <h5>Features: </h5>
-                        {product.features.map(item => <li>{item}</li>)}
+                        {features.map(item => <li>{item}</li>)}
                     </Features>}
 
-                    {product.conditions && <Features>
+                    {conditions && <Features>
                         <h5>Conditions: </h5>
-                        {product.conditions.map(item => <li>{item}</li>)}
+                        {conditions.map(item => <li>{item}</li>)}
                     </Features>}
 
-
-                    {product.gunres
-                    && <Features>
+                    {gunres && <Features>
                         <h5>Gunres: </h5>
-                        {product.gunres.map(item => <li>{item}</li>)}
+                        {gunres.map(item => <li>{item}</li>)}
                     </Features>}
 
-                    <Description>{product.description}</Description>
+                    <Description>{description}</Description>
                 </div>
 
             </Content>

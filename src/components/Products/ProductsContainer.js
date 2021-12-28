@@ -14,9 +14,8 @@ import {closeSidebar, openSidebar} from "../../redux/sidebarReducer";
 
 class ProductsContainer extends React.PureComponent {
 
-    tabTitle = (title) => {
-        return document.title = `${title}| Medias`
-    }
+    tabTitle = title => document.title = `${title}| Medias`
+
         componentDidMount() {
         this.props.openSidebar()
 
