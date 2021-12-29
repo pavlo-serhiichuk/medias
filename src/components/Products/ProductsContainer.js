@@ -11,12 +11,14 @@ import {
 import {addToCart} from "../../redux/cartReducer";
 import Countries from "../Countries/Countries.component";
 import {closeSidebar, openSidebar} from "../../redux/sidebarReducer";
+import {openMoreInfoModal} from "../../redux/modalReducer";
+import {setAsyncWish} from "../../redux/wishesReducer";
 
 class ProductsContainer extends React.PureComponent {
 
     tabTitle = title => document.title = `${title}| Medias`
 
-        componentDidMount() {
+    componentDidMount() {
         this.props.openSidebar()
 
         switch (this.props.category) {
@@ -39,6 +41,15 @@ class ProductsContainer extends React.PureComponent {
         }
     }
 
+    addToCart = product => {
+        return this.props.isAuth
+            ? () => this.props.addToCart(product)
+            : () => alert('Please, sigh in first! Asshole!!')
+    }
+
+    openMoreInfo = productId => this.props.openMoreInfoModal(productId)
+    setWish = (category, productId) => this.props.setAsyncWish(category, productId)
+
     render() {
         let countryName = null
         if (this.props.countries) {
@@ -55,9 +66,11 @@ class ProductsContainer extends React.PureComponent {
                 && <h5>{countryName[0].title} vouchers:</h5>}
 
                 <Products products={this.props.products}
-                          isAuth={this.props.isAuth}
+                          addToCart={this.addToCart}
+                          setWish={this.setWish}
+                          openMoreInfo={this.openMoreInfo}
                           isLoading={this.props.isLoading}
-                          addToCart={this.props.addToCart}/>
+                />
             </>
         );
     }
@@ -75,7 +88,14 @@ const mstp = state => ({
 
 
 export default connect(mstp, {
-    getAsyncGuitars, getAsyncBooks,
-    getAsyncVouchers, getAsyncCountries, getAsyncFilteredVouchers, openSidebar, closeSidebar,
+    getAsyncGuitars,
+    getAsyncBooks,
+    getAsyncVouchers,
+    getAsyncCountries,
+    getAsyncFilteredVouchers,
+    openSidebar,
+    closeSidebar,
+    openMoreInfoModal,
+    setAsyncWish,
     addToCart
 })(ProductsContainer);

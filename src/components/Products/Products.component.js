@@ -1,7 +1,7 @@
 import React from 'react';
+import {Wrapper} from "./Products.styles";
 import {ProductsWrap} from "./Products.styles";
 import Product from "./Product/Product.component";
-import {Wrapper} from "./Products.styles";
 
 const Products = (props) => {
 

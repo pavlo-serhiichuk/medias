@@ -54,6 +54,9 @@ export const productsAPI = {
 export const wishesAPI = {
     getWishes() {
         return get('wishes')
+    },
+    setWish(category, productId) {
+        return post(`wish`)
     }
 }
 

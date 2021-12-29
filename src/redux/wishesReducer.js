@@ -1,6 +1,6 @@
 import {request, wishesAPI} from "../api/api";
 
-const GET_WISHES = 'WISHES/GET_WISHES'
+const SET_WISHES = 'WISHES/SET_WISHES'
 const ADD_TO_WISHES = 'WISHES/ADD_TO_WISHES'
 const DELETE_FROM_WISHES = 'CART/DELETE_FROM_WISHES'
 
@@ -10,7 +10,7 @@ const initialState = {
 
 export const wishesReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GET_WISHES:
+        case SET_WISHES:
             return {...state, wishes: action.payload}
         case ADD_TO_WISHES:
             return {...state}
@@ -21,7 +21,8 @@ export const wishesReducer = (state = initialState, action) => {
     }
 }
 
-export const getWishes = (wishes) => ({type: GET_WISHES, payload: wishes})
-export const addToWishes = (productID) => ({type: ADD_TO_WISHES, payload: productID})
-export const deleteFromWishes = (productID) => ({type: DELETE_FROM_WISHES, payload: productID})
-export const getAsyncWishes = () => request(wishesAPI.getWishes, getWishes)
+export const setWishes = wishes => ({type: SET_WISHES, payload: wishes})
+export const addToWishes = productID => ({type: ADD_TO_WISHES, payload: productID})
+export const deleteFromWishes = productID => ({type: DELETE_FROM_WISHES, payload: productID})
+export const getAsyncWishes = () => request(wishesAPI.getWishes, setWishes)
+export const setAsyncWish = (category, productId) => request(wishesAPI.setWish(category, productId))

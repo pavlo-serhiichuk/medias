@@ -1,31 +1,27 @@
 import React from 'react';
-import {Buttons, Img, ProductContent, Title} from "./Product.styles";
+import {BiHeart as Liked} from "react-icons/all";
+import {AiOutlineShoppingCart as Cart} from "react-icons/ai"
+import {Buttons, ProductContent, Title} from "./Product.styles";
 import Button from "../../../common/Buttons/Button.component";
-import {useDispatch} from "react-redux";
-import {AiOutlineShoppingCart} from "react-icons/ai"
-import {BiHeart} from "react-icons/all";
-import {addToWishes} from "../../../redux/wishesReducer";
-import {openMoreInfoModal} from "../../../redux/modalReducer";
 
-const Product = ({isAuth, product, addToCart}) => {
-    const dispatch = useDispatch()
-
-    const addProduct = (product) => {
-        return isAuth
-            ? () => dispatch(addToCart(product))
-            : () => alert('Please, sigh in first! Asshole!!')
-    }
+const Product = ({product, addToCart, openMoreInfo, setWish}) => {
+    const {id, image, title} = product
 
     return (
-        <ProductContent image={product.image}>
-            <Title  onClick={() => dispatch(openMoreInfoModal(product.id))}>
-                {product.title}
+        <ProductContent image={image}>
+            <Title  onClick={() => openMoreInfo(id)}>
+                {title}
             </Title>
             <Buttons>
                 <Button color={'dodgerblue'}
-                        onClick={addProduct(product)}>Add to <AiOutlineShoppingCart/></Button>
-                <Button color={'#009B00'} wishes
-                        onClick={() => addToWishes(product.id)}><BiHeart/></Button>
+                        onClick={() => addToCart(product)}>
+                    Add to <Cart/>
+                </Button>
+                <Button color={'#009B00'}
+                        wishes
+                        onClick={() => setWish(id)}>
+                    <Liked/>
+                </Button>
             </Buttons>
         </ProductContent>
 

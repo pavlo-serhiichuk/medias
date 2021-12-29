@@ -70,5 +70,5 @@ export const getAsyncGuitars = () => request(productsAPI.getGuitars, setGuitars)
 export const getAsyncVouchers = () => request(productsAPI.getVouchers, setVouchers)
 export const getAsyncCountries = () => request(productsAPI.getCountries, setCountries)
 
-export const getAsyncFilteredVouchers = (countryID) => request(() => productsAPI.getCountryFilteredVouchers(countryID), getCountryFilteredVouchers)
+export const getAsyncFilteredVouchers = countryID => request(() => productsAPI.getCountryFilteredVouchers(countryID), getCountryFilteredVouchers)
 
