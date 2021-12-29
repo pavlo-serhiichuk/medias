@@ -1,8 +1,9 @@
 import styled from 'styled-components'
+import {FlexWrap} from "../../common/FlexWrap/FlexWrap";
 
 export const Wrapper = styled.div`
     overflow: hidden;
-    transition: 0.2s;
+    transition: .4s;
     position: fixed;
     right: 50px;
     bottom: 50px;
@@ -15,9 +16,9 @@ export const Wrapper = styled.div`
     font-size: 24px;
     box-shadow: 0 0 5px 1px rgb(33 130 119 / 46%), 0 0 10px 1px rgb(33 130 119 / 42%);
     &:hover {
-            width: 300px;    
-            border-radius: 5px;
-            height: 400px;
+        width: 320px;    
+        border-radius: 5px;
+        height: 400px;
     }
 `
 
@@ -25,9 +26,44 @@ export const Title = styled.div`
     background-color: rgb(213 82 235);
 `
 
-export const Messages = styled.div`
+export const Dialog = styled.div`
     height: 270px;
-    '
+`
+export const Consultant = styled(FlexWrap)`
+   padding: 10px 10px;
+   gap: 10px;
+   align-items: center; 
+`
+
+export const AvatarWrap = styled.div`
+`
+
+export const AvatarImage = styled.img`
+    max-width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+`
+
+export const Avatar = () => (
+    <AvatarWrap>
+        <AvatarImage src='https://img.freepik.com/free-photo/attractive-sexy-online-medical-consultant-headset-looks-camera-smiles_213441-726.jpg?size=626&ext=jpg'/>
+    </AvatarWrap>
+)
+
+export const MessageWrap = styled(FlexWrap)`
+   gap: 2px;
+   flex-wrap: wrap;
+   padding: 5px 25px 10px;
+   min-height: 43px;
+   width: 220px;
+   border-radius: 30px;
+   background-color: #ECECEC;
+   font-size: 15px;
+   text-align: left;
+   line-height: 20px;
+`
+export const Message = styled.span`
 `
 
 export const Form = styled.form`
@@ -47,10 +83,7 @@ export const Input = styled.input`
 `
 
 export const Submit = styled.button`
-    // display: flex;
-    // justify-content: center;
-    // align-items: center;
-        transition: 0.9s;
+    transition: 0.9s;
     padding: 0 0 0 4px;
     width: 50px;
     height: 50px;

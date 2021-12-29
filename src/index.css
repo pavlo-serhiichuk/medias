@@ -12,15 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(210, 217, 217, 0.89);
-  padding:0;
-
-
-  /*color: #ebede8;*/
-
-
-  /*cursor: zoom-in;*/
-  /*grid-template-columns: ;*/
-  /*grid-template-columns: repeat(3, 1fr);*/
+  /*color: white;*/
 }
 
 code {
