@@ -22,6 +22,7 @@ function AppContainer() {
     let query = useQuery();
 
     const isSignInModalOpen = useSelector(state => state.modal.isSighInModalOpen)
+    const isPhotosPopupOpen = useSelector(state => state.modal.isPhotosPopupOpen)
     const isLoginModalOpen = useSelector(state => state.modal.isLoginModalOpen)
     const isMoreInfoModalOpen = useSelector(state => state.modal.isMoreInfoModalOpen)
     let isSidebarOpen = useSelector(state => state.sidebar.isSidebarOpen)
@@ -33,6 +34,7 @@ function AppContainer() {
             <App query={query}
                  open={open}
                  isSidebarOpen={isSidebarOpen}
+                 isPhotosPopupOpen={isPhotosPopupOpen}
                  isSignInModalOpen={isSignInModalOpen}
                  isMoreInfoModalOpen={isMoreInfoModalOpen}
                  isLoginModalOpen={isLoginModalOpen}/>

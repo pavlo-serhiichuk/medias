@@ -26,8 +26,6 @@ const MoreInfoContainer = () => {
 
     useEffect(() => {
 
-
-
         document.querySelector('[data-close]')
             .addEventListener('click', event => {
                 return event.target.dataset.close && !isPhotosPopupOpen
