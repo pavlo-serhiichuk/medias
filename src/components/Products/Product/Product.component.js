@@ -4,7 +4,8 @@ import {AiOutlineShoppingCart as Cart} from "react-icons/ai"
 import {Buttons, ProductContent, Title} from "./Product.styles";
 import Button from "../../../common/Buttons/Button.component";
 
-const Product = ({product, addToCart, openMoreInfo, setWish}) => {
+const Product = ({product, addToCart, openMoreInfo, setWish, category}) => {
+
     const {id, image, title} = product
 
     return (
@@ -19,7 +20,7 @@ const Product = ({product, addToCart, openMoreInfo, setWish}) => {
                 </Button>
                 <Button color={'#009B00'}
                         wishes
-                        onClick={() => setWish(id)}>
+                        onClick={() => setWish(product, category, id)}>
                     <Liked/>
                 </Button>
             </Buttons>

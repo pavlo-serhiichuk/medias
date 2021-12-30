@@ -24,6 +24,7 @@ function AppContainer() {
     const isSignInModalOpen = useSelector(state => state.modal.isSighInModalOpen)
     const isLoginModalOpen = useSelector(state => state.modal.isLoginModalOpen)
     const isMoreInfoModalOpen = useSelector(state => state.modal.isMoreInfoModalOpen)
+    let isAlertOpen = useSelector(state => state.modal.isAlertOpen)
     let isSidebarOpen = useSelector(state => state.sidebar.isSidebarOpen)
 
     const open = () => dispatch(openSidebar())
@@ -35,6 +36,7 @@ function AppContainer() {
                  isSidebarOpen={isSidebarOpen}
                  isSignInModalOpen={isSignInModalOpen}
                  isMoreInfoModalOpen={isMoreInfoModalOpen}
+                 isAlertOpen={isAlertOpen}
                  isLoginModalOpen={isLoginModalOpen}/>
         </>
     );

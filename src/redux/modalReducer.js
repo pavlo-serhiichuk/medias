@@ -10,12 +10,16 @@ const CLOSE_MORE_INFO_MODAL = 'CLOSE_MORE_INFO_MODAL'
 const OPEN_PHOTOS_POPUP = 'OPEN_PHOTOS_POPUP'
 const CLOSE_PHOTOS_POPUP = 'CLOSE_PHOTOS_POPUP'
 
+const OPEN_ALERT = 'OPEN_ALERT'
+const CLOSE_ALERT = 'CLOSE_ALERT'
+
 const initialState = {
     isSighInModalOpen: false,
     isLoginModalOpen: false,
     isMoreInfoModalOpen: false,
     currentProductId: null,
-    isPhotosPopupOpen: false
+    isPhotosPopupOpen: false,
+    isAlertOpen: false,
 }
 
 export const modalReducer = (state = initialState, action) => {
@@ -23,27 +27,33 @@ export const modalReducer = (state = initialState, action) => {
 
         case OPEN_LOG_IN_MODAL:
             return {...state, isLoginModalOpen: true}
-
         case CLOSE_LOG_IN_MODAL:
             return {...state, isLoginModalOpen: false}
 
         case OPEN_SIGN_IN_MODAL:
             return {...state, isSighInModalOpen: true}
-
         case CLOSE_SIGN_IN_MODAL:
             return {...state, isSighInModalOpen: false}
 
         case OPEN_MORE_INFO_MODAL:
-            return {...state, isMoreInfoModalOpen: true, currentProductId: action.payload}
-
+            return {
+                ...state,
+                isMoreInfoModalOpen: true,
+                currentProductId: action.payload
+            }
         case CLOSE_MORE_INFO_MODAL:
             return {...state, isMoreInfoModalOpen: false}
 
         case OPEN_PHOTOS_POPUP:
             return {...state, isPhotosPopupOpen: true}
-
         case CLOSE_PHOTOS_POPUP:
             return {...state, isPhotosPopupOpen: false}
+
+        case OPEN_ALERT:
+            return {...state,isAlertOpen: true}
+        case CLOSE_ALERT:
+            return {...state, isAlertOpen: false}
+
         default:
             return state
     }
@@ -61,3 +71,6 @@ export const closeMoreInfoModal = () => ({type: CLOSE_MORE_INFO_MODAL})
 
 export const openPhotosPopup = () => ({type: OPEN_PHOTOS_POPUP})
 export const closePhotosPopup = () => ({type: CLOSE_PHOTOS_POPUP})
+
+export const openAlert = () => ({type: OPEN_ALERT})
+export const closeAlert = () => ({type: CLOSE_ALERT})

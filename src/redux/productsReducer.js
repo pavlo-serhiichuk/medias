@@ -52,7 +52,7 @@ const setGuitars = guitars => ({type: SET_GUITARS, payload: guitars})
 const setVouchers = vouchers => ({type: SET_VOUCHERS, payload: vouchers})
 const getCountryFilteredVouchers = vouchers => ({type: SET_FILTERED_VOUCHERS, payload: vouchers})
 export const setFilteredProducts = filteredProducts => ({type: SET_FILTERED_PRODUCTS, payload: filteredProducts})
-export const setCurrentProduct = productPhotos => ({type: SET_CURRENT_PRODUCT, payload: productPhotos})
+export const setCurrentProduct = product => ({type: SET_CURRENT_PRODUCT, payload: product})
 
 const setCountries = (countries) => ({type: SET_COUNTRIES, payload: countries})
 export const changeCountryID = countryID => ({type: CHANGE_COUNTRY_ID, payload: countryID})

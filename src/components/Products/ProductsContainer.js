@@ -6,12 +6,12 @@ import {
     getAsyncCountries,
     getAsyncGuitars,
     getAsyncVouchers,
-    getAsyncFilteredVouchers
+    getAsyncFilteredVouchers, setCurrentProduct
 } from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 import Countries from "../Countries/Countries.component";
 import {closeSidebar, openSidebar} from "../../redux/sidebarReducer";
-import {openMoreInfoModal} from "../../redux/modalReducer";
+import {openAlert, openMoreInfoModal} from "../../redux/modalReducer";
 import {setAsyncWish} from "../../redux/wishesReducer";
 
 class ProductsContainer extends React.PureComponent {
@@ -48,7 +48,12 @@ class ProductsContainer extends React.PureComponent {
     }
 
     openMoreInfo = productId => this.props.openMoreInfoModal(productId)
-    setWish = (category, productId) => this.props.setAsyncWish(category, productId)
+
+    setWish = (currentProduct, category, productId) => {
+        this.props.setCurrentProduct(currentProduct)
+        this.props.openAlert()
+        return this.props.setAsyncWish(this.props.userId, category, productId)
+    }
 
     render() {
         let countryName = null
@@ -68,6 +73,7 @@ class ProductsContainer extends React.PureComponent {
                 <Products products={this.props.products}
                           addToCart={this.addToCart}
                           setWish={this.setWish}
+                          category={this.props.category}
                           openMoreInfo={this.openMoreInfo}
                           isLoading={this.props.isLoading}
                 />
@@ -82,6 +88,7 @@ const mstp = state => ({
     countries: state.products.countries,
     countryID: state.products.countryID,
     isAuth: state.auth.isAuth,
+    usedId: state.auth.userId,
     isLoading: state.auth.isLoading,
     category: state.products.category
 })
@@ -97,5 +104,7 @@ export default connect(mstp, {
     closeSidebar,
     openMoreInfoModal,
     setAsyncWish,
-    addToCart
+    addToCart,
+    setCurrentProduct,
+    openAlert,
 })(ProductsContainer);

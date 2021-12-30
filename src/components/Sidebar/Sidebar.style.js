@@ -39,7 +39,7 @@ export const Button = styled.div`
     cursor: pointer;
     text-align: center;
     cursor: pointer;
-    z-index: 10000;
+    z-index: 2000;
     &:hover {
         background-color: #D3D3D3;
     }

@@ -55,7 +55,7 @@ export const wishesAPI = {
     getWishes() {
         return get('wishes')
     },
-    setWish(category, productId) {
+    setWish(userId, category, productId) {
         return post(`wish`)
     }
 }
@@ -80,7 +80,6 @@ export const request = (requestType, actionReducer) => async dispatch => {
 export const filterRequest = (method, data) => async dispatch => {
     dispatch(showLoading())
     let response =  await method(data)
-    debugger
 
     dispatch(setFilteredProducts(response))
     dispatch(deleteFilters())
