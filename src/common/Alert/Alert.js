@@ -13,10 +13,10 @@ const Alert = ({product, closeAlert}) => {
         return (
             <div className={s.alertWrap} style={{transition: 'all 3.2s ease-in'}}>
 
-                <h5>
+                <span>
                     You have added <strong>"{product.title}"</strong> to your Wishes!
                     Such a good choice:)
-                </h5>
+                </span>
             </div>
         );
     }
