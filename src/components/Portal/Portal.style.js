@@ -82,7 +82,7 @@ export const Input = styled.input`
     font-size: 20px;
 `
 
-export const Submit = styled.button`
+export const SubmitButton = styled.button`
     transition: 0.9s;
     padding: 0 0 0 4px;
     width: 50px;
