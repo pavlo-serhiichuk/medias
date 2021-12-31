@@ -68,7 +68,6 @@ export const fetchLogin = (data) => async (dispatch) => {
     dispatch(closeLoginModal())
 }
 
-
 export const fetchSignIn = (data) => async (dispatch) => {
     const response = await authAPI.signIn(data)
     dispatch(signIn(response))

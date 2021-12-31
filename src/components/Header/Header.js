@@ -5,14 +5,14 @@ import Button from "../../common/Buttons/Button.component";
 import {connect} from "react-redux";
 import {sighOut} from "../../redux/authReducer";
 import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
-import {BsCart4} from "react-icons/bs";
-import {BiHeart, VscSignOut} from "react-icons/all";
+import {BsCart4 as CartIcon} from "react-icons/bs";
+import {BiHeart as LikedIcon, VscSignOut} from "react-icons/all";
 import {SmallProfilePhoto} from "../../common/Imgs/Imgs";
 import {closeSidebar} from "../../redux/sidebarReducer";
 
 const Header = (props) => {
-    const wishesAmount = props.wishes.length
-    const cartAmount = props.cartProducts.length
+    const cartLength = props.cartProducts.length
+    const wishesLength = props.wishes.length
 
     const photoURL = 'https://scontent-iev1-1.xx.fbcdn.net/v/t1.6435-9/117732137_331177674726150_6549843426398612487_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=MrItjldoQzEAX963uw-&tn=HtaZntDbEw0xOelm&_nc_ht=scontent-iev1-1.xx&oh=00_AT-sIyTwMePHg3mpQpiDcdB_fc7uyGKnDY0oxDeVRiXskA&oe=61F36766'
 
@@ -31,12 +31,12 @@ const Header = (props) => {
                                 <Link to={`/profile?=${props.id}`}>{props.username}</Link>
                             </div>
                             <Link onClick={closeSidebar} to="/wishes" className={s.wishes}>
-                                <BiHeart size={25}/>
-                                <span className={s.amount}> {wishesAmount > 0 && wishesAmount}</span>
+                                <LikedIcon size={25}/>
+                                <span className={s.amount}>{wishesLength > 0 && wishesLength}</span>
                             </Link>
                             <Link to="/cart" className={s.cart}>
-                                <BsCart4 size={25}/>
-                                <span className={s.amount}> {cartAmount > 0 && cartAmount}</span>
+                                <CartIcon size={25}/>
+                                <span className={s.amount}>{cartLength > 0 && cartLength}</span>
                             </Link>
                         </>
                         : null}

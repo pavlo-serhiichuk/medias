@@ -2,7 +2,7 @@ import {request, wishesAPI} from "../api/api";
 import {hideLoading, showLoading} from "./authReducer";
 
 const SET_WISHES = 'WISHES/SET_WISHES'
-const ADD_TO_WISHES = 'WISHES/ADD_TO_WISHES'
+const SET_WISHES_LENGTH = 'WISHES/SET_WISHES_LENGTH'
 const DELETE_FROM_WISHES = 'CART/DELETE_FROM_WISHES'
 const SET_IS_WISH_ADDED = 'WISHES/SET_IS_WISH_ADDED'
 
@@ -15,27 +15,22 @@ export const wishesReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_WISHES:
             return {...state, wishes: action.payload}
-        case ADD_TO_WISHES:
-            return {...state}
-        case DELETE_FROM_WISHES:
-            return {...state}
-            case SET_IS_WISH_ADDED:
-            return {...state, isWishAdded: action.payload}
+        case SET_IS_WISH_ADDED:
+            return {...state, isWishAdded: !!action.payload}
         default:
             return state
     }
 }
 
 export const setWishes = wishes => ({type: SET_WISHES, payload: wishes})
-export const addToWishes = productID => ({type: ADD_TO_WISHES, payload: productID})
-export const deleteFromWishes = productID => ({type: DELETE_FROM_WISHES, payload: productID})
+export const setWishesLenght = wishesLength => ({type: SET_WISHES_LENGTH, payload: wishesLength})
 export const setIsWishAdded = status => ({type: SET_IS_WISH_ADDED, payload: status})
-
-export const getAsyncWishes = () => request(wishesAPI.getWishes, setWishes)
-// export const setAsyncWisha = (userId, category, productId) => request(wishesAPI.setWish(userId, category, productId))
-
+// export const getAsyncWishes = () => request(wishesAPI.getWishes, setWishes)
 
 export const setAsyncWish = (userId, category, productId) => async dispatch => {
-    const response = await wishesAPI.setWish(userId, category, productId)
+    const data = {userId, category, productId}
+
+    const response = await wishesAPI.setWish(data)
     dispatch(setIsWishAdded(response))
+    dispatch(setWishes(response))
 }

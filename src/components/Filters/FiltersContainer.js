@@ -28,7 +28,6 @@ const FiltersContainer = (props) => {
     }, [])
 
     if (!isSidebarOpen) {
-        console.log('inside if')
         console.log(isSidebarOpen)
         return null
     }

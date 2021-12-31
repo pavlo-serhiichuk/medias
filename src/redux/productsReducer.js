@@ -37,10 +37,8 @@ export const productsReducer = (state = initialState, action) => {
         case SET_COUNTRIES:
             return {...state, countries: action.payload}
         case CHANGE_COUNTRY_ID:
-            console.log(CHANGE_COUNTRY_ID)
             return {...state, countryID: action.payload}
         case CHANGE_CATEGORY:
-            console.log('Category changed')
             return {...state, category: action.payload}
         default:
             return state

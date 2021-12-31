@@ -51,8 +51,8 @@ class ProductsContainer extends React.PureComponent {
 
     setWish = (currentProduct, category, productId) => {
         this.props.setCurrentProduct(currentProduct)
-        this.props.openAlert()
-        return this.props.setAsyncWish(this.props.userId, category, productId)
+        this.props.setAsyncWish(this.props.userId, category, productId)
+        return this.props.openAlert()
     }
 
     render() {
@@ -88,7 +88,7 @@ const mstp = state => ({
     countries: state.products.countries,
     countryID: state.products.countryID,
     isAuth: state.auth.isAuth,
-    usedId: state.auth.userId,
+    userId: state.auth.userId,
     isLoading: state.auth.isLoading,
     category: state.products.category
 })
