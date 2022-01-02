@@ -51,8 +51,8 @@ class ProductsContainer extends React.PureComponent {
 
     setWish = (currentProduct, category, productId) => {
         this.props.setCurrentProduct(currentProduct)
-        this.props.setAsyncWish(this.props.userId, category, productId)
-        return this.props.openAlert()
+        return this.props.setAsyncWish(this.props.userId, category, productId)
+        // return this.props.openAlert()
     }
 
     render() {

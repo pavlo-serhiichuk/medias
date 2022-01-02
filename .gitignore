@@ -26,8 +26,8 @@ yarn-error.log*
 /.idea/modules.xml
 /.idea/inspectionProfiles/Project_Default.xml
 /src/store/photos/Sittings.PNG
-/.idea/styledmedia.iml
 /src/store/photos/TopScreen.PNG
 /.idea/vcs.xml
 /.idea/.name
 /public/favicon.ico
+/.idea/medias.iml
