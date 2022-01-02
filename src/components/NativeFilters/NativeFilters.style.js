@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import {SmallTitle} from "../../common/Titles/Titles";
+import {SmallTitle} from "../common/Titles/Titles";
 
 export const Wrapper = styled.div`
     width: 100%;

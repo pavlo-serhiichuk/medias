@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
-import {closeMoreInfoModal, closePhotosPopup, openPhotosPopup} from "../../redux/modalReducer";
 import {useDispatch, useSelector} from "react-redux";
+
 import MoreInfo from "./MoreInfo.component";
-import {setCurrentProduct} from "../../redux/productsReducer";
-import {setCurrentImageId, setImages} from "../../redux/imagesReducer";
+import {setCurrentProduct} from "@Redux/productsReducer";
+import {setCurrentImageId, setImages} from "@Redux/imagesReducer";
+import {closeMoreInfoModal, closePhotosPopup, openPhotosPopup} from "@Redux/modalReducer";
 
 const MoreInfoContainer = () => {
 

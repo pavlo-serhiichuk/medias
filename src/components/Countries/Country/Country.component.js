@@ -1,10 +1,10 @@
 import React from 'react';
 import {Wrapper} from "./Country.style";
-import {SmallTitle} from "../../../common/Titles/Titles";
-import {Img} from "../../../common/Imgs/Imgs";
+import {SmallTitle} from "../../common/Titles/Titles";
+import {Img} from "../../common/Imgs/Imgs";
 import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
-import {changeCategory, changeCountryID} from "../../../redux/productsReducer";
+import {changeCategory, changeCountryID} from "../@Redux/productsReducer";
 
 const Country = ({country}) => {
 

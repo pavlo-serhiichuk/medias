@@ -1,7 +1,7 @@
 import React from 'react';
 import {ArticleWrapper, Content} from "./IntroArticles.styles";
-import {MiddleTitle} from "../../common/Titles/Titles";
-import {Img} from "../../common/Imgs/Imgs";
+import {MiddleTitle} from "../common/Titles/Titles";
+import {Img} from "../common/Imgs/Imgs";
 import {Link} from "react-router-dom";
 
 const IntroArticle = ({article}) => {

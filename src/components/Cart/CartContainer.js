@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from "react-redux";
+import {closeSidebar} from "@Redux/sidebarReducer";
+import { deleteFromCart } from "@Redux/cartReducer";
 import Cart from "./Cart.component";
-import { deleteFromCart } from "../../redux/cartReducer";
-import {closeSidebar} from "../../redux/sidebarReducer";
 
 class CartContainer extends React.Component {
 

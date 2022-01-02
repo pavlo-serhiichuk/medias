@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import {FlexWrap} from "../../common/FlexWrap/FlexWrap";
-import {MiddleTitle, SmallTitle} from "../../common/Titles/Titles";
+import {FlexWrap} from "../common/FlexWrap/FlexWrap";
+import {MiddleTitle, SmallTitle} from "../common/Titles/Titles";
 
 export const Wrapper = styled(FlexWrap)`
     width: 100%;

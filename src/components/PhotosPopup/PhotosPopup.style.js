@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {FlexWrap} from "../../common/FlexWrap/FlexWrap";
+import {FlexWrap} from "../common/FlexWrap/FlexWrap";
 
 export const Wrapper = styled.div`
 

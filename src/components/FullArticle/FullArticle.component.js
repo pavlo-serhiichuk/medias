@@ -1,7 +1,7 @@
 import React from 'react';
 import {Wrapper} from "./FullArticle.style";
-import {HugeTitle} from "../../common/Titles/Titles";
-import {Img} from "../../common/Imgs/Imgs";
+import {HugeTitle} from "../common/Titles/Titles";
+import {Img} from "../common/Imgs/Imgs";
 
 const FullArticle = ({fullArticle}) => {
     return (

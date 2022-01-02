@@ -1,9 +1,9 @@
 import React from 'react';
 import {Form, Input, Label, P} from "./Login.styles";
 
-import Modal from "../../common/ModalWrap/Modal.component";
-import Button from "../../common/Buttons/Button.component";
-import CloseButton from "../../common/Buttons/CloseButton.component";
+import Modal from "../common/ModalWrap/Modal.component";
+import Button from "../common/Buttons/Button.component";
+import CloseButton from "../common/Buttons/CloseButton.component";
 
 
 const Login = ({closeModal, sendData, register, handleSubmit, errors}) => {

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import Filters from "./Filters.component";
 import {useDispatch, useSelector} from "react-redux";
-import {setFilterPopularity, setFilterPrice, setFilterTime} from "../../redux/sidebarReducer";
+import Filters from "./Filters.component";
+import {setFilterPopularity, setFilterPrice, setFilterTime} from "@Redux/sidebarReducer";
 
 const FiltersContainer = (props) => {
     const dispatch = useDispatch()

@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import {closeLoginModal} from "../../redux/modalReducer";
-import {useDispatch, useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
-import {fetchLogin} from "../../redux/authReducer";
-import Login from "./Login.component";
+import {useDispatch, useSelector} from "react-redux";
 import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
+import {fetchLogin} from "@Redux/authReducer";
+import {closeLoginModal} from "@Redux/modalReducer";
+import Login from "./Login.component";
 
 const LoginContainer = () => {
     const schema = yup.object().shape({

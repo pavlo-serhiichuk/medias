@@ -1,11 +1,11 @@
 import React from 'react';
 import {Buttons, Img, ProductContent, Title} from "./Product.styles";
-import Button from "../../../common/Buttons/Button.component";
+import Button from "../../common/Buttons/Button.component";
 import {useDispatch} from "react-redux";
 import {AiOutlineShoppingCart} from "react-icons/ai"
 import {BiHeart} from "react-icons/all";
-import {addToWishes} from "../../../redux/wishesReducer";
-import {openMoreInfoModal} from "../../../redux/modalReducer";
+import {addToWishes} from "../@Redux/wishesReducer";
+import {openMoreInfoModal} from "../@Redux/modalReducer";
 
 const Product = ({isAuth, product, addToCart}) => {
     const dispatch = useDispatch()

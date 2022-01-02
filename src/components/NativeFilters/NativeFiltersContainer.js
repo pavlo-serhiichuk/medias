@@ -7,7 +7,7 @@ import {
     setFilterPopularity,
     setFilterPrice,
     setFilterTime
-} from "../../redux/sidebarReducer";
+} from "@Redux/sidebarReducer";
 
 const NativeFiltersContainer = () => {
     const dispatch = useDispatch()

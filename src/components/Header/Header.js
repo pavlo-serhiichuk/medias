@@ -1,14 +1,15 @@
 import React from 'react';
-import s from './Header.module.css';
 import {Link} from "react-router-dom";
-import Button from "../../common/Buttons/Button.component";
 import {connect} from "react-redux";
-import {sighOut} from "../../redux/authReducer";
-import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
 import {BsCart4} from "react-icons/bs";
-import {BiHeart, VscSignOut} from "react-icons/all";
-import {SmallProfilePhoto} from "../../common/Imgs/Imgs";
-import {closeSidebar} from "../../redux/sidebarReducer";
+import {BiHeart} from "react-icons/all";
+import s from './Header.module.css';
+
+import {sighOut} from "@Redux/authReducer";
+import {closeSidebar} from "@Redux/sidebarReducer";
+import {openLoginModal, openSignInModal} from "@Redux/modalReducer";
+import Button from "../common/Buttons/Button.component";
+import {SmallProfilePhoto} from "../common/Imgs/Imgs";
 
 const Header = (props) => {
     const wishesAmount = props.wishes.length

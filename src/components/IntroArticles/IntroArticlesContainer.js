@@ -1,9 +1,10 @@
 import React, {useEffect} from 'react';
-import {Wrapper} from './IntroArticles.styles'
-import IntroArticles from "./IntroArticles.component";
 import {useSelector, useDispatch} from "react-redux";
-import {getAsyncArticles} from "../../redux/articlesReducer";
-import {closeSidebar} from "../../redux/sidebarReducer";
+import {closeSidebar} from "@Redux/sidebarReducer";
+import {getAsyncArticles} from "@Redux/articlesReducer";
+import {Wrapper} from './IntroArticles.styles'
+
+import IntroArticles from "./IntroArticles.component";
 
 const IntroArticlesContainer = () => {
 

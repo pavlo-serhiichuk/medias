@@ -7,10 +7,10 @@ import {
     getAsyncGuitars,
     getAsyncVouchers,
     getAsyncFilteredVouchers
-} from "../../redux/productsReducer";
-import {addToCart} from "../../redux/cartReducer";
+} from "@Redux/productsReducer";
+import {addToCart} from "@Redux/cartReducer";
 import Countries from "../Countries/Countries.component";
-import {closeSidebar, openSidebar} from "../../redux/sidebarReducer";
+import {closeSidebar, openSidebar} from "@Redux/sidebarReducer";
 
 class ProductsContainer extends React.PureComponent {
 

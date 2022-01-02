@@ -1,11 +1,11 @@
 import React from 'react';
-import Modal from "../../common/ModalWrap/Modal.component";
-import CloseButton from "../../common/Buttons/CloseButton.component";
+import Modal from "../common/ModalWrap/Modal.component";
+import CloseButton from "../common/Buttons/CloseButton.component";
 import {
     Content,
     Description,
     Features} from "./MoreInfo.style";
-import {BigTitle, MiddleTitle} from "../../common/Titles/Titles";
+import {BigTitle, MiddleTitle} from "../common/Titles/Titles";
 import MoreInfoImages from "./MoreInfoImages/MoreInfoImages.component";
 
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import CartProduct from "./CartProduct.component";
 import {useDispatch} from "react-redux";
-import {decrementAmount, incrementAmount} from "../../../redux/cartReducer";
-import {openMoreInfoModal} from "../../../redux/modalReducer";
+import {decrementAmount, incrementAmount} from "../@Redux/cartReducer";
+import {openMoreInfoModal} from "../@Redux/modalReducer";
 
 const CartProductContainer = (props) => {
     const dispatch = useDispatch()

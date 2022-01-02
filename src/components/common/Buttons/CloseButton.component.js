@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 import {BsXCircle} from "react-icons/bs";
 import {useDispatch} from "react-redux";
-import {closeMoreInfoModal} from "../../redux/modalReducer";
+import {closeMoreInfoModal} from "../@Redux/modalReducer";
 
 const SButton = styled.button`
     background-color: ${p => p.color || 'white'};

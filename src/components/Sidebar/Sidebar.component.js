@@ -8,11 +8,11 @@ import {ImBooks} from "react-icons/im";
 import {GiGuitar} from "react-icons/gi";
 import {GiHamburgerMenu as Hamburger} from "react-icons/all";
 
-import {SmallTitle} from "../../common/Titles/Titles";
+import {SmallTitle} from "../common/Titles/Titles";
 
-import {changeCategory} from "../../redux/productsReducer";
+import {changeCategory} from "@Redux/productsReducer";
 import NativeFiltersContainer from "../NativeFilters/NativeFiltersContainer";
-import {closeSidebar, openSidebar} from "../../redux/sidebarReducer";
+import {closeSidebar, openSidebar} from "@Redux/sidebarReducer";
 
 const Sidebar = () => {
     const dispatch = useDispatch()

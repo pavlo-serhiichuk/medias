@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import {closeSignInModal} from "../../redux/modalReducer";
-import {useDispatch, useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
-import {fetchSignIn} from "../../redux/authReducer";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchSignIn} from "@Redux/authReducer";
+import {closeSignInModal} from "@Redux/modalReducer";
 import SignIn from "./SighIn.component";
 
 const SignInContainer = () => {

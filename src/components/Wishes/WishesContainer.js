@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
-import {Wrapper} from "../Cart/Cart.styles";
 import {BiHeart} from "react-icons/all";
 import {useDispatch, useSelector} from "react-redux";
-import {closeSidebar} from "../../redux/sidebarReducer";
+import {Wrapper} from "../Cart/Cart.styles";
+import {closeSidebar} from "@Redux/sidebarReducer";
 
 const WishesContainer = () => {
     const dispatch = useDispatch()
