@@ -14,13 +14,13 @@ import WishesContainer from "./components/Wishes/WishesContainer";
 import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
 import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
 import IntroArticlesContainer from "./components/IntroArticles/IntroArticlesContainer";
-import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "./common/QuickScrolls/QuickScrolls.component";
+import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "./components/common/QuickScrolls/QuickScrolls.component";
 
 import {Routers} from "./AppContainer";
 import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
 import {LeftBtn} from "./components/Sidebar/Sidebar.style";
 import PhotosPopup from "./components/PhotosPopup/PhotosPopup.component";
-import Alert from "./common/Alert/Alert";
+import Alert from "./components/common/Alert/Alert";
 
 const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
