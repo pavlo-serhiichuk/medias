@@ -1,0 +1,15 @@
+.alertWrap {
+    transition: all 3.2s ease-in;
+    position: fixed;
+    top: 20px;
+    left: 27%;
+    width: 800px;
+    min-height: 60px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: greenyellow;
+    z-index: 3000;
+}
+.trans {
+    transition: all 3.2s ease-in;
+}

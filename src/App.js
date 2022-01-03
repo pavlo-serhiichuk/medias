@@ -20,14 +20,25 @@ import {Routers} from "./AppContainer";
 import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
 import {LeftBtn} from "./components/Sidebar/Sidebar.style";
 import PhotosPopup from "./components/PhotosPopup/PhotosPopup.component";
+import Alert from "./common/Alert/Alert";
 
 const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
-function App({query, isSignInModalOpen, isLoginModalOpen, isMoreInfoModalOpen, open, isSidebarOpen, isPhotosPopupOpen}) {
+function App({
+                 query,
+                 isSignInModalOpen,
+                 isLoginModalOpen,
+                 isMoreInfoModalOpen,
+                 open,
+                 isSidebarOpen,
+                 isPhotosPopupOpen,
+                 isAlertOpen
+             }) {
 
     return (
         <>
             <Wrapper>
+                {isAlertOpen && <Alert />}
                 <TopAnchor/>
                 <GoBottom/>
                 <Header/>

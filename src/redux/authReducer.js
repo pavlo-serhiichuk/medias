@@ -12,10 +12,11 @@ const initialState = {
     isAuth: true,
     isLoading: false,
     username: 'pasha_s',
+    userId: 3,
     profilePhoto: null,
     password: '',
-    tel: '',
     email: '',
+    tel: '',
 }
 
 export const authReducer = (state = initialState, action) => {
@@ -66,7 +67,6 @@ export const fetchLogin = (data) => async (dispatch) => {
     dispatch(login(response))
     dispatch(closeLoginModal())
 }
-
 
 export const fetchSignIn = (data) => async (dispatch) => {
     const response = await authAPI.signIn(data)

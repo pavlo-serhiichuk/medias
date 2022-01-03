@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
     padding-top: ${p => p.padTop};
     min-height: 100vh;
 `
+
 export const Icon = styled.div`
     position: absolute;
     top: 200px;

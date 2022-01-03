@@ -5,16 +5,18 @@ import Button from "../../common/Buttons/Button.component";
 import {connect} from "react-redux";
 import {sighOut} from "../../redux/authReducer";
 import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
-import {BsCart4} from "react-icons/bs";
-import {BiHeart, VscSignOut} from "react-icons/all";
+import {BsCart4 as CartIcon} from "react-icons/bs";
+import {BiHeart as LikedIcon, VscSignOut} from "react-icons/all";
 import {SmallProfilePhoto} from "../../common/Imgs/Imgs";
 import {closeSidebar} from "../../redux/sidebarReducer";
+import {getAsyncWishesProducts} from "../../redux/wishesReducer";
 
 const Header = (props) => {
-    const wishesAmount = props.wishes.length
-    const cartAmount = props.cartProducts.length
+    const cartLength = props.cartProducts.length
+    const wishesLength = props.wishesProducts.length
 
-    const photoURL = 'https://scontent-iev1-1.xx.fbcdn.net/v/t1.6435-9/117732137_331177674726150_6549843426398612487_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=wjOGYknIN2QAX8trGTv&tn=HtaZntDbEw0xOelm&_nc_ht=scontent-iev1-1.xx&oh=bfceb689f791b255f7b877450a5a4639&oe=61C3F166'
+    const photoURL = 'https://scontent-iev1-1.xx.fbcdn.net/v/t1.6435-9/117732137_331177674726150_6549843426398612487_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=MrItjldoQzEAX963uw-&tn=HtaZntDbEw0xOelm&_nc_ht=scontent-iev1-1.xx&oh=00_AT-sIyTwMePHg3mpQpiDcdB_fc7uyGKnDY0oxDeVRiXskA&oe=61F36766'
+
     return (
         <div className={s.header}>
             <div className={s.headerElements}>
@@ -30,12 +32,12 @@ const Header = (props) => {
                                 <Link to={`/profile?=${props.id}`}>{props.username}</Link>
                             </div>
                             <Link onClick={closeSidebar} to="/wishes" className={s.wishes}>
-                                <BiHeart size={25}/>
-                                <span className={s.amount}> {wishesAmount > 0 && wishesAmount}</span>
+                                <LikedIcon size={25}/>
+                                <span onClick={() => getAsyncWishesProducts(props.userId)} className={s.amount}>{wishesLength > 0 && wishesLength}</span>
                             </Link>
                             <Link to="/cart" className={s.cart}>
-                                <BsCart4 size={25}/>
-                                <span className={s.amount}> {cartAmount > 0 && cartAmount}</span>
+                                <CartIcon size={25}/>
+                                <span className={s.amount}>{cartLength > 0 && cartLength}</span>
                             </Link>
                         </>
                         : null}
@@ -56,9 +58,14 @@ const mstp = state => ({
     isAuth: state.auth.isAuth,
     profilePhoto: state.auth.profilePhoto,
     username: state.auth.username,
+    userId: state.auth.userId,
     isSighInModalOpen: state.auth.isSighInModalOpen,
     cartProducts: state.cart.cartProducts,
-    wishes: state.wishes.wishes
+    wishesProducts: state.wishes.wishesProducts
 })
 
-export default connect(mstp, {openLoginModal, openSignInModal, sighOut})(Header);
+export default connect(mstp, {
+    openLoginModal,
+    openSignInModal,
+    sighOut,
+    getAsyncWishesProducts})(Header);

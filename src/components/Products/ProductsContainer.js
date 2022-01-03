@@ -6,17 +6,19 @@ import {
     getAsyncCountries,
     getAsyncGuitars,
     getAsyncVouchers,
-    getAsyncFilteredVouchers
+    getAsyncFilteredVouchers, setCurrentProduct
 } from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 import Countries from "../Countries/Countries.component";
 import {closeSidebar, openSidebar} from "../../redux/sidebarReducer";
+import {openAlert, openMoreInfoModal} from "../../redux/modalReducer";
+import {setAsyncWish} from "../../redux/wishesReducer";
 
 class ProductsContainer extends React.PureComponent {
 
     tabTitle = title => document.title = `${title}| Medias`
 
-        componentDidMount() {
+    componentDidMount() {
         this.props.openSidebar()
 
         switch (this.props.category) {
@@ -39,6 +41,20 @@ class ProductsContainer extends React.PureComponent {
         }
     }
 
+    addToCart = product => {
+        return this.props.isAuth
+            ? () => this.props.addToCart(product)
+            : () => alert('Please, sigh in first! Asshole!!')
+    }
+
+    openMoreInfo = productId => this.props.openMoreInfoModal(productId)
+
+    setWish = (currentProduct, category, productId) => {
+        this.props.setCurrentProduct(currentProduct)
+        return this.props.setAsyncWish(this.props.userId, category, productId)
+        // return this.props.openAlert()
+    }
+
     render() {
         let countryName = null
         if (this.props.countries) {
@@ -55,9 +71,12 @@ class ProductsContainer extends React.PureComponent {
                 && <h5>{countryName[0].title} vouchers:</h5>}
 
                 <Products products={this.props.products}
-                          isAuth={this.props.isAuth}
+                          addToCart={this.addToCart}
+                          setWish={this.setWish}
+                          category={this.props.category}
+                          openMoreInfo={this.openMoreInfo}
                           isLoading={this.props.isLoading}
-                          addToCart={this.props.addToCart}/>
+                />
             </>
         );
     }
@@ -69,13 +88,23 @@ const mstp = state => ({
     countries: state.products.countries,
     countryID: state.products.countryID,
     isAuth: state.auth.isAuth,
+    userId: state.auth.userId,
     isLoading: state.auth.isLoading,
     category: state.products.category
 })
 
 
 export default connect(mstp, {
-    getAsyncGuitars, getAsyncBooks,
-    getAsyncVouchers, getAsyncCountries, getAsyncFilteredVouchers, openSidebar, closeSidebar,
-    addToCart
+    getAsyncGuitars,
+    getAsyncBooks,
+    getAsyncVouchers,
+    getAsyncCountries,
+    getAsyncFilteredVouchers,
+    openSidebar,
+    closeSidebar,
+    openMoreInfoModal,
+    setAsyncWish,
+    addToCart,
+    setCurrentProduct,
+    openAlert,
 })(ProductsContainer);

@@ -37,10 +37,8 @@ export const productsReducer = (state = initialState, action) => {
         case SET_COUNTRIES:
             return {...state, countries: action.payload}
         case CHANGE_COUNTRY_ID:
-            console.log(CHANGE_COUNTRY_ID)
             return {...state, countryID: action.payload}
         case CHANGE_CATEGORY:
-            console.log('Category changed')
             return {...state, category: action.payload}
         default:
             return state
@@ -52,7 +50,7 @@ const setGuitars = guitars => ({type: SET_GUITARS, payload: guitars})
 const setVouchers = vouchers => ({type: SET_VOUCHERS, payload: vouchers})
 const getCountryFilteredVouchers = vouchers => ({type: SET_FILTERED_VOUCHERS, payload: vouchers})
 export const setFilteredProducts = filteredProducts => ({type: SET_FILTERED_PRODUCTS, payload: filteredProducts})
-export const setCurrentProduct = productPhotos => ({type: SET_CURRENT_PRODUCT, payload: productPhotos})
+export const setCurrentProduct = product => ({type: SET_CURRENT_PRODUCT, payload: product})
 
 const setCountries = (countries) => ({type: SET_COUNTRIES, payload: countries})
 export const changeCountryID = countryID => ({type: CHANGE_COUNTRY_ID, payload: countryID})
@@ -70,5 +68,5 @@ export const getAsyncGuitars = () => request(productsAPI.getGuitars, setGuitars)
 export const getAsyncVouchers = () => request(productsAPI.getVouchers, setVouchers)
 export const getAsyncCountries = () => request(productsAPI.getCountries, setCountries)
 
-export const getAsyncFilteredVouchers = (countryID) => request(() => productsAPI.getCountryFilteredVouchers(countryID), getCountryFilteredVouchers)
+export const getAsyncFilteredVouchers = countryID => request(() => productsAPI.getCountryFilteredVouchers(countryID), getCountryFilteredVouchers)
 

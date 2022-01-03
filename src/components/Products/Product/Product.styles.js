@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const ProductContent = styled.div`
     width: 205px;
     height: 320px;
-    
     padding: 10px;
     position: relative;
     background-image: url(${p => p.image});
@@ -16,7 +15,7 @@ export const ProductContent = styled.div`
 `
 
 export const Title = styled.div`
-    transition : all .4s;
+     transition: all .4s;
      opacity: 0;
      height: 248px;
      overflow: scroll;
