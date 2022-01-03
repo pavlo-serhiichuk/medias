@@ -2,7 +2,7 @@ import React from 'react';
 import {Form, Input, Label, P} from "./Login.styles";
 
 import Modal from "../../common/ModalWrap/Modal.component";
-import Button from "../../common/Buttons/Button.component";
+import Button, {PrimaryButton} from "../../common/Buttons/Button.component";
 import CloseButton from "../../common/Buttons/CloseButton.component";
 
 
@@ -27,7 +27,7 @@ const Login = ({closeModal, sendData, register, handleSubmit, errors}) => {
                 </Label>
                 {errors.password && <P>! {errors.password.message}</P>}
 
-                <Button onClick={sendData}>Log in</Button>
+                <PrimaryButton onClick={sendData}>Log in</PrimaryButton>
             </Form>
         </Modal>
 

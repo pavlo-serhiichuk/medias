@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components'
-import {BsXCircle} from "react-icons/bs";
-import {useDispatch} from "react-redux";
-import {closeMoreInfoModal} from "../../redux/modalReducer";
+import {BsXCircle as Close} from "react-icons/bs";
 
-const SButton = styled.button`
+const ButtonWrap = styled.button`
     background-color: ${p => p.color || 'white'};
     margin: 5px 0;
     border-radius: 5px;
@@ -22,8 +20,9 @@ const SButton = styled.button`
 `
 
 const CloseButton = (props) => {
-
-    return <SButton {...props}>{props.component || <BsXCircle/>}</SButton>
+    return <ButtonWrap {...props}>
+        {props.component || <Close/>}
+    </ButtonWrap>
 };
 
 export default CloseButton;

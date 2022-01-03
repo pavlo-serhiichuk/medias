@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Header.module.css';
 import {Link} from "react-router-dom";
-import Button from "../../common/Buttons/Button.component";
+import Button, {PrimaryButton, GoldButton} from "../../common/Buttons/Button.component";
 import {connect} from "react-redux";
 import {sighOut} from "../../redux/authReducer";
 import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
@@ -44,8 +44,8 @@ const Header = (props) => {
                 {props.isAuth
                     ? ''
                     : <div className={s.right}>
-                        <Button onClick={props.openLoginModal}>Log in</Button>
-                        <Button onClick={props.openSignInModal}>Sign in</Button>
+                        <GoldButton onClick={props.openLoginModal}>Log in</GoldButton>
+                        <PrimaryButton onClick={props.openSignInModal}>Sign in</PrimaryButton>
                     </div>
                 }
             </div>

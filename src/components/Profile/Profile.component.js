@@ -3,7 +3,7 @@ import {Avatar, Content, History, UserInfo, Wrapper} from "./Profile.style";
 import {useDispatch, useSelector} from "react-redux";
 import {closeSidebar} from "../../redux/sidebarReducer";
 import {VscSignOut} from "react-icons/all";
-import Button from "../../common/Buttons/Button.component";
+import Button, {RedButton} from "../../common/Buttons/Button.component";
 import {sighOut} from "../../redux/authReducer";
 import {Redirect} from "react-router-dom";
 
@@ -26,7 +26,7 @@ const Profile = () => {
                 <Avatar />
                     <UserInfo></UserInfo>
                     <History></History>
-                    <Button signOut color={'indianred'} onClick={makeSighOut}><VscSignOut/></Button>
+                    <RedButton signOut color={'indianred'} onClick={makeSighOut}><VscSignOut/></RedButton>
             </Content>
         </Wrapper>
     );
