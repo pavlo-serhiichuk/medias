@@ -1,8 +1,6 @@
 import React from 'react';
-import {AiOutlineMinus as Minus, AiOutlinePlus as Plus} from 'react-icons/ai';
 import Button from "../../../common/Buttons/Button.component";
-import {Operators, Title, Wrapper, Img, AmountContainer, Amount, Description, Content} from "./WishProduct.style";
-import {openMoreInfoModal} from "../../../redux/modalReducer";
+import {Operators, Title, Wrapper, Img, Description} from "./WishProduct.style";
 
 const Wish = ({wish}) => {
     return (
