@@ -1,13 +1,13 @@
 import React from 'react';
 import s from './Header.module.css';
 import {Link} from "react-router-dom";
-import Button, {PrimaryButton, GoldButton} from "../../common/Buttons/Button.component";
+import Button, {PrimaryButton, GoldButton} from "../common/Buttons/Button.component";
 import {connect} from "react-redux";
 import {sighOut} from "../../redux/authReducer";
 import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
 import {BsCart4 as CartIcon} from "react-icons/bs";
 import {BiHeart as LikedIcon} from "react-icons/all";
-import {SmallProfilePhoto} from "../../common/Imgs/Imgs";
+import {SmallProfilePhoto} from "../common/Imgs/Imgs";
 import {closeSidebar} from "../../redux/sidebarReducer";
 import {getAsyncWishesProducts} from "../../redux/wishesReducer";
 

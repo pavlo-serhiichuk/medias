@@ -8,7 +8,7 @@ import {ImBooks} from "react-icons/im";
 import {GiGuitar} from "react-icons/gi";
 import {GiHamburgerMenu as Hamburger} from "react-icons/all";
 
-import {SmallTitle} from "../../common/Titles/Titles";
+import {SmallTitle} from "../common/Titles/Titles";
 
 import {changeCategory} from "../../redux/productsReducer";
 import NativeFiltersContainer from "../NativeFilters/NativeFiltersContainer";

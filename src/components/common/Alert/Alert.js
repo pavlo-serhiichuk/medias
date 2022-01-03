@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from "react-redux";
 import s from './Alert.module.css'
-import {closeAlert} from "../../redux/modalReducer";
+import {closeAlert} from "../../../redux/modalReducer";
 
 const Alert = ({product, closeAlert}) => {
 

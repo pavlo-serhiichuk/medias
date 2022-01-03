@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from "../../../common/Buttons/Button.component";
+import Button from "../../common/Buttons/Button.component";
 import {Operators, Title, Wrapper, Img, Description} from "./WishProduct.style";
 
 const Wish = ({wish}) => {

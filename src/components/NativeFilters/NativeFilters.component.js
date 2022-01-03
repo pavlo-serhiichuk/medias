@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form, FilterWrap, Label, Wrapper, Select} from './NativeFilters.style'
-import {SmallTitle} from "../../common/Titles/Titles";
+import {SmallTitle} from "../common/Titles/Titles";
 
 const NativeFilters = (props) => {
 
