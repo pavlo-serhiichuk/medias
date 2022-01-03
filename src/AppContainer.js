@@ -5,6 +5,8 @@ import {useDispatch, useSelector} from "react-redux";
 import './index.css';
 import App from "./App";
 import {openSidebar} from "./redux/sidebarReducer";
+import {createPortal} from "react-dom";
+import Portal from "./components/Portal/Portal.component";
 import {getAsyncWishesProducts} from "./redux/wishesReducer";
 import {changeCategory} from "./redux/productsReducer";
 
@@ -27,6 +29,7 @@ function AppContainer() {
     let isAlertOpen = useSelector(state => state.modal.isAlertOpen)
     let isLoginModalOpen = useSelector(state => state.modal.isLoginModalOpen)
     let isSignInModalOpen = useSelector(state => state.modal.isSighInModalOpen)
+    let isPhotosPopupOpen = useSelector(state => state.modal.isPhotosPopupOpen)
     let isMoreInfoModalOpen = useSelector(state => state.modal.isMoreInfoModalOpen)
     let isSidebarOpen = useSelector(state => state.sidebar.isSidebarOpen)
     let category = useSelector(state => state.products.category)
@@ -45,10 +48,12 @@ function AppContainer() {
             <App query={query}
                  open={open}
                  isSidebarOpen={isSidebarOpen}
+                 isPhotosPopupOpen={isPhotosPopupOpen}
                  isSignInModalOpen={isSignInModalOpen}
                  isMoreInfoModalOpen={isMoreInfoModalOpen}
                  isAlertOpen={isAlertOpen}
                  isLoginModalOpen={isLoginModalOpen}/>
+            {createPortal(<Portal />, document.getElementById('portal'))}
         </>
     );
 }
