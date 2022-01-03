@@ -2,7 +2,7 @@ import React from 'react';
 import {BiHeart as Liked} from "react-icons/all";
 import {AiOutlineShoppingCart as Cart} from "react-icons/ai"
 import {Buttons, ProductContent, Title} from "./Product.styles";
-import Button from "../../../common/Buttons/Button.component";
+import {PrimaryButton, SuccessButton} from "../../../common/Buttons/Button.component";
 
 const Product = ({product, addToCart, openMoreInfo, setWish, category}) => {
 
@@ -14,15 +14,12 @@ const Product = ({product, addToCart, openMoreInfo, setWish, category}) => {
                 {title}
             </Title>
             <Buttons>
-                <Button color={'dodgerblue'}
-                        onClick={() => addToCart(product)}>
+                <PrimaryButton color={'dodgerblue'} onClick={() => addToCart(product)}>
                     Add to <Cart/>
-                </Button>
-                <Button color={'#009B00'}
-                        wishes
-                        onClick={() => setWish(product, category, id)}>
+                </PrimaryButton>
+                <SuccessButton onClick={() => setWish(product, category, id)}>
                     <Liked/>
-                </Button>
+                </SuccessButton>
             </Buttons>
         </ProductContent>
 

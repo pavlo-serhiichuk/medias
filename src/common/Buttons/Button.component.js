@@ -1,21 +1,38 @@
 import React from 'react';
 import styled from 'styled-components'
 
-const SButton = styled.button`
-    display: ${p => p.display};
-    justify-content: ${p => p.justify || 'space-between'};
-    width: ${p => p.width ||  '100%'};
-    background-color: ${p => p.sighOut && 'indianred' || p.color || p.amount && '#c9cbc9' || 'dodgerblue'};
-    border-radius: ${p => p.operator && '0px' || '5px'};
+const Button = styled.button`
+    width: 100%;
+    border-radius: 5px;
     border: none;
     outline: none;
+`
+
+export const PrimaryButton = styled(Button)`
+    background-color: dodgerblue;
     &:hover {
-        background-color: ${p => p.signOut && '#cd6330' || p.wishes && '#00AE00' || `#46B8FF`};
+        background-color: #46B8FF;
     }
 `
 
-const Button = (props) => {
-    return <SButton {...props}/>
-};
+export const SuccessButton = styled(Button)`
+    background-color: #009B00;
+    &:hover {
+        background-color: #00AE00;
+    }
+`
+
+export const RedButton = styled(Button)`
+    background-color: indianred;
+    &:hover {
+        background-color: #cd6330;
+    }
+`
+export const GoldButton = styled(Button)`
+    background-color: #f3d11a;
+    &:hover {
+        background-color: #ffd700;
+    }
+`
 
 export default Button;
