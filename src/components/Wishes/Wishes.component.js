@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {Wrapper} from "./Wishes.style";
 import {BiHeart as Liked} from "react-icons/all";
 import Wish from './WishesProduct/Wish.component'
