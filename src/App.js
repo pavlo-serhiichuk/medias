@@ -1,5 +1,6 @@
 import React, {lazy, Suspense} from "react";
 import {Route} from "react-router-dom";
+import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
 import './index.css';
 import {Wrapper, Content} from "./App.styles";
 
@@ -15,12 +16,11 @@ import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
 import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
 import IntroArticlesContainer from "./components/IntroArticles/IntroArticlesContainer";
 import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "./components/common/QuickScrolls/QuickScrolls.component";
-
+import API from "./api/routerApi";
 import {Routers} from "./AppContainer";
-import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
+import Alert from "./components/common/Alert/Alert";
 import {LeftBtn} from "./components/Sidebar/Sidebar.style";
 import PhotosPopup from "./components/PhotosPopup/PhotosPopup.component";
-import Alert from "./components/common/Alert/Alert";
 
 const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
 
@@ -50,16 +50,16 @@ function App({
                     }
                     <Routers>
                         <Suspense fallback={'Loading...'}>
-                            <Route path="/books" render={() => <ProductsContainer/>}/>
-                            <Route path="/guitars" render={() => <ProductsContainer/>}/>
-                            <Route path="/vouchers" render={() => <ProductsContainer/>}/>
-                            <Route path="/filtered" render={() => <ProductsContainer id={query.get("id")}/>}/>
+                            <Route path={API.books.path} render={() => <ProductsContainer/>}/>
+                            <Route path={API.guitars.path} render={() => <ProductsContainer/>}/>
+                            <Route path={API.vouchers.path} render={() => <ProductsContainer/>}/>
+                            <Route path={API.filtered.path} render={() => <ProductsContainer id={query.get("id")}/>}/>
                         </Suspense>
-                        <Route path="/profile" render={() => <Profile/>}/>
-                        <Route path="/wishes" render={() => <WishesContainer/>}/>
-                        <Route path="/cart" render={() => <CartContainer/>}/>
-                        <Route path="/articles" render={() => <IntroArticlesContainer/>}/>
-                        <Route path="/article" render={() => <FullArticleContainer id={query.get("id")}/>}/>
+                        <Route path={API.profile.path} render={() => <Profile/>}/>
+                        <Route path={API.wishes.path} render={() => <WishesContainer/>}/>
+                        <Route path={API.cart.path} render={() => <CartContainer/>}/>
+                        <Route path={API.articles.path} render={() => <IntroArticlesContainer/>}/>
+                        <Route path={API.article.path} render={() => <FullArticleContainer id={query.get("id")}/>}/>
                     </Routers>
                 </Content>
                 <GoTop/>
