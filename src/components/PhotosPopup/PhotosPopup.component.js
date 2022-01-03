@@ -4,8 +4,8 @@ import {ImagesContainer, OtherImgs, Wrapper} from "./PhotosPopup.style";
 
 import {closePhotosPopup} from "../../redux/modalReducer";
 import {setCurrentImageId} from "../../redux/imagesReducer";
-import Modal from "../../common/ModalWrap/Modal.component";
-import CloseButton from "../../common/Buttons/CloseButton.component";
+import Modal from "../common/ModalWrap/Modal.component";
+import CloseButton from "../common/Buttons/CloseButton.component";
 import {MainImage, SmallImage} from "./Images.component";
 
 const PhotosPopup = ({product, closePhotosPopup}) => {
