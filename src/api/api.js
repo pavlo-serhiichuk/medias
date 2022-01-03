@@ -14,6 +14,14 @@ const post = (url, data) => fetch(`${serverURL}${url}`, {
     body:  JSON.stringify(data),
 }).then(res => res.json())
 
+const put = (url, data) => fetch(`${serverURL}${url}`, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body:  JSON.stringify(data),
+}).then(res => res.json())
+
 export const authAPI = {
     signIn(data) {
         return post('signin', data)
@@ -52,8 +60,8 @@ export const productsAPI = {
 }
 
 export const wishesAPI = {
-    getWishes() {
-        return get('wishes')
+    getWishes(data) {
+        return put('wishes', data)
     },
     setWish(data) {
         return post(`wish`, data)

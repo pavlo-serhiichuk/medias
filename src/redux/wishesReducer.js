@@ -1,10 +1,8 @@
-import {request, wishesAPI} from "../api/api";
-import {hideLoading, showLoading} from "./authReducer";
+import {wishesAPI} from "../api/api";
 import {openAlert} from "./modalReducer";
 import {useSelector} from "react-redux";
 
 const SET_WISHES = 'WISHES/SET_WISHES'
-const SET_WISHES_LENGTH = 'WISHES/SET_WISHES_LENGTH'
 const DELETE_FROM_WISHES = 'CART/DELETE_FROM_WISHES'
 const SET_IS_WISH_ADDED = 'WISHES/SET_IS_WISH_ADDED'
 
@@ -25,21 +23,27 @@ export const wishesReducer = (state = initialState, action) => {
 }
 
 export const setWishes = wishes => ({type: SET_WISHES, payload: wishes})
-export const setWishesLenght = wishesLength => ({type: SET_WISHES_LENGTH, payload: wishesLength})
 export const setIsWishAdded = status => ({type: SET_IS_WISH_ADDED, payload: status})
-// export const getAsyncWishes = () => request(wishesAPI.getWishes, setWishes)
+
+
+export const setAsyncWishes = (userId) => async dispatch => {
+    const response = await wishesAPI.getWishes({userId})
+
+    dispatch(setWishes(response))
+}
 
 export const setAsyncWish = (userId, category, productId) => async dispatch => {
-    // let wishes = useSelector(state => state.wishes.wishes)
 
-    const data = {userId, category, productId}
+    let wishes = useSelector(state => state.wishes.wishes)
 
-    const response = await wishesAPI.setWish(data)
-        // if(JSON.stringify(wishes) === JSON.stringify(response)) {
-        //
-        // }
-    // debugger
-    // dispatch(openAlert())
+    const response = await wishesAPI.setWish({userId, category, productId})
+
+    if(JSON.stringify(wishes) === JSON.stringify(response)) {
+
+    } else {
+        dispatch(openAlert())
+    }
+
     dispatch(setIsWishAdded(true))
     dispatch(setWishes(response))
 }
