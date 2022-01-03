@@ -3,9 +3,9 @@ import {filterRequest, productsAPI} from "../api/api";
 const OPEN_SIDEBAR = 'OPEN_SIDEBAR'
 const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR'
 
+const SET_TIME = 'SET_TIME'
 const SET_PRICE = 'SET_PRICE'
 const SET_POPULARITY = 'SET_POPULARITY'
-const SET_TIME = 'SET_TIME'
 const DELETE_FILTERS = 'DELETE_FILTERS'
 const SET_FILTER_NAME = 'SET_FILTER_NAME'
 const SET_FILTER_PARAM = 'SET_FILTER_PARAM'
