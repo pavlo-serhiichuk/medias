@@ -1,15 +1,14 @@
 import React, {useEffect} from 'react';
-import {Wrapper} from "../Cart/Cart.styles";
-import {BiHeart} from "react-icons/all";
-import {useDispatch, useSelector} from "react-redux";
-import {closeSidebar} from "../../redux/sidebarReducer";
+import {Wrapper} from "./Wishes.style";
+import {BiHeart as Liked} from "react-icons/all";
+import Wish from './WishesProduct/Wish.component'
 
 const Wishes = ({wishes}) => {
 
-    if (!wishes) {
+    if (!wishes.length) {
         return (
             <Wrapper padTop={'150px'}>
-                <h6>Упс... You haven't added anything to your Wishes<BiHeart/>. It's empty...
+                <h6>Упс... You haven't added anything to your Wishes<Liked/>. It's empty...
                     Please, turn back to All Elements and choose something.
                 </h6>
             </Wrapper>
@@ -18,7 +17,7 @@ const Wishes = ({wishes}) => {
 
     return (
         <div>
-            {wishes.map(wish => wish)}
+            {wishes.map(wish => <Wish wish={wish} />)}
         </div>
     );
 }

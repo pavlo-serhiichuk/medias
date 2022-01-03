@@ -9,10 +9,11 @@ import {BsCart4 as CartIcon} from "react-icons/bs";
 import {BiHeart as LikedIcon, VscSignOut} from "react-icons/all";
 import {SmallProfilePhoto} from "../../common/Imgs/Imgs";
 import {closeSidebar} from "../../redux/sidebarReducer";
+import {getAsyncWishesProducts} from "../../redux/wishesReducer";
 
 const Header = (props) => {
     const cartLength = props.cartProducts.length
-    const wishesLength = props.wishes.length
+    const wishesLength = props.wishesProducts.length
 
     const photoURL = 'https://scontent-iev1-1.xx.fbcdn.net/v/t1.6435-9/117732137_331177674726150_6549843426398612487_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=MrItjldoQzEAX963uw-&tn=HtaZntDbEw0xOelm&_nc_ht=scontent-iev1-1.xx&oh=00_AT-sIyTwMePHg3mpQpiDcdB_fc7uyGKnDY0oxDeVRiXskA&oe=61F36766'
 
@@ -32,7 +33,7 @@ const Header = (props) => {
                             </div>
                             <Link onClick={closeSidebar} to="/wishes" className={s.wishes}>
                                 <LikedIcon size={25}/>
-                                <span className={s.amount}>{wishesLength > 0 && wishesLength}</span>
+                                <span onClick={() => getAsyncWishesProducts(props.userId)} className={s.amount}>{wishesLength > 0 && wishesLength}</span>
                             </Link>
                             <Link to="/cart" className={s.cart}>
                                 <CartIcon size={25}/>
@@ -57,9 +58,14 @@ const mstp = state => ({
     isAuth: state.auth.isAuth,
     profilePhoto: state.auth.profilePhoto,
     username: state.auth.username,
+    userId: state.auth.userId,
     isSighInModalOpen: state.auth.isSighInModalOpen,
     cartProducts: state.cart.cartProducts,
-    wishes: state.wishes.wishes
+    wishesProducts: state.wishes.wishesProducts
 })
 
-export default connect(mstp, {openLoginModal, openSignInModal, sighOut})(Header);
+export default connect(mstp, {
+    openLoginModal,
+    openSignInModal,
+    sighOut,
+    getAsyncWishesProducts})(Header);

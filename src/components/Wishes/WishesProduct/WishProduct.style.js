@@ -1,16 +1,13 @@
 import styled from "styled-components";
 import {FlexWrap} from "../../../common/FlexWrap/FlexWrap";
 
-export const Wrapper = styled.div`
-    display: flex;
-    flex-direction: row;
+export const Wrapper = styled(FlexWrap)`
     justify-content: space-between;
-    box-sizing: border-box;
     padding: 10px;
-    margin-bottom: 10px;
-    border-bottom: 1px solid grey;
     background-color: #fff;
-    
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid grey;
 `
 
 export const Description = styled(FlexWrap)`
@@ -26,13 +23,16 @@ export const Img = styled.div`
 `
 
 export const Title = styled.div`
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bold;
   padding: 0 10px;
+  overflow: scroll;
+  max-width: 600px;
 `
 
 export const Operators = styled.div`
-    width: 106px;
+    width: 230px;
+    margin-left: 5px;
 `
 
 export const AmountContainer = styled.div`

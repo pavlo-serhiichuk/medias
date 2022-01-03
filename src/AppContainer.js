@@ -5,7 +5,8 @@ import {useDispatch, useSelector} from "react-redux";
 import './index.css';
 import App from "./App";
 import {openSidebar} from "./redux/sidebarReducer";
-import {setAsyncWishes} from "./redux/wishesReducer";
+import {getAsyncWishesProducts} from "./redux/wishesReducer";
+import {changeCategory} from "./redux/productsReducer";
 
 function useQuery() {
     const {search} = useLocation();
@@ -28,11 +29,15 @@ function AppContainer() {
     let isSignInModalOpen = useSelector(state => state.modal.isSighInModalOpen)
     let isMoreInfoModalOpen = useSelector(state => state.modal.isMoreInfoModalOpen)
     let isSidebarOpen = useSelector(state => state.sidebar.isSidebarOpen)
-
+    let category = useSelector(state => state.products.category)
     const open = () => dispatch(openSidebar())
 
     useEffect(() => {
-        dispatch(setAsyncWishes(userId))
+        dispatch(getAsyncWishesProducts(userId))
+
+        if(!category) {
+            dispatch(changeCategory('books'))
+        }
     }, [])
 
     return (
