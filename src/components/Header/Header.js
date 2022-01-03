@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import s from './Header.module.css';
 import {Link} from "react-router-dom";
 import Button from "../../common/Buttons/Button.component";
@@ -13,9 +13,13 @@ import {getAsyncWishesProducts} from "../../redux/wishesReducer";
 
 const Header = (props) => {
     const cartLength = props.cartProducts.length
-    const wishesLength = props.wishesProducts.length
+    const wishesLength = props.wishesMaping ? props.wishesMaping.length : 0
 
     const photoURL = 'https://scontent-iev1-1.xx.fbcdn.net/v/t1.6435-9/117732137_331177674726150_6549843426398612487_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=MrItjldoQzEAX963uw-&tn=HtaZntDbEw0xOelm&_nc_ht=scontent-iev1-1.xx&oh=00_AT-sIyTwMePHg3mpQpiDcdB_fc7uyGKnDY0oxDeVRiXskA&oe=61F36766'
+
+    useEffect(() => {
+        props.getAsyncWishesProducts(props.userId)
+    }, [])
 
     return (
         <div className={s.header}>
@@ -61,7 +65,8 @@ const mstp = state => ({
     userId: state.auth.userId,
     isSighInModalOpen: state.auth.isSighInModalOpen,
     cartProducts: state.cart.cartProducts,
-    wishesProducts: state.wishes.wishesProducts
+    wishesProducts: state.wishes.wishesProducts,
+    wishesMaping: state.wishes.wishesMaping
 })
 
 export default connect(mstp, {
