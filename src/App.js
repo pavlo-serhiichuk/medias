@@ -40,7 +40,6 @@ function App({
             <Wrapper>
                 {isAlertOpen && <Alert />}
                 <TopAnchor/>
-                <GoBottom/>
                 <Header/>
                 <Content>
                     {
@@ -63,6 +62,7 @@ function App({
                     </Routers>
                 </Content>
                 <GoTop/>
+                <GoBottom/>
                 <BottomAnchor/>
             </Wrapper>
             <Footer/>
