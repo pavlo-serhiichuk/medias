@@ -40,6 +40,7 @@ function App({
             <Wrapper>
                 {isAlertOpen && <Alert />}
                 <TopAnchor/>
+                <GoTop/>
                 <Header/>
                 <Content>
                     {
@@ -61,7 +62,6 @@ function App({
                         <Route path={API.article.path} render={() => <FullArticleContainer id={query.get("id")}/>}/>
                     </Routers>
                 </Content>
-                <GoTop/>
                 <GoBottom/>
                 <BottomAnchor/>
             </Wrapper>

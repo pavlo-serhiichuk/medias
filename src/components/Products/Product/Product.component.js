@@ -1,7 +1,7 @@
 import React from 'react';
 import {BiHeart as Liked} from "react-icons/all";
 import {AiOutlineShoppingCart as Cart} from "react-icons/ai"
-import {Buttons, ProductContent, Shadow, Title} from "./Product.styles";
+import {Buttons, ProductContent, Title} from "./Product.styles";
 import {PrimaryButton, SuccessButton} from "../../common/Buttons/Button.component";
 
 const Product = ({product, addToCart, openMoreInfo, setWish, category}) => {

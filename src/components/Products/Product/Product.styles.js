@@ -16,21 +16,6 @@ export const ProductContent = styled.div`
     &:hover: {
        opacity: 0.5; 
 `
-//
-// export const Shadow = styled.div`
-//     transition: .3s;
-//     position: absolute;
-//     top: 0;
-//     left: 0;
-//     background-color: #000;
-//     width: 100%;
-//     height: 100%;
-//     z-index: 200;
-//     opacity: 0;
-//     &:hover {
-//     opacity: 0.5;
-//     }
-// `
 
 export const Title = styled.div`
      transition: all .4s;

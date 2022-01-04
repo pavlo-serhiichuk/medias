@@ -7,6 +7,7 @@ export const A = styled.a`
   transition: .3s;
   right: 5px;
   opacity: 0.7;
+  z-index: 700;
   &:hover {
     background-color: #eeeeee;
       opacity: 1;
@@ -15,7 +16,6 @@ export const A = styled.a`
 
 export const GoBottomWrapper = styled(A)`
     top: 80px;
-    z-index: 700;
 `
 
 export const GoTopWrapper = styled(A)`
