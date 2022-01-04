@@ -23,11 +23,9 @@ class ProductsContainer extends React.PureComponent {
 
         switch (this.props.category) {
             case 'books':
-                debugger
                 this.tabTitle('Books')
                 return this.props.getAsyncBooks()
             case 'guitars':
-                debugger
                 this.tabTitle('Guitars')
                 return this.props.getAsyncGuitars()
             case 'vouchers':

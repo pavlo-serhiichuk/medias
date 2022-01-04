@@ -12,17 +12,20 @@ export const ProductContent = styled.div`
     background-size: 200px;
     box-sizing: border-box;
     border: 1px solid rgba(210, 217, 217, 0.89);
+        z-index: 223;
+    &:hover: {
+       opacity: 0.5; 
 `
 
 export const Title = styled.div`
      transition: all .4s;
      opacity: 0;
      height: 248px;
-     overflow: scroll;
+     overflow: hidden;
      font-size: 25px;    
      font-weight: bold;
      color: white;
-     text-shadow: #000 0.5px 0 11px;
+     text-shadow: #000 1.5px 0 21px;
      text-align:center; 
      cursor: default;
      z-index: 330;
@@ -35,6 +38,7 @@ export const Buttons = styled.div`
     display: grid;
     grid-template-columns: 5fr 1fr;
     grid-gap: 13px;
+    z-index: 330;
 `
 
 
