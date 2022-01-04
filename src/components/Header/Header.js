@@ -15,8 +15,9 @@ import {PrimaryButton, GoldButton} from "../common/Buttons/Button.component";
 const Header = (props) => {
     const cartLength = props.cartProducts.length
     const wishesLength = props.wishesMaping.length
-
     const photoURL = 'https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'
+    const getAsyncWishes = () => getAsyncWishesProducts(props.userId)
+
     return (
         <div className={s.header}>
             <div className={s.headerElements}>
@@ -33,7 +34,7 @@ const Header = (props) => {
                             </div>
                             <Link onClick={closeSidebar} to={API.wishes.path} className={s.wishes}>
                                 <LikedIcon size={25}/>
-                                <span onClick={() => getAsyncWishesProducts(props.userId)} className={s.amount}>{wishesLength > 0 && wishesLength}</span>
+                                <span onClick={getAsyncWishes} className={s.amount}>{wishesLength > 0 && wishesLength}</span>
                             </Link>
                             <Link to={API.cart.path} className={s.cart}>
                                 <CartIcon size={25}/>
