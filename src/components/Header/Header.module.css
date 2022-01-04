@@ -25,6 +25,7 @@
 
 
 .cart, .account, .wishes {
+    transition: .4s;
     display: flex;
     justify-content: center;
     align-items: center;
