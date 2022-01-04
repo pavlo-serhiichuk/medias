@@ -1,15 +1,16 @@
 import React from 'react';
 import s from './Header.module.css';
-import {Link} from "react-router-dom";
-import Button, {PrimaryButton, GoldButton} from "../common/Buttons/Button.component";
 import {connect} from "react-redux";
-import {sighOut} from "../../redux/authReducer";
-import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
+import {Link} from "react-router-dom";
 import {BsCart4 as CartIcon} from "react-icons/bs";
 import {BiHeart as LikedIcon} from "react-icons/all";
-import {SmallProfilePhoto} from "../common/Imgs/Imgs";
+import API from "../../api/routerApi";
+import {sighOut} from "../../redux/authReducer";
 import {closeSidebar} from "../../redux/sidebarReducer";
 import {getAsyncWishesProducts} from "../../redux/wishesReducer";
+import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
+import {SmallProfilePhoto} from "../common/Imgs/Imgs";
+import {PrimaryButton, GoldButton} from "../common/Buttons/Button.component";
 
 const Header = (props) => {
     const cartLength = props.cartProducts.length
@@ -21,20 +22,20 @@ const Header = (props) => {
             <div className={s.headerElements}>
                 <div className={s.left}>
                     <h1 className={s.article} >
-                        <Link to="/articles" onClick={closeSidebar}>medias</Link>
+                        <Link to={API.articles.path} onClick={closeSidebar}>medias</Link>
                     </h1>
                     {props.username
                         ?
                         <>
                             <div className={s.profile}>
                                  <SmallProfilePhoto profilePhoto={props.profilePhoto || photoURL}/>
-                                <Link to={`/profile?=${props.id}`}>{props.username}</Link>
+                                <Link to={`${API.profile.path}?=${props.id}`}>{props.username}</Link>
                             </div>
-                            <Link onClick={closeSidebar} to="/wishes" className={s.wishes}>
+                            <Link onClick={closeSidebar} to={API.wishes.path} className={s.wishes}>
                                 <LikedIcon size={25}/>
                                 <span onClick={() => getAsyncWishesProducts(props.userId)} className={s.amount}>{wishesLength > 0 && wishesLength}</span>
                             </Link>
-                            <Link to="/cart" className={s.cart}>
+                            <Link to={API.cart.path} className={s.cart}>
                                 <CartIcon size={25}/>
                                 <span className={s.amount}>{cartLength > 0 && cartLength}</span>
                             </Link>
