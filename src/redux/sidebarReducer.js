@@ -3,6 +3,9 @@ import {filterRequest, productsAPI} from "../api/api";
 const OPEN_SIDEBAR = 'OPEN_SIDEBAR'
 const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR'
 
+const OPEN_FILTERS = 'OPEN_FILTERS'
+const CLOSE_FILTERS = 'CLOSE_FILTERS'
+
 const SET_TIME = 'SET_TIME'
 const SET_PRICE = 'SET_PRICE'
 const SET_POPULARITY = 'SET_POPULARITY'
@@ -12,6 +15,7 @@ const SET_FILTER_PARAM = 'SET_FILTER_PARAM'
 
 const initialState = {
     isSidebarOpen: false,
+    isFiltersOpen: true,
     filterName: '',
     filterParam: '',
     price: "....",
@@ -25,6 +29,10 @@ export const sidebarReducer = (state = initialState, action) => {
             return {...state, isSidebarOpen: true}
         case CLOSE_SIDEBAR:
             return {...state, isSidebarOpen: false}
+        case OPEN_FILTERS:
+            return {...state, isFiltersOpen: true}
+        case CLOSE_FILTERS:
+            return {...state, isFiltersOpen: false}
 
         case SET_PRICE:
             return {...state, price: action.payload, liked: "....", time: "...."}
@@ -45,6 +53,8 @@ export const sidebarReducer = (state = initialState, action) => {
 
 export const openSidebar = () => ({type: OPEN_SIDEBAR})
 export const closeSidebar = () => ({type: CLOSE_SIDEBAR})
+export const openFilters = () => ({type: OPEN_FILTERS})
+export const closeFilters = () => ({type: CLOSE_FILTERS})
 
 export const setFilterPrice = (price) => ({type: SET_PRICE, payload: price})
 export const deleteFilters = () => ({type: DELETE_FILTERS})
