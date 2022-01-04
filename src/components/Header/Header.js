@@ -15,7 +15,7 @@ const Header = (props) => {
     const cartLength = props.cartProducts.length
     const wishesLength = props.wishesMaping.length
 
-    const photoURL = 'https://scontent-iev1-1.xx.fbcdn.net/v/t1.6435-9/117732137_331177674726150_6549843426398612487_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=wjOGYknIN2QAX8trGTv&tn=HtaZntDbEw0xOelm&_nc_ht=scontent-iev1-1.xx&oh=bfceb689f791b255f7b877450a5a4639&oe=61C3F166'
+    const photoURL = 'https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'
     return (
         <div className={s.header}>
             <div className={s.headerElements}>
