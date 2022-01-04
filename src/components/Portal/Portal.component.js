@@ -5,7 +5,7 @@ import {AiOutlineSend as SendButton, SiDialogflow as PortalSign} from "react-ico
 const Portal = () => {
 
     const messageArray = "How can I help you, Sapiens? I'm a big professional in different areas! Know everything about human nature. ".split(' ')
-    const message = messageArray.map(el => <Message>{el}</Message>)
+    const message = messageArray.map((el, i) => <Message key={i}>{el}</Message>)
 
     return (
         <Wrapper>
