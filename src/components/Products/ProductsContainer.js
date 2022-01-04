@@ -19,8 +19,6 @@ class ProductsContainer extends React.PureComponent {
     tabTitle = title => document.title = `${title}| Medias`
 
     componentDidMount() {
-        this.props.openSidebar()
-
         switch (this.props.category) {
             case 'books':
                 this.tabTitle('Books')
@@ -34,8 +32,7 @@ class ProductsContainer extends React.PureComponent {
                 return this.props.getAsyncCountries()
             case 'filteredVouchers':
                 this.tabTitle('Filtered Vouchers')
-                this.props.getAsyncFilteredVouchers(this.props.countryID)
-                return this.props.getAsyncCountries()
+                return this.props.getAsyncFilteredVouchers(this.props.countryID)
             default:
                 return null
         }
@@ -52,17 +49,17 @@ class ProductsContainer extends React.PureComponent {
     setWish = (currentProduct, category, productId) => {
         this.props.setCurrentProduct(currentProduct)
         return this.props.setAsyncWish(this.props.userId, category, productId)
-        // return this.props.openAlert()
     }
 
     render() {
         let countryName = null
+
         if (this.props.countries) {
             if (this.props.countryID) {
                 countryName = this.props.countries.filter(country => country.id === this.props.countryID)
             }
         }
-
+        console.log('rendered')
         return (
             <>
                 {this.props.category === 'vouchers'
@@ -84,7 +81,6 @@ class ProductsContainer extends React.PureComponent {
 
 const mstp = state => ({
     products: state.products.products,
-    filteredProducts: state.filteredProducts,
     countries: state.products.countries,
     countryID: state.products.countryID,
     isAuth: state.auth.isAuth,
@@ -106,5 +102,4 @@ export default connect(mstp, {
     setAsyncWish,
     addToCart,
     setCurrentProduct,
-    openAlert,
-})(ProductsContainer);
+    openAlert})(ProductsContainer);
