@@ -11,9 +11,7 @@
 }
 
 .headerElements {
-    width: 100%;
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
 }
 
@@ -44,6 +42,11 @@
     display: flex;
     justify-content: space-between;
     width: 200px;
+}
+
+.userNeeds {
+    display: flex;
+    justify-content: space-between;
 }
 
 .right button {

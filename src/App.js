@@ -5,12 +5,12 @@ import './index.css';
 import {Wrapper, Content} from "./App.styles";
 
 import Footer from "./components/Footer/Footer.component";
-import Header from "./components/Header/Header";
 import Profile from "./components/Profile/Profile.component";
 import Sidebar from "./components/Sidebar/Sidebar.component";
 import CartContainer from "./components/Cart/CartContainer";
 import LoginContainer from "./components/Login/LoginContainer";
 import SignInContainer from "./components/SignIn/SignInContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 import WishesContainer from "./components/Wishes/WishesContainer";
 import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
 import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
@@ -41,7 +41,7 @@ function App({
                 {isAlertOpen && <Alert />}
                 <TopAnchor/>
                 <GoTop/>
-                <Header/>
+                <HeaderContainer />
                 <Content>
                     {
                         isSidebarOpen
