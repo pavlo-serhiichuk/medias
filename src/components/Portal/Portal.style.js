@@ -15,6 +15,7 @@ export const Wrapper = styled.div`
     border-radius: 50%;
     font-size: 24px;
     box-shadow: 0 0 5px 1px rgb(33 130 119 / 46%), 0 0 10px 1px rgb(33 130 119 / 42%);
+    z-index: 800;
     &:hover {
         width: 320px;    
         border-radius: 5px;
