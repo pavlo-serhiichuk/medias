@@ -15,8 +15,10 @@ const Sidebar = () => {
     const isFiltersOpen = useSelector(state => state.sidebar.isFiltersOpen)
 
     const toggleCategory = (nextCategory) => {
+
         dispatch(openFilters())
         category !== nextCategory && dispatch(changeCategory(nextCategory))
+
     }
 
     const close = () => {

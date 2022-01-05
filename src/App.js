@@ -46,7 +46,7 @@ function App({
                     {
                         isSidebarOpen
                             ? <Sidebar/>
-                            : <LeftBtn onClick={() => open()}><Hamburger size={25}/></LeftBtn>
+                            : <LeftBtn onClick={open}><Hamburger size={25}/></LeftBtn>
                     }
                     <Routers>
                         <Suspense fallback={'Loading...'}>

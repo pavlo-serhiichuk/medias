@@ -1,5 +1,4 @@
 import {wishesAPI} from "../api/api";
-import {openAlert} from "./modalReducer";
 
 const SET_WISHES_MAPING = 'WISHES/SET_WISHES_MAPING'
 const GET_WISHES_PRODUCTS = 'WISHES/GET_WISHES_PRODUCTS'

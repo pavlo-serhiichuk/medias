@@ -1,9 +1,9 @@
 import React from 'react';
-import {Wrapper} from "./Country.style";
-import {SmallTitle} from "../../common/Titles/Titles";
-import {Img} from "../../common/Imgs/Imgs";
-import {useDispatch, useSelector} from "react-redux";
 import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {Wrapper} from "./Country.style";
+import {Img} from "../../common/Imgs/Imgs";
+import {SmallTitle} from "../../common/Titles/Titles";
 import {changeCategory, changeCountryID} from "../../../redux/productsReducer";
 
 const Country = ({country}) => {
@@ -18,8 +18,8 @@ const Country = ({country}) => {
 
     return (
         <Wrapper>
-            <Link to={`/filtered?id=${country.id}`} onClick={toggleCategory}>
-                <Img onClick={() => console.log(country.id)} image={country.image} country/>
+            <Link to={`/vouchers/filtered?id=${country.id}`} onClick={toggleCategory}>
+                <Img image={country.image} country/>
                 <SmallTitle>
                     {country.title}
                 </SmallTitle>
