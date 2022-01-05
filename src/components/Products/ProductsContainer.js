@@ -19,6 +19,7 @@ class ProductsContainer extends React.PureComponent {
     tabTitle = title => document.title = `${title}| Medias`
 
     componentDidMount() {
+
         switch (this.props.category) {
             case 'books':
                 this.tabTitle('Books')
@@ -59,13 +60,14 @@ class ProductsContainer extends React.PureComponent {
                 countryName = this.props.countries.filter(country => country.id === this.props.countryID)
             }
         }
-        console.log('rendered')
+        debugger
+
         return (
             <>
                 {this.props.category === 'vouchers'
                 && <Countries countries={this.props.countries}/>}
                 {this.props.category === 'filteredVouchers'
-                && <h5>{countryName[0].title} vouchers:</h5>}
+                && <b>{countryName[0].title} vouchers:</b>}
 
                 <Products products={this.props.products}
                           addToCart={this.addToCart}
