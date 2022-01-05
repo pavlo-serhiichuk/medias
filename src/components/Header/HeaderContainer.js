@@ -16,7 +16,7 @@ import {wishesAPI} from "../../api/api";
 
 const HeaderContainer = (props) => {
     const cart = props.cartProducts.length
-    const wishes = props.wishesMaping.length
+    const wishes = props.wishesProducts.length
     const photoURL = 'https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'
     const getAsyncWishes = () => getAsyncWishesProducts(props.userId)
 

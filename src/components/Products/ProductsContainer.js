@@ -40,9 +40,9 @@ class ProductsContainer extends React.PureComponent {
     }
 
     addToCart = product => {
-        return this.props.isAuth
-            ? () => this.props.addToCart(product)
-            : () => alert('Please, sigh in first! Asshole!!')
+            this.props.isAuth
+            ? this.props.addToCart(product)
+            : alert('Please, sigh in first! Asshole!!')
     }
 
     openMoreInfo = productId => this.props.openMoreInfoModal(productId)
@@ -60,7 +60,6 @@ class ProductsContainer extends React.PureComponent {
                 countryName = this.props.countries.filter(country => country.id === this.props.countryID)
             }
         }
-        debugger
 
         return (
             <>

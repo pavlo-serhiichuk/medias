@@ -1,27 +1,25 @@
 import React from 'react';
 import styled from 'styled-components'
-import {BsXCircle as Close} from "react-icons/bs";
+import {GrClose as Close} from "react-icons/gr";
 
 const ButtonWrap = styled.button`
-    background-color: ${p => p.color || 'white'};
+    position:absolute;
+    top: 0;
+    right: 0;
     margin: 5px 0;
     border-radius: 5px;
-    width: 8%;
-    position:absolute;
-    top: 10px;
-    right: 10px;
     border: none;
     outline: none;
     height: 30px;
-
-      &:hover {
+    background-color: ${p => p.color || 'white'};
+    &:hover {
         opacity: 0.7;
     }
 `
 
 const CloseButton = (props) => {
     return <ButtonWrap {...props}>
-        {props.component || <Close/>}
+        {props.component || <Close size={40}/>}
     </ButtonWrap>
 };
 

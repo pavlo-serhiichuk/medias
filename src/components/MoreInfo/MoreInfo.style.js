@@ -6,15 +6,34 @@ export const Content = styled.div`
     display: grid;
     grid-template-columns: 280px 2fr;
     grid-gap: 15px;
-    overflow: scroll;
-    height: 500px;
+    max-height: 700px;
 `
 
 export const ImgContaiter = styled.div`
     display: grid;
+    padding-top: 20px;
     grid-gap: 10px;
     height: 18%;
     max-width: 280px;
+    cursor: pointer;
+`
+
+export const InfoContainer = styled.div`
+    padding-right: 20px;
+    overflow: scroll;
+    overflow-x: hidden;
+    max-height: 600px;
+`
+
+
+export const ButtonsWrap = styled(FlexWrap)`
+       justify-content: right;
+       margin: 10px;
+       height: 30px;
+`
+
+export const Buttons = styled(FlexWrap)`
+       width: 300px;
 `
 
 export const OtherImgs = styled(FlexWrap)`

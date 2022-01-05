@@ -1,18 +1,19 @@
 import React from 'react';
+import {AiOutlineShoppingCart as Cart} from "react-icons/ai";
 import Modal from "../common/ModalWrap/Modal.component";
 import CloseButton from "../common/Buttons/CloseButton.component";
-import {
-    Content,
-    Description,
-    Features} from "./MoreInfo.style";
+import {Buttons, ButtonsWrap, Content, Description, Features, InfoContainer} from "./MoreInfo.style";
 import {BigTitle, MiddleTitle} from "../common/Titles/Titles";
 import MoreInfoImages from "./MoreInfoImages/MoreInfoImages.component";
+import {PrimaryButton, SuccessButton} from "../common/Buttons/Button.component";
+import {BiHeart as Liked} from "react-icons/bi";
 
 
 const MoreInfo = (props) => {
     const {closeMoreInfo, product} = props
 
-    const {author,
+    const {
+        author,
         producer,
         price,
         features,
@@ -20,19 +21,20 @@ const MoreInfo = (props) => {
         conditions,
         rating,
         gunres,
-        description} = product
+        description
+    } = product
 
     return (
         <Modal width={'80%'}>
             <CloseButton onClick={closeMoreInfo}/>
             <Content>
                 <MoreInfoImages  {...props}/>
-                <div>
+                <InfoContainer>
                     <BigTitle>{title}</BigTitle>
                     {author && <MiddleTitle producer>{author}</MiddleTitle>}
                     {producer && <MiddleTitle author>{producer}</MiddleTitle>}
 
-                    <MiddleTitle price>{price}</MiddleTitle>
+                    <MiddleTitle price>${price}</MiddleTitle>
                     {rating && <MiddleTitle>Rating: {rating}</MiddleTitle>}
 
                     {features && <Features>
@@ -51,9 +53,21 @@ const MoreInfo = (props) => {
                     </Features>}
 
                     <Description>{description}</Description>
-                </div>
-
+                </InfoContainer>
             </Content>
+            <ButtonsWrap>
+
+                <Buttons>
+                    <PrimaryButton color={'dodgerblue'} onClick={() => {
+                    }}>
+                        Add to <Cart/>
+                    </PrimaryButton>
+                    <SuccessButton onClick={() => {
+                    }}>
+                        Add to <Liked/>
+                    </SuccessButton>
+                </Buttons>
+            </ButtonsWrap>
         </Modal>
     );
 };

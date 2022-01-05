@@ -16,7 +16,7 @@ export const ModalContent = styled.div`
     position: relative;
     padding: 50px 20px 20px;
     margin: auto;
-    margin-top: 50px;
+    margin-top: 20px;
     max-width: ${p => p.width || '440px'};
     background: white;
 `
