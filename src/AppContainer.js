@@ -38,6 +38,7 @@ function AppContainer() {
     useEffect(() => {
         dispatch(getAsyncWishesProducts(userId))
         dispatch(openSidebar())
+        dispatch(getAsyncWishesProducts())
         if(!category) {
             dispatch(changeCategory('books'))
         }

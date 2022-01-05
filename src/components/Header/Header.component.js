@@ -47,8 +47,8 @@ const Header = (props) => {
                     </>}
                 </div>
                 {!isAuth && <div className={s.right}>
-                    <GoldButton onClick={openLoginModal}>Log in</GoldButton>
-                    <PrimaryButton onClick={openSignInModal}>Sign in</PrimaryButton>
+                    <GoldButton height='60px' onClick={openLoginModal}>Log in</GoldButton>
+                    <PrimaryButton height='60px' onClick={openSignInModal}>Sign in</PrimaryButton>
                 </div>
                 }
             </div>
