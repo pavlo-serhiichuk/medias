@@ -29,6 +29,7 @@ export const RedButton = styled(Button)`
         background-color: #cd6330;
     }
 `
+
 export const GoldButton = styled(Button)`
     background-color: #f3d11a;
     &:hover {
