@@ -7,7 +7,7 @@ import API from "../../api/routerApi";
 import {SmallTitle} from "../common/Titles/Titles";
 import {changeCategory} from "../../redux/productsReducer";
 import NativeFiltersContainer from "../NativeFilters/NativeFiltersContainer";
-import {closeFilters, closeSidebar, openFilters} from "../../redux/sidebarReducer";
+import {hideFilters, hideSidebar, openFilters} from "../../redux/sidebarReducer";
 
 const Sidebar = () => {
     const dispatch = useDispatch()
@@ -22,8 +22,8 @@ const Sidebar = () => {
     }
 
     const close = () => {
-        dispatch(closeSidebar())
-        dispatch(closeFilters())
+        dispatch(hideSidebar())
+        dispatch(hideFilters())
     }
 
     return (

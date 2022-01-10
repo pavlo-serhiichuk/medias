@@ -2,13 +2,13 @@ import React from 'react';
 import {connect} from "react-redux";
 import Cart from "./Cart.component";
 import { deleteFromCart } from "../../redux/cartReducer";
-import {closeSidebar} from "../../redux/sidebarReducer";
+import {hideSidebar} from "../../redux/sidebarReducer";
 
 class CartContainer extends React.Component {
 
     componentDidMount() {
         document.title = 'Cart| Medias'
-        this.props.closeSidebar()
+        this.props.hideSidebar()
     }
 
     render() {
@@ -27,5 +27,5 @@ const mstp = state => ({
 
 
 export default connect(mstp, {
-    deleteFromCart, closeSidebar,
+    deleteFromCart, hideSidebar,
 })(CartContainer);

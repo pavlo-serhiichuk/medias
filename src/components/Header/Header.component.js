@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {BsCart4 as CartIcon} from "react-icons/bs";
-import {BiHeart as LikedIcon} from "react-icons/all";
+import {BiHeart as LikedIcon} from "react-icons/bi";
 import s from './Header.module.css';
 import API from "../../api/routerApi";
 import {SmallProfilePhoto} from "../common/Imgs/Imgs";
@@ -23,7 +23,7 @@ const Header = (props) => {
  } = props
 
     return (
-        <div className={s.header}>
+        <div className={s.header} data-testid="header">
             <div className={s.headerElements}>
                 <div className={s.left}>
                     <h1 className={s.article} >
