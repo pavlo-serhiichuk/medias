@@ -3,7 +3,7 @@ import {Wrapper} from './IntroArticles.styles'
 import IntroArticles from "./IntroArticles.component";
 import {useSelector, useDispatch} from "react-redux";
 import {getAsyncArticles} from "../../redux/articlesReducer";
-import {closeSidebar} from "../../redux/sidebarReducer";
+import {hideSidebar} from "../../redux/sidebarReducer";
 
 const IntroArticlesContainer = () => {
 
@@ -14,7 +14,7 @@ const IntroArticlesContainer = () => {
     useEffect(() => {
         document.title = 'Articles| Medias'
         dispatch(getAsyncArticles())
-        dispatch(closeSidebar())
+        dispatch(hideSidebar())
     }, [])
 
     if (isLoading) return <div>Loading...</div>

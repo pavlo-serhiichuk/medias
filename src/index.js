@@ -1,7 +1,7 @@
 import React from 'react';
-import {render, createPortal} from 'react-dom';
+import {render} from 'react-dom';
 import './index.css';
-import AppContainer from './AppContainer';
+import AppContainer from './components/App/AppContainer';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
 import {Provider} from 'react-redux'
@@ -22,11 +22,11 @@ window.store = store
 
 render(
     <React.StrictMode>
-        <Provider store={store}>
-            <Router>
+        <Router>
+            <Provider store={store}>
                 <AppContainer/>
-            </Router>
-        </Provider>
+            </Provider>
+        </Router>
     </React.StrictMode>
     ,
     document.getElementById('root')

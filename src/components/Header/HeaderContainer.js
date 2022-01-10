@@ -6,7 +6,7 @@ import {BsCart4 as CartIcon} from "react-icons/bs";
 import {BiHeart as LikedIcon} from "react-icons/all";
 import API from "../../api/routerApi";
 import {sighOut} from "../../redux/authReducer";
-import {closeFilters, closeSidebar} from "../../redux/sidebarReducer";
+import {hideFilters, hideSidebar} from "../../redux/sidebarReducer";
 import {getAsyncWishesProducts} from "../../redux/wishesReducer";
 import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
 import {SmallProfilePhoto} from "../common/Imgs/Imgs";
@@ -21,8 +21,8 @@ const HeaderContainer = (props) => {
     const getAsyncWishes = () => getAsyncWishesProducts(props.userId)
 
     const close = () => {
-        props.closeSidebar()
-        props.closeFilters()
+        props.hideSidebar()
+        props.hideFilters()
     }
 
     return (
@@ -55,5 +55,5 @@ export default connect(mstp, {
     openLoginModal,
     openSignInModal,
     getAsyncWishesProducts,
-    closeFilters,
-    closeSidebar})(HeaderContainer);
+    hideFilters,
+    hideSidebar})(HeaderContainer);

@@ -10,7 +10,7 @@ import {
 } from "../../redux/productsReducer";
 import {addToCart} from "../../redux/cartReducer";
 import Countries from "../Countries/Countries.component";
-import {closeSidebar, openSidebar} from "../../redux/sidebarReducer";
+import {hideSidebar, openSidebar} from "../../redux/sidebarReducer";
 import {openAlert, openMoreInfoModal} from "../../redux/modalReducer";
 import {setAsyncWish} from "../../redux/wishesReducer";
 
@@ -98,7 +98,7 @@ export default connect(mstp, {
     getAsyncCountries,
     getAsyncFilteredVouchers,
     openSidebar,
-    closeSidebar,
+    hideSidebar,
     openMoreInfoModal,
     setAsyncWish,
     addToCart,

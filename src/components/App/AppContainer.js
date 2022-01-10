@@ -2,13 +2,13 @@ import React, {useEffect} from "react";
 import styled from "styled-components";
 import {useLocation} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import './index.css';
-import App from "./App";
-import {openSidebar} from "./redux/sidebarReducer";
+import '../../index.css';
+import App from "./App.component";
+import {openSidebar} from "../../redux/sidebarReducer";
 import {createPortal} from "react-dom";
-import Portal from "./components/Portal/Portal.component";
-import {getAsyncWishesProducts} from "./redux/wishesReducer";
-import {changeCategory} from "./redux/productsReducer";
+import Portal from "../Portal/Portal.component";
+import {getAsyncWishesProducts} from "../../redux/wishesReducer";
+import {changeCategory} from "../../redux/productsReducer";
 
 function useQuery() {
     const {search} = useLocation();
