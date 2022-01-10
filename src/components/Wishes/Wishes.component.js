@@ -1,6 +1,6 @@
 import React from 'react';
 import {Wrapper} from "./Wishes.style";
-import {BiHeart as Liked} from "react-icons/all";
+import {BiHeart as Liked} from "react-icons/bi";
 import Wish from './WishesProduct/Wish.component'
 
 const Wishes = ({wishes}) => {
