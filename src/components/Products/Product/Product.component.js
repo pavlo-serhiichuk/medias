@@ -1,5 +1,5 @@
 import React from 'react';
-import {BiHeart as Liked} from "react-icons/all";
+import {BiHeart as Liked} from "react-icons/bi";
 import {AiOutlineShoppingCart as Cart} from "react-icons/ai"
 import {Buttons, ProductContent, Title} from "./Product.styles";
 import {PrimaryButton, SuccessButton} from "../../common/Buttons/Button.component";
