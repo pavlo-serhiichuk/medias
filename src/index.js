@@ -20,13 +20,19 @@ const store = createStore(rootReducer, compose(
 
 window.store = store
 
-render(
-    <React.StrictMode>
+export const Medias = () => {
+    return (
         <Router>
             <Provider store={store}>
                 <AppContainer/>
             </Provider>
         </Router>
+    )
+}
+
+render(
+    <React.StrictMode>
+        <Medias />
     </React.StrictMode>
     ,
     document.getElementById('root')
