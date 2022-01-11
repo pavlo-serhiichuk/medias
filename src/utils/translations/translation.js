@@ -10,11 +10,11 @@ export const HEADER = {
 export const CATEGORIES = {
     LOGO: {
         TITLE: {
-            en: 'medias',
-            ua: 'medias'
+            en: 'Categories',
+            ua: 'Категорії'
         }
     },
-    CATEGORIES: {
+    CATEGORY: {
         ARTICLES: {
             en: ' Useful Articles',
             ua: 'Цікаві статті'
@@ -37,7 +37,7 @@ export const CATEGORIES = {
 export const FILTERS = {
     TITLE: {
         en: 'Filter on',
-        ua: 'Фільтри по'
+        ua: 'Фільтрувати по'
     },
     PRICE: {
         TITLE: {
