@@ -7,6 +7,8 @@ import {BigTitle, MiddleTitle} from "../common/Titles/Titles";
 import MoreInfoImages from "./MoreInfoImages/MoreInfoImages.component";
 import {PrimaryButton, SuccessButton} from "../common/Buttons/Button.component";
 import {BiHeart as Liked} from "react-icons/bi";
+import {getTranslation} from "../../utils/translations/getTranslation";
+import {PRODUCT} from "../../utils/translations/translation";
 
 
 const MoreInfo = (props) => {
@@ -60,11 +62,11 @@ const MoreInfo = (props) => {
                 <Buttons>
                     <PrimaryButton color={'dodgerblue'} onClick={() => {
                     }}>
-                        Add to <Cart/>
+                        {getTranslation(PRODUCT.CART.TITLE)}<Cart/>
                     </PrimaryButton>
                     <SuccessButton onClick={() => {
                     }}>
-                        Add to <Liked/>
+                        {getTranslation(PRODUCT.WISHES.TITLE)} <Liked/>
                     </SuccessButton>
                 </Buttons>
             </ButtonsWrap>

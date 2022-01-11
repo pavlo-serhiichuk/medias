@@ -6,6 +6,8 @@ import s from './Header.module.css';
 import API from "../../api/routerApi";
 import {SmallProfilePhoto} from "../common/Imgs/Imgs";
 import {PrimaryButton, GoldButton} from "../common/Buttons/Button.component";
+import {getTranslation} from "../../utils/translations/getTranslation";
+import {AUTH, PRODUCT} from "../../utils/translations/translation";
 
 const Header = (props) => {
  const {
@@ -47,8 +49,12 @@ const Header = (props) => {
                     </>}
                 </div>
                 {!isAuth && <div className={s.right}>
-                    <GoldButton height='60px' onClick={openLoginModal}>Log in</GoldButton>
-                    <PrimaryButton height='60px' onClick={openSignInModal}>Sign in</PrimaryButton>
+                    <GoldButton height='60px' onClick={openLoginModal}>
+                        {getTranslation(AUTH.LOGIN.TITLE)}
+                    </GoldButton>
+                    <PrimaryButton height='60px' onClick={openSignInModal}>
+                        {getTranslation(AUTH.SIGNIN.TITLE)}
+                    </PrimaryButton>
                 </div>
                 }
             </div>
