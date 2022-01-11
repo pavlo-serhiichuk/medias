@@ -1,7 +1,7 @@
 import React from 'react';
-import {render, createPortal} from 'react-dom';
+import {render} from 'react-dom';
 import './index.css';
-import AppContainer from './AppContainer';
+import AppContainer from './components/App/AppContainer';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
 import {Provider} from 'react-redux'
@@ -20,13 +20,19 @@ const store = createStore(rootReducer, compose(
 
 window.store = store
 
+export const Medias = () => {
+    return (
+        <Router>
+            <Provider store={store}>
+                <AppContainer/>
+            </Provider>
+        </Router>
+    )
+}
+
 render(
     <React.StrictMode>
-        <Provider store={store}>
-            <Router>
-                <AppContainer/>
-            </Router>
-        </Provider>
+        <Medias />
     </React.StrictMode>
     ,
     document.getElementById('root')

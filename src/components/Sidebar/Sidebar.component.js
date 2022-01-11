@@ -1,13 +1,17 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import {FaFly, GrArticle, ImBooks, GiGuitar, GiHamburgerMenu as Hamburger} from "react-icons/all";
+import {FaFly} from "react-icons/fa";
+import {ImBooks} from "react-icons/im";
+import {GiGuitar} from "react-icons/gi";
+import {GrArticle} from "react-icons/gr";
+import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
 import {SidebarWrap, Categories, RightBtn} from "./Sidebar.style";
 import API from "../../api/routerApi";
 import {SmallTitle} from "../common/Titles/Titles";
 import {changeCategory} from "../../redux/productsReducer";
 import NativeFiltersContainer from "../NativeFilters/NativeFiltersContainer";
-import {closeFilters, closeSidebar, openFilters} from "../../redux/sidebarReducer";
+import {hideFilters, hideSidebar, openFilters} from "../../redux/sidebarReducer";
 import {getTranslation} from "../../utils/translations/getTranslation";
 import {CATEGORIES, HEADER, translation} from "../../utils/translations/translation";
 
@@ -24,9 +28,10 @@ const Sidebar = () => {
     }
 
     const close = () => {
-        dispatch(closeSidebar())
-        dispatch(closeFilters())
+        dispatch(hideSidebar())
+        dispatch(hideFilters())
     }
+
     return (
         <SidebarWrap>
             <Categories>

@@ -8,7 +8,7 @@ const Products = (props) => {
     if (props.isLoading) return <div>Завантаження...</div>
 
     return (
-    <Wrapper>
+    <Wrapper data-testid="products">
             <ProductsWrap>
                 {props.products
                     .filter(product => product !== undefined)

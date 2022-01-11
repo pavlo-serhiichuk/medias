@@ -1,30 +1,30 @@
 import React, {lazy, Suspense} from "react";
 import {Route} from "react-router-dom";
 import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
-import './index.css';
+import '../../index.css';
 import {Wrapper, Content} from "./App.styles";
 
-import Footer from "./components/Footer/Footer.component";
-import Profile from "./components/Profile/Profile.component";
-import Sidebar from "./components/Sidebar/Sidebar.component";
-import CartContainer from "./components/Cart/CartContainer";
-import LoginContainer from "./components/Login/LoginContainer";
-import SignInContainer from "./components/SignIn/SignInContainer";
-import HeaderContainer from "./components/Header/HeaderContainer";
-import WishesContainer from "./components/Wishes/WishesContainer";
-import MoreInfoContainer from "./components/MoreInfo/MoreInfoContainer";
-import FullArticleContainer from "./components/FullArticle/FullArticleContainer";
-import IntroArticlesContainer from "./components/IntroArticles/IntroArticlesContainer";
-import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "./components/common/QuickScrolls/QuickScrolls.component";
-import API from "./api/routerApi";
+import Footer from "../Footer/Footer.component";
+import Profile from "../Profile/Profile.component";
+import Sidebar from "../Sidebar/Sidebar.component";
+import CartContainer from "../Cart/CartContainer";
+import LoginContainer from "../Login/LoginContainer";
+import SignInContainer from "../SignIn/SignInContainer";
+import HeaderContainer from "../Header/HeaderContainer";
+import WishesContainer from "../Wishes/WishesContainer";
+import MoreInfoContainer from "../MoreInfo/MoreInfoContainer";
+import FullArticleContainer from "../FullArticle/FullArticleContainer";
+import IntroArticlesContainer from "../IntroArticles/IntroArticlesContainer";
+import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "../common/QuickScrolls/QuickScrolls.component";
+import API from "../../api/routerApi";
 import {Routers} from "./AppContainer";
-import Alert from "./components/common/Alert/Alert";
-import {LeftBtn} from "./components/Sidebar/Sidebar.style";
-import PhotosPopup from "./components/PhotosPopup/PhotosPopup.component";
+import Alert from "../common/Alert/Alert";
+import {LeftBtn} from "../Sidebar/Sidebar.style";
+import PhotosPopup from "../PhotosPopup/PhotosPopup.component";
 
-const ProductsContainer = lazy(() => import("./components/Products/ProductsContainer"))
+const ProductsContainer = lazy(() => import("../Products/ProductsContainer"))
 
-function App({
+function App ({
                  query,
                  isSignInModalOpen,
                  isLoginModalOpen,

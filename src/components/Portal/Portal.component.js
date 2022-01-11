@@ -1,6 +1,7 @@
 import React from 'react';
 import {Form, Input, Dialog, SubmitButton, Title, Wrapper, Avatar, Consultant, MessageWrap, Message} from "./Portal.style";
-import {AiOutlineSend as SendButton, SiDialogflow as PortalSign} from "react-icons/all";
+import {AiOutlineSend as SendButton} from "react-icons/ai"
+import {SiDialogflow as PortalSign} from "react-icons/si";
 
 const Portal = () => {
 

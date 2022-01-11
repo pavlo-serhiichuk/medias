@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import {BsCart4 as CartIcon} from "react-icons/bs";
-import {BiHeart as LikedIcon} from "react-icons/all";
+// import {BsCart4 as CartIcon} from "react-icons/bs";
+// import {BiHeart as LikedIcon} from "react-icons/bi";
 import s from './Header.module.css';
 import API from "../../api/routerApi";
 import {SmallProfilePhoto} from "../common/Imgs/Imgs";
@@ -25,7 +25,7 @@ const Header = (props) => {
  } = props
 
     return (
-        <div className={s.header}>
+        <div className={s.header} data-testid="header">
             <div className={s.headerElements}>
                 <div className={s.left}>
                     <h1 className={s.article} >
@@ -39,11 +39,11 @@ const Header = (props) => {
                             <Link to={`${API.profile.path}?=${userId}`}>{username}</Link>
                         </div>
                         <Link onClick={close} to={API.wishes.path} className={s.wishes}>
-                            <LikedIcon size={25}/>
+                            {/*<LikedIcon size={25}/>*/}
                             <span onClick={getAsyncWishes} className={s.amount}>{wishes > 0 && wishes}</span>
                         </Link>
                         <Link onClick={close} to={API.cart.path} className={s.cart}>
-                            <CartIcon size={25}/>
+                            {/*<CartIcon size={25}/> */}
                             <span className={s.amount}>{cart > 0 && cart}</span>
                         </Link>
                     </>}

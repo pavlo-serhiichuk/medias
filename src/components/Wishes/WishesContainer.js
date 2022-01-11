@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {closeSidebar} from "../../redux/sidebarReducer";
+import {hideSidebar} from "../../redux/sidebarReducer";
 import Wishes from "./Wishes.component";
 
 const WishesContainer = () => {
@@ -8,7 +8,7 @@ const WishesContainer = () => {
     let wishesProducts = useSelector(state => state.wishes.wishesProducts)
 
     useEffect(() => {
-        dispatch(closeSidebar())
+        dispatch(hideSidebar())
         document.title = 'Wishes| Medias'
     }, [])
 

@@ -4,10 +4,9 @@ import {BsCartX} from "react-icons/bs";
 import CartProductContainer from "./CartProduct/CartProductContainer";
 
 const Cart = (props) => {
-    if (!props.cartProducts.length) {
-
+    if (!props.cartProducts) {
         return (
-            <Wrapper padTop={'150px'}>
+            <Wrapper padTop={'150px'} data-testid='cart'>
                 <h6>Упс... You haven't added anything to your <BsCartX/>. It's empty...
                     Please, turn back to All Elements and choose something.</h6>
             </Wrapper>
@@ -15,7 +14,7 @@ const Cart = (props) => {
     }
 
     return (
-        <Wrapper display={'flex'}>
+        <Wrapper display={'flex'} data-testid='cart'>
             {props.cartProducts.map(cartProduct => <CartProductContainer {...props} product={cartProduct}
                                                                          key={`${cartProduct.category}_${cartProduct.id}`}/>)}
         </Wrapper>

@@ -52,9 +52,9 @@ export const sidebarReducer = (state = initialState, action) => {
 }
 
 export const openSidebar = () => ({type: OPEN_SIDEBAR})
-export const closeSidebar = () => ({type: CLOSE_SIDEBAR})
+export const hideSidebar = () => ({type: CLOSE_SIDEBAR})
 export const openFilters = () => ({type: OPEN_FILTERS})
-export const closeFilters = () => ({type: CLOSE_FILTERS})
+export const hideFilters = () => ({type: CLOSE_FILTERS})
 
 export const setFilterPrice = (price) => ({type: SET_PRICE, payload: price})
 export const deleteFilters = () => ({type: DELETE_FILTERS})
