@@ -40,7 +40,7 @@ class ProductsContainer extends React.PureComponent {
     }
 
     addToCart = product => {
-            this.props.isAuth
+        this.props.isAuth
             ? this.props.addToCart(product)
             : alert('Please, sigh in first! Asshole!!')
     }
@@ -68,12 +68,14 @@ class ProductsContainer extends React.PureComponent {
                 {this.props.category === 'filteredVouchers'
                 && <b>{countryName[0].title} vouchers:</b>}
 
-                <Products products={this.props.products}
-                          addToCart={this.addToCart}
-                          setWish={this.setWish}
-                          category={this.props.category}
-                          openMoreInfo={this.openMoreInfo}
-                          isLoading={this.props.isLoading}
+                <Products
+                    products={this.props.products}
+                    addToCart={this.addToCart}
+                    setWish={this.setWish}
+                    lang={this.props.lang}
+                    category={this.props.category}
+                    openMoreInfo={this.openMoreInfo}
+                    isLoading={this.props.isLoading}
                 />
             </>
         );
@@ -87,7 +89,8 @@ const mstp = state => ({
     isAuth: state.auth.isAuth,
     userId: state.auth.userId,
     isLoading: state.auth.isLoading,
-    category: state.products.category
+    category: state.products.category,
+    lang: state.lang.language
 })
 
 
@@ -103,4 +106,5 @@ export default connect(mstp, {
     setAsyncWish,
     addToCart,
     setCurrentProduct,
-    openAlert})(ProductsContainer);
+    openAlert
+})(ProductsContainer);

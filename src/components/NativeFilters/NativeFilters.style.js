@@ -21,9 +21,10 @@ export const Label = styled.div`
 `
 
 export const Select = styled.select`
-    min-width: 101px;
+    width: 120px;
     height: 20px;
 `
+
 
 
 

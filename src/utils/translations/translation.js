@@ -1,3 +1,5 @@
+import {BsCartX} from "react-icons/bs";
+
 export const HEADER = {
     LOGO: {
         TITLE: {
@@ -79,18 +81,30 @@ export const FILTERS = {
     },
 }
 
-export const PRODUCT = {
+export const BUTTON = {
     CART: {
         TITLE: {
             en: 'Add to',
-            ua: 'Добавити в'
+            ua: 'Добав у'
         }
     },
     WISHES: {
         TITLE: {
             en: 'Add to',
-            ua: 'Добавити в'
+            ua: 'Добав у'
         }
+    },
+    MORE_INFO: {
+        en: 'More Info',
+        ua: 'Детальніше'
+    },
+    DELETE: {
+        en: 'Delete',
+        ua: 'Видалити'
+    },
+    BUY: {
+        en: 'Buy',
+        ua: 'Придбати'
     }
 }
 
@@ -128,8 +142,21 @@ export const AUTH = {
             en: 'Sign in',
             ua: 'Реєстрація'
         }
+    },
+    EXIT: {
+        en: 'Exit',
+        ua: 'Вихід'
     }
 }
 
+export const CART = {
+    WARNING_MESSAGE: {
+        en: `Ups... You haven't added anything to your Cart. It's empty...
+                    Please, turn back to All Elements and choose something.`,
+        ua: `Упс... Ви досі нічого не добавили у свою Корзину. 
+                    Просимо Вас спершу повернутись до товарів а потім сюди лізти.`
+    }
+}
 
+// ${<BsCartX/>}
 

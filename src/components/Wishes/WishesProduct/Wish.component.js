@@ -1,8 +1,11 @@
 import React from 'react';
-import Button from "../../common/Buttons/Button.component";
+import {AiOutlineShoppingCart as Cart} from "react-icons/ai"
 import {Operators, Title, Wrapper, Img, Description} from "./WishProduct.style";
+import {BUTTON} from "../../../utils/translations/translation";
+import {getTranslation} from "../../../utils/translations/getTranslation";
+import {PrimaryButton, RedButton, SuccessButton} from "../../common/Buttons/Button.component";
 
-const Wish = ({wish}) => {
+const Wish = ({wish, lang}) => {
     return (
         <Wrapper>
             <Description>
@@ -10,16 +13,16 @@ const Wish = ({wish}) => {
                 <Title>{wish.title}</Title>
             </Description>
             <Operators>
-                <Button operator='true' color='dodgerblue'>
-                    More Info
-                </Button>
-                <Button operator='true' color='indianred'>
-                    Delete
-                </Button>
-                <Button operator='true' color='green' onClick={() => {
+                <SuccessButton operator='true' color='dodgerblue'>
+                    {getTranslation(BUTTON.MORE_INFO, lang)}
+                </SuccessButton>
+                <RedButton operator='true' color='indianred'>
+                    {getTranslation(BUTTON.DELETE, lang)}
+                </RedButton>
+                <PrimaryButton operator='true' color='green' onClick={() => {
                 }}>
-                    Add to Cart
-                </Button>
+                    {getTranslation(BUTTON.CART.TITLE, lang)} <Cart/>
+                </PrimaryButton>
             </Operators>
         </Wrapper>
     );

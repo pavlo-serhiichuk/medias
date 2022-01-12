@@ -6,6 +6,7 @@ import Wishes from "./Wishes.component";
 const WishesContainer = () => {
     const dispatch = useDispatch()
     let wishesProducts = useSelector(state => state.wishes.wishesProducts)
+    let lang = useSelector(state => state.lang.language)
 
     useEffect(() => {
         dispatch(hideSidebar())
@@ -14,7 +15,7 @@ const WishesContainer = () => {
 
     return (
         <>
-            <Wishes wishes={wishesProducts} />
+            <Wishes wishes={wishesProducts} lang={lang} />
         </>
     )
 }

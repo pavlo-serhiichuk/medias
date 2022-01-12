@@ -19,6 +19,7 @@ const LoginContainer = () => {
 
     const dispatch = useDispatch()
     const isLoginModalOpen = useSelector(state => state.modal.isLoginModalOpen)
+    const lang = useSelector(state => state.lang.language)
 
     const sendData = () => {
         const data = watch()
@@ -39,6 +40,7 @@ const LoginContainer = () => {
         <>
             <Login closeModal={closeModal}
                    sendData={sendData}
+                   lang={lang}
                    errors={errors}
                    register={register}
                    handleSubmit={handleSubmit}/>

@@ -1,4 +1,4 @@
-
-export const getTranslation = (key) => {
-    return key.ua
+export const getTranslation = (key, selectedLang) => {
+    return key[selectedLang]
 }
+

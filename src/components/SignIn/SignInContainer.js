@@ -8,9 +8,10 @@ import SignIn from "./SighIn.component";
 const SignInContainer = () => {
 
     const dispatch = useDispatch()
+    const closeModal = () => dispatch(closeSignInModal())
+    const lang = useSelector(state => state.lang.language)
     const isSignInModalOpen = useSelector(state => state.modal.isSignInModalOpen)
     const {register, handleSubmit, watch, formState: {errors}} = useForm();
-    const closeModal = () => dispatch(closeSignInModal())
 
     const sendData = () => {
         const data = watch()
@@ -29,6 +30,7 @@ const SignInContainer = () => {
         <div>
             <SignIn closeModal={closeModal}
                     sendData={sendData}
+                    lang={lang}
                     register={register}
                     handleSubmit={handleSubmit}/>
         </div>

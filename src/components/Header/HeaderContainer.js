@@ -1,23 +1,18 @@
 import React from 'react';
-import s from './Header.module.css';
 import {connect} from "react-redux";
-import {Link} from "react-router-dom";
-import {BsCart4 as CartIcon} from "react-icons/bs";
-import {BiHeart as LikedIcon} from "react-icons/all";
-import API from "../../api/routerApi";
-import {sighOut} from "../../redux/authReducer";
 import {hideFilters, hideSidebar} from "../../redux/sidebarReducer";
 import {getAsyncWishesProducts} from "../../redux/wishesReducer";
 import {openLoginModal, openSignInModal} from "../../redux/modalReducer";
-import {SmallProfilePhoto} from "../common/Imgs/Imgs";
-import {PrimaryButton, GoldButton} from "../common/Buttons/Button.component";
 import Header from "./Header.component";
-import {wishesAPI} from "../../api/api";
+import {setLanguage} from "../../redux/langReducer";
 
 const HeaderContainer = (props) => {
     const cart = props.cartProducts.length
     const wishes = props.wishesProducts.length
-    const photoURL = 'https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'
+    const avatar = 'https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'
+    const uaFlag = "https://mltwhqhpb0wf.i.optimole.com/JdK432s-E1CyyNUi/w:auto/h:auto/q:auto/https://spring-perevod.com/wp-content/uploads/2015/06/UA-Flag.png"
+    const gbFlag = "https://i.pinimg.com/736x/17/0d/98/170d98e54ff7d32e417f12a087ed6c22.jpg"
+
     const getAsyncWishes = () => getAsyncWishesProducts(props.userId)
 
     const close = () => {
@@ -31,8 +26,10 @@ const HeaderContainer = (props) => {
                 {...props}
                 cart={cart}
                 wishes={wishes}
-                photoURL={photoURL}
                 getAsyncWishes={getAsyncWishes}
+                uaFlag={uaFlag}
+                gbFlag={gbFlag}
+                avatar={avatar}
                 openLoginModal={props.openLoginModal}
                 openSignInModal={props.openSignInModal}
                 close={close}/>
@@ -48,7 +45,8 @@ const mstp = state => ({
     isSighInModalOpen: state.auth.isSighInModalOpen,
     cartProducts: state.cart.cartProducts,
     wishesProducts: state.wishes.wishesProducts,
-    wishesMaping: state.wishes.wishesMaping
+    wishesMaping: state.wishes.wishesMaping,
+    lang: state.lang.language
 })
 
 export default connect(mstp, {
@@ -56,4 +54,4 @@ export default connect(mstp, {
     openSignInModal,
     getAsyncWishesProducts,
     hideFilters,
-    hideSidebar})(HeaderContainer);
+    hideSidebar, setLanguage})(HeaderContainer);

@@ -9,6 +9,7 @@ const MoreInfoContainer = () => {
 
     const dispatch = useDispatch()
     const currentProductId = useSelector(state => state.modal.currentProductId)
+    const lang = useSelector(state => state.lang.language)
 
     const products = useSelector(state => state.products.products)
     const currentProduct = products.filter(book => book.id === currentProductId)
@@ -37,11 +38,13 @@ const MoreInfoContainer = () => {
     }, [])
 
     return (
-        <MoreInfo currentImgId={currentImgId}
-                  openPhotosModal={openPhotosModal}
-                  closeMoreInfo={closeMoreInfo}
-                  setImageId={setImageId}
-                  product={currentProduct[0]}/>
+        <MoreInfo
+            currentImgId={currentImgId}
+            openPhotosModal={openPhotosModal}
+            closeMoreInfo={closeMoreInfo}
+            setImageId={setImageId}
+            lang={lang}
+            product={currentProduct[0]}/>
     );
 };
 
