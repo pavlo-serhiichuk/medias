@@ -1,7 +1,6 @@
 import React from 'react';
-import {ImgContaiter, MainImg, MainImgWrap, OtherImgs, SmallImg, SmallImgWrap} from "../MoreInfo.style";
 import ReactTooltip from "react-tooltip"
-import {Link} from "react-router-dom";
+import {ImgContaiter, MainImg, MainImgWrap, OtherImgs, SmallImg, SmallImgWrap} from "../MoreInfo.style";
 
 const SmallImages = ({image, product, openPhotosModal, setImageId, imageId}) => {
 
