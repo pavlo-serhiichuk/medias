@@ -20,5 +20,4 @@ export const SmallProfilePhoto = styled.div`
   background-repeat: no-repeat;
   background-size: ${p => p.bgSize || '50px'};
   border-radius: 50%;
-  z-index: 1000;
 `
