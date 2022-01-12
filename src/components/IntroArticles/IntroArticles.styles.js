@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {MiddleTitle} from "../common/Titles/Titles";
 
 export const Wrapper = styled.div`
         min-height: 100vh;
@@ -10,7 +11,24 @@ export const ArticleWrapper = styled.div`
     padding-top: 8px;
 `
 
+export const Title = styled(MiddleTitle)`
+    &:hover { 
+        color: red;
+        text-decoration: underline red;
+    }
+`
+
 export const Content = styled.div`
     font-size: 20px;
+
 `
+
+export const MoreInfo = styled.span`
+    color: blue;
+    &:hover {
+        color: red;
+    }
+`
+
+
 
