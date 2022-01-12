@@ -9,7 +9,7 @@ import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
 import {SidebarWrap, Categories, RightBtn} from "./Sidebar.style";
 import API from "../../api/routerApi";
 import {SmallTitle} from "../common/Titles/Titles";
-import {changeCategory} from "../../redux/productsReducer";
+import {changeCategory, getAsyncVouchers} from "../../redux/productsReducer";
 import NativeFiltersContainer from "../NativeFilters/NativeFiltersContainer";
 import {hideFilters, hideSidebar, openFilters} from "../../redux/sidebarReducer";
 import {getTranslation} from "../../utils/translations/getTranslation";
@@ -22,8 +22,12 @@ const Sidebar = () => {
     const lang = useSelector(state => state.lang.language)
 
     const toggleCategory = (nextCategory) => {
-
         dispatch(openFilters())
+
+        category === 'filteredVouchers'
+        && nextCategory === 'vouchers'
+        && dispatch(getAsyncVouchers())
+
         category !== nextCategory && dispatch(changeCategory(nextCategory))
 
     }

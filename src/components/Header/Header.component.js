@@ -44,12 +44,13 @@ const Header = (props) => {
                 <div className={s.userNeeds}>
                     {username && <>
                         <Link
+                            to={`${API.profile.path}?=${userId}`}
                             onClick={close}
                             data-tip="your profile"
                             className={s.profile}>
                             <ReactTooltip place="bottom"/>
                             <SmallProfilePhoto profilePhoto={profilePhoto || avatar}/>
-                            <div to={`${API.profile.path}?=${userId}`}>{username}</div>
+                            <span>{username}</span>
                         </Link>
                         <Link
                             onClick={close}
