@@ -19,3 +19,10 @@ export const Content = styled.div`
 export const Strong = styled.strong`
     font-size: 30px;
 `
+
+export const SocialMedias = styled.div`
+    // margin-right: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center; 
+`

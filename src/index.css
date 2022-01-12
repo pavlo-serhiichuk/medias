@@ -12,6 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgba(210, 217, 217, 0.89);
+  align-items: center;
 }
 
 code {
