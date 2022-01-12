@@ -1,5 +1,3 @@
-import {BsCartX} from "react-icons/bs";
-
 export const HEADER = {
     LOGO: {
         TITLE: {
@@ -157,6 +155,4 @@ export const CART = {
                     Просимо Вас спершу повернутись до товарів а потім сюди лізти.`
     }
 }
-
-// ${<BsCartX/>}
 
