@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactTooltip from "react-tooltip"
 import {ImgContaiter, MainImg, MainImgWrap, OtherImgs, SmallImg, SmallImgWrap} from "../MoreInfo.style";
 
 const SmallImages = ({image, product, openPhotosModal, setImageId, imageId}) => {
@@ -9,7 +10,11 @@ const SmallImages = ({image, product, openPhotosModal, setImageId, imageId}) => 
     }
 
     return <SmallImgWrap>
-        <SmallImg src={image} onClick={() => openPhotos(product, imageId)}/>
+        <SmallImg
+            src={image}
+            data-tip="press to open full size"
+            onClick={() => openPhotos(product, imageId)}/>
+        <ReactTooltip place="right"/>
     </SmallImgWrap>
 }
 

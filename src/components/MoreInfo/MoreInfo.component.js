@@ -5,9 +5,9 @@ import {Buttons, ButtonsWrap, Content, Description, Features, InfoContainer} fro
 import Modal from "../common/ModalWrap/Modal.component";
 import {BUTTON} from "../../utils/translations/translation";
 import CloseButton from "../common/Buttons/CloseButton.component";
-import {BigTitle, MiddleTitle} from "../common/Titles/Titles";
 import MoreInfoImages from "./MoreInfoImages/MoreInfoImages.component";
 import {getTranslation} from "../../utils/translations/getTranslation";
+import {BigTitle, MiddleTitle} from "../common/Titles/Titles";
 import {PrimaryButton, SuccessButton} from "../common/Buttons/Button.component";
 
 const MoreInfo = (props) => {

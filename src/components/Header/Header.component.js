@@ -1,7 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-// import {BsCart4 as CartIcon} from "react-icons/bs";
-// import {BiHeart as LikedIcon} from "react-icons/bi";
+import ReactTooltip from 'react-tooltip';
+import {BsCart4 as CartIcon} from "react-icons/bs";
+import {BiHeart as LikedIcon} from "react-icons/bi";
 import s from './Header.module.css';
 import API from "../../api/routerApi";
 import {SmallProfilePhoto} from "../common/Imgs/Imgs";
@@ -42,16 +43,30 @@ const Header = (props) => {
                 </div>
                 <div className={s.userNeeds}>
                     {username && <>
-                        <div onClick={close} className={s.profile}>
+                        <Link
+                            onClick={close}
+                            data-tip="your profile"
+                            className={s.profile}>
+                            <ReactTooltip place="bottom"/>
                             <SmallProfilePhoto profilePhoto={profilePhoto || avatar}/>
-                            <Link to={`${API.profile.path}?=${userId}`}>{username}</Link>
-                        </div>
-                        <Link onClick={close} to={API.wishes.path} className={s.wishes}>
-                            {/*<LikedIcon size={25}/>*/}
+                            <div to={`${API.profile.path}?=${userId}`}>{username}</div>
+                        </Link>
+                        <Link
+                            onClick={close}
+                            to={API.wishes.path}
+                            data-tip="your Wishes"
+                            className={s.wishes}>
+                            <ReactTooltip place="bottom"/>
+                            <LikedIcon size={25}/>
                             <span onClick={getAsyncWishes} className={s.amount}>{wishes > 0 && wishes}</span>
                         </Link>
-                        <Link onClick={close} to={API.cart.path} className={s.cart}>
-                            {/*<CartIcon size={25}/> */}
+                        <Link
+                            onClick={close}
+                            to={API.cart.path}
+                            data-tip="your Cart"
+                            className={s.cart}>
+                            <CartIcon size={25}/>
+                            <ReactTooltip place="bottom"/>
                             <span className={s.amount}>{cart > 0 && cart}</span>
                         </Link>
                     </>}
