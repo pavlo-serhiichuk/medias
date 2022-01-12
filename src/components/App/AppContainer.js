@@ -17,7 +17,7 @@ function useQuery() {
 }
 
 export const Routers = styled.div`
-       width: 100%
+       width: 100%;
 `
 
 function AppContainer() {
@@ -39,6 +39,7 @@ function AppContainer() {
         dispatch(getAsyncWishesProducts(userId))
         dispatch(openSidebar())
         dispatch(getAsyncWishesProducts())
+
         if(!category) {
             dispatch(changeCategory('books'))
         }

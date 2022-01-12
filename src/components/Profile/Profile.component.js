@@ -25,8 +25,6 @@ const Profile = (props) => {
         props.hideSidebar()
     }, [])
 
-    if(!props.isAuth) return <Redirect to={'/guitars'}/>
-
     return (
         <Wrapper>
             <Content>
