@@ -3,7 +3,7 @@ import {Wrapper} from "./Wishes.style";
 import {BiHeart as Liked} from "react-icons/bi";
 import Wish from './WishesProduct/Wish.component'
 
-const Wishes = ({wishes}) => {
+const Wishes = ({wishes, lang}) => {
 
     if (!wishes.length) {
         return (
@@ -17,7 +17,7 @@ const Wishes = ({wishes}) => {
 
     return (
         <div>
-            {wishes.map(wish => <Wish wish={wish} />)}
+            {wishes.map(wish => <Wish wish={wish} lang={lang}/>)}
         </div>
     );
 }

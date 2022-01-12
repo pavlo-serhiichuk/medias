@@ -19,6 +19,7 @@ const NativeFiltersContainer = () => {
     let filterName = useSelector(state => state.sidebar.filterName)
     let filterParam = useSelector(state => state.sidebar.filterParam)
     let category = useSelector(state => state.products.category)
+    let lang = useSelector(state => state.lang.language)
 
     let [price, setPrice] = useState(filterPrice)
     let [liked, setPopularity] = useState(filterPopularity)
@@ -60,6 +61,7 @@ const NativeFiltersContainer = () => {
             <Filters price={price}
                      time={time}
                      liked={liked}
+                     lang={lang}
                      setTime={setNewTime}
                      setPopularity={setNewPopularity}
                      setPrice={setNewPrice}/>

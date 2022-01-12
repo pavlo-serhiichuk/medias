@@ -1,18 +1,17 @@
 import React from 'react';
+import {BiHeart as Liked} from "react-icons/bi";
 import {AiOutlineShoppingCart as Cart} from "react-icons/ai";
-import Modal from "../common/ModalWrap/Modal.component";
-import CloseButton from "../common/Buttons/CloseButton.component";
 import {Buttons, ButtonsWrap, Content, Description, Features, InfoContainer} from "./MoreInfo.style";
+import Modal from "../common/ModalWrap/Modal.component";
+import {BUTTON} from "../../utils/translations/translation";
+import CloseButton from "../common/Buttons/CloseButton.component";
 import {BigTitle, MiddleTitle} from "../common/Titles/Titles";
 import MoreInfoImages from "./MoreInfoImages/MoreInfoImages.component";
-import {PrimaryButton, SuccessButton} from "../common/Buttons/Button.component";
-import {BiHeart as Liked} from "react-icons/bi";
 import {getTranslation} from "../../utils/translations/getTranslation";
-import {PRODUCT} from "../../utils/translations/translation";
-
+import {PrimaryButton, SuccessButton} from "../common/Buttons/Button.component";
 
 const MoreInfo = (props) => {
-    const {closeMoreInfo, product} = props
+    const {closeMoreInfo, product, lang} = props
 
     const {
         author,
@@ -62,11 +61,11 @@ const MoreInfo = (props) => {
                 <Buttons>
                     <PrimaryButton color={'dodgerblue'} onClick={() => {
                     }}>
-                        {getTranslation(PRODUCT.CART.TITLE)}<Cart/>
+                        {getTranslation(BUTTON.CART.TITLE, lang)}<Cart/>
                     </PrimaryButton>
                     <SuccessButton onClick={() => {
                     }}>
-                        {getTranslation(PRODUCT.WISHES.TITLE)} <Liked/>
+                        {getTranslation(BUTTON.WISHES.TITLE, lang)} <Liked/>
                     </SuccessButton>
                 </Buttons>
             </ButtonsWrap>

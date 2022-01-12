@@ -34,7 +34,7 @@ export const Title = styled.div`
 `
 
 export const Operators = styled.div`
-    width: 106px;
+    width: 160px;
 `
 
 export const AmountContainer = styled.div`

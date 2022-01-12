@@ -4,9 +4,9 @@ import {AiOutlineShoppingCart as Cart} from "react-icons/ai"
 import {Buttons, ProductContent, Title} from "./Product.styles";
 import {PrimaryButton, SuccessButton} from "../../common/Buttons/Button.component";
 import {getTranslation} from "../../../utils/translations/getTranslation";
-import {FILTERS, PRODUCT} from "../../../utils/translations/translation";
+import {BUTTON} from "../../../utils/translations/translation";
 
-const Product = ({product, addToCart, openMoreInfo, setWish, category}) => {
+const Product = ({product, addToCart, openMoreInfo, setWish, category, lang}) => {
 
     const {id, image, title} = product
 
@@ -17,7 +17,7 @@ const Product = ({product, addToCart, openMoreInfo, setWish, category}) => {
             </Title>
             <Buttons>
                 <PrimaryButton color={'dodgerblue'} onClick={() => addToCart(product)}>
-                    {getTranslation(PRODUCT.CART.TITLE)} <Cart/>
+                    {getTranslation(BUTTON.CART.TITLE, lang)} <Cart/>
                 </PrimaryButton>
                 <SuccessButton onClick={() => setWish(product, category, id)}>
                     <Liked/>

@@ -8,6 +8,8 @@ import Button, {RedButton} from "../common/Buttons/Button.component";
 import {sighOut} from "../../redux/authReducer";
 import {Redirect} from "react-router-dom";
 import {changeCategory} from "../../redux/productsReducer";
+import {getTranslation} from "../../utils/translations/getTranslation";
+import {AUTH} from "../../utils/translations/translation";
 
 const Profile = (props) => {
     let history = useHistory();
@@ -31,14 +33,17 @@ const Profile = (props) => {
                 <Avatar />
                     <UserInfo></UserInfo>
                     <History></History>
-                    <RedButton signOut color={'indianred'} onClick={makeSighOut}><ExitIcon/> Exit</RedButton>
+                    <RedButton signOut color={'indianred'} onClick={makeSighOut}>
+                        <ExitIcon/> {getTranslation(AUTH.EXIT, props.lang)}
+                    </RedButton>
             </Content>
         </Wrapper>
     );
 };
 
 const mstp = state => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    lang: state.lang.language
 })
 
 export default connect(mstp, {

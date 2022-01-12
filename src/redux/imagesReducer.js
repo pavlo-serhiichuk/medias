@@ -1,5 +1,3 @@
-import {act} from "@testing-library/react";
-
 const SET_CURRENT_IMAGE_ID = 'SET_CURRENT_IMAGE_ID'
 const SET_IMAGES = 'SET_IMAGES'
 

@@ -7,6 +7,7 @@ import {cartReducer} from "./cartReducer";
 import {wishesReducer} from "./wishesReducer";
 import {sidebarReducer} from "./sidebarReducer";
 import {imagesReducer} from "./imagesReducer";
+import {langReducer} from "./langReducer";
 
 export const rootReducer = combineReducers({
     articles: articlesReducer,
@@ -16,5 +17,6 @@ export const rootReducer = combineReducers({
     auth: authReducer,
     modal: modalReducer,
     sidebar: sidebarReducer,
-    images: imagesReducer
+    images: imagesReducer,
+    lang: langReducer
 })

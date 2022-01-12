@@ -1,14 +1,14 @@
 import React from 'react';
 import {Wrapper} from "./Cart.styles";
-import {BsCartX} from "react-icons/bs";
+import {CART} from "../../utils/translations/translation";
+import {getTranslation} from "../../utils/translations/getTranslation";
 import CartProductContainer from "./CartProduct/CartProductContainer";
 
 const Cart = (props) => {
-    if (!props.cartProducts) {
+    if (!props.cartProducts.length) {
         return (
             <Wrapper padTop={'150px'} data-testid='cart'>
-                <h6>Упс... You haven't added anything to your <BsCartX/>. It's empty...
-                    Please, turn back to All Elements and choose something.</h6>
+                <h6>{getTranslation(CART.WARNING_MESSAGE, props.lang)}</h6>
             </Wrapper>
         )
     }

@@ -19,6 +19,7 @@ const Sidebar = () => {
     const dispatch = useDispatch()
     const category = useSelector(state => state.products.category)
     const isFiltersOpen = useSelector(state => state.sidebar.isFiltersOpen)
+    const lang = useSelector(state => state.lang.language)
 
     const toggleCategory = (nextCategory) => {
 
@@ -35,12 +36,12 @@ const Sidebar = () => {
     return (
         <SidebarWrap>
             <Categories>
-                <SmallTitle>{getTranslation(CATEGORIES.LOGO.TITLE)}:</SmallTitle>
-                <Link to={API.articles.path} onClick={close}><GrArticle/>{getTranslation(CATEGORIES.CATEGORY.ARTICLES)}</Link>
+                <SmallTitle>{getTranslation(CATEGORIES.LOGO.TITLE, lang)}:</SmallTitle>
+                <Link to={API.articles.path} onClick={close}><GrArticle/>{getTranslation(CATEGORIES.CATEGORY.ARTICLES, lang)}</Link>
                 <RightBtn onClick={close}><Hamburger size={25}/></RightBtn>
-                <Link to={API.books.path} onClick={() => toggleCategory('books')}><ImBooks/> {getTranslation(CATEGORIES.CATEGORY.BOOKS)}</Link>
-                <Link to={API.guitars.path} onClick={() => toggleCategory('guitars')}><GiGuitar/> {getTranslation(CATEGORIES.CATEGORY.GUITARS)}</Link>
-                <Link to={API.vouchers.path} onClick={() => toggleCategory('vouchers')}><FaFly/> {getTranslation(CATEGORIES.CATEGORY.VOUCHERS)}</Link>
+                <Link to={API.books.path} onClick={() => toggleCategory('books')}><ImBooks/> {getTranslation(CATEGORIES.CATEGORY.BOOKS, lang)}</Link>
+                <Link to={API.guitars.path} onClick={() => toggleCategory('guitars')}><GiGuitar/> {getTranslation(CATEGORIES.CATEGORY.GUITARS, lang)}</Link>
+                <Link to={API.vouchers.path} onClick={() => toggleCategory('vouchers')}><FaFly/> {getTranslation(CATEGORIES.CATEGORY.VOUCHERS, lang)}</Link>
             </Categories>
            {isFiltersOpen && <NativeFiltersContainer/>}
         </SidebarWrap>
