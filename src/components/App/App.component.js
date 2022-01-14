@@ -59,7 +59,6 @@ function App ({
                         <Route path={API.wishes.path} render={() => <WishesContainer/>}/>
                         <Route path={API.cart.path} render={() => <CartContainer/>}/>
                         <Route exact path='/articles' render={() => <IntroArticlesContainer/>}/>
-                        {/*<Route exact path='/articles/article/:articleId' render={() => <div>div</div>}/>*/}
                         <Route path='/articles/article/:articleId' render={() => <FullArticleContainer />}/>
                     </Routers>
                 </Content>
