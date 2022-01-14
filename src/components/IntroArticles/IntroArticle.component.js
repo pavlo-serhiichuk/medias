@@ -4,7 +4,7 @@ import {Img} from "../common/Imgs/Imgs";
 import {Link} from "react-router-dom";
 
 const IntroArticle = ({article}) => {
-    const articleId = `/article?id=${article.id}`
+    const articleId = `/articles/article/${article.id}`
 
     return (
         <ArticleWrapper>

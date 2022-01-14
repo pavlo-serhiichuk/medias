@@ -58,8 +58,8 @@ function App ({
                         <Route path={API.profile.path} render={() => <Profile/>}/>
                         <Route path={API.wishes.path} render={() => <WishesContainer/>}/>
                         <Route path={API.cart.path} render={() => <CartContainer/>}/>
-                        <Route path={API.articles.path} render={() => <IntroArticlesContainer/>}/>
-                        <Route path={API.article.path} render={() => <FullArticleContainer id={query.get("id")}/>}/>
+                        <Route exact path='/articles' render={() => <IntroArticlesContainer/>}/>
+                        <Route path='/articles/article/:articleId' render={() => <FullArticleContainer />}/>
                     </Routers>
                 </Content>
                 <GoBottom/>

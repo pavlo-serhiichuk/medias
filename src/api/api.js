@@ -79,7 +79,6 @@ export const articlesAPI = {
 
 export const request = (requestType, actionReducer) => async dispatch => {
     dispatch(showLoading())
-
     const response = await requestType()
     dispatch(actionReducer(response))
     dispatch(hideLoading())

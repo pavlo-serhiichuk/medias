@@ -48,6 +48,7 @@ export const authReducer = (state = initialState, action) => {
         case SHOW_LOADING:
             return {...state, isLoading: true}
         case HIDE_LOADING:
+            debugger
             return {...state, isLoading: false}
 
         default:
