@@ -1,5 +1,5 @@
 const API = {
-    article: {path: '/article', name: 'ARTICLE'},
+    article: {path: '/articles/article/:articleId', name: 'ARTICLE'},
     articles: {path: '/articles', name: 'ARTICLES'},
     books: {path: '/books', name: 'BOOKS'},
     cart: {path: '/cart', name: 'CART'},
