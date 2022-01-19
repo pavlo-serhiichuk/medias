@@ -1,15 +1,19 @@
 import React, {useEffect} from 'react';
+import {connect} from "react-redux";
 import { useHistory } from "react-router-dom";
-import {Avatar, Content, History, UserInfo, Wrapper} from "./Profile.style";
-import {connect, useDispatch, useSelector} from "react-redux";
-import {hideSidebar} from "../../redux/sidebarReducer";
+
 import {VscSignOut as ExitIcon} from "react-icons/vsc";
-import Button, {RedButton} from "../common/Buttons/Button.component";
+
+import {Avatar, Content, History, UserInfo, Wrapper} from "./Profile.style";
+
 import {sighOut} from "../../redux/authReducer";
-import {Redirect} from "react-router-dom";
+import {hideSidebar} from "../../redux/sidebarReducer";
 import {changeCategory} from "../../redux/productsReducer";
-import {getTranslation} from "../../utils/translations/getTranslation";
+
+import {RedButton} from "../common/Buttons/Button.component";
+
 import {AUTH} from "../../utils/translations/translation";
+import {getTranslation} from "../../utils/translations/getTranslation";
 
 const Profile = (props) => {
     let history = useHistory();

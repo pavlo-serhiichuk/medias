@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const Img = styled.div`
   margin: 0 auto;
-  width: ${p => p.country && '90px' || '300px'};
-  height: ${p => p.height || p.country && '60px' || '350px'} ;
+  width: ${p => p.country ? '90px' : '300px'};
+  height: ${p => (p.height || p.country) ? '60px' : '350px'} ;
   background-position: center;
   background-image: url(${p => p.image});
   background-repeat: no-repeat;
-  background-size: ${p => p.bgSize || p.country && '100px' || '250px'};
+  background-size: ${p => (p.bgSize || p.country) ? '100px' : '250px'};
 `
 
 

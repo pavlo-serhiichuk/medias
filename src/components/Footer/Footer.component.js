@@ -18,9 +18,9 @@ const Footer = () => {
                 </span>
                 <SocialMedias>
                     <span>Try to find Us in:</span>
-                    <a href="https://www.facebook.com/" target="_blank"><Facebook size={30}/></a>
-                    <a href="https://www.youtube.com/" target="_blank"><Youtube size={30}/></a>
-                    <a href="https://www.instagram.com/" target="_blank"><Instagram size={30}/></a>
+                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><Facebook size={30}/></a>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noreferrer"><Youtube size={30}/></a>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><Instagram size={30}/></a>
                 </SocialMedias>
             </Content>
         </Wrapper>

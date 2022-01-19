@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components'
 
 export const Wrapper = styled.div`
@@ -12,6 +11,10 @@ export const Wrapper = styled.div`
     @media screen and (max-width: 992px) {width: 856px;}
     @media screen and (max-width: 768px) {width: 643px;}
     @media screen and (max-width: 576px) {width: 440px;}
+`
+
+export const Routers = styled.div`
+       width: 100%;
 `
 
 export const Content = styled.div`

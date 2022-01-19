@@ -3,8 +3,8 @@ import {BsFillCaretDownFill, BsFillCaretUpFill} from "react-icons/all";
 
 import {GoBottomWrapper, GoTopWrapper} from "./QuickScrolls.style";
 
-export const TopAnchor = () => <a name='top-anchor'/>
-export const BottomAnchor = () => <a name='bottom-anchor'/>
+export const TopAnchor = () => <a href="#" name='top-anchor'/>
+export const BottomAnchor = () => <a href='#' name='bottom-anchor'/>
 
 export const GoBottom = () => (
     <GoBottomWrapper href='#bottom-anchor'>

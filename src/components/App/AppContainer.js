@@ -1,24 +1,21 @@
 import React, {useEffect} from "react";
-import styled from "styled-components";
+import {createPortal} from "react-dom";
 import {useLocation} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
-import '../../index.css';
+
 import App from "./App.component";
+
 import {openSidebar} from "../../redux/sidebarReducer";
-import {createPortal} from "react-dom";
-import Portal from "../Portal/Portal.component";
-import {getAsyncWishesProducts} from "../../redux/wishesReducer";
 import {changeCategory} from "../../redux/productsReducer";
+import {getAsyncWishesProducts} from "../../redux/wishesReducer";
+
+import Portal from "../Portal/Portal.component";
 
 function useQuery() {
     const {search} = useLocation();
 
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
-
-export const Routers = styled.div`
-       width: 100%;
-`
 
 function AppContainer() {
 

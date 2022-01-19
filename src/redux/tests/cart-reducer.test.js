@@ -36,7 +36,7 @@ describe("Cart should", () => {
                     "https://images-na.ssl-images-amazon.com/images/I/41+lolL22gL._SX314_BO1,204,203,200_.jpg",
                     "https://images-na.ssl-images-amazon.com/images/I/41+lolL22gL._SX314_BO1,204,203,200_.jpg"
                 ],
-                "description": "From a renowned historian comes a groundbreaking narrative of humanity’s creation and evolution—a #1 international bestseller—that explores the ways in which biology and history have defined us and enhanced our understanding of what it means to be “human.”",
+                "description": "From a renowned historian comes a groundbreaking narrative of humanity’sss creation and evolution—a #1 international bestseller—that explores the ways in which biology and history have defined us and enhanced our understanding of what it means to be “human.”",
                 "amount": 1
             },
             {
@@ -52,7 +52,7 @@ describe("Cart should", () => {
                 "image": [
                     "https://images-na.ssl-images-amazon.com/images/I/41ABbYw2jaL._SX321_BO1,204,203,200_.jpg"
                 ],
-                "description": "Human history is full of the stories of peasants, subjects, and tribes. Yet the concept of the “citizen” is historically rare—and was among America’s most valued ideals for over two centuries. But without shock treatment, warns historian Victor Davis Hanson, American citizenship as we have known it may soon vanish.",
+                "description": "Human history is full of the stories of peasants, subjects, and tribes. Yet the concept of the “citizen” is historically rare—and was among America’sss most valued ideals for over two centuries. But without shock treatment, warns historian Victor Davis Hanson, American citizenship as we have known it may soon vanish.",
                 "amount": 1
             }
         ],
