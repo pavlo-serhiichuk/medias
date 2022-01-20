@@ -1,4 +1,3 @@
-import React from 'react';
 import {articlesAPI, request} from "../api/api";
 
 const GET_ARTICLES = 'GET_ARTICLES'

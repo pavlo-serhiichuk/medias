@@ -1,8 +1,10 @@
 import React, {lazy, Suspense} from "react";
 import {Route} from "react-router-dom";
 import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
-import '../../index.css';
-import {Wrapper, Content} from "./App.styles";
+
+import {Wrapper, Content, Routers} from "./App.styles";
+
+import API from "../../api/routerApi";
 
 import Footer from "../Footer/Footer.component";
 import Profile from "../Profile/Profile.component";
@@ -16,8 +18,6 @@ import MoreInfoContainer from "../MoreInfo/MoreInfoContainer";
 import FullArticleContainer from "../FullArticle/FullArticleContainer";
 import IntroArticlesContainer from "../IntroArticles/IntroArticlesContainer";
 import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "../common/QuickScrolls/QuickScrolls.component";
-import API from "../../api/routerApi";
-import {Routers} from "./AppContainer";
 import Alert from "../common/Alert/Alert";
 import {LeftBtn} from "../Sidebar/Sidebar.style";
 import PhotosPopup from "../PhotosPopup/PhotosPopup.component";

@@ -12,11 +12,11 @@ export const BigTitle = styled.div`
 export const MiddleTitle = styled.div`
     font-size: 23px;
     font-weight: bold;
-    color: ${p => p.price && 'red' || p.author && 'grey' || p.producer && 'grey' || '#000'}
+    color: ${p => p.price ? 'red' : p.author ? 'grey' : p.producer ? 'grey' : '#000'}
 `
 
 export const SmallTitle = styled.span`
     font-size: 17px;
     font-weight: bold;
-    color: ${p => p.price && 'red' || p.author && 'grey' || p.producer && 'grey' || '#000'}
+    color: ${p => p.price ? 'red' : p.author ? 'grey' : p.producer ? 'grey' : '#000'}
 `

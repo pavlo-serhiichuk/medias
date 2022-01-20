@@ -1,44 +1,42 @@
 import React from 'react';
-import {render} from 'react-dom';
-import './index.css';
-import AppContainer from './components/App/AppContainer';
-import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from "react-router-dom";
-import {Provider} from 'react-redux'
-import {applyMiddleware, compose, createStore} from "redux";
-import {rootReducer} from "./redux/rootReducer";
 import thunk from "redux-thunk";
-import {logger} from "redux-logger";
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux'
+import {rootReducer} from "./redux/rootReducer";
+import {createLogger} from 'redux-logger';
+import {BrowserRouter as Router} from "react-router-dom";
+import {applyMiddleware, compose, createStore} from "redux";
 
-const store = createStore(rootReducer, compose(
-    applyMiddleware(
-        thunk,
-        logger
-    ),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-))
+import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly';
+
+import './index.css';
+
+import AppContainer from './components/App/AppContainer';
+
+const logger = createLogger({
+    /* https://github.com/evgenyrodionov/redux-logger */
+    collapsed: true,
+    diff: true
+});
+
+const store = createStore(
+    rootReducer,
+    {}, //initialState
+    composeWithDevTools(
+        /* logger must be the last middleware in chain to log actions */
+        applyMiddleware(thunk, logger)
+    )
+);
 
 window.store = store
 
-export const Medias = () => {
-    return (
+ReactDOM.render(
+    <React.StrictMode>
         <Router>
             <Provider store={store}>
                 <AppContainer/>
             </Provider>
         </Router>
-    )
-}
-
-render(
-    <React.StrictMode>
-        <Medias />
-    </React.StrictMode>
-    ,
+    </React.StrictMode>,
     document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

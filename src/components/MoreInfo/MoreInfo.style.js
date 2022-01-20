@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import React from "react";
 import {FlexWrap} from "../common/FlexWrap/FlexWrap";
 
 export const Content = styled.div`
