@@ -1,11 +1,16 @@
 import React, {useEffect} from 'react';
-import {closeLoginModal} from "../../redux/modalReducer";
 import {connect, useDispatch, useSelector} from "react-redux";
-import {useForm} from "react-hook-form";
-import {fetchLogin} from "../../redux/authReducer";
-import Login from "./Login.component";
-import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
+import {useForm} from "react-hook-form";
+import * as yup from "yup";
+
+import {Form, Input, ErrorMessage} from "./Login.styles";
+
+import {closeLoginModal} from "../../redux/modalReducer";
+import {fetchLogin} from "../../redux/authReducer";
+import Modal from "../common/ModalWrap/Modal.component";
+import CloseButton from "../common/Buttons/CloseButton.component";
+import {PrimaryButton} from "../common/Buttons/Button.component";
 
 const LoginContainer = (props) => {
     const schema = yup.object().shape({
@@ -29,7 +34,7 @@ const LoginContainer = (props) => {
 
         {
             const {email: emailError = {}, password: passwordError = {}} = errors || {};
-            if (isEmpty  || emailError.message || passwordError.message) {
+            if (isEmpty || emailError.message || passwordError.message) {
                 return;
             }
         }
@@ -47,21 +52,34 @@ const LoginContainer = (props) => {
         });
     }, [isLoginModalOpen])
 
+    const getRow = name => {
+        return (
+            <>
+                {errors[name] && <ErrorMessage>{errors[name].message}</ErrorMessage>}
+                <label for={name}>Email:</label>
+                <Input type={name} id={name} {...register(name, {required: true})}/>
+                <br/>
+            </>
+        )
+    }
+
     return (
-        <Login
-            authError={props.authError}
-            closeModal={closeModal}
-            sendData={sendData}
-            lang={lang}
-            errors={errors}
-            register={register}
-            handleSubmit={handleSubmit}
-        />
+        <Modal>
+            <CloseButton onClick={closeModal}/>
+            <Form onSubmit={handleSubmit(sendData)}>
+                {getRow('email')}
+                {getRow('password')}
+                <ErrorMessage>{props.authError && props.authError.error}</ErrorMessage>
+                <PrimaryButton onClick={sendData}>Log in</PrimaryButton>
+            </Form>
+        </Modal>
+
     );
 };
 
 const mstp = state => ({
     authError: state.auth.authError,
+    auth: state.auth,
 })
 
 export default connect(mstp)(LoginContainer);

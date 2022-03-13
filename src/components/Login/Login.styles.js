@@ -20,6 +20,9 @@ export const Input = styled.input`
     padding: 5px;
 `
 
-export const P = styled.p`
+export const ErrorMessage = styled.p`
     color: red;
+    font-size: 14px;
+    padding: 0 5px;
+    text-transform: capitalize;
 `

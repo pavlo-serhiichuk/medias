@@ -26,7 +26,7 @@ export const authReducer = (state = initialState, action) => {
         case  LOG_IN_FAILED:
             return {
                 ...state,
-                authError: action.payload.error
+                authError: action.payload
             }
         case  SIGN_IN:
             return {
@@ -66,15 +66,14 @@ export const signIn = (data) => ({type: SIGN_IN, payload: data})
 export const sighOut = () => ({type: SIGH_OUT})
 export const showLoading = () => ({type: SHOW_LOADING})
 export const hideLoading = () => ({type: HIDE_LOADING})
-
-export const loginFailed = (data) => ({type: LOG_IN_FAILED, payload: data})
-export const login = (data) => ({type: LOG_IN, payload: data})
+export const login = (data) => ({type: LOG_IN, payload: data});
+export const loginFailed = (data) => ({type: LOG_IN_FAILED, payload: data});
 
 export const fetchLogin = (data) => async (dispatch) => {
-    const response = await authAPI.login(data)
-    console.log('222222 ', response)
+    const response = await authAPI.login(data);
+
     if (response.status !== 200) {
-        return loginFailed(response)
+        return dispatch(loginFailed(response));
     }
 
     dispatch(login(response))
