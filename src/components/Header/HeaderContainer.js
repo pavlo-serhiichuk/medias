@@ -39,6 +39,7 @@ const HeaderContainer = (props) => {
 
 const mstp = state => ({
     isAuth: state.auth.isAuth,
+    authError: state.auth.authError,
     profilePhoto: state.auth.profilePhoto,
     username: state.auth.username,
     userId: state.auth.userId,

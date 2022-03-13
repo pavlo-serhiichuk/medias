@@ -8,27 +8,27 @@ import {getTranslation} from "../../utils/translations/getTranslation";
 import {AUTH} from "../../utils/translations/translation";
 
 
-const Login = ({closeModal, sendData, register, handleSubmit, errors, lang}) => {
+const Login = ({closeModal, sendData, register, handleSubmit, errors = {}, authError, lang}) => {
+    console.log('________ ', {authError});
+
     return (
         <Modal>
             <CloseButton onClick={closeModal}/>
             <Form onSubmit={handleSubmit(sendData)}>
-                <h5>{getTranslation(AUTH.MODAL.TITLE, lang)}:</h5>
-                <Label>
-                    <h6>{getTranslation(AUTH.MODAL.USERNAME, lang)}: </h6>
-                    <Input type={'text'}
-                           defaultValue="p@p.p"
-                           {...register('email', {required: true})}/>
-                </Label>
+                {authError && authError.error}
+                <br/>
                 {errors.email && <P>! {errors.email.message}</P>}
                 <Label>
-                    <h6>{getTranslation(AUTH.MODAL.PASSWORD, lang)}:</h6>
-                    <Input type={'password'}
-                           defaultValue="pasha_s"
-                           {...register('password', {required: true})}/>
+                    <h6>Email: </h6>
+                    <Input type='email' {...register('email', {required: true})}/>
                 </Label>
+                <br/>
                 {errors.password && <P>! {errors.password.message}</P>}
-
+                <Label>
+                    <h6>Password: </h6>
+                    <Input type='password' {...register('password', {required: true})}/>
+                </Label>
+                <br/>
                 <PrimaryButton onClick={sendData}>Log in</PrimaryButton>
             </Form>
         </Modal>

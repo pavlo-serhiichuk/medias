@@ -1,16 +1,16 @@
 import React, {useEffect} from 'react';
 import {closeLoginModal} from "../../redux/modalReducer";
-import {useDispatch, useSelector} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import {useForm} from "react-hook-form";
 import {fetchLogin} from "../../redux/authReducer";
 import Login from "./Login.component";
 import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
 
-const LoginContainer = () => {
+const LoginContainer = (props) => {
     const schema = yup.object().shape({
         username: yup.string().max(15).required(),
-        email: yup.string().max(15).required(),
+        email: yup.string().email().max(15).required(),
         password: yup.string().min(3).max(15).required(),
     });
 
@@ -23,9 +23,18 @@ const LoginContainer = () => {
     const lang = useSelector(state => state.lang.language)
 
     const sendData = () => {
-        const data = watch();
-        console.log({data});
-        dispatch(fetchLogin({email: data.email, password: data.password}))
+        const {email, password} = watch();
+
+        const isEmpty = !email.length || !password.length;
+
+        {
+            const {email: emailError = {}, password: passwordError = {}} = errors || {};
+            if (isEmpty  || emailError.message || passwordError.message) {
+                return;
+            }
+        }
+
+        dispatch(fetchLogin({email, password}))
     }
 
     const closeModal = () => dispatch(closeLoginModal())
@@ -40,6 +49,7 @@ const LoginContainer = () => {
 
     return (
         <Login
+            authError={props.authError}
             closeModal={closeModal}
             sendData={sendData}
             lang={lang}
@@ -50,4 +60,9 @@ const LoginContainer = () => {
     );
 };
 
-export default LoginContainer;
+const mstp = state => ({
+    authError: state.auth.authError,
+})
+
+export default connect(mstp)(LoginContainer);
+

@@ -2,6 +2,7 @@ import {closeLoginModal, closeSignInModal} from "./modalReducer";
 import {authAPI} from "../api/api";
 
 const LOG_IN = 'LOG_IN'
+const LOG_IN_FAILED = 'LOG_IN_FAILED'
 
 const SIGN_IN = 'SIGN_IN'
 const SIGH_OUT = 'SIGH_OUT'
@@ -12,6 +13,7 @@ const initialState = {
     isAuth: false,
     isLoading: false,
     username: undefined,
+    authError: undefined,
     userId: 3,
     profilePhoto: null,
     password: '',
@@ -21,6 +23,11 @@ const initialState = {
 
 export const authReducer = (state = initialState, action) => {
     switch (action.type) {
+        case  LOG_IN_FAILED:
+            return {
+                ...state,
+                authError: action.payload.error
+            }
         case  SIGN_IN:
             return {
                 ...state,
@@ -60,11 +67,16 @@ export const sighOut = () => ({type: SIGH_OUT})
 export const showLoading = () => ({type: SHOW_LOADING})
 export const hideLoading = () => ({type: HIDE_LOADING})
 
+export const loginFailed = (data) => ({type: LOG_IN_FAILED, payload: data})
 export const login = (data) => ({type: LOG_IN, payload: data})
 
 export const fetchLogin = (data) => async (dispatch) => {
     const response = await authAPI.login(data)
-    cosnole.log({response});
+    console.log('222222 ', response)
+    if (response.status !== 200) {
+        return loginFailed(response)
+    }
+
     dispatch(login(response))
     dispatch(closeLoginModal())
 }
