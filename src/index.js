@@ -5,7 +5,7 @@ import {Provider} from 'react-redux'
 import {rootReducer} from "./redux/rootReducer";
 import {createLogger} from 'redux-logger';
 import {BrowserRouter as Router} from "react-router-dom";
-import {applyMiddleware, compose, createStore} from "redux";
+import {applyMiddleware, createStore} from "redux";
 
 import {composeWithDevTools} from 'redux-devtools-extension/developmentOnly';
 

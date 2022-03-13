@@ -7,10 +7,8 @@ export const Form = styled.form`
 `
 
 export const Label = styled.label`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-`
+    text-transform: capitalize;
+`;
 
 export const Input = styled.input`
     width: 230px;
@@ -18,7 +16,7 @@ export const Input = styled.input`
     box-sizing: border-box;
     height: 30px;
     padding: 5px;
-`
+`;
 
 export const ErrorMessage = styled.p`
     color: red;
