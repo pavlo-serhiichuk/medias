@@ -10,6 +10,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 const LoginContainer = () => {
     const schema = yup.object().shape({
         username: yup.string().max(15).required(),
+        email: yup.string().max(15).required(),
         password: yup.string().min(3).max(15).required(),
     });
 
@@ -22,7 +23,8 @@ const LoginContainer = () => {
     const lang = useSelector(state => state.lang.language)
 
     const sendData = () => {
-        const data = watch()
+        const data = watch();
+        console.log({data});
         dispatch(fetchLogin({email: data.email, password: data.password}))
     }
 
@@ -37,14 +39,14 @@ const LoginContainer = () => {
     }, [isLoginModalOpen])
 
     return (
-        <>
-            <Login closeModal={closeModal}
-                   sendData={sendData}
-                   lang={lang}
-                   errors={errors}
-                   register={register}
-                   handleSubmit={handleSubmit}/>
-        </>
+        <Login
+            closeModal={closeModal}
+            sendData={sendData}
+            lang={lang}
+            errors={errors}
+            register={register}
+            handleSubmit={handleSubmit}
+        />
     );
 };
 

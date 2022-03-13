@@ -9,9 +9,9 @@ const SHOW_LOADING = 'SHOW_LOADING'
 const HIDE_LOADING = 'HIDE_LOADING'
 
 const initialState = {
-    isAuth: true,
+    isAuth: false,
     isLoading: false,
-    username: 'pasha_s',
+    username: undefined,
     userId: 3,
     profilePhoto: null,
     password: '',
@@ -48,7 +48,6 @@ export const authReducer = (state = initialState, action) => {
         case SHOW_LOADING:
             return {...state, isLoading: true}
         case HIDE_LOADING:
-            debugger
             return {...state, isLoading: false}
 
         default:
@@ -65,6 +64,7 @@ export const login = (data) => ({type: LOG_IN, payload: data})
 
 export const fetchLogin = (data) => async (dispatch) => {
     const response = await authAPI.login(data)
+    cosnole.log({response});
     dispatch(login(response))
     dispatch(closeLoginModal())
 }
