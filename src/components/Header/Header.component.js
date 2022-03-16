@@ -47,7 +47,7 @@ export default ({
                     </div>
                 </Left>
                 <UserNeeds>
-                    {username &&
+                    {isAuth &&
                         <>
                         {/*Profile*/}
                         <Link

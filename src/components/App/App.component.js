@@ -10,7 +10,7 @@ import Footer from "../Footer/Footer.component";
 import Profile from "../Profile/Profile.component";
 import Sidebar from "../Sidebar/Sidebar.component";
 import CartContainer from "../Cart/CartContainer";
-import LoginContainer from "../Login/LoginContainer";
+import LoginPopup from "../LoginPopup/LoginPopup.component";
 import SignInContainer from "../SignIn/SignInContainer";
 import HeaderContainer from "../Header/HeaderContainer";
 import WishesContainer from "../Wishes/WishesContainer";
@@ -69,7 +69,7 @@ function App ({
 
             {isMoreInfoModalOpen && <MoreInfoContainer/>}
             {isPhotosPopupOpen && <PhotosPopup/>}
-            {isLoginModalOpen && <LoginContainer/>}
+            {isLoginModalOpen && <LoginPopup/>}
             {isSignInModalOpen && <SignInContainer/>}
         </>
     );
