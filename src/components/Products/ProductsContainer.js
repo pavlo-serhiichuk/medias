@@ -69,13 +69,13 @@ class ProductsContainer extends React.PureComponent {
                 && <b>{countryName[0].title} vouchers:</b>}
 
                 <Products
+                    isLoading={this.props.isLoading}
                     products={this.props.products}
+                    category={this.props.category}
+                    lang={this.props.lang}
+                    openMoreInfo={this.openMoreInfo}
                     addToCart={this.addToCart}
                     setWish={this.setWish}
-                    lang={this.props.lang}
-                    category={this.props.category}
-                    openMoreInfo={this.openMoreInfo}
-                    isLoading={this.props.isLoading}
                 />
             </>
         );

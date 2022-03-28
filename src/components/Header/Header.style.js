@@ -53,7 +53,7 @@ export const Right = styled.div`
     }
 `
 
-export const Image = styled.image`
+export const Image = styled.img`
     margin: 20px 5px 0;
     width: 30px;
     height: 30px;
@@ -63,11 +63,11 @@ export const Image = styled.image`
     cursor: pointer;
 `
 
-export const UserNeeds = styled.image`
+export const UserNeeds = styled.div`
     display: flex;
     justify-content: space-between;
 `
-export const Profile = styled.image`
+export const Profile = styled.div`
     padding: 0 10px 0 0 ;
     display: flex;
     justify-content: center;

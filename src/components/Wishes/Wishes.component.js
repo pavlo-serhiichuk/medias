@@ -17,7 +17,7 @@ const Wishes = ({wishes, lang}) => {
 
     return (
         <div>
-            {wishes.map(wish => <Wish wish={wish} lang={lang}/>)}
+            {wishes.map((wish, i) => <Wish key={i} wish={wish} lang={lang}/>)}
         </div>
     );
 }

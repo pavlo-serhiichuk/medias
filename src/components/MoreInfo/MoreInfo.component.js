@@ -40,17 +40,17 @@ const MoreInfo = (props) => {
 
                     {features && <Features>
                         <h5>Features: </h5>
-                        {features.map(item => <li>{item}</li>)}
+                        {features.map((item, i) => <li key={i}>{item}</li>)}
                     </Features>}
 
                     {conditions && <Features>
                         <h5>Conditions: </h5>
-                        {conditions.map(item => <li>{item}</li>)}
+                        {conditions.map((item, i) => <li key={i}>{item}</li>)}
                     </Features>}
 
                     {gunres && <Features>
                         <h5>Gunres: </h5>
-                        {gunres.map(item => <li>{item}</li>)}
+                        {gunres.map((item, i) => <li key={i}>{item}</li>)}
                     </Features>}
 
                     <Description>{description}</Description>

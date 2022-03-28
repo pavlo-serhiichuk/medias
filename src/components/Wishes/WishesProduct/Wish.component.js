@@ -19,8 +19,7 @@ const Wish = ({wish, lang}) => {
                 <RedButton operator='true' color='indianred'>
                     {getTranslation(BUTTON.DELETE, lang)}
                 </RedButton>
-                <PrimaryButton operator='true' color='green' onClick={() => {
-                }}>
+                <PrimaryButton operator='true' color='green' onClick={() => {}}>
                     {getTranslation(BUTTON.CART.TITLE, lang)} <Cart/>
                 </PrimaryButton>
             </Operators>
