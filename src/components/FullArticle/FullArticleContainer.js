@@ -11,7 +11,6 @@ const FullArticleContainer = () => {
     const isLoading = useSelector(state => state.auth.isLoading)
 
     useEffect(() => {
-        debugger
         dispatch(getAsyncFullArticle(+articleId))
     }, [])
 

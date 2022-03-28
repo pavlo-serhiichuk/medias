@@ -47,7 +47,8 @@ export default ({
                     </div>
                 </Left>
                 <UserNeeds>
-                    {username && <>
+                    {isAuth &&
+                        <>
                         {/*Profile*/}
                         <Link
                             to={`${API.profile.path}?=${userId}`}

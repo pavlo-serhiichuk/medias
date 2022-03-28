@@ -12,7 +12,15 @@ const post = (url, data) => fetch(`${serverURL}${url}`, {
         'Content-Type': 'application/json',
     },
     body:  JSON.stringify(data),
-}).then(res => res.json())
+})
+    .then( async res =>  {
+        const data = await res.json();
+
+        return {
+            status: res.status,
+            ...data
+        };
+    });
 
 const put = (url, data) => fetch(`${serverURL}${url}`, {
     method: 'PUT',
