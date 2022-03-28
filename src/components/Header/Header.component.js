@@ -5,8 +5,7 @@ import ReactTooltip from 'react-tooltip';
 import {BsCart4 as CartIcon} from "react-icons/bs";
 import {BiHeart as LikedIcon} from "react-icons/bi";
 
-import {Header, ContentWrapper, Left, Article, UserNeeds, Right, Amount, Image} from './Header.style.js';
-
+import {Header, ContentWrapper, Left, Article, UserNeeds, Right, Amount, Image, LinkWrap} from './Header.style.js';
 
 import {getTranslation} from "../../utils/translations/getTranslation";
 
@@ -17,22 +16,22 @@ import {PrimaryButton, GoldButton} from "../common/Buttons/Button.component";
 import {AUTH} from "../../utils/translations/translation";
 
 export default ({
-    cart,
-    wishes,
-    avatar,
-    getAsyncWishes,
-    close,
-    isAuth,
-    profilePhoto,
-    username,
-    uaFlag,
-    gbFlag,
-    userId,
-    lang,
-    setLanguage,
-    openLoginModal,
-    openSignInModal
-}) => {
+                    cart,
+                    wishes,
+                    avatar,
+                    getAsyncWishes,
+                    close,
+                    isAuth,
+                    profilePhoto,
+                    username,
+                    uaFlag,
+                    gbFlag,
+                    userId,
+                    lang,
+                    setLanguage,
+                    openLoginModal,
+                    openSignInModal
+                }) => {
 
     return (
         <Header data-testid="header">
@@ -49,37 +48,43 @@ export default ({
                 <UserNeeds>
                     {isAuth &&
                         <>
-                        {/*Profile*/}
-                        <Link
-                            to={`${API.profile.path}?=${userId}`}
-                            onClick={close}
-                            data-tip="your profile"
-                        >
-                            <ReactTooltip place="bottom"/>
-                            <SmallProfilePhoto profilePhoto={profilePhoto || avatar}/>
-                            <span>{username}</span>
-                        </Link>
-                        {/*Wishes*/}
-                        <Link
-                            onClick={close}
-                            to={API.wishes.path}
-                            data-tip="your Wishes"
-                        >
-                            <ReactTooltip place="bottom"/>
-                            <LikedIcon size={25}/>
-                            <Amount onClick={getAsyncWishes}>{wishes > 0 && wishes}</Amount>
-                        </Link>
-                        {/*Cart*/}
-                        <Link
-                            onClick={close}
-                            to={API.cart.path}
-                            data-tip="your Cart"
-                        >
-                            <CartIcon size={25}/>
-                            <ReactTooltip place="bottom"/>
-                            <Amount>{cart > 0 && cart}</Amount>
-                        </Link>
-                    </>}
+                            {/*Profile*/}
+                            <LinkWrap>
+                                <Link
+                                    to={`${API.profile.path}?=${userId}`}
+                                    onClick={close}
+                                    data-tip="your profile"
+                                >
+                                    <ReactTooltip place="bottom"/>
+                                    <SmallProfilePhoto profilePhoto={profilePhoto || avatar}/>
+                                    <span>{username}</span>
+                                </Link>
+                            </LinkWrap>
+                            {/*Wishes*/}
+                            <LinkWrap>
+                                <Link
+                                    onClick={close}
+                                    to={API.wishes.path}
+                                    data-tip="your Wishes"
+                                >
+                                    <ReactTooltip place="bottom"/>
+                                    <LikedIcon size={25}/>
+                                    <Amount onClick={getAsyncWishes}>{wishes > 0 && wishes}</Amount>
+                                </Link>
+                            </LinkWrap>
+                            {/*Cart*/}
+                            <LinkWrap>
+                                <Link
+                                    onClick={close}
+                                    to={API.cart.path}
+                                    data-tip="your Cart"
+                                >
+                                    <CartIcon size={25}/>
+                                    <ReactTooltip place="bottom"/>
+                                    <Amount>{cart > 0 && cart}</Amount>
+                                </Link>
+                            </LinkWrap>
+                        </>}
                 </UserNeeds>
                 {!isAuth &&
                     <Right>
