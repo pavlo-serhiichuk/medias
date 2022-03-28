@@ -14,7 +14,7 @@ const SET_FILTER_NAME = 'SET_FILTER_NAME'
 const SET_FILTER_PARAM = 'SET_FILTER_PARAM'
 
 const initialState = {
-    isSidebarOpen: false,
+    isSidebarOpen: true,
     isFiltersOpen: true,
     filterName: '',
     filterParam: '',

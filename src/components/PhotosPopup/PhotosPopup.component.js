@@ -27,7 +27,13 @@ const PhotosPopup = ({product, closePhotosPopup}) => {
                     <MainImage image={currentImage[0].image}/>
                     {Array.isArray(image)
                         ? <OtherImgs>
-                        {images.map(image => <SmallImage setImageId={setImageId} imageId={image.id} img={image.image} key={image.id}/>)}
+                        {images.map(image =>
+                            <SmallImage
+                                key={image.id}
+                                setImageId={setImageId}
+                                imageId={image.id}
+                                img={image.image}
+                                key={image.id}/>)}
                     </OtherImgs>
                         : null}
                 </ImagesContainer>

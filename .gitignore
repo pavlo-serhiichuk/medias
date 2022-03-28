@@ -31,3 +31,4 @@ yarn-error.log*
 /.idea/.name
 /public/favicon.ico
 /.idea/medias.iml
+/package-lock.json
