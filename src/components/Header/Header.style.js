@@ -98,7 +98,7 @@ export const Wishes = styled.div`
   }
 `
 export const Cart = styled.div`
-  ${defaultStyle}
+  ${defaultStyle};
   border-right: 1px solid #000;
   position: relative;
   width: 80px;
@@ -108,12 +108,18 @@ export const Cart = styled.div`
     background-color: rgba(192, 192, 192, 0.35);
   }
 `
-export const Amount = styled.span`
+
+export const ItemsAmount = styled.span`
   position: absolute;
   width: 30px;
   top: 3px;
-  right: -8px;
   border-radius: 50%;
   background-color: #ff694b;
-  text-align: center;
+  text-align: center;`
+
+export const WishesAmount = styled(ItemsAmount)`
+  right: 88px;
+`
+export const CartAmount = styled(ItemsAmount)`
+  right: -8px;
 `

@@ -5,7 +5,18 @@ import ReactTooltip from 'react-tooltip';
 import {BsCart4 as CartIcon} from "react-icons/bs";
 import {BiHeart as LikedIcon} from "react-icons/bi";
 
-import {Header, ContentWrapper, Left, Article, UserNeeds, Right, Amount, Image, LinkWrap} from './Header.style.js';
+import {
+    Header,
+    ContentWrapper,
+    Left,
+    Article,
+    UserNeeds,
+    Right,
+    Image,
+    LinkWrap,
+    WishesAmount,
+    CartAmount
+} from './Header.style.js';
 
 import {getTranslation} from "../../utils/translations/getTranslation";
 
@@ -69,7 +80,7 @@ export default ({
                                 >
                                     <ReactTooltip place="bottom"/>
                                     <LikedIcon size={25}/>
-                                    <Amount onClick={getAsyncWishes}>{wishes > 0 && wishes}</Amount>
+                                    <WishesAmount onClick={getAsyncWishes}>{wishes > 0 && wishes}</WishesAmount>
                                 </Link>
                             </LinkWrap>
                             {/*Cart*/}
@@ -81,7 +92,7 @@ export default ({
                                 >
                                     <CartIcon size={25}/>
                                     <ReactTooltip place="bottom"/>
-                                    <Amount>{cart > 0 && cart}</Amount>
+                                    <CartAmount>{cart > 0 && cart}</CartAmount>
                                 </Link>
                             </LinkWrap>
                         </>}
