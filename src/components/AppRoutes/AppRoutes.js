@@ -9,6 +9,7 @@ import FullArticleContainer from "../FullArticle/FullArticleContainer";
 import {Routers} from "../App/App.styles";
 import useQuery from "../../hooks/useQuery";
 import {useSelector} from "react-redux";
+import Home from "../Home/Home.component";
 
 const ProductsContainer = lazy(() => import("../Products/ProductsContainer"))
 
@@ -16,29 +17,20 @@ const AppRoutes = () => {
     let query = useQuery();
     const isAuth = useSelector(state => state.auth.isAuth)
     return (
-            <Routers>
-                <><Suspense fallback={'Loading...'}>
-                        <Route path={API.books.path} render={() => <ProductsContainer/>}/>
-                        <Route path={API.guitars.path} render={() => <ProductsContainer/>}/>
-                        <Route path={API.vouchers.path} render={() => <ProductsContainer/>}/>
-                        <Route path={API.filtered.path} render={() => <ProductsContainer id={query.get("id")}/>}/>
-                    </Suspense>
-                        <Route path={API.profile.path} render={() => <Profile/>}/>
-                    {
-                        isAuth
-                            ? <Route path={API.wishes.path} render={() => <WishesContainer/>}/>
-                            : <Route
-                                path="*"
-                                element={<Redirect to="/books"  />}
-                            />
-                    }
-                        <Route path={API.cart.path} render={() => <CartContainer/>}/>
-                        <Route exact path='/articles' render={() => <IntroArticlesContainer/>}/>
-                        <Route path='/articles/article/:articleId' render={() => <FullArticleContainer />}/></>
-
-
-
-            </Routers>
+        <Routers>
+            <Route exact path='/' render={() => <Home/>}/>
+            <><Suspense fallback={'Loading...'}>
+                <Route path={API.books.path} render={() => <ProductsContainer/>}/>
+                <Route path={API.guitars.path} render={() => <ProductsContainer/>}/>
+                <Route path={API.vouchers.path} render={() => <ProductsContainer/>}/>
+                <Route path={API.filtered.path} render={() => <ProductsContainer id={query.get("id")}/>}/>
+            </Suspense>
+                <Route path={API.profile.path} render={() => <Profile/>}/>
+                <Route path={API.wishes.path} render={() => <WishesContainer/>}/>
+                <Route path={API.cart.path} render={() => <CartContainer/>}/>
+                <Route exact path='/articles' render={() => <IntroArticlesContainer/>}/>
+                <Route path='/articles/article/:articleId' render={() => <FullArticleContainer/>}/></>
+        </Routers>
     );
 };
 

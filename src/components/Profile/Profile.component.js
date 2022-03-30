@@ -21,7 +21,7 @@ const Profile = (props) => {
     const makeSighOut = () => {
         props.sighOut()
         props.changeCategory('books')
-        history.push('/books')
+        history.push('/')
     }
 
     useEffect(() => {

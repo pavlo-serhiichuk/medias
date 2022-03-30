@@ -49,7 +49,7 @@ export default ({
             <ContentWrapper>
                 <Left>
                     <Article>
-                        <Link to={API.articles.path} onClick={close}>medias</Link>
+                        <Link to='/' onClick={close}>medias</Link>
                     </Article>
                     <div>
                         <Image src={uaFlag} onClick={() => setLanguage('ua')}/>
