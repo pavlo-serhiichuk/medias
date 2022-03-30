@@ -10,9 +10,9 @@ const SHOW_LOADING = 'SHOW_LOADING'
 const HIDE_LOADING = 'HIDE_LOADING'
 
 const initialState = {
-    isAuth: false,
+    isAuth: localStorage.getItem('isAuth') === 'true' ? true: false,
     isLoading: false,
-    username: undefined,
+    username: 'pasha_s',
     authError: undefined,
     userId: 3,
     profilePhoto: null,
