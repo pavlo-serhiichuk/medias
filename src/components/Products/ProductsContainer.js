@@ -13,15 +13,15 @@ import Countries from "../Countries/Countries.component";
 import {hideSidebar, openSidebar} from "../../redux/sidebarReducer";
 import {openAlert, openMoreInfoModal} from "../../redux/modalReducer";
 import {setAsyncWish} from "../../redux/wishesReducer";
-import {useHistory} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 
 const ProductsContainer = (props) => {
 
     const tabTitle = title => document.title = `${title}| Medias`
-    const history = useHistory()
-    const currentCategory = history.location.pathname.slice(1)
-    useEffect(() => {
+    const location = useLocation()
+    const currentCategory = location.pathname.slice(1)
 
+    useEffect(() => {
         switch (currentCategory) {
             case 'books':
                 tabTitle('Books')
@@ -39,7 +39,7 @@ const ProductsContainer = (props) => {
             default:
                 return null
         }
-    }, [])
+    }, [currentCategory])
 
     const addToCart = product => {
         props.isAuth
