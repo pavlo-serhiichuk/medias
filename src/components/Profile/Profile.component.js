@@ -18,6 +18,7 @@ import {getTranslation} from "../../utils/translations/getTranslation";
 const Profile = (props) => {
 
     const makeSighOut = () => {
+        localStorage.setItem('isAuth', 'false')
         props.sighOut()
         props.changeCategory('books')
     }

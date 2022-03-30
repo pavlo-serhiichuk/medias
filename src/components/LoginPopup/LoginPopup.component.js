@@ -29,7 +29,7 @@ const LoginContainer = (props) => {
 
     const sendData = () => {
         const {email, password}  = watch();
-
+        localStorage.setItem('isAuth', 'true')
         const isEmpty = !email.length || !password.length;
 
         {

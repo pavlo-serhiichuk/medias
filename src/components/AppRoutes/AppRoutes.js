@@ -8,7 +8,6 @@ import IntroArticlesContainer from "../IntroArticles/IntroArticlesContainer";
 import FullArticleContainer from "../FullArticle/FullArticleContainer";
 import {Routers} from "../App/App.styles";
 import useQuery from "../../hooks/useQuery";
-import {useSelector} from "react-redux";
 import Home from "../Home/Home.component";
 
 const ProductsContainer = lazy(() => import("../Products/ProductsContainer"))
@@ -28,7 +27,7 @@ const AppRoutes = () => {
                 </Routes>
             </Suspense>
             <Routes>
-                <Route path='/' render={() => <Home/>}/>
+                <Route path='/' element={<Home/>}/>
                 <Route path={API.profile.path} element={<Profile/>}/>
                 <Route path={API.wishes.path} element={<WishesContainer/>}/>
                 <Route path={API.cart.path} element={<CartContainer/>}/>
