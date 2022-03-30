@@ -15,7 +15,7 @@ const ProductsContainer = lazy(() => import("../Products/ProductsContainer"))
 
 const AppRoutes = () => {
     let query = useQuery();
-    const isAuth = useSelector(state => state.auth.isAuth)
+
     return (
         <Routers>
             <Route exact path='/' render={() => <Home/>}/>
