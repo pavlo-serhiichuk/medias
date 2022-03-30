@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Products from "./Products.component";
 import {connect} from "react-redux";
 import {
@@ -13,73 +13,74 @@ import Countries from "../Countries/Countries.component";
 import {hideSidebar, openSidebar} from "../../redux/sidebarReducer";
 import {openAlert, openMoreInfoModal} from "../../redux/modalReducer";
 import {setAsyncWish} from "../../redux/wishesReducer";
+import {useLocation} from "react-router-dom";
 
-class ProductsContainer extends React.PureComponent {
+const ProductsContainer = (props) => {
 
-    tabTitle = title => document.title = `${title}| Medias`
+    const tabTitle = title => document.title = `${title}| Medias`
+    const location = useLocation()
+    const currentCategory = location.pathname.slice(1)
 
-    componentDidMount() {
-
-        switch (this.props.category) {
+    useEffect(() => {
+        switch (currentCategory) {
             case 'books':
-                this.tabTitle('Books')
-                return this.props.getAsyncBooks()
+                tabTitle('Books')
+                return props.getAsyncBooks()
             case 'guitars':
-                this.tabTitle('Guitars')
-                return this.props.getAsyncGuitars()
+                tabTitle('Guitars')
+                return props.getAsyncGuitars()
             case 'vouchers':
-                this.tabTitle('Vouchers')
-                this.props.getAsyncVouchers()
-                return this.props.getAsyncCountries()
+                tabTitle('Vouchers')
+                props.getAsyncVouchers()
+                return props.getAsyncCountries()
             case 'filteredVouchers':
-                this.tabTitle('Filtered Vouchers')
-                return this.props.getAsyncFilteredVouchers(this.props.countryID)
+                tabTitle('Filtered Vouchers')
+                return props.getAsyncFilteredVouchers(props.countryID)
             default:
                 return null
         }
-    }
+    }, [currentCategory])
 
-    addToCart = product => {
-        this.props.isAuth
-            ? this.props.addToCart(product)
+    const addToCart = product => {
+        props.isAuth
+            ? props.addToCart(product)
             : alert('Please, sigh in first! Asshole!!')
     }
 
-    openMoreInfo = productId => this.props.openMoreInfoModal(productId)
+    const openMoreInfo = productId => props.openMoreInfoModal(productId)
 
-    setWish = (currentProduct, category, productId) => {
-        this.props.setCurrentProduct(currentProduct)
-        return this.props.setAsyncWish(this.props.userId, category, productId)
+    const setWish = (currentProduct, category, productId) => {
+        props.setCurrentProduct(currentProduct)
+        return props.setAsyncWish(props.userId, category, productId)
     }
 
-    render() {
-        let countryName = null
 
-        if (this.props.countries) {
-            if (this.props.countryID) {
-                countryName = this.props.countries.filter(country => country.id === this.props.countryID)
-            }
+    let countryName = null
+
+    if (props.countries) {
+        if (props.countryID) {
+            countryName = props.countries.filter(country => country.id === props.countryID)
         }
+    }
 
-        return (
-            <>
-                {this.props.category === 'vouchers'
-                && <Countries countries={this.props.countries}/>}
-                {this.props.category === 'filteredVouchers'
+    return (
+        <>
+            {props.category === 'vouchers'
+                && <Countries countries={props.countries}/>}
+            {props.category === 'filteredVouchers'
                 && <b>{countryName[0].title} vouchers:</b>}
 
-                <Products
-                    isLoading={this.props.isLoading}
-                    products={this.props.products}
-                    category={this.props.category}
-                    lang={this.props.lang}
-                    openMoreInfo={this.openMoreInfo}
-                    addToCart={this.addToCart}
-                    setWish={this.setWish}
-                />
-            </>
-        );
-    }
+            <Products
+                isLoading={props.isLoading}
+                products={props.products}
+                category={props.category}
+                lang={props.lang}
+                openMoreInfo={openMoreInfo}
+                addToCart={addToCart}
+                setWish={setWish}
+            />
+        </>
+    );
 }
 
 const mstp = state => ({
