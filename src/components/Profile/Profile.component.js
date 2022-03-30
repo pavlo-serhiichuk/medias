@@ -16,12 +16,10 @@ import {AUTH} from "../../utils/translations/translation";
 import {getTranslation} from "../../utils/translations/getTranslation";
 
 const Profile = (props) => {
-    let history = useHistory();
 
     const makeSighOut = () => {
         props.sighOut()
         props.changeCategory('books')
-        history.push('/books')
     }
 
     useEffect(() => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {ArticleWrapper, Content, MoreInfo, Title} from "./IntroArticles.styles";
 import {Img} from "../common/Imgs/Imgs";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 const IntroArticle = ({article}) => {
     const articleId = `/articles/article/${article.id}`
@@ -9,14 +9,14 @@ const IntroArticle = ({article}) => {
     return (
         <ArticleWrapper>
             <Title>
-                <Link to={articleId}> {article.title}</Link>
+                <NavLink to={articleId}> {article.title}</NavLink>
             </Title>
-            <Link to={articleId}>
+            <NavLink to={articleId}>
                 <Img bgSize={'500px'} image={article.image} height={'200px'}/>
-            </Link>
+            </NavLink>
             <Content>
                 {article.description}
-                <Link to={articleId}><MoreInfo>...More info</MoreInfo></Link>
+                <NavLink to={articleId}><MoreInfo>...More info</MoreInfo></NavLink>
             </Content>
 
         </ArticleWrapper>

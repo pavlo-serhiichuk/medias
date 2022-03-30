@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 
 import {FaFly} from "react-icons/fa";
@@ -46,11 +46,11 @@ const Sidebar = () => {
         <SidebarWrap>
             <Categories>
                 <SmallTitle>{getTranslation(CATEGORIES.LOGO.TITLE, lang)}:</SmallTitle>
-                <Link to={API.articles.path} onClick={close}><GrArticle/>{getTranslation(CATEGORIES.CATEGORY.ARTICLES, lang)}</Link>
+                <NavLink to={API.articles.path} onClick={close}><GrArticle/>{getTranslation(CATEGORIES.CATEGORY.ARTICLES, lang)}</NavLink>
                 <RightBtn onClick={close}><Hamburger size={25}/></RightBtn>
-                <Link to={API.books.path} onClick={() => toggleCategory('books')}><ImBooks/> {getTranslation(CATEGORIES.CATEGORY.BOOKS, lang)}</Link>
-                <Link to={API.guitars.path} onClick={() => toggleCategory('guitars')}><GiGuitar/> {getTranslation(CATEGORIES.CATEGORY.GUITARS, lang)}</Link>
-                <Link to={API.vouchers.path} onClick={() => toggleCategory('vouchers')}><FaFly/> {getTranslation(CATEGORIES.CATEGORY.VOUCHERS, lang)}</Link>
+                <NavLink to={API.books.path} onClick={() => toggleCategory('books')}><ImBooks/> {getTranslation(CATEGORIES.CATEGORY.BOOKS, lang)}</NavLink>
+                <NavLink to={API.guitars.path} onClick={() => toggleCategory('guitars')}><GiGuitar/> {getTranslation(CATEGORIES.CATEGORY.GUITARS, lang)}</NavLink>
+                <NavLink to={API.vouchers.path} onClick={() => toggleCategory('vouchers')}><FaFly/> {getTranslation(CATEGORIES.CATEGORY.VOUCHERS, lang)}</NavLink>
             </Categories>
            {isFiltersOpen && <NativeFiltersContainer/>}
         </SidebarWrap>

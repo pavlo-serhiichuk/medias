@@ -26,5 +26,13 @@ a {
 }
 
 a:hover {
-  color: #000000;
+  color: darkslategray;
 }
+
+.active {
+  color: darkolivegreen;
+}
+
+/*.active:hover {*/
+/*  color: darkred;*/
+/*}*/
