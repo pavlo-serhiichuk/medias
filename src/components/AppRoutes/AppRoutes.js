@@ -18,7 +18,6 @@ const AppRoutes = () => {
 
     return (
         <Routers>
-
             <Suspense fallback={'Loading...'}>
                 <Routes>
                     <Route path={API.books.path} element={<ProductsContainer/>}/>
@@ -35,7 +34,6 @@ const AppRoutes = () => {
                 <Route path='/articles' element={<IntroArticlesContainer/>}/>
                 <Route path='/articles/article/:articleId' element={<FullArticleContainer/>}/>
             </Routes>
-
         </Routers>
     );
 };
