@@ -13,14 +13,16 @@ import Countries from "../Countries/Countries.component";
 import {hideSidebar, openSidebar} from "../../redux/sidebarReducer";
 import {openAlert, openMoreInfoModal} from "../../redux/modalReducer";
 import {setAsyncWish} from "../../redux/wishesReducer";
+import {useHistory} from "react-router-dom";
 
 const ProductsContainer = (props) => {
 
     const tabTitle = title => document.title = `${title}| Medias`
-
+    const history = useHistory()
+    const currentCategory = history.location.pathname.slice(1)
     useEffect(() => {
 
-        switch (props.category) {
+        switch (currentCategory) {
             case 'books':
                 tabTitle('Books')
                 return props.getAsyncBooks()
