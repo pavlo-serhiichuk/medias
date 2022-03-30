@@ -7,14 +7,12 @@ import CartContainer from "../Cart/CartContainer";
 import IntroArticlesContainer from "../IntroArticles/IntroArticlesContainer";
 import FullArticleContainer from "../FullArticle/FullArticleContainer";
 import {Routers} from "../App/App.styles";
-import useQuery from "../../hooks/useQuery";
 import Home from "../Home/Home.component";
 
 const ProductsContainer = lazy(() => import("../Products/ProductsContainer"))
 
 const AppRoutes = () => {
-    let query = useQuery();
-    const isAuth = useSelector(state => state.auth.isAuth)
+
     return (
         <Routers>
 
@@ -23,7 +21,7 @@ const AppRoutes = () => {
                     <Route path={API.books.path} element={<ProductsContainer/>}/>
                     <Route path={API.guitars.path} element={<ProductsContainer/>}/>
                     <Route path={API.vouchers.path} element={<ProductsContainer/>}/>
-                    <Route path={API.filtered.path} element={<ProductsContainer id={query.get("id")}/>}/>
+                    <Route path={API.filtered.path} element={<ProductsContainer/>}/>
                 </Routes>
             </Suspense>
             <Routes>

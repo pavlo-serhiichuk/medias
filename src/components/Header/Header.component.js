@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import ReactTooltip from 'react-tooltip';
 
 import {BsCart4 as CartIcon} from "react-icons/bs";
@@ -49,7 +49,7 @@ export default ({
             <ContentWrapper>
                 <Left>
                     <Article>
-                        <Link to='/' onClick={close}>medias</Link>
+                        <NavLink to='/' onClick={close}>medias</NavLink>
                     </Article>
                     <div>
                         <Image src={uaFlag} onClick={() => setLanguage('ua')}/>
@@ -61,7 +61,7 @@ export default ({
                         <>
                             {/*Profile*/}
                             <LinkWrap>
-                                <Link
+                                <NavLink
                                     to={`${API.profile.path}?=${userId}`}
                                     onClick={close}
                                     data-tip="your profile"
@@ -69,11 +69,11 @@ export default ({
                                     <ReactTooltip place="bottom"/>
                                     <SmallProfilePhoto profilePhoto={profilePhoto || avatar}/>
                                     <span>{username}</span>
-                                </Link>
+                                </NavLink>
                             </LinkWrap>
                             {/*Wishes*/}
                             <LinkWrap>
-                                <Link
+                                <NavLink
                                     onClick={close}
                                     to={API.wishes.path}
                                     data-tip="your Wishes"
@@ -81,11 +81,11 @@ export default ({
                                     <ReactTooltip place="bottom"/>
                                     <LikedIcon size={25}/>
                                     <WishesAmount onClick={getAsyncWishes}>{wishes > 0 && wishes}</WishesAmount>
-                                </Link>
+                                </NavLink>
                             </LinkWrap>
                             {/*Cart*/}
                             <LinkWrap>
-                                <Link
+                                <NavLink
                                     onClick={close}
                                     to={API.cart.path}
                                     data-tip="your Cart"
@@ -93,7 +93,7 @@ export default ({
                                     <CartIcon size={25}/>
                                     <ReactTooltip place="bottom"/>
                                     <CartAmount>{cart > 0 && cart}</CartAmount>
-                                </Link>
+                                </NavLink>
                             </LinkWrap>
                         </>}
                 </UserNeeds>

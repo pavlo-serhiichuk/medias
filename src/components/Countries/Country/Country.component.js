@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {Wrapper} from "./Country.style";
 import {Img} from "../../common/Imgs/Imgs";
@@ -19,16 +19,14 @@ const Country = ({country}) => {
     }
 
     return (
-        <>
-            <Wrapper>
-                <Link to={`/vouchers/filtered/${country.id}`} onClick={toggleCategory}>
-                    <Img image={country.image} country/>
-                    <SmallTitle>
-                        {country.title}
-                    </SmallTitle>
-                </Link>
-            </Wrapper>
-        </>
+        <Wrapper>
+            <NavLink to={`/vouchers/filtered/${country.id}`} onClick={toggleCategory}>
+                <Img image={country.image} country/>
+                <SmallTitle>
+                    {country.title}
+                </SmallTitle>
+            </NavLink>
+        </Wrapper>
     );
 };
 
