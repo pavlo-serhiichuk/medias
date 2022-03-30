@@ -14,7 +14,7 @@ const ProductsContainer = lazy(() => import("../Products/ProductsContainer"))
 
 const AppRoutes = () => {
     let query = useQuery();
-
+    const isAuth = useSelector(state => state.auth.isAuth)
     return (
         <Routers>
 
@@ -34,7 +34,6 @@ const AppRoutes = () => {
                 <Route path='/articles' element={<IntroArticlesContainer/>}/>
                 <Route path='/articles/article/:articleId' element={<FullArticleContainer/>}/>
             </Routes>
-
         </Routers>
     );
 };
