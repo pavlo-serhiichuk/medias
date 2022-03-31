@@ -27,6 +27,7 @@ function AppContainer() {
         }
     }, [])
 
+
     return (
         <>
             <App isAlertOpen={isAlertOpen}/>
