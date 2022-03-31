@@ -1,5 +1,4 @@
-import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import React from 'react';
 import {ModalContent, ModalWrap} from "./Modal.style";
 
 const Modal = (props) => {

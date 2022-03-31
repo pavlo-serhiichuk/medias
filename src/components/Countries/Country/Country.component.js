@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {Wrapper} from "./Country.style";
 import {Img} from "../../common/Imgs/Imgs";
 import {SmallTitle} from "../../common/Titles/Titles";
 import {changeCategory, changeCountryID} from "../../../redux/productsReducer";
+import {NavLink} from "react-router-dom";
 
 const Country = ({country}) => {
 
@@ -20,12 +20,12 @@ const Country = ({country}) => {
 
     return (
         <Wrapper>
-            <Link to={`/vouchers/filtered/${country.id}`} onClick={toggleCategory}>
+            <NavLink to={`/vouchers/filtered/${country.id}`} onClick={toggleCategory}>
                 <Img image={country.image} country/>
                 <SmallTitle>
                     {country.title}
                 </SmallTitle>
-            </Link>
+            </NavLink>
         </Wrapper>
     );
 };

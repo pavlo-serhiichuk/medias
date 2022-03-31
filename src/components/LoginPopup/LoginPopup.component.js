@@ -23,7 +23,6 @@ const LoginContainer = (props) => {
 
     const dispatch = useDispatch()
     const isLoginModalOpen = useSelector(state => state.modal.isLoginModalOpen)
-    const lang = useSelector(state => state.lang.language)
 
     const data = watch();
 

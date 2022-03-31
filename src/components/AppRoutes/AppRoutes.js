@@ -7,13 +7,11 @@ import CartContainer from "../Cart/CartContainer";
 import IntroArticlesContainer from "../IntroArticles/IntroArticlesContainer";
 import FullArticleContainer from "../FullArticle/FullArticleContainer";
 import {Routers} from "../App/App.styles";
-import useQuery from "../../hooks/useQuery";
 import Home from "../Home/Home.component";
 
 const ProductsContainer = lazy(() => import("../Products/ProductsContainer"))
 
 const AppRoutes = () => {
-    let query = useQuery();
 
     return (
         <Routers>
