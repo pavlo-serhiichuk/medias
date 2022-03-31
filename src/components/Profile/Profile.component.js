@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {connect} from "react-redux";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {VscSignOut as ExitIcon} from "react-icons/vsc";
 
@@ -16,11 +16,12 @@ import {AUTH} from "../../utils/translations/translation";
 import {getTranslation} from "../../utils/translations/getTranslation";
 
 const Profile = (props) => {
-
+    const navigate = useNavigate()
     const makeSighOut = () => {
         localStorage.setItem('isAuth', 'false')
         props.sighOut()
         props.changeCategory('books')
+        navigate('/', {replace: true})
     }
 
     useEffect(() => {
