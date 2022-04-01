@@ -20,7 +20,7 @@ import {
 
 import {getTranslation} from "../../utils/translations/getTranslation";
 
-import API from "../../api/routerApi";
+import ROUTE from "../../api/routerPath";
 import {SmallProfilePhoto} from "../common/Imgs/Imgs";
 import {PrimaryButton, GoldButton} from "../common/Buttons/Button.component";
 
@@ -62,7 +62,7 @@ export default ({
                             {/*Profile*/}
                             <LinkWrap>
                                 <NavLink
-                                    to={`${API.profile.path}?=${userId}`}
+                                    to={`${ROUTE.profile.path}?=${userId}`}
                                     onClick={close}
                                     data-tip="your profile"
                                 >
@@ -75,7 +75,7 @@ export default ({
                             <LinkWrap>
                                 <NavLink
                                     onClick={close}
-                                    to={API.wishes.path}
+                                    to={ROUTE.wishes.path}
                                     data-tip="your Wishes"
                                 >
                                     <ReactTooltip place="bottom"/>
@@ -87,7 +87,7 @@ export default ({
                             <LinkWrap>
                                 <NavLink
                                     onClick={close}
-                                    to={API.cart.path}
+                                    to={ROUTE.cart.path}
                                     data-tip="your Cart"
                                 >
                                     <CartIcon size={25}/>

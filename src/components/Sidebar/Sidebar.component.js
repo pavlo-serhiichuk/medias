@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 
 import {FaFly} from "react-icons/fa";
@@ -10,7 +10,7 @@ import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
 
 import {SidebarWrap, Categories, RightBtn} from "./Sidebar.style";
 
-import API from "../../api/routerApi";
+import ROUTE from "../../api/routerPath";
 import {SmallTitle} from "../common/Titles/Titles";
 import {changeCategory, getAsyncVouchers} from "../../redux/productsReducer";
 import {hideFilters, hideSidebar, openFilters} from "../../redux/sidebarReducer";
@@ -34,7 +34,6 @@ const Sidebar = () => {
         && dispatch(getAsyncVouchers())
 
         category !== nextCategory && dispatch(changeCategory(nextCategory))
-
     }
 
     const close = () => {
@@ -46,11 +45,11 @@ const Sidebar = () => {
         <SidebarWrap>
             <Categories>
                 <SmallTitle>{getTranslation(CATEGORIES.LOGO.TITLE, lang)}:</SmallTitle>
-                <NavLink to={API.articles.path} onClick={close}><GrArticle/>{getTranslation(CATEGORIES.CATEGORY.ARTICLES, lang)}</NavLink>
+                <NavLink to={ROUTE.articles.path} onClick={close}><GrArticle/>{getTranslation(CATEGORIES.CATEGORY.ARTICLES, lang)}</NavLink>
                 <RightBtn onClick={close}><Hamburger size={25}/></RightBtn>
-                <NavLink to={API.books.path} onClick={() => toggleCategory('books')}><ImBooks/> {getTranslation(CATEGORIES.CATEGORY.BOOKS, lang)}</NavLink>
-                <NavLink to={API.guitars.path} onClick={() => toggleCategory('guitars')}><GiGuitar/> {getTranslation(CATEGORIES.CATEGORY.GUITARS, lang)}</NavLink>
-                <NavLink to={API.vouchers.path} onClick={() => toggleCategory('vouchers')}><FaFly/> {getTranslation(CATEGORIES.CATEGORY.VOUCHERS, lang)}</NavLink>
+                <NavLink to={ROUTE.books.path} onClick={() => toggleCategory('books')}><ImBooks/> {getTranslation(CATEGORIES.CATEGORY.BOOKS, lang)}</NavLink>
+                <NavLink to={ROUTE.guitars.path} onClick={() => toggleCategory('guitars')}><GiGuitar/> {getTranslation(CATEGORIES.CATEGORY.GUITARS, lang)}</NavLink>
+                <NavLink to={ROUTE.vouchers.path} onClick={() => toggleCategory('vouchers')}><FaFly/> {getTranslation(CATEGORIES.CATEGORY.VOUCHERS, lang)}</NavLink>
             </Categories>
            {isFiltersOpen && <NativeFiltersContainer/>}
         </SidebarWrap>

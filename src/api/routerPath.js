@@ -1,4 +1,4 @@
-const API = {
+const ROUTE = {
     article: {path: '/articles/article/:articleId', name: 'ARTICLE'},
     articles: {path: '/articles', name: 'ARTICLES'},
     books: {path: '/books', name: 'BOOKS'},
@@ -10,4 +10,4 @@ const API = {
     wishes: {path: '/wishes', name: 'WISHES'},
 };
 
-export default API
+export default ROUTE

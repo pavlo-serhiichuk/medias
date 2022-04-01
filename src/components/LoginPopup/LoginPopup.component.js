@@ -52,12 +52,12 @@ const LoginContainer = (props) => {
         });
     }, [isLoginModalOpen])
 
-    const getRow = (name, type) => {
+    const getRow = (name, type = 'text') => {
         return (
             <>
                 <Label htmlFor={name}>{name}:</Label>
                 {errors[name] && <ErrorMessage>{errors[name].message}</ErrorMessage>}
-                <Input type={type || name} id={name} {...register(name, {required: true})}/>
+                <Input type={type} id={name} {...register(name, {required: true})}/>
                 <br/>
             </>
         )
@@ -71,13 +71,13 @@ const LoginContainer = (props) => {
     return (
         <Modal>
             <CloseButton onClick={closeModal}/>
-            <h2>Sign in</h2>
+            <h2>Log in</h2>
             <Form onSubmit={handleSubmit(sendData)}>
                 {getRow('email')}
                 {
                     isShowPassword
-                        ? getRow('password', 'text')
-                        : getRow('password')
+                        ? getRow('password' )
+                        : getRow('password', 'password')
                 }
                 {data.password && data.password.length ? switchPassword : null}
 

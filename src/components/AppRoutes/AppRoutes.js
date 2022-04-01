@@ -1,35 +1,34 @@
 import React, {lazy, Suspense} from 'react';
 import {Route, Routes} from "react-router-dom";
-import API from "../../api/routerApi";
+import ROUTE from "../../api/routerPath";
 import Profile from "../Profile/Profile.component";
 import WishesContainer from "../Wishes/WishesContainer";
 import CartContainer from "../Cart/CartContainer";
 import IntroArticlesContainer from "../IntroArticles/IntroArticlesContainer";
 import FullArticleContainer from "../FullArticle/FullArticleContainer";
 import {Routers} from "../App/App.styles";
-import useQuery from "../../hooks/useQuery";
 import Home from "../Home/Home.component";
 
 const ProductsContainer = lazy(() => import("../Products/ProductsContainer"))
 
 const AppRoutes = () => {
-    let query = useQuery();
 
     return (
         <Routers>
             <Suspense fallback={'Loading...'}>
                 <Routes>
-                    <Route path={API.books.path} element={<ProductsContainer/>}/>
-                    <Route path={API.guitars.path} element={<ProductsContainer/>}/>
-                    <Route path={API.vouchers.path} element={<ProductsContainer/>}/>
-                    <Route path={API.filtered.path} element={<ProductsContainer/>}/>
+
+                    <Route path={ROUTE.books.path} element={<ProductsContainer/>}/>
+                    <Route path={ROUTE.guitars.path} element={<ProductsContainer/>}/>
+                    <Route path={ROUTE.vouchers.path} element={<ProductsContainer/>}/>
+                    <Route path={ROUTE.filtered.path} element={<ProductsContainer/>}/>
                 </Routes>
             </Suspense>
             <Routes>
                 <Route path='/' element={<Home/>}/>
-                <Route path={API.profile.path} element={<Profile/>}/>
-                <Route path={API.wishes.path} element={<WishesContainer/>}/>
-                <Route path={API.cart.path} element={<CartContainer/>}/>
+                <Route path={ROUTE.profile.path} element={<Profile/>}/>
+                <Route path={ROUTE.wishes.path} element={<WishesContainer/>}/>
+                <Route path={ROUTE.cart.path} element={<CartContainer/>}/>
                 <Route path='/articles' element={<IntroArticlesContainer/>}/>
                 <Route path='/articles/article/:articleId' element={<FullArticleContainer/>}/>
             </Routes>
