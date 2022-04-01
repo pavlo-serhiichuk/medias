@@ -64,6 +64,7 @@ export const setFilterName = (filterName) => ({type: SET_FILTER_NAME, payload: f
 export const setFilterParam = (filterParam) => ({type: SET_FILTER_PARAM, payload: filterParam})
 
 export const getAsyncFilteredProducts = (category, data) => {
+    debugger
     if(category === 'books') return filterRequest(productsAPI.getFilteredBooks, data)
     if(category === 'guitars') return filterRequest(productsAPI.getFilteredGuitars, data)
     if (category === 'vouchers') return filterRequest(productsAPI.getFilteredVouchers, data)

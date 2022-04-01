@@ -3,6 +3,7 @@ import {Form, FilterWrap, Label, Wrapper, Select} from './NativeFilters.style'
 import {FILTERS} from "../../utils/translations/translation";
 import {SmallTitle} from "../common/Titles/Titles";
 import {getTranslation} from "../../utils/translations/getTranslation";
+import {Link} from "react-router-dom";
 
 const NativeFilters = (props) => {
 
