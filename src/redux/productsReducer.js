@@ -56,14 +56,7 @@ const setCountries = (countries) => ({type: SET_COUNTRIES, payload: countries})
 export const changeCountryID = countryID => ({type: CHANGE_COUNTRY_ID, payload: countryID})
 export const changeCategory = category => ({type: CHANGE_CATEGORY, payload: category})
 
-export const getAsyncBooks = () => async dispatch => {
-    dispatch(showLoading())
-    const response = await fetch('http://localhost:3001/books')
-    const json = await response.json()
-    dispatch(setBooks(json))
-    dispatch(hideLoading())
-}
-
+export const getAsyncBooks = () => request(productsAPI.getBooks, setBooks)
 export const getAsyncGuitars = () => request(productsAPI.getGuitars, setGuitars)
 export const getAsyncVouchers = () => request(productsAPI.getVouchers, setVouchers)
 export const getAsyncCountries = () => request(productsAPI.getCountries, setCountries)

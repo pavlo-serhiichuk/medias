@@ -1,4 +1,4 @@
-import {filterRequest, productsAPI} from "../api/api";
+import {filterRequest, productsAPI, request} from "../api/api";
 
 const OPEN_SIDEBAR = 'OPEN_SIDEBAR'
 const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR'

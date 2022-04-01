@@ -1,6 +1,149 @@
 {
   "books": [
     {
+      "id":1,
+      "author":"Richard Branson",
+      "title":"THE VIRGIN WAY",
+      "gunres":[
+        "Bussiness",
+        "Motivation"
+      ],
+      "price":1520,
+      "liked":"10540",
+      "image":[
+        "https://images-na.ssl-images-amazon.com/images/I/91mrvQ22TRL.jpg"
+      ],
+      "description":"Our most popular and trending eBooks, updated hourly. Start reading with Kobo. Check out of top eBooks in every genre to see what other readers are buying right now. eBooks In Every Genre. 24/7 Support. Download Kobo app. Top New eBook Releases."
+    },
+    {
+      "id":2,
+      "author":"Yuval Noah Harari",
+      "title":"Sapiens: A Brief History of Humankind",
+      "gunres":[
+        "Documentary",
+        "History"
+      ],
+      "price":1530,
+      "liked":"49540",
+      "image":[
+        "https://images-na.ssl-images-amazon.com/images/I/41+lolL22gL._SX314_BO1,204,203,200_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/41+lolL22gL._SX314_BO1,204,203,200_.jpg",
+        "https://images-na.ssl-images-amazon.com/images/I/41+lolL22gL._SX314_BO1,204,203,200_.jpg"
+      ],
+      "description":"From a renowned historian comes a groundbreaking narrative of humanity’s creation and evolution—a #1 international bestseller—that explores the ways in which biology and history have defined us and enhanced our understanding of what it means to be “human.”"
+    },
+    {
+      "id":3,
+      "author":"Victor Davis Hanson",
+      "title":"The Dying Citizen: How Progressive Elites, Tribalism, and Globalization Are Destroying the Idea of America",
+      "gunres":[
+        "Documentary",
+        "History"
+      ],
+      "price":1550,
+      "liked":"6540",
+      "image":[
+        "https://images-na.ssl-images-amazon.com/images/I/41ABbYw2jaL._SX321_BO1,204,203,200_.jpg"
+      ],
+      "description":"Human history is full of the stories of peasants, subjects, and tribes. Yet the concept of the “citizen” is historically rare—and was among America’s most valued ideals for over two centuries. But without shock treatment, warns historian Victor Davis Hanson, American citizenship as we have known it may soon vanish."
+    },
+    {
+      "id":4,
+      "author":"Richard Branson",
+      "title":"Feeding the Soul (Because It's My Business): Finding Our Way to Joy, Love, and Freedom ",
+      "category":"books",
+      "gunres":[
+        "Adventurous",
+        "Bussiness"
+      ],
+      "price":2150,
+      "liked":"5400",
+      "image":[
+        "https://images-na.ssl-images-amazon.com/images/I/51vUAyizUCS._SX331_BO1,204,203,200_.jpg"
+      ],
+      "description":"Before Tabitha Brown was one of the most popular personalities in the world, sharing her delicious vegan home cooking and compassionate wisdom with millions of followers across social media, she was an"
+    },
+    {
+      "id":5,
+      "author":"Stephen M .R. Covey",
+      "title":"Speed of Trust: The One Thing That Changes Everything",
+      "category":"books",
+      "gunres":[
+        "Adventurous",
+        "Bussiness"
+      ],
+      "price":5150,
+      "liked":"50",
+      "image":[
+        "https://m.media-amazon.com/images/I/5137FVHUBEL._AC_UY218_.jpg"
+      ],
+      "description":"Before Tabitha Brown was one of the most popular personalities in the world, sharing her delicious vegan home cooking and compassionate wisdom with millions of followers across social media, she was an"
+    },
+    {
+      "id":6,
+      "author":"Richard Branson",
+      "title":"Speed of Trust: The One Thing That Changes Everything",
+      "category":"books",
+      "gunres":[
+        "Adventurous",
+        "Bussiness"
+      ],
+      "price":50,
+      "liked":"0",
+      "image":[
+        "https://images-na.ssl-images-amazon.com/images/I/81W+pBC1JFL.jpg"
+      ],
+      "description":"Before Tabitha Brown was one of the most popular personalities in the world, sharing her delicious vegan home cooking and compassionate wisdom with millions of followers across social media, she was an"
+    },
+    {
+      "id":7,
+      "author":"Richard Branson",
+      "title":"Speed of Trust: The One Thing That Changes Everything",
+      "category":"books",
+      "gunres":[
+        "Adventurous",
+        "Bussiness"
+      ],
+      "price":1250,
+      "liked":"1111100",
+      "image":[
+        "https://images-na.ssl-images-amazon.com/images/I/51OULPcNetL._AC_SX184_.jpg"
+      ],
+      "description":"Before Tabitha Brown was one of the most popular personalities in the world, sharing her delicious vegan home cooking and compassionate wisdom with millions of followers across social media, she was an"
+    },
+    {
+      "id":8,
+      "author":"Richard Branson",
+      "title":"Speed of Trust: The One Thing That Changes Everything",
+      "category":"books",
+      "gunres":[
+        "Adventurous",
+        "Bussiness"
+      ],
+      "price":250,
+      "liked":"897005",
+      "image":[
+        "https://m.media-amazon.com/images/I/91P67FPmyvL._AC_UL320_.jpg"
+      ],
+      "description":"Before Tabitha Brown was one of the most popular personalities in the world, sharing her delicious vegan home cooking and compassionate wisdom with millions of followers across social media, she was an"
+    },
+    {
+      "id":9,
+      "author":"Richard Branson",
+      "title":"Speed of Trust: The One Thing That Changes Everything",
+      "category":"books",
+      "gunres":[
+        "Adventurous",
+        "Bussiness"
+      ],
+      "price":650,
+      "liked":"27",
+      "image":[
+        "https://m.media-amazon.com/images/I/914BkcGCNgS._AC_UL320_.jpg"
+      ],
+      "description":"Before Tabitha Brown was one of the most popular personalities in the world, sharing her delicious vegan home cooking and compassionate wisdom with millions of followers across social media, she was an"
+    },
+    {
       "id":10,
       "author":"Richard Branson",
       "title":"Speed of Trust: The One Thing That Changes Everything",
@@ -15,6 +158,651 @@
         "https://images-na.ssl-images-amazon.com/images/I/619M-4xNINL._AC_UL160_SR160,160_.jpg"
       ],
       "description":"Before Tabitha Brown was one of the most popular personalities in the world, sharing her delicious vegan home cooking and compassionate wisdom with millions of followers across social media, she was an"
+    }
+  ],
+  "countries": [
+    {
+      "id":1,
+      "title":"Egypt",
+      "image":"https://www.world-grain.com/ext/resources/2021/10/12/Egypt.jpg?t=1634049291&width=1080"
+    },
+    {
+      "id":5,
+      "title":"Spain",
+      "image":"https://totochie.com/wp-content/uploads/2020/03/map-spain-touristic-landmarks-1920x1222.jpg"
+    },
+    {
+      "id":9,
+      "title":"Brazil",
+      "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Map_of_Brazil_with_flag.svg/2048px-Map_of_Brazil_with_flag.svg.png"
+    },
+    {
+      "id":11,
+      "title":"Canada",
+      "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Map_Canada_political_ru.png/700px-Map_Canada_political_ru.png"
+    },
+    {
+      "id":13,
+      "title":"England",
+      "image":"https://fs01.vseosvita.ua/0100e76w-3268.jpg"
+    },
+    {
+      "id":15,
+      "title":"China",
+      "image":"https://image.shutterstock.com/z/stock-photo-inscription-covid-on-abstract-china-map-coronavirus-disease-named-covid-map-with-contours-1642256926.jpg"
+    },
+    {
+      "id":17,
+      "title":"Australia",
+      "image":"https://image.shutterstock.com/z/stock-vector-animals-world-map-australia-australian-animals-poster-australia-map-australia-mammals-cartoon-352461830.jpg"
+    },
+    {
+      "id":19,
+      "title":"Thailand",
+      "image":"https://image.freepik.com/free-vector/thailand-map-with-colorful-landmarks-illustration-design_66675-214.jpg"
+    }
+  ],
+  "guitars": [
+    {
+      "id":1,
+      "producer":"Fame",
+      "title":"Fame Bonita Pino",
+      "category":"guitars",
+      "type":"Classical",
+      "price":150,
+      "liked":"65",
+      "image":[
+        "https://images.musicstore.de/images/0960/fame-bonita-pino_1_GIT0055163-000.jpg"
+      ],
+      "description":"The Fame Bonita Pino is the optimal basis for successful guitar learning because, in addition to very obliging playability, the 4/4 concert guitar convinces with a powerful and defined sound, which already unfolds with light strokes. Furthermore, the adjusted saddle and the finely notched bone nut ensure a clean intonation in all 19 frets, while the tuners allow precise tuning of the 6 nylon strings. Visually, the instrument is rounded off by wood bindings, an elaborate soundhole rosette and the matte varnish, which gently emphasizes the even grain of the tonewoods. ",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    },
+    {
+      "id":2,
+      "producer":"Fender",
+      "title":"Fender CN-140SCE (Natural)",
+      "category":"guitars",
+      "type":"Electro-Acoustic",
+      "price":150,
+      "liked":"35",
+      "image":[
+        "https://images.musicstore.de/images/0960/fender-cn-140sce-natural-_1_GIT0050694-000.jpg"
+      ],
+      "description":"The Fender CN-140SCE (Natural) is a 6-string Concert Electro-Acoustic Guitar which combines high playing comfort with full stage suitability. This Nylon Strung Guitar offers not only a Mahogany neck with a comfortable \"Easy-to-Play\" profile and 43mm saddle width, but also a cut-away for access into the high registers of the Fingerboard.",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    },
+    {
+      "id":3,
+      "producer":"Ibanez",
+      "title":"Ibanez AEG7TN Nylon String",
+      "category":"guitars",
+      "type":"Classical",
+      "price":150,
+      "liked":"63",
+      "image":[
+        "https://images.musicstore.de/images/0960/ibanez-aeg7tn-nylon-string_1_GIT0052440-000.jpg"
+      ],
+      "description":"With the new Ibanez AEG7TN, the traditional Japanese manufacturer revamps its universally popular AEG series. In addition to a new coat of paint, this electroacoustic classical guitar now also comes with a purpleheart fingerboard and the new Ibanez Ibanez AEQ-2T pickup system with integrated tuner. ",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    },
+    {
+      "id":4,
+      "producer":"Yamaha",
+      "title":"Yamaha CG 122 MC NT Cedar Natural",
+      "category":"guitars",
+      "type":"Classical",
+      "price":150,
+      "liked":"646",
+      "image":[
+        "https://images.musicstore.de/images/0960/yamaha-cg-122-mc-nt-cedar-natural_1_GIT0018381-000.jpg"
+      ],
+      "description":"The CG 122 is Yamaha 's semi-massive instrument from the affordable CG classical guitar series , which includes high-quality materials and a very expressive sound. Due to its lightweight construction , consisting of a solid cedar top and a Nato body , the Yamaha CG 122 MC NT develops a very powerful dynamic even at the slightest touch and a very strong tone, which is particularly pronounced in the bass and mid-range frequencies.",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    },
+    {
+      "id":5,
+      "producer":"Yamaha",
+      "title":"Yamaha C40 Classical Guitar",
+      "category":"guitars",
+      "type":"Classical",
+      "price":150,
+      "liked":"735",
+      "image":[
+        "https://images.musicstore.de/images/0960/yamaha-c40-classical-guitar-_1_GIT0000636-000.jpg"
+      ],
+      "description":"For decades, the  Yamaha C 40 series  has been the perfect basis for learning to play the guitar easily and successfully. In addition to its outstanding quality, the  Yamaha C 40 NT II 4/4 classical guitar  convinces with its perfectly adapted workmanship, which is particularly noticeable when you hold it. Despite the  laminated construction , the instrument produces a powerful sound that is interspersed with warm bass frequencies and, thanks to its  light weight , unfolds quickly and persistently.",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    },
+    {
+      "id":6,
+      "producer":"Almeria",
+      "title":"Almeria CG-390 Black",
+      "category":"guitars",
+      "type":"Classical",
+      "price":150,
+      "liked":"888",
+      "image":[
+        "https://images.musicstore.de/images/0960/almeria-cg-390-black_1_GIT0046624-000.jpg"
+      ],
+      "description":"The Almeria CG-390 Black is the best proof that there are decent sounding instruments for little money! But how can you offer a guitar so affordable? We buy this guitar by container bulk purchase in China directly from the factory and without wholesale or intermediate distribution. And we are happy that we can offer our customers so much guitar for so little money thanks to our high sales figures.",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    },
+    {
+      "id":7,
+      "producer":"Fame",
+      "title":"Fame Gig-Bag Basic",
+      "category":"guitars",
+      "type":"Classical",
+      "price":50,
+      "liked":"457",
+      "image":[
+        "https://images.musicstore.de/images/0960/fame-gig-bag-basic-classical-guitar-_1_GIT0022882-000.jpg"
+      ],
+      "description":"The Fame Gig-Bag Basic (Classical Guitar) offers protection for your acoustic guitar at a great price. The Fame Basic Classical Guitar Gig Bag features 10mm padding and a water repellent, tear resistant nylon exterior keeping your instrument out of harms reach. Also included are strong surround zips, robustly sewn straps and carry handles, plus a spacious front compartment for additional gear.",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    },
+    {
+      "id":8,
+      "producer":"Fame",
+      "title":"Fame Forum IV Modern ",
+      "category":"guitars",
+      "type":"Electric",
+      "price":800,
+      "liked":"332",
+      "image":[
+        "https://images.musicstore.de/images/0960/fame-forum-iv-modern-satin-black-_1_GIT0043605-000.jpg"
+      ],
+      "description":"The Fame Forum IV Modern (Satin Black) is a versatile 6-string Electric Guitar with contemporary equipment and a high playing comfort. The slender Mahogany body with Maple top offers a comfortable playing position, while the generous cut-away offers unhindered access over the entire neck. This is made of Mahogany and traditionally glued, whilst the flat \"D\" profile lies comfortably in the hand, the Ebony fingerboard more than suitable for advanced techniques.",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    },
+    {
+      "id":9,
+      "producer":"Fame",
+      "title":"Fame SE Series ST Worn Out MN Blonde",
+      "category":"guitars",
+      "type":"Electric",
+      "price":300,
+      "liked":"231",
+      "image":[
+        "https://images.musicstore.de/images/0960/fame-se-series-st-worn-out-mn-blonde_1_GIT0051111-000.jpg"
+      ],
+      "description":"With the incomparable charm of an instrument played for decades on stages and in the studio, the Fame SE Series Worn Out MN Blonde offers the look, sound and feel of a classic Relic guitar. The electric guitar in the traditional ST design relies on tried and tested ingredients in the form of an alder body with a bolt-on maple neck, whose balanced C-profile gives the tried and tested playing feel in all registers.",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    },
+    {
+      "id":10,
+      "producer":"Jackson",
+      "title":"Jackson JS22 Dinky DKA Satin Black",
+      "category":"guitars",
+      "type":"Electric",
+      "price":150,
+      "liked":"12",
+      "image":[
+        "https://images.musicstore.de/images/0960/jackson-js22-dinky-dka-satin-black_1_GIT0048663-000.jpg"
+      ],
+      "description":"The Dinky Arch Jackson JS Series Top JS22 DK Satin Black A convinces as an affordable Metal guitar with first-class equipment for beginners and advanced players. The electric guitar has a mahogany body in a trendy Natural Oil finish and a screwed maple neck with graphite inlays, which with its \" Speed Neck \" profile and compound radius fingerboard offers the perfect basis for fast riffs and endless solos.",
+      "features":[
+        "Manufacturer: Fame Size: 4/4",
+        "Cutaway: No",
+        "Top: Spruce",
+        "Solid Top: Yes",
+        "Finish Top: Matte",
+        "Bracing: Fame",
+        "Classical Back & Sides: Mahogany",
+        "Solid back & sides: No",
+        "Finish Back & Sides: Matte",
+        "Binding: Maple",
+        "Neck: Mahogany",
+        "Neck Profile: Round"
+      ]
+    }
+  ],
+  "login": [
+    {
+      "id":1,
+      "email":"s@s.s",
+      "password":"1111",
+      "nickname":"Vlad"
+    },
+    {
+      "id":2,
+      "email":"v@v.v",
+      "password":"1111",
+      "nickname":"Stepan_001"
+    },
+    {
+      "id":3,
+      "email":"p@p.p",
+      "password":"pasha_s",
+      "username":"pasha_s",
+      "tel":"380976804609",
+      "image":"https://scontent-iev1-1.xx.fbcdn.net/v/t1.6435-9/117732137_331177674726150_6549843426398612487_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=wjOGYknIN2QAX8trGTv&tn=HtaZntDbEw0xOelm&_nc_ht=scontent-iev1-1.xx&oh=bfceb689f791b255f7b877450a5a4639&oe=61C3F166"
+    }
+  ],
+  "vouchers": [
+    {
+      "id":1,
+      "title":"Nefertiti Hotel Luxor",
+      "category":"traveling",
+      "countryId":1,
+      "city":"Luxor",
+      "adress":"Al-Sahaby Lan,In Front Of Luxor Temple, East bank, 99999 Luxor",
+      "rating":"9,3",
+      "price":1150,
+      "discount":"5%",
+      "liked":62,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/284968621.jpg?k=3f437881e747c3202735412d0beeb14baeb0356e7a954bb4100bd21b5e29b103&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/284968032.jpg?k=59b12fdd0f541b36a5270da7933857f4700d36bd2ca1a4b044c8a6a89f6a3b2f&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/284968032.jpg?k=59b12fdd0f541b36a5270da7933857f4700d36bd2ca1a4b044c8a6a89f6a3b2f&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/284968032.jpg?k=59b12fdd0f541b36a5270da7933857f4700d36bd2ca1a4b044c8a6a89f6a3b2f&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/284968032.jpg?k=59b12fdd0f541b36a5270da7933857f4700d36bd2ca1a4b044c8a6a89f6a3b2f&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/284968032.jpg?k=59b12fdd0f541b36a5270da7933857f4700d36bd2ca1a4b044c8a6a89f6a3b2f&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/284968032.jpg?k=59b12fdd0f541b36a5270da7933857f4700d36bd2ca1a4b044c8a6a89f6a3b2f&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/284968032.jpg?k=59b12fdd0f541b36a5270da7933857f4700d36bd2ca1a4b044c8a6a89f6a3b2f&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/284968032.jpg?k=59b12fdd0f541b36a5270da7933857f4700d36bd2ca1a4b044c8a6a89f6a3b2f&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/79969666.jpg?k=56338992e6bb38e85e6c166a3b6da56a7008254ede41879ac5bedddfaf680fca&o=&hp=1"
+      ],
+      "description":"Overlooking the ancient Luxor Temple, Nefertiti offers comfortable rooms with air conditioning and a private bathroom. Luxor’s railway station is only a 10-minute walk away. The rooms of Nefertiti enjoy a simple interior. Some of the rooms have a private balcony. Nefertiti has a tour desk which offers Nile River cruises and several sightseeing trips in Luxor. It also has a convenient 24-hour front desk service. A variety of drinks and Egyptian dishes are served on the rooftop terrace. Here, guests can also smoke a traditional Egyptian water pipe. It is only a 20-minute drive from Luxor International Airport. Solo travellers particularly like the location — they rated it 9.3 for a one-person stay.",
+      "conditions":[
+        "Free WiFi",
+        "Airport shuttle",
+        "Family rooms",
+        "Restaurant",
+        "Free parking",
+        "Room service",
+        "Tea/coffee maker in all rooms"
+      ]
+    },
+    {
+      "id":3,
+      "title":"Susanna Hotel Luxor",
+      "beds":2,
+      "category":"traveling",
+      "countryId":1,
+      "city":"Luxor",
+      "adress":"52 Karnak Temple St, East Bank, East bank, Luxor",
+      "rating":"9,4",
+      "price":450,
+      "discount":"5%",
+      "liked":321,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/2463931.jpg?k=3d9aa289b0c7c4b4c4b1e4e16b6e62525c7a20171b4a862f97ee569eb1eb3387&o=&hp=1x",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/235591931.jpg?k=26d214ec887ceb56d92ebdd404c1838251ef63c48e0f9e47d622d738a46eb35c&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/241242548.jpg?k=d95948e042d50826d31241bb1ab1e89559b4f5e87b7488805c4c4ea7e943c357&o=&hp=1"
+      ],
+      "description":"Facing the Luxor Temple and the Nile, Susanna Hotel offers comfortable rooms with satellite TV and air conditioning. Facilities include an outdoor rooftop swimming pool and sun terrace. All rooms of Susanna Hotel feature a balcony and a private bathroom. Guests can enjoy international cuisine in Susanna Hotel’s restaurant, which offers panoramic views over Luxor city. The lobby bar serves a wide variety of drinks. It is only a 20-minute drive from Luxor International Airport, and a 10-minute walk to Luxor’s railway station. Solo travellers particularly like the location — they rated it 9.4 for a one-person stay.",
+      "conditions":[
+        "1 swimming pool",
+        "Free WiFi",
+        "Airport shuttle",
+        "Restaurant",
+        "Free parking",
+        "Bar"
+      ]
+    },
+    {
+      "id":5,
+      "title":"Hostal Orleans",
+      "beds":2,
+      "category":"traveling",
+      "countryId":5,
+      "city":"Barcelona",
+      "adress":"Avenida Marqués de la Argentera, 13, Ciutat Vella, 08003 Barcelona, Spain",
+      "rating":"9,2",
+      "price":150,
+      "discount":"5%",
+      "liked":152,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/260616006.jpg?k=2d29f3e40d547a6a50a545e14701a8f71f35efe542c95b67aeae47d8a5470011&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261817164.jpg?k=50558b34b9d97a22ea4cd5411114605e04f8edbea7b265907c067568bc062aae&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/261817197.jpg?k=3222bf79164ee988d1bb171dc9bba4cdc536644f95f70d1e826b8416d77bafb0&o=&hp=1"
+      ],
+      "description":"This pleasant guest house is located in front of Estació de França Train Station. It offers air-conditioned rooms with a balcony and free Wi-Fi, 50 m from Ciutadella Park. The heated rooms at Hostal Orleans have vibrant décor. Each features a plasma TV, safe and a private bathroom with hairdryer. Sheets and towels are also included. There is a communal lounge with sofas, computers with free internet and drinks vending machines, along with a microwave. Reception is open 24 hours and free luggage storage is provided. The Orleans guest house is 2 minutes’ walk from the Santa Maria del Mar Church and 900 m from Barceloneta Beach. The Maremagnum Shopping Centre 5 minutes’ walk away. Barceloneta Metro Station is 400 m away and La Rambla and Barcelona Cathedral can be reached by foot in 10 minutes. This is our guests' favourite part of Barcelona, according to independent reviews. Solo travellers particularly like the location — they rated it 9.2 for a one-person stay.",
+      "conditions":[
+        "Free WiFi",
+        "Family rooms",
+        "Non-smoking rooms",
+        "24-hour front desk",
+        "Room service",
+        "Air conditioning"
+      ]
+    },
+    {
+      "id":7,
+      "title":" Acta Mimic",
+      "beds":4,
+      "category":"traveling",
+      "countryId":5,
+      "city":"Barcelona",
+      "adress":"Arc del Teatre, 58, Ciutat Vella, 08001 Barcelona, Spain",
+      "rating":"8,1",
+      "price":292,
+      "discount":"5%",
+      "liked":652,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94411453.jpg?k=27a21b97b5ea0fb9e64ebae1bedf5fdd36699c26915208e3647b48297729f127&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94410005.jpg?k=aeec2b296d17cabacb055a0e5a2c697acbbd24afd4cc1c8a079238ee9df7c9cc&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/94413125.jpg?k=7311de0f1726fca6f3b3cecbb9deba2a86e0f313597ddc1cb20e8925a9bee2ae&o=&hp=1"
+      ],
+      "description":"Situated 400 m from Las Ramblas, this former theatre offers a rooftop terrace with city and sea views. The Acta Mimic’s unique rooms include free Wi-Fi and flat-screen satellite TV. The Acta Mimic design hotel features black and white décor. Each open-plan room has air conditioning. The hotel has a courtyard, where you can enjoy a buffet breakfast. Hotel Acta Mimic has a 24-hour reception, where staff can arrange restaurant bookings, tickets for shows or guided tours of Barcelona. Free city maps are also available. The hotel is located at the bottom of the lively Raval district, just 700 m from Barcelona Port. Drassanes and Paral•lel Metro Stations are both within 300 m. This is our guests' favourite part of Barcelona, according to independent reviews. Solo travellers particularly like the location — they rated it 8.1 for a one-person stay.",
+      "conditions":[
+        "Parking",
+        "Free WiFi",
+        "Non-smoking rooms",
+        "24-hour front desk",
+        "Facilities for disabled guests",
+        "Terrace",
+        "Bar"
+      ]
+    },
+    {
+      "id":9,
+      "title":"Hotel Atlantico Tower",
+      "beds":10,
+      "category":"traveling",
+      "countryId":9,
+      "city":"Rio de Janeiro",
+      "adress":"Rua Visconde de Inhaúma, 95 - Centro",
+      "rating":"8,3",
+      "price":423,
+      "discount":"5%",
+      "liked":2252,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/69381658.jpg?k=958386d33909c94da670199ec23209d9736e0ee1deeccf9d7703b23fe5f6e0c8&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/69381679.jpg?k=d17a1017470583300a5480ee8389613968c4aedf168ae5c0c62a0f214197a5ba&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/69381683.jpg?k=0949e21faff5fd9a1e82646320f9eb7c3177c949b4b1259dc5e0280ddea4b4b8&o=&hp=1"
+      ],
+      "description":"Hotel Atlantico Tower offers modern accommodations in Rio de Janeiro city centre, 600 m from Museum of Tomorrow and 1.5 km from Santos Dumont Airport. It features free WiFi, a rooftop pool with panoramic city views. Rooms at Hotel Atlantico Tower have simple interiors with tasteful wooden furnishings and light tiled floors. All are equipped with air conditioning, a minibar and a work desk for laptop use. A breakfast buffet is served daily. The Hotel is 5 km from Novo Rio bus terminal, and 12 km from Galeão International Airport. Maracanã Stadium is 3 km away, and Marquês de Sapucaí Sambadrome can be reached within a 20-minute walk. Solo travellers particularly like the location — they rated it 8.3 for a one-person stay.",
+      "conditions":[
+        "1 swimming pool",
+        "Free WiFi",
+        "Parking",
+        "Family rooms",
+        "Restaurant",
+        "Bar"
+      ]
+    },
+    {
+      "id":11,
+      "title":"DoubleTree by Hilton Toronto Downtown",
+      "beds":2,
+      "category":"traveling",
+      "countryId":11,
+      "city":"Toronto",
+      "adress":"108 Chestnut Street",
+      "rating":"9,0",
+      "price":543,
+      "discount":"5%",
+      "liked":652,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/238813705.jpg?k=15f6d30f55427be712d0eda5ac09651425fda1eee2d1785527e4b4ae3ee4de1a&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/35590546.jpg?k=7ee3682fc612414ebb4fa2c3d5d8b6afb728302ac60c597744e5637a17f533c5&o=&hp=1"
+      ],
+      "description":"Located in the city centre, DoubleTree by Hilton Toronto Downtown boasts an indoor heated pool, an on-site restaurant, and a fitness centre. Toronto Eaton Centre and St. Patrick Subway Station are within 350 m. Each of the tastefully decorated rooms has a flat-screen cable HDTV with pay-per-view channels. Air conditioning, safe and a coffee maker are also included. A hairdryer can be found in the bathroom. The suites offer a kitchen with a fridge/freezer, a microwave, a stovetop and utensils. Upon arrival, guests of DoubleTree by Hilton Downtown Toronto are greeted with warm chocolate chip cookies. DoubleTree by Hilton Toronto Downtown provides underground parking upon request with surcharge. Guests who pay for on-site parking can enjoy in-and-out privileges during their stay. This hotel is 1.7 km from both the popular CN Tower and Air Canada Centre. Toronto Pearson International Airport is at a distance of 30 km. This is our guests' favourite part of Toronto, according to independent reviews. Solo travellers particularly like the location — they rated it 9.0 for a one-person stay.",
+      "conditions":[
+        "1 swimming pool",
+        "Free WiFi",
+        "Parking",
+        "Family rooms",
+        "Restaurant",
+        "Bar"
+      ]
+    },
+    {
+      "id":13,
+      "title":"Park Grand London Kensington",
+      "beds":2,
+      "category":"traveling",
+      "countryId":13,
+      "city":"London",
+      "adress":"33 - 37 Hogarth Road, Kensington and Chelsea, London, SW5 0QQ",
+      "rating":"",
+      "price":1213,
+      "discount":"25%",
+      "liked":652,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/18720365.jpg?k=43e231d7c610d7c2205dfce13499aca3952b0f1fcea2f1a7e5a5230f4c585fbb&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/40723765.jpg?k=5e3cae98fa9b69f55e9814ad7f2002f90176370b0611be64c3433f9ea9f181c7&o=&hp=1"
+      ],
+      "description":"Just 150 m from Earls Court Tube Station, Park Grand London Kensington is a 5-minute walk from the famous Museum Mile. It features free WiFi, stylish bedrooms and a restaurant. The elegant rooms at this 4-star hotel have luxury bathrooms with heated mirrors and free toiletries. Rooms also feature satellite TVs, tea/coffee facilities and a work desk. The property has a modern fitness centre and a 24-hour front desk. It also features multi-lingual staff and air conditioning throughout. With a contemporary theme, the spacious restaurant serves a varied menu and world wine list. The bar offers beverages and light snacks, and cooked or continental breakfasts are available daily. Situated just 1.6 km from the Olympia London, Park Grand London Kensington is a 10-minute walk from glamorous Knightsbridge. The Royal Albert Hall is just a kilometer away favourite part of London, according to independent reviews. Solo travellers particularly like the location — they rated it 8.9 for a one-person stay.",
+      "conditions":[
+        "Free WiFi",
+        "Family rooms",
+        "Non-smoking rooms",
+        "Fitness centre",
+        "Restaurant",
+        "Room service",
+        "Bar"
+      ]
+    },
+    {
+      "id":15,
+      "title":"Trachung Tsang Eco Lodge",
+      "beds":2,
+      "category":"traveling",
+      "countryId":15,
+      "city":"Luqu",
+      "adress":"Zhendonngka Village, 737200 Luqu",
+      "rating":"9.3",
+      "price":774,
+      "discount":"5%",
+      "liked":1252,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/265060446.jpg?k=03ee317cf090bb2c3c917721995274f25b5206c15ee9802bca2f0d2a39e228f0&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1024x768/304900372.jpg?k=7f4f8019c14e7d253322dfdc13e89b2c22992c7bf831200cf82c41180514e73a&o=&hp=1"
+      ],
+      "description":"Set in Luqu, Trachung Tsang Eco Lodge features air-conditioned rooms with free WiFi. This hostel offers a 24-hour front desk and luggage storage space. Guests can enjoy mountain views. Gannan Xiahe Airport is 80 km away.",
+      "conditions":[
+        "Free WiFi",
+        "Family rooms",
+        "Non-smoking rooms",
+        "Fitness centre",
+        "Restaurant",
+        "Room service"
+      ]
+    },
+    {
+      "id":17,
+      "title":"Airlie Beach Eco Cabins",
+      "beds":2,
+      "category":"traveling",
+      "countryId":17,
+      "city":"Cannonvale",
+      "adress":"442 Paluma Road, 4802 Cannonvale ",
+      "rating":"9,5",
+      "price":1214,
+      "discount":"15%",
+      "liked":452,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/96186355.jpg?k=aaf3bca86aa5eef510e7c467d740e303c556cd3ea22388e8727d1f4ee5da5fb1&o=&hp=1",
+        "https://www.booking.com/hotel/au/airlie-beach-eco-cabins.en-gb.html?aid=397594&label=gog235jc-1DCAEoggI46AdIKVgDaOkBiAEBmAEpuAEHyAEM2AED6AEB-AECiAIBqAIDuAKQnf-MBsACAdICJGI2NzljNWYxLWViMDctNDcxZi05MGFhLThjYjdiN2I3Mjg5N9gCBOACAQ&sid=a3f17b89b5f38893255971f29af169ac&dest_id=13&dest_type=country&dist=0&group_adults=1&group_children=0&hapos=2&hpos=2&no_rooms=1&req_adults=1&req_children=0&room1=A&sb_price_type=total&sr_order=popularity&srepoch=1637868473&srpvid=44c288dc907e0052&type=total&ucfs=1&activeTab=photosGallery"
+      ],
+      "description":"Located in Cannonvale, 9.8 km from Airlie Beach, this property offers a unique wildlife experience in a tranquil Australian bush setting. Airlie Beach Eco Cabins features accommodation with free WiFi and is 4.2 km from Whitsunday Plaza. All cabins feature a balcony to relax on and enjoy the peaceful surroundings as well as a kitchenette with a microwave, toaster and kettle and a private bathroom with shower. Also included in all cabins is a flat-screen TV with Netflix, air-conditioning, safety deposit box and ironing facilities. During the day you can watch the cockatoos, kookaburras and Australian wildlife, or can enjoy roasting marshmallows on the outdoor fireplace in the evening. Whitsunday Coast Airport is a 30-minute drive from Airlie Beach Eco Cabins. Solo travellers particularly like the location — they rated it 9.5 for a one-person stay.",
+      "conditions":[
+        "Tea/coffee maker in all rooms"
+      ]
+    },
+    {
+      "id":19,
+      "title":"Diamond Resort Phuket - SHA",
+      "beds":2,
+      "category":"traveling",
+      "countryId":19,
+      "city":"Phuket",
+      "adress":"106 Soi Cherngtaley 14, Srisoonthorn Road, Cherngtaley",
+      "rating":"8.1",
+      "price":534,
+      "discount":"5%",
+      "liked":152,
+      "image":[
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/307581716.jpg?k=9161dbe40fb63b892e956d63de48c17903340cd6631d7d5bb90c35f9cc9719a6&o=&hp=1",
+        "https://cf.bstatic.com/xdata/images/hotel/max1280x900/194653700.jpg?k=80bbd234e901329a5edc6814c97471ddef53321936975ea8ec4bcaf97c1491bc&o=&hp=1"
+      ],
+      "description":"Diamond Resort Phuket - SHA features an outdoor swimming pool, fitness centre and garden in Bang Tao Beach. Guests can enjoy Asian and International dishes at the on-site restaurant. All rooms here will provide you with a kitchenette with a microwave. A buffet breakfast is available daily at the resort. Staff at reception can provide assistance around the clock with information on the area. Catch Beach Club is a 14-minute walk from the hotel. Phuket International Airport is a 20-minute drive away, and Diamond Resort Phuket - SHA offers a free daily shuttle service to Bangtao Beach, Boat Avenue Complex. Solo travellers particularly like the location — they rated it 8.1 for a one-person stay. We speak your language!",
+      "conditions":[]
+    }
+  ],
+  "wishes": [
+    {"userId":3,"category":"books","productId":3}
+  ],
+  "articles": [
+    {
+      "id":1,
+      "author":"Pabini Gabriel-Petit",
+      "title":"13 Human Qualities You Must Have to Succeed in Work and Life",
+      "liked":"10540",
+      "image":"https://www.aihr.com/wp-content/uploads/continousimprovement.png",
+      "description":""
+    },
+    {
+      "id":2,
+      "author":"Bryan McClain",
+      "title":"Strengths and Weaknesses of Quantitative and Qualitative Research",
+      "liked":"49540",
+      "image":"https://miro.medium.com/max/1400/1*CH9zWYSU4XZudQ4CQDWafA.jpeg",
+      "description":""
+    },
+    {
+      "id":3,
+      "author":"Steven Hoober",
+      "title":"How Do Users Really Hold Mobile Devices?",
+      "liked":"6540",
+      "image":"https://www.callcentrehelper.com/images/stories/2020/01/i-can-motivation-dice-760.jpg",
+      "description":""
+    },
+    {
+      "id":4,
+      "author":"Luke Wroblewski",
+      "title":"International Address Fields in Web Forms",
+      "liked":"5400",
+      "image":"https://www.easymetrics.com/wp-content/uploads/2021/01/Measuring-Growth-Orange-2.jpg",
+      "description":""
+    },
+    {
+      "id":5,
+      "author":"Caroline Jarrett",
+      "title":"What Is a Confidence Interval and Why Would You Want One?",
+      "liked":"50",
+      "image":"https://res.cloudinary.com/grohealth/image/upload/f_auto,fl_lossy,q_auto/v1583921423/DCUK/Content/iStock-1003163388.jpg",
+      "description":""
     }
   ]
 }
