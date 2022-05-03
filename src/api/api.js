@@ -3,7 +3,7 @@ import {deleteFilters} from "../redux/sidebarReducer";
 import {setFilteredProducts} from "../redux/productsReducer";
 import axios from "axios";
 
-const serverURL = 'http://localhost:1113/'
+const serverURL = 'http://localhost:3001/'
 
 const get = (url) => fetch(`${serverURL}${url}`).then(res => res.json())
 
@@ -95,7 +95,6 @@ export const articlesAPI = {
 export const request = (requestType, actionReducer) => async dispatch => {
     dispatch(showLoading())
     const response = await requestType()
-    debugger
     dispatch(actionReducer(response))
     dispatch(hideLoading())
 }
