@@ -16,7 +16,8 @@ export const MiddleTitle = styled.div`
 `
 
 export const SmallTitle = styled.span`
-    font-size: 17px;
+    font-size: 20px;
     font-weight: bold;
+    margin: 0 0 10px;
     color: ${p => p.price ? 'red' : p.author ? 'grey' : p.producer ? 'grey' : '#000'}
 `

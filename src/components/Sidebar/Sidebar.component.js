@@ -6,9 +6,8 @@ import {FaFly} from "react-icons/fa";
 import {ImBooks} from "react-icons/im";
 import {GiGuitar} from "react-icons/gi";
 import {GrArticle} from "react-icons/gr";
-import {GiHamburgerMenu as Hamburger} from "react-icons/gi";
 
-import {SidebarWrap, Categories, RightBtn} from "./Sidebar.style";
+import {SidebarWrap, Categories, ItemTitle} from "./Sidebar.style";
 
 import ROUTE from "../../api/routerPath";
 import {SmallTitle} from "../common/Titles/Titles";
@@ -41,17 +40,18 @@ const Sidebar = () => {
         dispatch(hideFilters())
     }
 
+    const imgSize = 20;
+
     return (
         <SidebarWrap>
             <Categories>
                 <SmallTitle>{getTranslation(CATEGORIES.LOGO.TITLE, lang)}:</SmallTitle>
-                <NavLink to={ROUTE.articles.path} onClick={close}><GrArticle/>{getTranslation(CATEGORIES.CATEGORY.ARTICLES, lang)}</NavLink>
-                <RightBtn onClick={close}><Hamburger size={25}/></RightBtn>
-                <NavLink to={ROUTE.books.path} onClick={() => toggleCategory('books')}><ImBooks/> {getTranslation(CATEGORIES.CATEGORY.BOOKS, lang)}</NavLink>
-                <NavLink to={ROUTE.guitars.path} onClick={() => toggleCategory('guitars')}><GiGuitar/> {getTranslation(CATEGORIES.CATEGORY.GUITARS, lang)}</NavLink>
-                <NavLink to={ROUTE.vouchers.path} onClick={() => toggleCategory('vouchers')}><FaFly/> {getTranslation(CATEGORIES.CATEGORY.VOUCHERS, lang)}</NavLink>
+                <NavLink to={ROUTE.articles.path} onClick={close}><GrArticle  size={imgSize}/> <ItemTitle>{getTranslation(CATEGORIES.CATEGORY.ARTICLES, lang)}</ItemTitle></NavLink>
+                <NavLink to={ROUTE.books.path} onClick={() => toggleCategory('books')}><ImBooks size={imgSize}/> <ItemTitle>{getTranslation(CATEGORIES.CATEGORY.BOOKS, lang)}</ItemTitle></NavLink>
+                <NavLink to={ROUTE.guitars.path} onClick={() => toggleCategory('guitars')}><GiGuitar size={imgSize}/> <ItemTitle>{getTranslation(CATEGORIES.CATEGORY.GUITARS, lang)} </ItemTitle></NavLink>
+                <NavLink to={ROUTE.vouchers.path} onClick={() => toggleCategory('vouchers')}><FaFly  size={imgSize}/> <ItemTitle>{getTranslation(CATEGORIES.CATEGORY.VOUCHERS, lang)} </ItemTitle></NavLink>
+                {isFiltersOpen && <NativeFiltersContainer/>}
             </Categories>
-           {isFiltersOpen && <NativeFiltersContainer/>}
         </SidebarWrap>
     );
 };

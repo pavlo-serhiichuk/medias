@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     position: relative;
     min-height: 100vh;
     margin: 0 auto;
-    width: 1065px;
+    width: 1068px;
     box-sizing: border-box;
     background-color: #fff;
   

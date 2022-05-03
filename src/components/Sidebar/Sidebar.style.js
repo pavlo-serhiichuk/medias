@@ -14,20 +14,17 @@ export const SidebarWrap = styled.div`
             background-color: #fff;
             z-index: 1000;
         }
-
 `
+
+export const ItemTitle = styled.span`
+  font-size: 20px;
+`;
 
 export const Categories = styled.div`
   display: flex;
     flex-direction: column;
     position: relative;
     padding: 20px 0 10px 10px;
-`
-
-export const Title = styled.div`
-    font-size: 15px;
-    font-weight: bold; 
-    cursor: default; 
 `
 
 export const Button = styled.div`
