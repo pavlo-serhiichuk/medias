@@ -6,8 +6,7 @@ import {BottomAnchor, GoBottom, GoTop, TopAnchor} from "../common/QuickScrolls/Q
 import Alert from "../common/Alert/Alert";
 import AppModals from "../AppModals/AppModals";
 import AppRoutes from "../AppRoutes/AppRoutes";
-import SidebarContainer from "../Sidebar/SidebarContainer";
-
+import Sidebar from "../Sidebar/Sidebar.component.js";
 
 function App({isAlertOpen}) {
 
@@ -19,7 +18,7 @@ function App({isAlertOpen}) {
                 <GoTop/>
                 <HeaderContainer/>
                 <Content>
-                    <SidebarContainer/>
+                    <Sidebar />
                     <AppRoutes/>
                     <AppModals/>
                 </Content>
