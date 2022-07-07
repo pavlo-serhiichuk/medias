@@ -12,7 +12,7 @@ const IntroArticle = ({article}) => {
                 <NavLink to={articleId}> {article.title}</NavLink>
             </Title>
             <NavLink to={articleId}>
-                <Img bgSize={'500px'} image={article.image} height={'200px'}/>
+                <Img bgSize={'500px'} image={article.image} />
             </NavLink>
             <Content>
                 {article.description}

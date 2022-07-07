@@ -7,10 +7,10 @@ const FullArticle = ({fullArticle}) => {
     return (
         <Wrapper>
             <HugeTitle>
-                {fullArticle.title}
+                {fullArticle?.title}
             </HugeTitle>
-            <Img bgSize={'650px'} image={fullArticle.image}/>
-            <div>{fullArticle.description}</div>
+            <Img bgSize={'650px'} image={fullArticle?.image}/>
+            <div>{fullArticle?.description}</div>
         </Wrapper>
     );
 };
