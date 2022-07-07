@@ -29,7 +29,6 @@ export const Article = styled.h1`
   margin-right: 30px;
   width: 165px;
   margin-left: 15px;
-  font-size: 50px;
   box-sizing: border-box;
 
   &:hover {

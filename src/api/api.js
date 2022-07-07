@@ -3,12 +3,10 @@ import {deleteFilters} from "../redux/sidebarReducer";
 import {setFilteredProducts} from "../redux/productsReducer";
 import axios from "axios";
 
-const serverURL = 'http://localhost:3001/'
+const serverURL = 'http://localhost:1113/'
 
 const get = (url) => fetch(`${serverURL}${url}`).then(res => res.json())
-
 const post = (url, data) => axios.post(`${serverURL}${url}`, data)
-
 //    const post = fetch(`${serverURL}${url}`, {
 //     method: 'POST',
 //     headers: {
@@ -26,7 +24,6 @@ const post = (url, data) => axios.post(`${serverURL}${url}`, data)
 //     });
 
 const put = (url, data) => axios.put(`${serverURL}${url}`, {data})
-
 // const put = (url, data) =>
 //     fetch(`${serverURL}${url}`, {
 //     method: 'PUT',

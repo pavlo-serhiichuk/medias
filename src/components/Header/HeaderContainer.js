@@ -10,7 +10,7 @@ const HeaderContainer = (props) => {
     const cart = props.cartProducts.length
     const wishes = props.wishesProducts.length
     const avatar = 'https://t3.ftcdn.net/jpg/03/46/83/96/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg'
-    const uaFlag = "https://mltwhqhpb0wf.i.optimole.com/JdK432s-E1CyyNUi/w:auto/h:auto/q:auto/https://spring-perevod.com/wp-content/uploads/2015/06/UA-Flag.png"
+    const uaFlag = "https://cdn-icons-png.flaticon.com/512/197/197572.png"
     const gbFlag = "https://i.pinimg.com/736x/17/0d/98/170d98e54ff7d32e417f12a087ed6c22.jpg"
 
     const getAsyncWishes = () => getAsyncWishesProducts(props.userId)

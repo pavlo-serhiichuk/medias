@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-    margin: 5px;
-`
+export const Wrapper = styled.div``
 
 export const ProductsWrap = styled.div`
     display: flex;

@@ -44,7 +44,7 @@ const ProductsContainer = (props) => {
     const addToCart = product => {
         props.isAuth
             ? props.addToCart(product)
-            : alert('Please, sigh in first! Asshole!!')
+            : alert('Please, sigh in first!')
     }
 
     const openMoreInfo = productId => props.openMoreInfoModal(productId)
