@@ -8,9 +8,7 @@ import AppModals from "../AppModals/AppModals";
 import AppRoutes from "../AppRoutes/AppRoutes";
 import SidebarContainer from "../Sidebar/SidebarContainer";
 
-
 function App({isAlertOpen}) {
-
     return (
         <>
             <Wrapper>

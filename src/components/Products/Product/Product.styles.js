@@ -11,7 +11,7 @@ export const ProductContent = styled.div`
     background-size: 200px;
     box-sizing: border-box;
     border: 1px solid rgba(210, 217, 217, 0.89);
-    &:hover: {
+    &:hover {
        opacity: 0.5; 
 `
 
